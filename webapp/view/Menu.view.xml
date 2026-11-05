@@ -1,0 +1,7 @@
+<mvc:View controllerName="code2.fiori.pou.pou1project.controller.Menu"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m">
+    <Page id="Menu_page" title="{i18n>title}">
+        <Text text="Menu!" />
+    </Page>
+</mvc:View>

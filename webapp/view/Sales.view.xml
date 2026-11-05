@@ -1,0 +1,7 @@
+<mvc:View controllerName="code2.fiori.pou.pou1project.controller.Sales"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m">
+    <Page id="Sales_page" title="{i18n>title}">
+        <Text text="Sales!" />
+    </Page>
+</mvc:View>
