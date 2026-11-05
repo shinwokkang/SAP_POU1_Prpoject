@@ -1,0 +1,7 @@
+<mvc:View controllerName="code2.fiori.pou.pou1project.controller.Dashboard"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m">
+    <Page id="Dashboard_page" title="{i18n>title}">
+        <Text text="Dashboard!" />
+    </Page>
+</mvc:View>

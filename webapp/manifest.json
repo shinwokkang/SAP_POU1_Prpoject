@@ -65,7 +65,7 @@
         "routerClass": "sap.m.routing.Router",
         "controlAggregation": "pages",
         "controlId": "app",
-        "transition": "slide",
+        "transition": "fade",
         "type": "View",
         "viewType": "XML",
         "path": "code2.fiori.pou.pou1project.view",
@@ -74,17 +74,105 @@
       },
       "routes": [
         {
-          "name": "RouteMainView",
+          "name": "Main",
           "pattern": ":?query:",
           "target": [
-            "TargetMainView"
+            "TargetMain"
+          ]
+        },
+        {
+          "name": "Dashboard",
+          "pattern": "Dashboard",
+          "target": [
+            "TargetDashboard"
+          ]
+        },
+        {
+          "name": "Store",
+          "pattern": "Store",
+          "target": [
+            "TargetStore"
+          ]
+        },
+        {
+          "name": "Menu",
+          "pattern": "Menu",
+          "target": [
+            "TargetMenu"
+          ]
+        },
+        {
+          "name": "Sales",
+          "pattern": "Sales",
+          "target": [
+            "TargetSales"
+          ]
+        },
+        {
+          "name": "Stock",
+          "pattern": "Stock",
+          "target": [
+            "TargetStock"
+          ]
+        },
+        {
+          "name": "StockShortage",
+          "pattern": "StockShortage",
+          "target": [
+            "TargetStockShortage"
+          ]
+        },
+        {
+          "name": "Purchase",
+          "pattern": "Purchase",
+          "target": [
+            "TargetPurchase"
+          ]
+        },
+        {
+          "name": "SalesAnalytics",
+          "pattern": "SalesAnalytics",
+          "target": [
+            "TargetSalesAnalytics"
           ]
         }
       ],
       "targets": {
-        "TargetMainView": {
-          "id": "MainView",
-          "name": "MainView"
+        "TargetMain": {
+          "id": "Main",
+          "name": "Main"
+        },
+        "TargetDashboard": {
+          "id": "Dashboard",
+          "name": "Dashboard"
+        },
+        "TargetStore": {
+          "id": "Store",
+          "name": "Store"
+        },
+        "TargetMenu": {
+          "id": "Menu",
+          "name": "Menu"
+        },
+        "TargetSales": {
+          "id": "Sales",
+          "name": "Sales"
+        },
+        "TargetStock": {
+          "id": "Stock",
+          "name": "Stock"
+        },
+        "TargetStockShortage": {
+          "id": "StockShortage",
+          "name": "StockShortage"
+        },
+        "TargetPurchase": {
+          "id": "Purchase",
+          "name": "Purchase"
+        },
+        "TargetSalesAnalytics": {
+          "id": "SalesAnalytics",
+          "name": "SalesAnalytics"
         }
       }
     },

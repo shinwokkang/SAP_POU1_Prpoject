@@ -1,0 +1,3791 @@
+{
+    "StoreSet": [
+        {
+            "Storeid": "S001",
+            "Storename": "성수점",
+            "Region": "서울",
+            "Address": "서울특별시 성동구 성수동",
+            "Manager": "김민수",
+            "Status": "운영중"
+        },
+        {
+            "Storeid": "S002",
+            "Storename": "강남점",
+            "Region": "서울",
+            "Address": "서울특별시 강남구 역삼동",
+            "Manager": "이지은",
+            "Status": "운영중"
+        },
+        {
+            "Storeid": "S003",
+            "Storename": "수원점",
+            "Region": "경기도",
+            "Address": "경기도 수원시 팔달구",
+            "Manager": "박지훈",
+            "Status": "운영중"
+        },
+        {
+            "Storeid": "S004",
+            "Storename": "성남점",
+            "Region": "경기도",
+            "Address": "경기도 성남시 분당구",
+            "Manager": "최서연",
+            "Status": "운영중"
+        },
+        {
+            "Storeid": "S005",
+            "Storename": "춘천점",
+            "Region": "강원도",
+            "Address": "강원특별자치도 춘천시 퇴계동",
+            "Manager": "정유진",
+            "Status": "운영중"
+        },
+        {
+            "Storeid": "S006",
+            "Storename": "대전점",
+            "Region": "충청도",
+            "Address": "대전광역시 서구 둔산동",
+            "Manager": "한도윤",
+            "Status": "운영중"
+        },
+        {
+            "Storeid": "S007",
+            "Storename": "전주점",
+            "Region": "전라도",
+            "Address": "전북특별자치도 전주시 완산구",
+            "Manager": "오하린",
+            "Status": "운영중"
+        },
+        {
+            "Storeid": "S008",
+            "Storename": "대구점",
+            "Region": "경상도",
+            "Address": "대구광역시 중구 동성로 일대",
+            "Manager": "서지우",
+            "Status": "운영중"
+        },
+        {
+            "Storeid": "S009",
+            "Storename": "부산점",
+            "Region": "경상도",
+            "Address": "부산광역시 부산진구 부전동",
+            "Manager": "윤태영",
+            "Status": "운영중"
+        },
+        {
+            "Storeid": "S010",
+            "Storename": "제주점",
+            "Region": "제주도",
+            "Address": "제주특별자치도 제주시 연동",
+            "Manager": "강수빈",
+            "Status": "운영중"
+        },
+        {
+            "Storeid": "S011",
+            "Storename": "인천점",
+            "Region": "경기도",
+            "Address": "인천광역시 남동구 구월동",
+            "Manager": "이서현",
+            "Status": "휴점중"
+        },
+        {
+            "Storeid": "S012",
+            "Storename": "광주점",
+            "Region": "전라도",
+            "Address": "광주광역시 서구 치평동",
+            "Manager": "김도현",
+            "Status": "휴점중"
+        }
+    ],
+    "MenuSet": [
+        {
+            "Menuid": "M001",
+            "Menuname": "아메리카노",
+            "Category": "Coffee",
+            "Price": 4500,
+            "Status": "판매중",
+            "Soldqty": 526
+        },
+        {
+            "Menuid": "M002",
+            "Menuname": "카페라떼",
+            "Category": "Coffee",
+            "Price": 5000,
+            "Status": "판매중",
+            "Soldqty": 495
+        },
+        {
+            "Menuid": "M003",
+            "Menuname": "바닐라라떼",
+            "Category": "Coffee",
+            "Price": 5500,
+            "Status": "판매중",
+            "Soldqty": 374
+        },
+        {
+            "Menuid": "M004",
+            "Menuname": "카푸치노",
+            "Category": "Coffee",
+            "Price": 5000,
+            "Status": "판매중",
+            "Soldqty": 332
+        },
+        {
+            "Menuid": "M005",
+            "Menuname": "말차라떼",
+            "Category": "NonCoffee",
+            "Price": 6000,
+            "Status": "판매중",
+            "Soldqty": 448
+        },
+        {
+            "Menuid": "M006",
+            "Menuname": "초코라떼",
+            "Category": "NonCoffee",
+            "Price": 5500,
+            "Status": "판매중",
+            "Soldqty": 583
+        },
+        {
+            "Menuid": "M007",
+            "Menuname": "레몬에이드",
+            "Category": "Ade",
+            "Price": 5500,
+            "Status": "판매중",
+            "Soldqty": 665
+        },
+        {
+            "Menuid": "M008",
+            "Menuname": "자몽에이드",
+            "Category": "Ade",
+            "Price": 6000,
+            "Status": "판매중",
+            "Soldqty": 620
+        },
+        {
+            "Menuid": "M009",
+            "Menuname": "소금빵",
+            "Category": "Bakery",
+            "Price": 3200,
+            "Status": "판매중",
+            "Soldqty": 561
+        },
+        {
+            "Menuid": "M010",
+            "Menuname": "휘낭시에",
+            "Category": "Bakery",
+            "Price": 3000,
+            "Status": "판매중",
+            "Soldqty": 477
+        },
+        {
+            "Menuid": "M011",
+            "Menuname": "치즈케이크",
+            "Category": "Dessert",
+            "Price": 6500,
+            "Status": "판매중",
+            "Soldqty": 431
+        },
+        {
+            "Menuid": "M012",
+            "Menuname": "크루아상",
+            "Category": "Bakery",
+            "Price": 3800,
+            "Status": "판매중",
+            "Soldqty": 488
+        }
+    ],
+    "SalesSet": [
+        {
+            "Salesdate": "2026-10-30",
+            "Storeid": "S001",
+            "Storename": "성수점",
+            "Menuid": "M001",
+            "Menuname": "아메리카노",
+            "Quantity": 8,
+            "Amount": 36000
+        },
+        {
+            "Salesdate": "2026-10-30",
+            "Storeid": "S001",
+            "Storename": "성수점",
+            "Menuid": "M002",
+            "Menuname": "카페라떼",
+            "Quantity": 11,
+            "Amount": 55000
+        },
+        {
+            "Salesdate": "2026-10-30",
+            "Storeid": "S001",
+            "Storename": "성수점",
+            "Menuid": "M003",
+            "Menuname": "바닐라라떼",
+            "Quantity": 14,
+            "Amount": 77000
+        },
+        {
+            "Salesdate": "2026-10-30",
+            "Storeid": "S001",
+            "Storename": "성수점",
+            "Menuid": "M004",
+            "Menuname": "카푸치노",
+            "Quantity": 17,
+            "Amount": 85000
+        },
+        {
+            "Salesdate": "2026-10-30",
+            "Storeid": "S001",
+            "Storename": "성수점",
+            "Menuid": "M005",
+            "Menuname": "말차라떼",
+            "Quantity": 20,
+            "Amount": 120000
+        },
+        {
+            "Salesdate": "2026-10-30",
+            "Storeid": "S001",
+            "Storename": "성수점",
+            "Menuid": "M006",
+            "Menuname": "초코라떼",
+            "Quantity": 23,
+            "Amount": 126500
+        },
+        {
+            "Salesdate": "2026-10-30",
+            "Storeid": "S002",
+            "Storename": "강남점",
+            "Menuid": "M003",
+            "Menuname": "바닐라라떼",
+            "Quantity": 15,
+            "Amount": 82500
+        },
+        {
+            "Salesdate": "2026-10-30",
+            "Storeid": "S002",
+            "Storename": "강남점",
+            "Menuid": "M004",
+            "Menuname": "카푸치노",
+            "Quantity": 18,
+            "Amount": 90000
+        },
+        {
+            "Salesdate": "2026-10-30",
+            "Storeid": "S002",
+            "Storename": "강남점",
+            "Menuid": "M005",
+            "Menuname": "말차라떼",
+            "Quantity": 21,
+            "Amount": 126000
+        },
+        {
+            "Salesdate": "2026-10-30",
+            "Storeid": "S002",
+            "Storename": "강남점",
+            "Menuid": "M006",
+            "Menuname": "초코라떼",
+            "Quantity": 24,
+            "Amount": 132000
+        },
+        {
+            "Salesdate": "2026-10-30",
+            "Storeid": "S002",
+            "Storename": "강남점",
+            "Menuid": "M007",
+            "Menuname": "레몬에이드",
+            "Quantity": 27,
+            "Amount": 148500
+        },
+        {
+            "Salesdate": "2026-10-30",
+            "Storeid": "S002",
+            "Storename": "강남점",
+            "Menuid": "M008",
+            "Menuname": "자몽에이드",
+            "Quantity": 30,
+            "Amount": 180000
+        },
+        {
+            "Salesdate": "2026-10-30",
+            "Storeid": "S003",
+            "Storename": "수원점",
+            "Menuid": "M005",
+            "Menuname": "말차라떼",
+            "Quantity": 22,
+            "Amount": 132000
+        },
+        {
+            "Salesdate": "2026-10-30",
+            "Storeid": "S003",
+            "Storename": "수원점",
+            "Menuid": "M006",
+            "Menuname": "초코라떼",
+            "Quantity": 25,
+            "Amount": 137500
+        },
+        {
+            "Salesdate": "2026-10-30",
+            "Storeid": "S003",
+            "Storename": "수원점",
+            "Menuid": "M007",
+            "Menuname": "레몬에이드",
+            "Quantity": 28,
+            "Amount": 154000
+        },
+        {
+            "Salesdate": "2026-10-30",
+            "Storeid": "S003",
+            "Storename": "수원점",
+            "Menuid": "M008",
+            "Menuname": "자몽에이드",
+            "Quantity": 31,
+            "Amount": 186000
+        },
+        {
+            "Salesdate": "2026-10-30",
+            "Storeid": "S003",
+            "Storename": "수원점",
+            "Menuid": "M009",
+            "Menuname": "소금빵",
+            "Quantity": 9,
+            "Amount": 28800
+        },
+        {
+            "Salesdate": "2026-10-30",
+            "Storeid": "S003",
+            "Storename": "수원점",
+            "Menuid": "M010",
+            "Menuname": "휘낭시에",
+            "Quantity": 12,
+            "Amount": 36000
+        },
+        {
+            "Salesdate": "2026-10-30",
+            "Storeid": "S004",
+            "Storename": "성남점",
+            "Menuid": "M007",
+            "Menuname": "레몬에이드",
+            "Quantity": 29,
+            "Amount": 159500
+        },
+        {
+            "Salesdate": "2026-10-30",
+            "Storeid": "S004",
+            "Storename": "성남점",
+            "Menuid": "M008",
+            "Menuname": "자몽에이드",
+            "Quantity": 32,
+            "Amount": 192000
+        },
+        {
+            "Salesdate": "2026-10-30",
+            "Storeid": "S004",
+            "Storename": "성남점",
+            "Menuid": "M009",
+            "Menuname": "소금빵",
+            "Quantity": 10,
+            "Amount": 32000
+        },
+        {
+            "Salesdate": "2026-10-30",
+            "Storeid": "S004",
+            "Storename": "성남점",
+            "Menuid": "M010",
+            "Menuname": "휘낭시에",
+            "Quantity": 13,
+            "Amount": 39000
+        },
+        {
+            "Salesdate": "2026-10-30",
+            "Storeid": "S004",
+            "Storename": "성남점",
+            "Menuid": "M011",
+            "Menuname": "치즈케이크",
+            "Quantity": 16,
+            "Amount": 104000
+        },
+        {
+            "Salesdate": "2026-10-30",
+            "Storeid": "S004",
+            "Storename": "성남점",
+            "Menuid": "M012",
+            "Menuname": "크루아상",
+            "Quantity": 19,
+            "Amount": 72200
+        },
+        {
+            "Salesdate": "2026-10-30",
+            "Storeid": "S005",
+            "Storename": "춘천점",
+            "Menuid": "M009",
+            "Menuname": "소금빵",
+            "Quantity": 11,
+            "Amount": 35200
+        },
+        {
+            "Salesdate": "2026-10-30",
+            "Storeid": "S005",
+            "Storename": "춘천점",
+            "Menuid": "M010",
+            "Menuname": "휘낭시에",
+            "Quantity": 14,
+            "Amount": 42000
+        },
+        {
+            "Salesdate": "2026-10-30",
+            "Storeid": "S005",
+            "Storename": "춘천점",
+            "Menuid": "M011",
+            "Menuname": "치즈케이크",
+            "Quantity": 17,
+            "Amount": 110500
+        },
+        {
+            "Salesdate": "2026-10-30",
+            "Storeid": "S005",
+            "Storename": "춘천점",
+            "Menuid": "M012",
+            "Menuname": "크루아상",
+            "Quantity": 20,
+            "Amount": 76000
+        },
+        {
+            "Salesdate": "2026-10-30",
+            "Storeid": "S005",
+            "Storename": "춘천점",
+            "Menuid": "M001",
+            "Menuname": "아메리카노",
+            "Quantity": 23,
+            "Amount": 103500
+        },
+        {
+            "Salesdate": "2026-10-30",
+            "Storeid": "S005",
+            "Storename": "춘천점",
+            "Menuid": "M002",
+            "Menuname": "카페라떼",
+            "Quantity": 26,
+            "Amount": 130000
+        },
+        {
+            "Salesdate": "2026-10-30",
+            "Storeid": "S006",
+            "Storename": "대전점",
+            "Menuid": "M011",
+            "Menuname": "치즈케이크",
+            "Quantity": 18,
+            "Amount": 117000
+        },
+        {
+            "Salesdate": "2026-10-30",
+            "Storeid": "S006",
+            "Storename": "대전점",
+            "Menuid": "M012",
+            "Menuname": "크루아상",
+            "Quantity": 21,
+            "Amount": 79800
+        },
+        {
+            "Salesdate": "2026-10-30",
+            "Storeid": "S006",
+            "Storename": "대전점",
+            "Menuid": "M001",
+            "Menuname": "아메리카노",
+            "Quantity": 24,
+            "Amount": 108000
+        },
+        {
+            "Salesdate": "2026-10-30",
+            "Storeid": "S006",
+            "Storename": "대전점",
+            "Menuid": "M002",
+            "Menuname": "카페라떼",
+            "Quantity": 27,
+            "Amount": 135000
+        },
+        {
+            "Salesdate": "2026-10-30",
+            "Storeid": "S006",
+            "Storename": "대전점",
+            "Menuid": "M003",
+            "Menuname": "바닐라라떼",
+            "Quantity": 30,
+            "Amount": 165000
+        },
+        {
+            "Salesdate": "2026-10-30",
+            "Storeid": "S006",
+            "Storename": "대전점",
+            "Menuid": "M004",
+            "Menuname": "카푸치노",
+            "Quantity": 8,
+            "Amount": 40000
+        },
+        {
+            "Salesdate": "2026-10-30",
+            "Storeid": "S007",
+            "Storename": "전주점",
+            "Menuid": "M001",
+            "Menuname": "아메리카노",
+            "Quantity": 25,
+            "Amount": 112500
+        },
+        {
+            "Salesdate": "2026-10-30",
+            "Storeid": "S007",
+            "Storename": "전주점",
+            "Menuid": "M002",
+            "Menuname": "카페라떼",
+            "Quantity": 28,
+            "Amount": 140000
+        },
+        {
+            "Salesdate": "2026-10-30",
+            "Storeid": "S007",
+            "Storename": "전주점",
+            "Menuid": "M003",
+            "Menuname": "바닐라라떼",
+            "Quantity": 31,
+            "Amount": 170500
+        },
+        {
+            "Salesdate": "2026-10-30",
+            "Storeid": "S007",
+            "Storename": "전주점",
+            "Menuid": "M004",
+            "Menuname": "카푸치노",
+            "Quantity": 9,
+            "Amount": 45000
+        },
+        {
+            "Salesdate": "2026-10-30",
+            "Storeid": "S007",
+            "Storename": "전주점",
+            "Menuid": "M005",
+            "Menuname": "말차라떼",
+            "Quantity": 12,
+            "Amount": 72000
+        },
+        {
+            "Salesdate": "2026-10-30",
+            "Storeid": "S007",
+            "Storename": "전주점",
+            "Menuid": "M006",
+            "Menuname": "초코라떼",
+            "Quantity": 15,
+            "Amount": 82500
+        },
+        {
+            "Salesdate": "2026-10-30",
+            "Storeid": "S008",
+            "Storename": "대구점",
+            "Menuid": "M003",
+            "Menuname": "바닐라라떼",
+            "Quantity": 32,
+            "Amount": 176000
+        },
+        {
+            "Salesdate": "2026-10-30",
+            "Storeid": "S008",
+            "Storename": "대구점",
+            "Menuid": "M004",
+            "Menuname": "카푸치노",
+            "Quantity": 10,
+            "Amount": 50000
+        },
+        {
+            "Salesdate": "2026-10-30",
+            "Storeid": "S008",
+            "Storename": "대구점",
+            "Menuid": "M005",
+            "Menuname": "말차라떼",
+            "Quantity": 13,
+            "Amount": 78000
+        },
+        {
+            "Salesdate": "2026-10-30",
+            "Storeid": "S008",
+            "Storename": "대구점",
+            "Menuid": "M006",
+            "Menuname": "초코라떼",
+            "Quantity": 16,
+            "Amount": 88000
+        },
+        {
+            "Salesdate": "2026-10-30",
+            "Storeid": "S008",
+            "Storename": "대구점",
+            "Menuid": "M007",
+            "Menuname": "레몬에이드",
+            "Quantity": 19,
+            "Amount": 104500
+        },
+        {
+            "Salesdate": "2026-10-30",
+            "Storeid": "S008",
+            "Storename": "대구점",
+            "Menuid": "M008",
+            "Menuname": "자몽에이드",
+            "Quantity": 22,
+            "Amount": 132000
+        },
+        {
+            "Salesdate": "2026-10-30",
+            "Storeid": "S009",
+            "Storename": "부산점",
+            "Menuid": "M005",
+            "Menuname": "말차라떼",
+            "Quantity": 14,
+            "Amount": 84000
+        },
+        {
+            "Salesdate": "2026-10-30",
+            "Storeid": "S009",
+            "Storename": "부산점",
+            "Menuid": "M006",
+            "Menuname": "초코라떼",
+            "Quantity": 17,
+            "Amount": 93500
+        },
+        {
+            "Salesdate": "2026-10-30",
+            "Storeid": "S009",
+            "Storename": "부산점",
+            "Menuid": "M007",
+            "Menuname": "레몬에이드",
+            "Quantity": 20,
+            "Amount": 110000
+        },
+        {
+            "Salesdate": "2026-10-30",
+            "Storeid": "S009",
+            "Storename": "부산점",
+            "Menuid": "M008",
+            "Menuname": "자몽에이드",
+            "Quantity": 23,
+            "Amount": 138000
+        },
+        {
+            "Salesdate": "2026-10-30",
+            "Storeid": "S009",
+            "Storename": "부산점",
+            "Menuid": "M009",
+            "Menuname": "소금빵",
+            "Quantity": 26,
+            "Amount": 83200
+        },
+        {
+            "Salesdate": "2026-10-30",
+            "Storeid": "S009",
+            "Storename": "부산점",
+            "Menuid": "M010",
+            "Menuname": "휘낭시에",
+            "Quantity": 29,
+            "Amount": 87000
+        },
+        {
+            "Salesdate": "2026-10-30",
+            "Storeid": "S010",
+            "Storename": "제주점",
+            "Menuid": "M007",
+            "Menuname": "레몬에이드",
+            "Quantity": 21,
+            "Amount": 115500
+        },
+        {
+            "Salesdate": "2026-10-30",
+            "Storeid": "S010",
+            "Storename": "제주점",
+            "Menuid": "M008",
+            "Menuname": "자몽에이드",
+            "Quantity": 24,
+            "Amount": 144000
+        },
+        {
+            "Salesdate": "2026-10-30",
+            "Storeid": "S010",
+            "Storename": "제주점",
+            "Menuid": "M009",
+            "Menuname": "소금빵",
+            "Quantity": 27,
+            "Amount": 86400
+        },
+        {
+            "Salesdate": "2026-10-30",
+            "Storeid": "S010",
+            "Storename": "제주점",
+            "Menuid": "M010",
+            "Menuname": "휘낭시에",
+            "Quantity": 30,
+            "Amount": 90000
+        },
+        {
+            "Salesdate": "2026-10-30",
+            "Storeid": "S010",
+            "Storename": "제주점",
+            "Menuid": "M011",
+            "Menuname": "치즈케이크",
+            "Quantity": 8,
+            "Amount": 52000
+        },
+        {
+            "Salesdate": "2026-10-30",
+            "Storeid": "S010",
+            "Storename": "제주점",
+            "Menuid": "M012",
+            "Menuname": "크루아상",
+            "Quantity": 11,
+            "Amount": 41800
+        },
+        {
+            "Salesdate": "2026-10-31",
+            "Storeid": "S001",
+            "Storename": "성수점",
+            "Menuid": "M002",
+            "Menuname": "카페라떼",
+            "Quantity": 13,
+            "Amount": 65000
+        },
+        {
+            "Salesdate": "2026-10-31",
+            "Storeid": "S001",
+            "Storename": "성수점",
+            "Menuid": "M003",
+            "Menuname": "바닐라라떼",
+            "Quantity": 16,
+            "Amount": 88000
+        },
+        {
+            "Salesdate": "2026-10-31",
+            "Storeid": "S001",
+            "Storename": "성수점",
+            "Menuid": "M004",
+            "Menuname": "카푸치노",
+            "Quantity": 19,
+            "Amount": 95000
+        },
+        {
+            "Salesdate": "2026-10-31",
+            "Storeid": "S001",
+            "Storename": "성수점",
+            "Menuid": "M005",
+            "Menuname": "말차라떼",
+            "Quantity": 22,
+            "Amount": 132000
+        },
+        {
+            "Salesdate": "2026-10-31",
+            "Storeid": "S001",
+            "Storename": "성수점",
+            "Menuid": "M006",
+            "Menuname": "초코라떼",
+            "Quantity": 25,
+            "Amount": 137500
+        },
+        {
+            "Salesdate": "2026-10-31",
+            "Storeid": "S001",
+            "Storename": "성수점",
+            "Menuid": "M007",
+            "Menuname": "레몬에이드",
+            "Quantity": 28,
+            "Amount": 154000
+        },
+        {
+            "Salesdate": "2026-10-31",
+            "Storeid": "S002",
+            "Storename": "강남점",
+            "Menuid": "M004",
+            "Menuname": "카푸치노",
+            "Quantity": 20,
+            "Amount": 100000
+        },
+        {
+            "Salesdate": "2026-10-31",
+            "Storeid": "S002",
+            "Storename": "강남점",
+            "Menuid": "M005",
+            "Menuname": "말차라떼",
+            "Quantity": 23,
+            "Amount": 138000
+        },
+        {
+            "Salesdate": "2026-10-31",
+            "Storeid": "S002",
+            "Storename": "강남점",
+            "Menuid": "M006",
+            "Menuname": "초코라떼",
+            "Quantity": 26,
+            "Amount": 143000
+        },
+        {
+            "Salesdate": "2026-10-31",
+            "Storeid": "S002",
+            "Storename": "강남점",
+            "Menuid": "M007",
+            "Menuname": "레몬에이드",
+            "Quantity": 29,
+            "Amount": 159500
+        },
+        {
+            "Salesdate": "2026-10-31",
+            "Storeid": "S002",
+            "Storename": "강남점",
+            "Menuid": "M008",
+            "Menuname": "자몽에이드",
+            "Quantity": 32,
+            "Amount": 192000
+        },
+        {
+            "Salesdate": "2026-10-31",
+            "Storeid": "S002",
+            "Storename": "강남점",
+            "Menuid": "M009",
+            "Menuname": "소금빵",
+            "Quantity": 10,
+            "Amount": 32000
+        },
+        {
+            "Salesdate": "2026-10-31",
+            "Storeid": "S003",
+            "Storename": "수원점",
+            "Menuid": "M006",
+            "Menuname": "초코라떼",
+            "Quantity": 27,
+            "Amount": 148500
+        },
+        {
+            "Salesdate": "2026-10-31",
+            "Storeid": "S003",
+            "Storename": "수원점",
+            "Menuid": "M007",
+            "Menuname": "레몬에이드",
+            "Quantity": 30,
+            "Amount": 165000
+        },
+        {
+            "Salesdate": "2026-10-31",
+            "Storeid": "S003",
+            "Storename": "수원점",
+            "Menuid": "M008",
+            "Menuname": "자몽에이드",
+            "Quantity": 8,
+            "Amount": 48000
+        },
+        {
+            "Salesdate": "2026-10-31",
+            "Storeid": "S003",
+            "Storename": "수원점",
+            "Menuid": "M009",
+            "Menuname": "소금빵",
+            "Quantity": 11,
+            "Amount": 35200
+        },
+        {
+            "Salesdate": "2026-10-31",
+            "Storeid": "S003",
+            "Storename": "수원점",
+            "Menuid": "M010",
+            "Menuname": "휘낭시에",
+            "Quantity": 14,
+            "Amount": 42000
+        },
+        {
+            "Salesdate": "2026-10-31",
+            "Storeid": "S003",
+            "Storename": "수원점",
+            "Menuid": "M011",
+            "Menuname": "치즈케이크",
+            "Quantity": 17,
+            "Amount": 110500
+        },
+        {
+            "Salesdate": "2026-10-31",
+            "Storeid": "S004",
+            "Storename": "성남점",
+            "Menuid": "M008",
+            "Menuname": "자몽에이드",
+            "Quantity": 9,
+            "Amount": 54000
+        },
+        {
+            "Salesdate": "2026-10-31",
+            "Storeid": "S004",
+            "Storename": "성남점",
+            "Menuid": "M009",
+            "Menuname": "소금빵",
+            "Quantity": 12,
+            "Amount": 38400
+        },
+        {
+            "Salesdate": "2026-10-31",
+            "Storeid": "S004",
+            "Storename": "성남점",
+            "Menuid": "M010",
+            "Menuname": "휘낭시에",
+            "Quantity": 15,
+            "Amount": 45000
+        },
+        {
+            "Salesdate": "2026-10-31",
+            "Storeid": "S004",
+            "Storename": "성남점",
+            "Menuid": "M011",
+            "Menuname": "치즈케이크",
+            "Quantity": 18,
+            "Amount": 117000
+        },
+        {
+            "Salesdate": "2026-10-31",
+            "Storeid": "S004",
+            "Storename": "성남점",
+            "Menuid": "M012",
+            "Menuname": "크루아상",
+            "Quantity": 21,
+            "Amount": 79800
+        },
+        {
+            "Salesdate": "2026-10-31",
+            "Storeid": "S004",
+            "Storename": "성남점",
+            "Menuid": "M001",
+            "Menuname": "아메리카노",
+            "Quantity": 24,
+            "Amount": 108000
+        },
+        {
+            "Salesdate": "2026-10-31",
+            "Storeid": "S005",
+            "Storename": "춘천점",
+            "Menuid": "M010",
+            "Menuname": "휘낭시에",
+            "Quantity": 16,
+            "Amount": 48000
+        },
+        {
+            "Salesdate": "2026-10-31",
+            "Storeid": "S005",
+            "Storename": "춘천점",
+            "Menuid": "M011",
+            "Menuname": "치즈케이크",
+            "Quantity": 19,
+            "Amount": 123500
+        },
+        {
+            "Salesdate": "2026-10-31",
+            "Storeid": "S005",
+            "Storename": "춘천점",
+            "Menuid": "M012",
+            "Menuname": "크루아상",
+            "Quantity": 22,
+            "Amount": 83600
+        },
+        {
+            "Salesdate": "2026-10-31",
+            "Storeid": "S005",
+            "Storename": "춘천점",
+            "Menuid": "M001",
+            "Menuname": "아메리카노",
+            "Quantity": 25,
+            "Amount": 112500
+        },
+        {
+            "Salesdate": "2026-10-31",
+            "Storeid": "S005",
+            "Storename": "춘천점",
+            "Menuid": "M002",
+            "Menuname": "카페라떼",
+            "Quantity": 28,
+            "Amount": 140000
+        },
+        {
+            "Salesdate": "2026-10-31",
+            "Storeid": "S005",
+            "Storename": "춘천점",
+            "Menuid": "M003",
+            "Menuname": "바닐라라떼",
+            "Quantity": 31,
+            "Amount": 170500
+        },
+        {
+            "Salesdate": "2026-10-31",
+            "Storeid": "S006",
+            "Storename": "대전점",
+            "Menuid": "M012",
+            "Menuname": "크루아상",
+            "Quantity": 23,
+            "Amount": 87400
+        },
+        {
+            "Salesdate": "2026-10-31",
+            "Storeid": "S006",
+            "Storename": "대전점",
+            "Menuid": "M001",
+            "Menuname": "아메리카노",
+            "Quantity": 26,
+            "Amount": 117000
+        },
+        {
+            "Salesdate": "2026-10-31",
+            "Storeid": "S006",
+            "Storename": "대전점",
+            "Menuid": "M002",
+            "Menuname": "카페라떼",
+            "Quantity": 29,
+            "Amount": 145000
+        },
+        {
+            "Salesdate": "2026-10-31",
+            "Storeid": "S006",
+            "Storename": "대전점",
+            "Menuid": "M003",
+            "Menuname": "바닐라라떼",
+            "Quantity": 32,
+            "Amount": 176000
+        },
+        {
+            "Salesdate": "2026-10-31",
+            "Storeid": "S006",
+            "Storename": "대전점",
+            "Menuid": "M004",
+            "Menuname": "카푸치노",
+            "Quantity": 10,
+            "Amount": 50000
+        },
+        {
+            "Salesdate": "2026-10-31",
+            "Storeid": "S006",
+            "Storename": "대전점",
+            "Menuid": "M005",
+            "Menuname": "말차라떼",
+            "Quantity": 13,
+            "Amount": 78000
+        },
+        {
+            "Salesdate": "2026-10-31",
+            "Storeid": "S007",
+            "Storename": "전주점",
+            "Menuid": "M002",
+            "Menuname": "카페라떼",
+            "Quantity": 30,
+            "Amount": 150000
+        },
+        {
+            "Salesdate": "2026-10-31",
+            "Storeid": "S007",
+            "Storename": "전주점",
+            "Menuid": "M003",
+            "Menuname": "바닐라라떼",
+            "Quantity": 8,
+            "Amount": 44000
+        },
+        {
+            "Salesdate": "2026-10-31",
+            "Storeid": "S007",
+            "Storename": "전주점",
+            "Menuid": "M004",
+            "Menuname": "카푸치노",
+            "Quantity": 11,
+            "Amount": 55000
+        },
+        {
+            "Salesdate": "2026-10-31",
+            "Storeid": "S007",
+            "Storename": "전주점",
+            "Menuid": "M005",
+            "Menuname": "말차라떼",
+            "Quantity": 14,
+            "Amount": 84000
+        },
+        {
+            "Salesdate": "2026-10-31",
+            "Storeid": "S007",
+            "Storename": "전주점",
+            "Menuid": "M006",
+            "Menuname": "초코라떼",
+            "Quantity": 17,
+            "Amount": 93500
+        },
+        {
+            "Salesdate": "2026-10-31",
+            "Storeid": "S007",
+            "Storename": "전주점",
+            "Menuid": "M007",
+            "Menuname": "레몬에이드",
+            "Quantity": 20,
+            "Amount": 110000
+        },
+        {
+            "Salesdate": "2026-10-31",
+            "Storeid": "S008",
+            "Storename": "대구점",
+            "Menuid": "M004",
+            "Menuname": "카푸치노",
+            "Quantity": 12,
+            "Amount": 60000
+        },
+        {
+            "Salesdate": "2026-10-31",
+            "Storeid": "S008",
+            "Storename": "대구점",
+            "Menuid": "M005",
+            "Menuname": "말차라떼",
+            "Quantity": 15,
+            "Amount": 90000
+        },
+        {
+            "Salesdate": "2026-10-31",
+            "Storeid": "S008",
+            "Storename": "대구점",
+            "Menuid": "M006",
+            "Menuname": "초코라떼",
+            "Quantity": 18,
+            "Amount": 99000
+        },
+        {
+            "Salesdate": "2026-10-31",
+            "Storeid": "S008",
+            "Storename": "대구점",
+            "Menuid": "M007",
+            "Menuname": "레몬에이드",
+            "Quantity": 21,
+            "Amount": 115500
+        },
+        {
+            "Salesdate": "2026-10-31",
+            "Storeid": "S008",
+            "Storename": "대구점",
+            "Menuid": "M008",
+            "Menuname": "자몽에이드",
+            "Quantity": 24,
+            "Amount": 144000
+        },
+        {
+            "Salesdate": "2026-10-31",
+            "Storeid": "S008",
+            "Storename": "대구점",
+            "Menuid": "M009",
+            "Menuname": "소금빵",
+            "Quantity": 27,
+            "Amount": 86400
+        },
+        {
+            "Salesdate": "2026-10-31",
+            "Storeid": "S009",
+            "Storename": "부산점",
+            "Menuid": "M006",
+            "Menuname": "초코라떼",
+            "Quantity": 19,
+            "Amount": 104500
+        },
+        {
+            "Salesdate": "2026-10-31",
+            "Storeid": "S009",
+            "Storename": "부산점",
+            "Menuid": "M007",
+            "Menuname": "레몬에이드",
+            "Quantity": 22,
+            "Amount": 121000
+        },
+        {
+            "Salesdate": "2026-10-31",
+            "Storeid": "S009",
+            "Storename": "부산점",
+            "Menuid": "M008",
+            "Menuname": "자몽에이드",
+            "Quantity": 25,
+            "Amount": 150000
+        },
+        {
+            "Salesdate": "2026-10-31",
+            "Storeid": "S009",
+            "Storename": "부산점",
+            "Menuid": "M009",
+            "Menuname": "소금빵",
+            "Quantity": 28,
+            "Amount": 89600
+        },
+        {
+            "Salesdate": "2026-10-31",
+            "Storeid": "S009",
+            "Storename": "부산점",
+            "Menuid": "M010",
+            "Menuname": "휘낭시에",
+            "Quantity": 31,
+            "Amount": 93000
+        },
+        {
+            "Salesdate": "2026-10-31",
+            "Storeid": "S009",
+            "Storename": "부산점",
+            "Menuid": "M011",
+            "Menuname": "치즈케이크",
+            "Quantity": 9,
+            "Amount": 58500
+        },
+        {
+            "Salesdate": "2026-10-31",
+            "Storeid": "S010",
+            "Storename": "제주점",
+            "Menuid": "M008",
+            "Menuname": "자몽에이드",
+            "Quantity": 26,
+            "Amount": 156000
+        },
+        {
+            "Salesdate": "2026-10-31",
+            "Storeid": "S010",
+            "Storename": "제주점",
+            "Menuid": "M009",
+            "Menuname": "소금빵",
+            "Quantity": 29,
+            "Amount": 92800
+        },
+        {
+            "Salesdate": "2026-10-31",
+            "Storeid": "S010",
+            "Storename": "제주점",
+            "Menuid": "M010",
+            "Menuname": "휘낭시에",
+            "Quantity": 32,
+            "Amount": 96000
+        },
+        {
+            "Salesdate": "2026-10-31",
+            "Storeid": "S010",
+            "Storename": "제주점",
+            "Menuid": "M011",
+            "Menuname": "치즈케이크",
+            "Quantity": 10,
+            "Amount": 65000
+        },
+        {
+            "Salesdate": "2026-10-31",
+            "Storeid": "S010",
+            "Storename": "제주점",
+            "Menuid": "M012",
+            "Menuname": "크루아상",
+            "Quantity": 13,
+            "Amount": 49400
+        },
+        {
+            "Salesdate": "2026-10-31",
+            "Storeid": "S010",
+            "Storename": "제주점",
+            "Menuid": "M001",
+            "Menuname": "아메리카노",
+            "Quantity": 16,
+            "Amount": 72000
+        },
+        {
+            "Salesdate": "2026-11-01",
+            "Storeid": "S001",
+            "Storename": "성수점",
+            "Menuid": "M003",
+            "Menuname": "바닐라라떼",
+            "Quantity": 18,
+            "Amount": 99000
+        },
+        {
+            "Salesdate": "2026-11-01",
+            "Storeid": "S001",
+            "Storename": "성수점",
+            "Menuid": "M004",
+            "Menuname": "카푸치노",
+            "Quantity": 21,
+            "Amount": 105000
+        },
+        {
+            "Salesdate": "2026-11-01",
+            "Storeid": "S001",
+            "Storename": "성수점",
+            "Menuid": "M005",
+            "Menuname": "말차라떼",
+            "Quantity": 24,
+            "Amount": 144000
+        },
+        {
+            "Salesdate": "2026-11-01",
+            "Storeid": "S001",
+            "Storename": "성수점",
+            "Menuid": "M006",
+            "Menuname": "초코라떼",
+            "Quantity": 27,
+            "Amount": 148500
+        },
+        {
+            "Salesdate": "2026-11-01",
+            "Storeid": "S001",
+            "Storename": "성수점",
+            "Menuid": "M007",
+            "Menuname": "레몬에이드",
+            "Quantity": 30,
+            "Amount": 165000
+        },
+        {
+            "Salesdate": "2026-11-01",
+            "Storeid": "S001",
+            "Storename": "성수점",
+            "Menuid": "M008",
+            "Menuname": "자몽에이드",
+            "Quantity": 8,
+            "Amount": 48000
+        },
+        {
+            "Salesdate": "2026-11-01",
+            "Storeid": "S002",
+            "Storename": "강남점",
+            "Menuid": "M005",
+            "Menuname": "말차라떼",
+            "Quantity": 25,
+            "Amount": 150000
+        },
+        {
+            "Salesdate": "2026-11-01",
+            "Storeid": "S002",
+            "Storename": "강남점",
+            "Menuid": "M006",
+            "Menuname": "초코라떼",
+            "Quantity": 28,
+            "Amount": 154000
+        },
+        {
+            "Salesdate": "2026-11-01",
+            "Storeid": "S002",
+            "Storename": "강남점",
+            "Menuid": "M007",
+            "Menuname": "레몬에이드",
+            "Quantity": 31,
+            "Amount": 170500
+        },
+        {
+            "Salesdate": "2026-11-01",
+            "Storeid": "S002",
+            "Storename": "강남점",
+            "Menuid": "M008",
+            "Menuname": "자몽에이드",
+            "Quantity": 9,
+            "Amount": 54000
+        },
+        {
+            "Salesdate": "2026-11-01",
+            "Storeid": "S002",
+            "Storename": "강남점",
+            "Menuid": "M009",
+            "Menuname": "소금빵",
+            "Quantity": 12,
+            "Amount": 38400
+        },
+        {
+            "Salesdate": "2026-11-01",
+            "Storeid": "S002",
+            "Storename": "강남점",
+            "Menuid": "M010",
+            "Menuname": "휘낭시에",
+            "Quantity": 15,
+            "Amount": 45000
+        },
+        {
+            "Salesdate": "2026-11-01",
+            "Storeid": "S003",
+            "Storename": "수원점",
+            "Menuid": "M007",
+            "Menuname": "레몬에이드",
+            "Quantity": 32,
+            "Amount": 176000
+        },
+        {
+            "Salesdate": "2026-11-01",
+            "Storeid": "S003",
+            "Storename": "수원점",
+            "Menuid": "M008",
+            "Menuname": "자몽에이드",
+            "Quantity": 10,
+            "Amount": 60000
+        },
+        {
+            "Salesdate": "2026-11-01",
+            "Storeid": "S003",
+            "Storename": "수원점",
+            "Menuid": "M009",
+            "Menuname": "소금빵",
+            "Quantity": 13,
+            "Amount": 41600
+        },
+        {
+            "Salesdate": "2026-11-01",
+            "Storeid": "S003",
+            "Storename": "수원점",
+            "Menuid": "M010",
+            "Menuname": "휘낭시에",
+            "Quantity": 16,
+            "Amount": 48000
+        },
+        {
+            "Salesdate": "2026-11-01",
+            "Storeid": "S003",
+            "Storename": "수원점",
+            "Menuid": "M011",
+            "Menuname": "치즈케이크",
+            "Quantity": 19,
+            "Amount": 123500
+        },
+        {
+            "Salesdate": "2026-11-01",
+            "Storeid": "S003",
+            "Storename": "수원점",
+            "Menuid": "M012",
+            "Menuname": "크루아상",
+            "Quantity": 22,
+            "Amount": 83600
+        },
+        {
+            "Salesdate": "2026-11-01",
+            "Storeid": "S004",
+            "Storename": "성남점",
+            "Menuid": "M009",
+            "Menuname": "소금빵",
+            "Quantity": 14,
+            "Amount": 44800
+        },
+        {
+            "Salesdate": "2026-11-01",
+            "Storeid": "S004",
+            "Storename": "성남점",
+            "Menuid": "M010",
+            "Menuname": "휘낭시에",
+            "Quantity": 17,
+            "Amount": 51000
+        },
+        {
+            "Salesdate": "2026-11-01",
+            "Storeid": "S004",
+            "Storename": "성남점",
+            "Menuid": "M011",
+            "Menuname": "치즈케이크",
+            "Quantity": 20,
+            "Amount": 130000
+        },
+        {
+            "Salesdate": "2026-11-01",
+            "Storeid": "S004",
+            "Storename": "성남점",
+            "Menuid": "M012",
+            "Menuname": "크루아상",
+            "Quantity": 23,
+            "Amount": 87400
+        },
+        {
+            "Salesdate": "2026-11-01",
+            "Storeid": "S004",
+            "Storename": "성남점",
+            "Menuid": "M001",
+            "Menuname": "아메리카노",
+            "Quantity": 26,
+            "Amount": 117000
+        },
+        {
+            "Salesdate": "2026-11-01",
+            "Storeid": "S004",
+            "Storename": "성남점",
+            "Menuid": "M002",
+            "Menuname": "카페라떼",
+            "Quantity": 29,
+            "Amount": 145000
+        },
+        {
+            "Salesdate": "2026-11-01",
+            "Storeid": "S005",
+            "Storename": "춘천점",
+            "Menuid": "M011",
+            "Menuname": "치즈케이크",
+            "Quantity": 21,
+            "Amount": 136500
+        },
+        {
+            "Salesdate": "2026-11-01",
+            "Storeid": "S005",
+            "Storename": "춘천점",
+            "Menuid": "M012",
+            "Menuname": "크루아상",
+            "Quantity": 24,
+            "Amount": 91200
+        },
+        {
+            "Salesdate": "2026-11-01",
+            "Storeid": "S005",
+            "Storename": "춘천점",
+            "Menuid": "M001",
+            "Menuname": "아메리카노",
+            "Quantity": 27,
+            "Amount": 121500
+        },
+        {
+            "Salesdate": "2026-11-01",
+            "Storeid": "S005",
+            "Storename": "춘천점",
+            "Menuid": "M002",
+            "Menuname": "카페라떼",
+            "Quantity": 30,
+            "Amount": 150000
+        },
+        {
+            "Salesdate": "2026-11-01",
+            "Storeid": "S005",
+            "Storename": "춘천점",
+            "Menuid": "M003",
+            "Menuname": "바닐라라떼",
+            "Quantity": 8,
+            "Amount": 44000
+        },
+        {
+            "Salesdate": "2026-11-01",
+            "Storeid": "S005",
+            "Storename": "춘천점",
+            "Menuid": "M004",
+            "Menuname": "카푸치노",
+            "Quantity": 11,
+            "Amount": 55000
+        },
+        {
+            "Salesdate": "2026-11-01",
+            "Storeid": "S006",
+            "Storename": "대전점",
+            "Menuid": "M001",
+            "Menuname": "아메리카노",
+            "Quantity": 28,
+            "Amount": 126000
+        },
+        {
+            "Salesdate": "2026-11-01",
+            "Storeid": "S006",
+            "Storename": "대전점",
+            "Menuid": "M002",
+            "Menuname": "카페라떼",
+            "Quantity": 31,
+            "Amount": 155000
+        },
+        {
+            "Salesdate": "2026-11-01",
+            "Storeid": "S006",
+            "Storename": "대전점",
+            "Menuid": "M003",
+            "Menuname": "바닐라라떼",
+            "Quantity": 9,
+            "Amount": 49500
+        },
+        {
+            "Salesdate": "2026-11-01",
+            "Storeid": "S006",
+            "Storename": "대전점",
+            "Menuid": "M004",
+            "Menuname": "카푸치노",
+            "Quantity": 12,
+            "Amount": 60000
+        },
+        {
+            "Salesdate": "2026-11-01",
+            "Storeid": "S006",
+            "Storename": "대전점",
+            "Menuid": "M005",
+            "Menuname": "말차라떼",
+            "Quantity": 15,
+            "Amount": 90000
+        },
+        {
+            "Salesdate": "2026-11-01",
+            "Storeid": "S006",
+            "Storename": "대전점",
+            "Menuid": "M006",
+            "Menuname": "초코라떼",
+            "Quantity": 18,
+            "Amount": 99000
+        },
+        {
+            "Salesdate": "2026-11-01",
+            "Storeid": "S007",
+            "Storename": "전주점",
+            "Menuid": "M003",
+            "Menuname": "바닐라라떼",
+            "Quantity": 10,
+            "Amount": 55000
+        },
+        {
+            "Salesdate": "2026-11-01",
+            "Storeid": "S007",
+            "Storename": "전주점",
+            "Menuid": "M004",
+            "Menuname": "카푸치노",
+            "Quantity": 13,
+            "Amount": 65000
+        },
+        {
+            "Salesdate": "2026-11-01",
+            "Storeid": "S007",
+            "Storename": "전주점",
+            "Menuid": "M005",
+            "Menuname": "말차라떼",
+            "Quantity": 16,
+            "Amount": 96000
+        },
+        {
+            "Salesdate": "2026-11-01",
+            "Storeid": "S007",
+            "Storename": "전주점",
+            "Menuid": "M006",
+            "Menuname": "초코라떼",
+            "Quantity": 19,
+            "Amount": 104500
+        },
+        {
+            "Salesdate": "2026-11-01",
+            "Storeid": "S007",
+            "Storename": "전주점",
+            "Menuid": "M007",
+            "Menuname": "레몬에이드",
+            "Quantity": 22,
+            "Amount": 121000
+        },
+        {
+            "Salesdate": "2026-11-01",
+            "Storeid": "S007",
+            "Storename": "전주점",
+            "Menuid": "M008",
+            "Menuname": "자몽에이드",
+            "Quantity": 25,
+            "Amount": 150000
+        },
+        {
+            "Salesdate": "2026-11-01",
+            "Storeid": "S008",
+            "Storename": "대구점",
+            "Menuid": "M005",
+            "Menuname": "말차라떼",
+            "Quantity": 17,
+            "Amount": 102000
+        },
+        {
+            "Salesdate": "2026-11-01",
+            "Storeid": "S008",
+            "Storename": "대구점",
+            "Menuid": "M006",
+            "Menuname": "초코라떼",
+            "Quantity": 20,
+            "Amount": 110000
+        },
+        {
+            "Salesdate": "2026-11-01",
+            "Storeid": "S008",
+            "Storename": "대구점",
+            "Menuid": "M007",
+            "Menuname": "레몬에이드",
+            "Quantity": 23,
+            "Amount": 126500
+        },
+        {
+            "Salesdate": "2026-11-01",
+            "Storeid": "S008",
+            "Storename": "대구점",
+            "Menuid": "M008",
+            "Menuname": "자몽에이드",
+            "Quantity": 26,
+            "Amount": 156000
+        },
+        {
+            "Salesdate": "2026-11-01",
+            "Storeid": "S008",
+            "Storename": "대구점",
+            "Menuid": "M009",
+            "Menuname": "소금빵",
+            "Quantity": 29,
+            "Amount": 92800
+        },
+        {
+            "Salesdate": "2026-11-01",
+            "Storeid": "S008",
+            "Storename": "대구점",
+            "Menuid": "M010",
+            "Menuname": "휘낭시에",
+            "Quantity": 32,
+            "Amount": 96000
+        },
+        {
+            "Salesdate": "2026-11-01",
+            "Storeid": "S009",
+            "Storename": "부산점",
+            "Menuid": "M007",
+            "Menuname": "레몬에이드",
+            "Quantity": 24,
+            "Amount": 132000
+        },
+        {
+            "Salesdate": "2026-11-01",
+            "Storeid": "S009",
+            "Storename": "부산점",
+            "Menuid": "M008",
+            "Menuname": "자몽에이드",
+            "Quantity": 27,
+            "Amount": 162000
+        },
+        {
+            "Salesdate": "2026-11-01",
+            "Storeid": "S009",
+            "Storename": "부산점",
+            "Menuid": "M009",
+            "Menuname": "소금빵",
+            "Quantity": 30,
+            "Amount": 96000
+        },
+        {
+            "Salesdate": "2026-11-01",
+            "Storeid": "S009",
+            "Storename": "부산점",
+            "Menuid": "M010",
+            "Menuname": "휘낭시에",
+            "Quantity": 8,
+            "Amount": 24000
+        },
+        {
+            "Salesdate": "2026-11-01",
+            "Storeid": "S009",
+            "Storename": "부산점",
+            "Menuid": "M011",
+            "Menuname": "치즈케이크",
+            "Quantity": 11,
+            "Amount": 71500
+        },
+        {
+            "Salesdate": "2026-11-01",
+            "Storeid": "S009",
+            "Storename": "부산점",
+            "Menuid": "M012",
+            "Menuname": "크루아상",
+            "Quantity": 14,
+            "Amount": 53200
+        },
+        {
+            "Salesdate": "2026-11-01",
+            "Storeid": "S010",
+            "Storename": "제주점",
+            "Menuid": "M009",
+            "Menuname": "소금빵",
+            "Quantity": 31,
+            "Amount": 99200
+        },
+        {
+            "Salesdate": "2026-11-01",
+            "Storeid": "S010",
+            "Storename": "제주점",
+            "Menuid": "M010",
+            "Menuname": "휘낭시에",
+            "Quantity": 9,
+            "Amount": 27000
+        },
+        {
+            "Salesdate": "2026-11-01",
+            "Storeid": "S010",
+            "Storename": "제주점",
+            "Menuid": "M011",
+            "Menuname": "치즈케이크",
+            "Quantity": 12,
+            "Amount": 78000
+        },
+        {
+            "Salesdate": "2026-11-01",
+            "Storeid": "S010",
+            "Storename": "제주점",
+            "Menuid": "M012",
+            "Menuname": "크루아상",
+            "Quantity": 15,
+            "Amount": 57000
+        },
+        {
+            "Salesdate": "2026-11-01",
+            "Storeid": "S010",
+            "Storename": "제주점",
+            "Menuid": "M001",
+            "Menuname": "아메리카노",
+            "Quantity": 18,
+            "Amount": 81000
+        },
+        {
+            "Salesdate": "2026-11-01",
+            "Storeid": "S010",
+            "Storename": "제주점",
+            "Menuid": "M002",
+            "Menuname": "카페라떼",
+            "Quantity": 21,
+            "Amount": 105000
+        },
+        {
+            "Salesdate": "2026-11-02",
+            "Storeid": "S001",
+            "Storename": "성수점",
+            "Menuid": "M004",
+            "Menuname": "카푸치노",
+            "Quantity": 23,
+            "Amount": 115000
+        },
+        {
+            "Salesdate": "2026-11-02",
+            "Storeid": "S001",
+            "Storename": "성수점",
+            "Menuid": "M005",
+            "Menuname": "말차라떼",
+            "Quantity": 26,
+            "Amount": 156000
+        },
+        {
+            "Salesdate": "2026-11-02",
+            "Storeid": "S001",
+            "Storename": "성수점",
+            "Menuid": "M006",
+            "Menuname": "초코라떼",
+            "Quantity": 29,
+            "Amount": 159500
+        },
+        {
+            "Salesdate": "2026-11-02",
+            "Storeid": "S001",
+            "Storename": "성수점",
+            "Menuid": "M007",
+            "Menuname": "레몬에이드",
+            "Quantity": 32,
+            "Amount": 176000
+        },
+        {
+            "Salesdate": "2026-11-02",
+            "Storeid": "S001",
+            "Storename": "성수점",
+            "Menuid": "M008",
+            "Menuname": "자몽에이드",
+            "Quantity": 10,
+            "Amount": 60000
+        },
+        {
+            "Salesdate": "2026-11-02",
+            "Storeid": "S001",
+            "Storename": "성수점",
+            "Menuid": "M009",
+            "Menuname": "소금빵",
+            "Quantity": 13,
+            "Amount": 41600
+        },
+        {
+            "Salesdate": "2026-11-02",
+            "Storeid": "S002",
+            "Storename": "강남점",
+            "Menuid": "M006",
+            "Menuname": "초코라떼",
+            "Quantity": 30,
+            "Amount": 165000
+        },
+        {
+            "Salesdate": "2026-11-02",
+            "Storeid": "S002",
+            "Storename": "강남점",
+            "Menuid": "M007",
+            "Menuname": "레몬에이드",
+            "Quantity": 8,
+            "Amount": 44000
+        },
+        {
+            "Salesdate": "2026-11-02",
+            "Storeid": "S002",
+            "Storename": "강남점",
+            "Menuid": "M008",
+            "Menuname": "자몽에이드",
+            "Quantity": 11,
+            "Amount": 66000
+        },
+        {
+            "Salesdate": "2026-11-02",
+            "Storeid": "S002",
+            "Storename": "강남점",
+            "Menuid": "M009",
+            "Menuname": "소금빵",
+            "Quantity": 14,
+            "Amount": 44800
+        },
+        {
+            "Salesdate": "2026-11-02",
+            "Storeid": "S002",
+            "Storename": "강남점",
+            "Menuid": "M010",
+            "Menuname": "휘낭시에",
+            "Quantity": 17,
+            "Amount": 51000
+        },
+        {
+            "Salesdate": "2026-11-02",
+            "Storeid": "S002",
+            "Storename": "강남점",
+            "Menuid": "M011",
+            "Menuname": "치즈케이크",
+            "Quantity": 20,
+            "Amount": 130000
+        },
+        {
+            "Salesdate": "2026-11-02",
+            "Storeid": "S003",
+            "Storename": "수원점",
+            "Menuid": "M008",
+            "Menuname": "자몽에이드",
+            "Quantity": 12,
+            "Amount": 72000
+        },
+        {
+            "Salesdate": "2026-11-02",
+            "Storeid": "S003",
+            "Storename": "수원점",
+            "Menuid": "M009",
+            "Menuname": "소금빵",
+            "Quantity": 15,
+            "Amount": 48000
+        },
+        {
+            "Salesdate": "2026-11-02",
+            "Storeid": "S003",
+            "Storename": "수원점",
+            "Menuid": "M010",
+            "Menuname": "휘낭시에",
+            "Quantity": 18,
+            "Amount": 54000
+        },
+        {
+            "Salesdate": "2026-11-02",
+            "Storeid": "S003",
+            "Storename": "수원점",
+            "Menuid": "M011",
+            "Menuname": "치즈케이크",
+            "Quantity": 21,
+            "Amount": 136500
+        },
+        {
+            "Salesdate": "2026-11-02",
+            "Storeid": "S003",
+            "Storename": "수원점",
+            "Menuid": "M012",
+            "Menuname": "크루아상",
+            "Quantity": 24,
+            "Amount": 91200
+        },
+        {
+            "Salesdate": "2026-11-02",
+            "Storeid": "S003",
+            "Storename": "수원점",
+            "Menuid": "M001",
+            "Menuname": "아메리카노",
+            "Quantity": 27,
+            "Amount": 121500
+        },
+        {
+            "Salesdate": "2026-11-02",
+            "Storeid": "S004",
+            "Storename": "성남점",
+            "Menuid": "M010",
+            "Menuname": "휘낭시에",
+            "Quantity": 19,
+            "Amount": 57000
+        },
+        {
+            "Salesdate": "2026-11-02",
+            "Storeid": "S004",
+            "Storename": "성남점",
+            "Menuid": "M011",
+            "Menuname": "치즈케이크",
+            "Quantity": 22,
+            "Amount": 143000
+        },
+        {
+            "Salesdate": "2026-11-02",
+            "Storeid": "S004",
+            "Storename": "성남점",
+            "Menuid": "M012",
+            "Menuname": "크루아상",
+            "Quantity": 25,
+            "Amount": 95000
+        },
+        {
+            "Salesdate": "2026-11-02",
+            "Storeid": "S004",
+            "Storename": "성남점",
+            "Menuid": "M001",
+            "Menuname": "아메리카노",
+            "Quantity": 28,
+            "Amount": 126000
+        },
+        {
+            "Salesdate": "2026-11-02",
+            "Storeid": "S004",
+            "Storename": "성남점",
+            "Menuid": "M002",
+            "Menuname": "카페라떼",
+            "Quantity": 31,
+            "Amount": 155000
+        },
+        {
+            "Salesdate": "2026-11-02",
+            "Storeid": "S004",
+            "Storename": "성남점",
+            "Menuid": "M003",
+            "Menuname": "바닐라라떼",
+            "Quantity": 9,
+            "Amount": 49500
+        },
+        {
+            "Salesdate": "2026-11-02",
+            "Storeid": "S005",
+            "Storename": "춘천점",
+            "Menuid": "M012",
+            "Menuname": "크루아상",
+            "Quantity": 26,
+            "Amount": 98800
+        },
+        {
+            "Salesdate": "2026-11-02",
+            "Storeid": "S005",
+            "Storename": "춘천점",
+            "Menuid": "M001",
+            "Menuname": "아메리카노",
+            "Quantity": 29,
+            "Amount": 130500
+        },
+        {
+            "Salesdate": "2026-11-02",
+            "Storeid": "S005",
+            "Storename": "춘천점",
+            "Menuid": "M002",
+            "Menuname": "카페라떼",
+            "Quantity": 32,
+            "Amount": 160000
+        },
+        {
+            "Salesdate": "2026-11-02",
+            "Storeid": "S005",
+            "Storename": "춘천점",
+            "Menuid": "M003",
+            "Menuname": "바닐라라떼",
+            "Quantity": 10,
+            "Amount": 55000
+        },
+        {
+            "Salesdate": "2026-11-02",
+            "Storeid": "S005",
+            "Storename": "춘천점",
+            "Menuid": "M004",
+            "Menuname": "카푸치노",
+            "Quantity": 13,
+            "Amount": 65000
+        },
+        {
+            "Salesdate": "2026-11-02",
+            "Storeid": "S005",
+            "Storename": "춘천점",
+            "Menuid": "M005",
+            "Menuname": "말차라떼",
+            "Quantity": 16,
+            "Amount": 96000
+        },
+        {
+            "Salesdate": "2026-11-02",
+            "Storeid": "S006",
+            "Storename": "대전점",
+            "Menuid": "M002",
+            "Menuname": "카페라떼",
+            "Quantity": 8,
+            "Amount": 40000
+        },
+        {
+            "Salesdate": "2026-11-02",
+            "Storeid": "S006",
+            "Storename": "대전점",
+            "Menuid": "M003",
+            "Menuname": "바닐라라떼",
+            "Quantity": 11,
+            "Amount": 60500
+        },
+        {
+            "Salesdate": "2026-11-02",
+            "Storeid": "S006",
+            "Storename": "대전점",
+            "Menuid": "M004",
+            "Menuname": "카푸치노",
+            "Quantity": 14,
+            "Amount": 70000
+        },
+        {
+            "Salesdate": "2026-11-02",
+            "Storeid": "S006",
+            "Storename": "대전점",
+            "Menuid": "M005",
+            "Menuname": "말차라떼",
+            "Quantity": 17,
+            "Amount": 102000
+        },
+        {
+            "Salesdate": "2026-11-02",
+            "Storeid": "S006",
+            "Storename": "대전점",
+            "Menuid": "M006",
+            "Menuname": "초코라떼",
+            "Quantity": 20,
+            "Amount": 110000
+        },
+        {
+            "Salesdate": "2026-11-02",
+            "Storeid": "S006",
+            "Storename": "대전점",
+            "Menuid": "M007",
+            "Menuname": "레몬에이드",
+            "Quantity": 23,
+            "Amount": 126500
+        },
+        {
+            "Salesdate": "2026-11-02",
+            "Storeid": "S007",
+            "Storename": "전주점",
+            "Menuid": "M004",
+            "Menuname": "카푸치노",
+            "Quantity": 15,
+            "Amount": 75000
+        },
+        {
+            "Salesdate": "2026-11-02",
+            "Storeid": "S007",
+            "Storename": "전주점",
+            "Menuid": "M005",
+            "Menuname": "말차라떼",
+            "Quantity": 18,
+            "Amount": 108000
+        },
+        {
+            "Salesdate": "2026-11-02",
+            "Storeid": "S007",
+            "Storename": "전주점",
+            "Menuid": "M006",
+            "Menuname": "초코라떼",
+            "Quantity": 21,
+            "Amount": 115500
+        },
+        {
+            "Salesdate": "2026-11-02",
+            "Storeid": "S007",
+            "Storename": "전주점",
+            "Menuid": "M007",
+            "Menuname": "레몬에이드",
+            "Quantity": 24,
+            "Amount": 132000
+        },
+        {
+            "Salesdate": "2026-11-02",
+            "Storeid": "S007",
+            "Storename": "전주점",
+            "Menuid": "M008",
+            "Menuname": "자몽에이드",
+            "Quantity": 27,
+            "Amount": 162000
+        },
+        {
+            "Salesdate": "2026-11-02",
+            "Storeid": "S007",
+            "Storename": "전주점",
+            "Menuid": "M009",
+            "Menuname": "소금빵",
+            "Quantity": 30,
+            "Amount": 96000
+        },
+        {
+            "Salesdate": "2026-11-02",
+            "Storeid": "S008",
+            "Storename": "대구점",
+            "Menuid": "M006",
+            "Menuname": "초코라떼",
+            "Quantity": 22,
+            "Amount": 121000
+        },
+        {
+            "Salesdate": "2026-11-02",
+            "Storeid": "S008",
+            "Storename": "대구점",
+            "Menuid": "M007",
+            "Menuname": "레몬에이드",
+            "Quantity": 25,
+            "Amount": 137500
+        },
+        {
+            "Salesdate": "2026-11-02",
+            "Storeid": "S008",
+            "Storename": "대구점",
+            "Menuid": "M008",
+            "Menuname": "자몽에이드",
+            "Quantity": 28,
+            "Amount": 168000
+        },
+        {
+            "Salesdate": "2026-11-02",
+            "Storeid": "S008",
+            "Storename": "대구점",
+            "Menuid": "M009",
+            "Menuname": "소금빵",
+            "Quantity": 31,
+            "Amount": 99200
+        },
+        {
+            "Salesdate": "2026-11-02",
+            "Storeid": "S008",
+            "Storename": "대구점",
+            "Menuid": "M010",
+            "Menuname": "휘낭시에",
+            "Quantity": 9,
+            "Amount": 27000
+        },
+        {
+            "Salesdate": "2026-11-02",
+            "Storeid": "S008",
+            "Storename": "대구점",
+            "Menuid": "M011",
+            "Menuname": "치즈케이크",
+            "Quantity": 12,
+            "Amount": 78000
+        },
+        {
+            "Salesdate": "2026-11-02",
+            "Storeid": "S009",
+            "Storename": "부산점",
+            "Menuid": "M008",
+            "Menuname": "자몽에이드",
+            "Quantity": 29,
+            "Amount": 174000
+        },
+        {
+            "Salesdate": "2026-11-02",
+            "Storeid": "S009",
+            "Storename": "부산점",
+            "Menuid": "M009",
+            "Menuname": "소금빵",
+            "Quantity": 32,
+            "Amount": 102400
+        },
+        {
+            "Salesdate": "2026-11-02",
+            "Storeid": "S009",
+            "Storename": "부산점",
+            "Menuid": "M010",
+            "Menuname": "휘낭시에",
+            "Quantity": 10,
+            "Amount": 30000
+        },
+        {
+            "Salesdate": "2026-11-02",
+            "Storeid": "S009",
+            "Storename": "부산점",
+            "Menuid": "M011",
+            "Menuname": "치즈케이크",
+            "Quantity": 13,
+            "Amount": 84500
+        },
+        {
+            "Salesdate": "2026-11-02",
+            "Storeid": "S009",
+            "Storename": "부산점",
+            "Menuid": "M012",
+            "Menuname": "크루아상",
+            "Quantity": 16,
+            "Amount": 60800
+        },
+        {
+            "Salesdate": "2026-11-02",
+            "Storeid": "S009",
+            "Storename": "부산점",
+            "Menuid": "M001",
+            "Menuname": "아메리카노",
+            "Quantity": 19,
+            "Amount": 85500
+        },
+        {
+            "Salesdate": "2026-11-02",
+            "Storeid": "S010",
+            "Storename": "제주점",
+            "Menuid": "M010",
+            "Menuname": "휘낭시에",
+            "Quantity": 11,
+            "Amount": 33000
+        },
+        {
+            "Salesdate": "2026-11-02",
+            "Storeid": "S010",
+            "Storename": "제주점",
+            "Menuid": "M011",
+            "Menuname": "치즈케이크",
+            "Quantity": 14,
+            "Amount": 91000
+        },
+        {
+            "Salesdate": "2026-11-02",
+            "Storeid": "S010",
+            "Storename": "제주점",
+            "Menuid": "M012",
+            "Menuname": "크루아상",
+            "Quantity": 17,
+            "Amount": 64600
+        },
+        {
+            "Salesdate": "2026-11-02",
+            "Storeid": "S010",
+            "Storename": "제주점",
+            "Menuid": "M001",
+            "Menuname": "아메리카노",
+            "Quantity": 20,
+            "Amount": 90000
+        },
+        {
+            "Salesdate": "2026-11-02",
+            "Storeid": "S010",
+            "Storename": "제주점",
+            "Menuid": "M002",
+            "Menuname": "카페라떼",
+            "Quantity": 23,
+            "Amount": 115000
+        },
+        {
+            "Salesdate": "2026-11-02",
+            "Storeid": "S010",
+            "Storename": "제주점",
+            "Menuid": "M003",
+            "Menuname": "바닐라라떼",
+            "Quantity": 26,
+            "Amount": 143000
+        },
+        {
+            "Salesdate": "2026-11-03",
+            "Storeid": "S001",
+            "Storename": "성수점",
+            "Menuid": "M005",
+            "Menuname": "말차라떼",
+            "Quantity": 28,
+            "Amount": 168000
+        },
+        {
+            "Salesdate": "2026-11-03",
+            "Storeid": "S001",
+            "Storename": "성수점",
+            "Menuid": "M006",
+            "Menuname": "초코라떼",
+            "Quantity": 31,
+            "Amount": 170500
+        },
+        {
+            "Salesdate": "2026-11-03",
+            "Storeid": "S001",
+            "Storename": "성수점",
+            "Menuid": "M007",
+            "Menuname": "레몬에이드",
+            "Quantity": 9,
+            "Amount": 49500
+        },
+        {
+            "Salesdate": "2026-11-03",
+            "Storeid": "S001",
+            "Storename": "성수점",
+            "Menuid": "M008",
+            "Menuname": "자몽에이드",
+            "Quantity": 12,
+            "Amount": 72000
+        },
+        {
+            "Salesdate": "2026-11-03",
+            "Storeid": "S001",
+            "Storename": "성수점",
+            "Menuid": "M009",
+            "Menuname": "소금빵",
+            "Quantity": 15,
+            "Amount": 48000
+        },
+        {
+            "Salesdate": "2026-11-03",
+            "Storeid": "S001",
+            "Storename": "성수점",
+            "Menuid": "M010",
+            "Menuname": "휘낭시에",
+            "Quantity": 18,
+            "Amount": 54000
+        },
+        {
+            "Salesdate": "2026-11-03",
+            "Storeid": "S002",
+            "Storename": "강남점",
+            "Menuid": "M007",
+            "Menuname": "레몬에이드",
+            "Quantity": 10,
+            "Amount": 55000
+        },
+        {
+            "Salesdate": "2026-11-03",
+            "Storeid": "S002",
+            "Storename": "강남점",
+            "Menuid": "M008",
+            "Menuname": "자몽에이드",
+            "Quantity": 13,
+            "Amount": 78000
+        },
+        {
+            "Salesdate": "2026-11-03",
+            "Storeid": "S002",
+            "Storename": "강남점",
+            "Menuid": "M009",
+            "Menuname": "소금빵",
+            "Quantity": 16,
+            "Amount": 51200
+        },
+        {
+            "Salesdate": "2026-11-03",
+            "Storeid": "S002",
+            "Storename": "강남점",
+            "Menuid": "M010",
+            "Menuname": "휘낭시에",
+            "Quantity": 19,
+            "Amount": 57000
+        },
+        {
+            "Salesdate": "2026-11-03",
+            "Storeid": "S002",
+            "Storename": "강남점",
+            "Menuid": "M011",
+            "Menuname": "치즈케이크",
+            "Quantity": 22,
+            "Amount": 143000
+        },
+        {
+            "Salesdate": "2026-11-03",
+            "Storeid": "S002",
+            "Storename": "강남점",
+            "Menuid": "M012",
+            "Menuname": "크루아상",
+            "Quantity": 25,
+            "Amount": 95000
+        },
+        {
+            "Salesdate": "2026-11-03",
+            "Storeid": "S003",
+            "Storename": "수원점",
+            "Menuid": "M009",
+            "Menuname": "소금빵",
+            "Quantity": 17,
+            "Amount": 54400
+        },
+        {
+            "Salesdate": "2026-11-03",
+            "Storeid": "S003",
+            "Storename": "수원점",
+            "Menuid": "M010",
+            "Menuname": "휘낭시에",
+            "Quantity": 20,
+            "Amount": 60000
+        },
+        {
+            "Salesdate": "2026-11-03",
+            "Storeid": "S003",
+            "Storename": "수원점",
+            "Menuid": "M011",
+            "Menuname": "치즈케이크",
+            "Quantity": 23,
+            "Amount": 149500
+        },
+        {
+            "Salesdate": "2026-11-03",
+            "Storeid": "S003",
+            "Storename": "수원점",
+            "Menuid": "M012",
+            "Menuname": "크루아상",
+            "Quantity": 26,
+            "Amount": 98800
+        },
+        {
+            "Salesdate": "2026-11-03",
+            "Storeid": "S003",
+            "Storename": "수원점",
+            "Menuid": "M001",
+            "Menuname": "아메리카노",
+            "Quantity": 29,
+            "Amount": 130500
+        },
+        {
+            "Salesdate": "2026-11-03",
+            "Storeid": "S003",
+            "Storename": "수원점",
+            "Menuid": "M002",
+            "Menuname": "카페라떼",
+            "Quantity": 32,
+            "Amount": 160000
+        },
+        {
+            "Salesdate": "2026-11-03",
+            "Storeid": "S004",
+            "Storename": "성남점",
+            "Menuid": "M011",
+            "Menuname": "치즈케이크",
+            "Quantity": 24,
+            "Amount": 156000
+        },
+        {
+            "Salesdate": "2026-11-03",
+            "Storeid": "S004",
+            "Storename": "성남점",
+            "Menuid": "M012",
+            "Menuname": "크루아상",
+            "Quantity": 27,
+            "Amount": 102600
+        },
+        {
+            "Salesdate": "2026-11-03",
+            "Storeid": "S004",
+            "Storename": "성남점",
+            "Menuid": "M001",
+            "Menuname": "아메리카노",
+            "Quantity": 30,
+            "Amount": 135000
+        },
+        {
+            "Salesdate": "2026-11-03",
+            "Storeid": "S004",
+            "Storename": "성남점",
+            "Menuid": "M002",
+            "Menuname": "카페라떼",
+            "Quantity": 8,
+            "Amount": 40000
+        },
+        {
+            "Salesdate": "2026-11-03",
+            "Storeid": "S004",
+            "Storename": "성남점",
+            "Menuid": "M003",
+            "Menuname": "바닐라라떼",
+            "Quantity": 11,
+            "Amount": 60500
+        },
+        {
+            "Salesdate": "2026-11-03",
+            "Storeid": "S004",
+            "Storename": "성남점",
+            "Menuid": "M004",
+            "Menuname": "카푸치노",
+            "Quantity": 14,
+            "Amount": 70000
+        },
+        {
+            "Salesdate": "2026-11-03",
+            "Storeid": "S005",
+            "Storename": "춘천점",
+            "Menuid": "M001",
+            "Menuname": "아메리카노",
+            "Quantity": 31,
+            "Amount": 139500
+        },
+        {
+            "Salesdate": "2026-11-03",
+            "Storeid": "S005",
+            "Storename": "춘천점",
+            "Menuid": "M002",
+            "Menuname": "카페라떼",
+            "Quantity": 9,
+            "Amount": 45000
+        },
+        {
+            "Salesdate": "2026-11-03",
+            "Storeid": "S005",
+            "Storename": "춘천점",
+            "Menuid": "M003",
+            "Menuname": "바닐라라떼",
+            "Quantity": 12,
+            "Amount": 66000
+        },
+        {
+            "Salesdate": "2026-11-03",
+            "Storeid": "S005",
+            "Storename": "춘천점",
+            "Menuid": "M004",
+            "Menuname": "카푸치노",
+            "Quantity": 15,
+            "Amount": 75000
+        },
+        {
+            "Salesdate": "2026-11-03",
+            "Storeid": "S005",
+            "Storename": "춘천점",
+            "Menuid": "M005",
+            "Menuname": "말차라떼",
+            "Quantity": 18,
+            "Amount": 108000
+        },
+        {
+            "Salesdate": "2026-11-03",
+            "Storeid": "S005",
+            "Storename": "춘천점",
+            "Menuid": "M006",
+            "Menuname": "초코라떼",
+            "Quantity": 21,
+            "Amount": 115500
+        },
+        {
+            "Salesdate": "2026-11-03",
+            "Storeid": "S006",
+            "Storename": "대전점",
+            "Menuid": "M003",
+            "Menuname": "바닐라라떼",
+            "Quantity": 13,
+            "Amount": 71500
+        },
+        {
+            "Salesdate": "2026-11-03",
+            "Storeid": "S006",
+            "Storename": "대전점",
+            "Menuid": "M004",
+            "Menuname": "카푸치노",
+            "Quantity": 16,
+            "Amount": 80000
+        },
+        {
+            "Salesdate": "2026-11-03",
+            "Storeid": "S006",
+            "Storename": "대전점",
+            "Menuid": "M005",
+            "Menuname": "말차라떼",
+            "Quantity": 19,
+            "Amount": 114000
+        },
+        {
+            "Salesdate": "2026-11-03",
+            "Storeid": "S006",
+            "Storename": "대전점",
+            "Menuid": "M006",
+            "Menuname": "초코라떼",
+            "Quantity": 22,
+            "Amount": 121000
+        },
+        {
+            "Salesdate": "2026-11-03",
+            "Storeid": "S006",
+            "Storename": "대전점",
+            "Menuid": "M007",
+            "Menuname": "레몬에이드",
+            "Quantity": 25,
+            "Amount": 137500
+        },
+        {
+            "Salesdate": "2026-11-03",
+            "Storeid": "S006",
+            "Storename": "대전점",
+            "Menuid": "M008",
+            "Menuname": "자몽에이드",
+            "Quantity": 28,
+            "Amount": 168000
+        },
+        {
+            "Salesdate": "2026-11-03",
+            "Storeid": "S007",
+            "Storename": "전주점",
+            "Menuid": "M005",
+            "Menuname": "말차라떼",
+            "Quantity": 20,
+            "Amount": 120000
+        },
+        {
+            "Salesdate": "2026-11-03",
+            "Storeid": "S007",
+            "Storename": "전주점",
+            "Menuid": "M006",
+            "Menuname": "초코라떼",
+            "Quantity": 23,
+            "Amount": 126500
+        },
+        {
+            "Salesdate": "2026-11-03",
+            "Storeid": "S007",
+            "Storename": "전주점",
+            "Menuid": "M007",
+            "Menuname": "레몬에이드",
+            "Quantity": 26,
+            "Amount": 143000
+        },
+        {
+            "Salesdate": "2026-11-03",
+            "Storeid": "S007",
+            "Storename": "전주점",
+            "Menuid": "M008",
+            "Menuname": "자몽에이드",
+            "Quantity": 29,
+            "Amount": 174000
+        },
+        {
+            "Salesdate": "2026-11-03",
+            "Storeid": "S007",
+            "Storename": "전주점",
+            "Menuid": "M009",
+            "Menuname": "소금빵",
+            "Quantity": 32,
+            "Amount": 102400
+        },
+        {
+            "Salesdate": "2026-11-03",
+            "Storeid": "S007",
+            "Storename": "전주점",
+            "Menuid": "M010",
+            "Menuname": "휘낭시에",
+            "Quantity": 10,
+            "Amount": 30000
+        },
+        {
+            "Salesdate": "2026-11-03",
+            "Storeid": "S008",
+            "Storename": "대구점",
+            "Menuid": "M007",
+            "Menuname": "레몬에이드",
+            "Quantity": 27,
+            "Amount": 148500
+        },
+        {
+            "Salesdate": "2026-11-03",
+            "Storeid": "S008",
+            "Storename": "대구점",
+            "Menuid": "M008",
+            "Menuname": "자몽에이드",
+            "Quantity": 30,
+            "Amount": 180000
+        },
+        {
+            "Salesdate": "2026-11-03",
+            "Storeid": "S008",
+            "Storename": "대구점",
+            "Menuid": "M009",
+            "Menuname": "소금빵",
+            "Quantity": 8,
+            "Amount": 25600
+        },
+        {
+            "Salesdate": "2026-11-03",
+            "Storeid": "S008",
+            "Storename": "대구점",
+            "Menuid": "M010",
+            "Menuname": "휘낭시에",
+            "Quantity": 11,
+            "Amount": 33000
+        },
+        {
+            "Salesdate": "2026-11-03",
+            "Storeid": "S008",
+            "Storename": "대구점",
+            "Menuid": "M011",
+            "Menuname": "치즈케이크",
+            "Quantity": 14,
+            "Amount": 91000
+        },
+        {
+            "Salesdate": "2026-11-03",
+            "Storeid": "S008",
+            "Storename": "대구점",
+            "Menuid": "M012",
+            "Menuname": "크루아상",
+            "Quantity": 17,
+            "Amount": 64600
+        },
+        {
+            "Salesdate": "2026-11-03",
+            "Storeid": "S009",
+            "Storename": "부산점",
+            "Menuid": "M009",
+            "Menuname": "소금빵",
+            "Quantity": 9,
+            "Amount": 28800
+        },
+        {
+            "Salesdate": "2026-11-03",
+            "Storeid": "S009",
+            "Storename": "부산점",
+            "Menuid": "M010",
+            "Menuname": "휘낭시에",
+            "Quantity": 12,
+            "Amount": 36000
+        },
+        {
+            "Salesdate": "2026-11-03",
+            "Storeid": "S009",
+            "Storename": "부산점",
+            "Menuid": "M011",
+            "Menuname": "치즈케이크",
+            "Quantity": 15,
+            "Amount": 97500
+        },
+        {
+            "Salesdate": "2026-11-03",
+            "Storeid": "S009",
+            "Storename": "부산점",
+            "Menuid": "M012",
+            "Menuname": "크루아상",
+            "Quantity": 18,
+            "Amount": 68400
+        },
+        {
+            "Salesdate": "2026-11-03",
+            "Storeid": "S009",
+            "Storename": "부산점",
+            "Menuid": "M001",
+            "Menuname": "아메리카노",
+            "Quantity": 21,
+            "Amount": 94500
+        },
+        {
+            "Salesdate": "2026-11-03",
+            "Storeid": "S009",
+            "Storename": "부산점",
+            "Menuid": "M002",
+            "Menuname": "카페라떼",
+            "Quantity": 24,
+            "Amount": 120000
+        },
+        {
+            "Salesdate": "2026-11-03",
+            "Storeid": "S010",
+            "Storename": "제주점",
+            "Menuid": "M011",
+            "Menuname": "치즈케이크",
+            "Quantity": 16,
+            "Amount": 104000
+        },
+        {
+            "Salesdate": "2026-11-03",
+            "Storeid": "S010",
+            "Storename": "제주점",
+            "Menuid": "M012",
+            "Menuname": "크루아상",
+            "Quantity": 19,
+            "Amount": 72200
+        },
+        {
+            "Salesdate": "2026-11-03",
+            "Storeid": "S010",
+            "Storename": "제주점",
+            "Menuid": "M001",
+            "Menuname": "아메리카노",
+            "Quantity": 22,
+            "Amount": 99000
+        },
+        {
+            "Salesdate": "2026-11-03",
+            "Storeid": "S010",
+            "Storename": "제주점",
+            "Menuid": "M002",
+            "Menuname": "카페라떼",
+            "Quantity": 25,
+            "Amount": 125000
+        },
+        {
+            "Salesdate": "2026-11-03",
+            "Storeid": "S010",
+            "Storename": "제주점",
+            "Menuid": "M003",
+            "Menuname": "바닐라라떼",
+            "Quantity": 28,
+            "Amount": 154000
+        },
+        {
+            "Salesdate": "2026-11-03",
+            "Storeid": "S010",
+            "Storename": "제주점",
+            "Menuid": "M004",
+            "Menuname": "카푸치노",
+            "Quantity": 31,
+            "Amount": 155000
+        }
+    ],
+    "StockSet": [
+        {
+            "Storeid": "S001",
+            "Storename": "성수점",
+            "Matnr": "R001",
+            "Matname": "원두",
+            "Quantity": 2,
+            "Minqty": 10,
+            "Unit": "kg",
+            "Status": "부족"
+        },
+        {
+            "Storeid": "S001",
+            "Storename": "성수점",
+            "Matnr": "R002",
+            "Matname": "우유",
+            "Quantity": 9,
+            "Minqty": 12,
+            "Unit": "L",
+            "Status": "부족"
+        },
+        {
+            "Storeid": "S001",
+            "Storename": "성수점",
+            "Matnr": "R003",
+            "Matname": "말차가루",
+            "Quantity": 7,
+            "Minqty": 5,
+            "Unit": "kg",
+            "Status": "정상"
+        },
+        {
+            "Storeid": "S001",
+            "Storename": "성수점",
+            "Matnr": "R004",
+            "Matname": "초코파우더",
+            "Quantity": 0,
+            "Minqty": 5,
+            "Unit": "kg",
+            "Status": "부족"
+        },
+        {
+            "Storeid": "S001",
+            "Storename": "성수점",
+            "Matnr": "R005",
+            "Matname": "밀가루",
+            "Quantity": 7,
+            "Minqty": 10,
+            "Unit": "kg",
+            "Status": "부족"
+        },
+        {
+            "Storeid": "S001",
+            "Storename": "성수점",
+            "Matnr": "R006",
+            "Matname": "버터",
+            "Quantity": 8,
+            "Minqty": 6,
+            "Unit": "kg",
+            "Status": "정상"
+        },
+        {
+            "Storeid": "S002",
+            "Storename": "강남점",
+            "Matnr": "R001",
+            "Matname": "원두",
+            "Quantity": 5,
+            "Minqty": 10,
+            "Unit": "kg",
+            "Status": "부족"
+        },
+        {
+            "Storeid": "S002",
+            "Storename": "강남점",
+            "Matnr": "R002",
+            "Matname": "우유",
+            "Quantity": 12,
+            "Minqty": 12,
+            "Unit": "L",
+            "Status": "부족"
+        },
+        {
+            "Storeid": "S002",
+            "Storename": "강남점",
+            "Matnr": "R003",
+            "Matname": "말차가루",
+            "Quantity": 10,
+            "Minqty": 5,
+            "Unit": "kg",
+            "Status": "정상"
+        },
+        {
+            "Storeid": "S002",
+            "Storename": "강남점",
+            "Matnr": "R004",
+            "Matname": "초코파우더",
+            "Quantity": 0,
+            "Minqty": 5,
+            "Unit": "kg",
+            "Status": "부족"
+        },
+        {
+            "Storeid": "S002",
+            "Storename": "강남점",
+            "Matnr": "R005",
+            "Matname": "밀가루",
+            "Quantity": 10,
+            "Minqty": 10,
+            "Unit": "kg",
+            "Status": "부족"
+        },
+        {
+            "Storeid": "S002",
+            "Storename": "강남점",
+            "Matnr": "R006",
+            "Matname": "버터",
+            "Quantity": 11,
+            "Minqty": 6,
+            "Unit": "kg",
+            "Status": "정상"
+        },
+        {
+            "Storeid": "S003",
+            "Storename": "수원점",
+            "Matnr": "R001",
+            "Matname": "원두",
+            "Quantity": 8,
+            "Minqty": 10,
+            "Unit": "kg",
+            "Status": "부족"
+        },
+        {
+            "Storeid": "S003",
+            "Storename": "수원점",
+            "Matnr": "R002",
+            "Matname": "우유",
+            "Quantity": 15,
+            "Minqty": 12,
+            "Unit": "L",
+            "Status": "정상"
+        },
+        {
+            "Storeid": "S003",
+            "Storename": "수원점",
+            "Matnr": "R003",
+            "Matname": "말차가루",
+            "Quantity": 0,
+            "Minqty": 5,
+            "Unit": "kg",
+            "Status": "부족"
+        },
+        {
+            "Storeid": "S003",
+            "Storename": "수원점",
+            "Matnr": "R004",
+            "Matname": "초코파우더",
+            "Quantity": 3,
+            "Minqty": 5,
+            "Unit": "kg",
+            "Status": "부족"
+        },
+        {
+            "Storeid": "S003",
+            "Storename": "수원점",
+            "Matnr": "R005",
+            "Matname": "밀가루",
+            "Quantity": 13,
+            "Minqty": 10,
+            "Unit": "kg",
+            "Status": "정상"
+        },
+        {
+            "Storeid": "S003",
+            "Storename": "수원점",
+            "Matnr": "R006",
+            "Matname": "버터",
+            "Quantity": 0,
+            "Minqty": 6,
+            "Unit": "kg",
+            "Status": "부족"
+        },
+        {
+            "Storeid": "S004",
+            "Storename": "성남점",
+            "Matnr": "R001",
+            "Matname": "원두",
+            "Quantity": 11,
+            "Minqty": 10,
+            "Unit": "kg",
+            "Status": "정상"
+        },
+        {
+            "Storeid": "S004",
+            "Storename": "성남점",
+            "Matnr": "R002",
+            "Matname": "우유",
+            "Quantity": 18,
+            "Minqty": 12,
+            "Unit": "L",
+            "Status": "정상"
+        },
+        {
+            "Storeid": "S004",
+            "Storename": "성남점",
+            "Matnr": "R003",
+            "Matname": "말차가루",
+            "Quantity": 1,
+            "Minqty": 5,
+            "Unit": "kg",
+            "Status": "부족"
+        },
+        {
+            "Storeid": "S004",
+            "Storename": "성남점",
+            "Matnr": "R004",
+            "Matname": "초코파우더",
+            "Quantity": 6,
+            "Minqty": 5,
+            "Unit": "kg",
+            "Status": "정상"
+        },
+        {
+            "Storeid": "S004",
+            "Storename": "성남점",
+            "Matnr": "R005",
+            "Matname": "밀가루",
+            "Quantity": 16,
+            "Minqty": 10,
+            "Unit": "kg",
+            "Status": "정상"
+        },
+        {
+            "Storeid": "S004",
+            "Storename": "성남점",
+            "Matnr": "R006",
+            "Matname": "버터",
+            "Quantity": 2,
+            "Minqty": 6,
+            "Unit": "kg",
+            "Status": "부족"
+        },
+        {
+            "Storeid": "S005",
+            "Storename": "춘천점",
+            "Matnr": "R001",
+            "Matname": "원두",
+            "Quantity": 14,
+            "Minqty": 10,
+            "Unit": "kg",
+            "Status": "정상"
+        },
+        {
+            "Storeid": "S005",
+            "Storename": "춘천점",
+            "Matnr": "R002",
+            "Matname": "우유",
+            "Quantity": 6,
+            "Minqty": 12,
+            "Unit": "L",
+            "Status": "부족"
+        },
+        {
+            "Storeid": "S005",
+            "Storename": "춘천점",
+            "Matnr": "R003",
+            "Matname": "말차가루",
+            "Quantity": 4,
+            "Minqty": 5,
+            "Unit": "kg",
+            "Status": "부족"
+        },
+        {
+            "Storeid": "S005",
+            "Storename": "춘천점",
+            "Matnr": "R004",
+            "Matname": "초코파우더",
+            "Quantity": 9,
+            "Minqty": 5,
+            "Unit": "kg",
+            "Status": "정상"
+        },
+        {
+            "Storeid": "S005",
+            "Storename": "춘천점",
+            "Matnr": "R005",
+            "Matname": "밀가루",
+            "Quantity": 4,
+            "Minqty": 10,
+            "Unit": "kg",
+            "Status": "부족"
+        },
+        {
+            "Storeid": "S005",
+            "Storename": "춘천점",
+            "Matnr": "R006",
+            "Matname": "버터",
+            "Quantity": 5,
+            "Minqty": 6,
+            "Unit": "kg",
+            "Status": "부족"
+        },
+        {
+            "Storeid": "S006",
+            "Storename": "대전점",
+            "Matnr": "R001",
+            "Matname": "원두",
+            "Quantity": 2,
+            "Minqty": 10,
+            "Unit": "kg",
+            "Status": "부족"
+        },
+        {
+            "Storeid": "S006",
+            "Storename": "대전점",
+            "Matnr": "R002",
+            "Matname": "우유",
+            "Quantity": 9,
+            "Minqty": 12,
+            "Unit": "L",
+            "Status": "부족"
+        },
+        {
+            "Storeid": "S006",
+            "Storename": "대전점",
+            "Matnr": "R003",
+            "Matname": "말차가루",
+            "Quantity": 7,
+            "Minqty": 5,
+            "Unit": "kg",
+            "Status": "정상"
+        },
+        {
+            "Storeid": "S006",
+            "Storename": "대전점",
+            "Matnr": "R004",
+            "Matname": "초코파우더",
+            "Quantity": 0,
+            "Minqty": 5,
+            "Unit": "kg",
+            "Status": "부족"
+        },
+        {
+            "Storeid": "S006",
+            "Storename": "대전점",
+            "Matnr": "R005",
+            "Matname": "밀가루",
+            "Quantity": 7,
+            "Minqty": 10,
+            "Unit": "kg",
+            "Status": "부족"
+        },
+        {
+            "Storeid": "S006",
+            "Storename": "대전점",
+            "Matnr": "R006",
+            "Matname": "버터",
+            "Quantity": 8,
+            "Minqty": 6,
+            "Unit": "kg",
+            "Status": "정상"
+        },
+        {
+            "Storeid": "S007",
+            "Storename": "전주점",
+            "Matnr": "R001",
+            "Matname": "원두",
+            "Quantity": 5,
+            "Minqty": 10,
+            "Unit": "kg",
+            "Status": "부족"
+        },
+        {
+            "Storeid": "S007",
+            "Storename": "전주점",
+            "Matnr": "R002",
+            "Matname": "우유",
+            "Quantity": 12,
+            "Minqty": 12,
+            "Unit": "L",
+            "Status": "부족"
+        },
+        {
+            "Storeid": "S007",
+            "Storename": "전주점",
+            "Matnr": "R003",
+            "Matname": "말차가루",
+            "Quantity": 10,
+            "Minqty": 5,
+            "Unit": "kg",
+            "Status": "정상"
+        },
+        {
+            "Storeid": "S007",
+            "Storename": "전주점",
+            "Matnr": "R004",
+            "Matname": "초코파우더",
+            "Quantity": 0,
+            "Minqty": 5,
+            "Unit": "kg",
+            "Status": "부족"
+        },
+        {
+            "Storeid": "S007",
+            "Storename": "전주점",
+            "Matnr": "R005",
+            "Matname": "밀가루",
+            "Quantity": 10,
+            "Minqty": 10,
+            "Unit": "kg",
+            "Status": "부족"
+        },
+        {
+            "Storeid": "S007",
+            "Storename": "전주점",
+            "Matnr": "R006",
+            "Matname": "버터",
+            "Quantity": 11,
+            "Minqty": 6,
+            "Unit": "kg",
+            "Status": "정상"
+        },
+        {
+            "Storeid": "S008",
+            "Storename": "대구점",
+            "Matnr": "R001",
+            "Matname": "원두",
+            "Quantity": 8,
+            "Minqty": 10,
+            "Unit": "kg",
+            "Status": "부족"
+        },
+        {
+            "Storeid": "S008",
+            "Storename": "대구점",
+            "Matnr": "R002",
+            "Matname": "우유",
+            "Quantity": 15,
+            "Minqty": 12,
+            "Unit": "L",
+            "Status": "정상"
+        },
+        {
+            "Storeid": "S008",
+            "Storename": "대구점",
+            "Matnr": "R003",
+            "Matname": "말차가루",
+            "Quantity": 0,
+            "Minqty": 5,
+            "Unit": "kg",
+            "Status": "부족"
+        },
+        {
+            "Storeid": "S008",
+            "Storename": "대구점",
+            "Matnr": "R004",
+            "Matname": "초코파우더",
+            "Quantity": 3,
+            "Minqty": 5,
+            "Unit": "kg",
+            "Status": "부족"
+        },
+        {
+            "Storeid": "S008",
+            "Storename": "대구점",
+            "Matnr": "R005",
+            "Matname": "밀가루",
+            "Quantity": 13,
+            "Minqty": 10,
+            "Unit": "kg",
+            "Status": "정상"
+        },
+        {
+            "Storeid": "S008",
+            "Storename": "대구점",
+            "Matnr": "R006",
+            "Matname": "버터",
+            "Quantity": 0,
+            "Minqty": 6,
+            "Unit": "kg",
+            "Status": "부족"
+        },
+        {
+            "Storeid": "S009",
+            "Storename": "부산점",
+            "Matnr": "R001",
+            "Matname": "원두",
+            "Quantity": 11,
+            "Minqty": 10,
+            "Unit": "kg",
+            "Status": "정상"
+        },
+        {
+            "Storeid": "S009",
+            "Storename": "부산점",
+            "Matnr": "R002",
+            "Matname": "우유",
+            "Quantity": 18,
+            "Minqty": 12,
+            "Unit": "L",
+            "Status": "정상"
+        },
+        {
+            "Storeid": "S009",
+            "Storename": "부산점",
+            "Matnr": "R003",
+            "Matname": "말차가루",
+            "Quantity": 1,
+            "Minqty": 5,
+            "Unit": "kg",
+            "Status": "부족"
+        },
+        {
+            "Storeid": "S009",
+            "Storename": "부산점",
+            "Matnr": "R004",
+            "Matname": "초코파우더",
+            "Quantity": 6,
+            "Minqty": 5,
+            "Unit": "kg",
+            "Status": "정상"
+        },
+        {
+            "Storeid": "S009",
+            "Storename": "부산점",
+            "Matnr": "R005",
+            "Matname": "밀가루",
+            "Quantity": 16,
+            "Minqty": 10,
+            "Unit": "kg",
+            "Status": "정상"
+        },
+        {
+            "Storeid": "S009",
+            "Storename": "부산점",
+            "Matnr": "R006",
+            "Matname": "버터",
+            "Quantity": 2,
+            "Minqty": 6,
+            "Unit": "kg",
+            "Status": "부족"
+        },
+        {
+            "Storeid": "S010",
+            "Storename": "제주점",
+            "Matnr": "R001",
+            "Matname": "원두",
+            "Quantity": 14,
+            "Minqty": 10,
+            "Unit": "kg",
+            "Status": "정상"
+        },
+        {
+            "Storeid": "S010",
+            "Storename": "제주점",
+            "Matnr": "R002",
+            "Matname": "우유",
+            "Quantity": 6,
+            "Minqty": 12,
+            "Unit": "L",
+            "Status": "부족"
+        },
+        {
+            "Storeid": "S010",
+            "Storename": "제주점",
+            "Matnr": "R003",
+            "Matname": "말차가루",
+            "Quantity": 4,
+            "Minqty": 5,
+            "Unit": "kg",
+            "Status": "부족"
+        },
+        {
+            "Storeid": "S010",
+            "Storename": "제주점",
+            "Matnr": "R004",
+            "Matname": "초코파우더",
+            "Quantity": 9,
+            "Minqty": 5,
+            "Unit": "kg",
+            "Status": "정상"
+        },
+        {
+            "Storeid": "S010",
+            "Storename": "제주점",
+            "Matnr": "R005",
+            "Matname": "밀가루",
+            "Quantity": 4,
+            "Minqty": 10,
+            "Unit": "kg",
+            "Status": "부족"
+        },
+        {
+            "Storeid": "S010",
+            "Storename": "제주점",
+            "Matnr": "R006",
+            "Matname": "버터",
+            "Quantity": 5,
+            "Minqty": 6,
+            "Unit": "kg",
+            "Status": "부족"
+        }
+    ],
+    "PurchaseSet": [
+        {
+            "Pono": "PO001",
+            "Podate": "2026-11-01",
+            "Storeid": "S001",
+            "Storename": "성수점",
+            "Matnr": "R001",
+            "Matname": "원두",
+            "Poqty": 18,
+            "Unit": "kg",
+            "Status": "발주요청"
+        },
+        {
+            "Pono": "PO002",
+            "Podate": "2026-11-02",
+            "Storeid": "S001",
+            "Storename": "성수점",
+            "Matnr": "R002",
+            "Matname": "우유",
+            "Poqty": 15,
+            "Unit": "L",
+            "Status": "발주완료"
+        },
+        {
+            "Pono": "PO003",
+            "Podate": "2026-11-03",
+            "Storeid": "S002",
+            "Storename": "강남점",
+            "Matnr": "R001",
+            "Matname": "원두",
+            "Poqty": 15,
+            "Unit": "kg",
+            "Status": "입고완료"
+        },
+        {
+            "Pono": "PO004",
+            "Podate": "2026-11-04",
+            "Storeid": "S002",
+            "Storename": "강남점",
+            "Matnr": "R002",
+            "Matname": "우유",
+            "Poqty": 12,
+            "Unit": "L",
+            "Status": "발주요청"
+        },
+        {
+            "Pono": "PO005",
+            "Podate": "2026-11-05",
+            "Storeid": "S003",
+            "Storename": "수원점",
+            "Matnr": "R001",
+            "Matname": "원두",
+            "Poqty": 12,
+            "Unit": "kg",
+            "Status": "발주완료"
+        },
+        {
+            "Pono": "PO006",
+            "Podate": "2026-11-01",
+            "Storeid": "S003",
+            "Storename": "수원점",
+            "Matnr": "R003",
+            "Matname": "말차가루",
+            "Poqty": 10,
+            "Unit": "kg",
+            "Status": "입고완료"
+        },
+        {
+            "Pono": "PO007",
+            "Podate": "2026-11-02",
+            "Storeid": "S004",
+            "Storename": "성남점",
+            "Matnr": "R003",
+            "Matname": "말차가루",
+            "Poqty": 9,
+            "Unit": "kg",
+            "Status": "발주요청"
+        },
+        {
+            "Pono": "PO008",
+            "Podate": "2026-11-03",
+            "Storeid": "S004",
+            "Storename": "성남점",
+            "Matnr": "R006",
+            "Matname": "버터",
+            "Poqty": 10,
+            "Unit": "kg",
+            "Status": "발주완료"
+        },
+        {
+            "Pono": "PO009",
+            "Podate": "2026-11-04",
+            "Storeid": "S005",
+            "Storename": "춘천점",
+            "Matnr": "R002",
+            "Matname": "우유",
+            "Poqty": 18,
+            "Unit": "L",
+            "Status": "입고완료"
+        },
+        {
+            "Pono": "PO010",
+            "Podate": "2026-11-05",
+            "Storeid": "S005",
+            "Storename": "춘천점",
+            "Matnr": "R003",
+            "Matname": "말차가루",
+            "Poqty": 6,
+            "Unit": "kg",
+            "Status": "발주요청"
+        },
+        {
+            "Pono": "PO011",
+            "Podate": "2026-11-01",
+            "Storeid": "S006",
+            "Storename": "대전점",
+            "Matnr": "R001",
+            "Matname": "원두",
+            "Poqty": 18,
+            "Unit": "kg",
+            "Status": "발주완료"
+        },
+        {
+            "Pono": "PO012",
+            "Podate": "2026-11-02",
+            "Storeid": "S006",
+            "Storename": "대전점",
+            "Matnr": "R002",
+            "Matname": "우유",
+            "Poqty": 15,
+            "Unit": "L",
+            "Status": "입고완료"
+        },
+        {
+            "Pono": "PO013",
+            "Podate": "2026-11-03",
+            "Storeid": "S007",
+            "Storename": "전주점",
+            "Matnr": "R001",
+            "Matname": "원두",
+            "Poqty": 15,
+            "Unit": "kg",
+            "Status": "발주요청"
+        },
+        {
+            "Pono": "PO014",
+            "Podate": "2026-11-04",
+            "Storeid": "S007",
+            "Storename": "전주점",
+            "Matnr": "R002",
+            "Matname": "우유",
+            "Poqty": 12,
+            "Unit": "L",
+            "Status": "발주완료"
+        },
+        {
+            "Pono": "PO015",
+            "Podate": "2026-11-05",
+            "Storeid": "S008",
+            "Storename": "대구점",
+            "Matnr": "R001",
+            "Matname": "원두",
+            "Poqty": 12,
+            "Unit": "kg",
+            "Status": "입고완료"
+        },
+        {
+            "Pono": "PO016",
+            "Podate": "2026-11-01",
+            "Storeid": "S008",
+            "Storename": "대구점",
+            "Matnr": "R003",
+            "Matname": "말차가루",
+            "Poqty": 10,
+            "Unit": "kg",
+            "Status": "발주요청"
+        },
+        {
+            "Pono": "PO017",
+            "Podate": "2026-11-02",
+            "Storeid": "S009",
+            "Storename": "부산점",
+            "Matnr": "R003",
+            "Matname": "말차가루",
+            "Poqty": 9,
+            "Unit": "kg",
+            "Status": "발주완료"
+        },
+        {
+            "Pono": "PO018",
+            "Podate": "2026-11-03",
+            "Storeid": "S009",
+            "Storename": "부산점",
+            "Matnr": "R006",
+            "Matname": "버터",
+            "Poqty": 10,
+            "Unit": "kg",
+            "Status": "입고완료"
+        },
+        {
+            "Pono": "PO019",
+            "Podate": "2026-11-04",
+            "Storeid": "S010",
+            "Storename": "제주점",
+            "Matnr": "R002",
+            "Matname": "우유",
+            "Poqty": 18,
+            "Unit": "L",
+            "Status": "발주요청"
+        },
+        {
+            "Pono": "PO020",
+            "Podate": "2026-11-05",
+            "Storeid": "S010",
+            "Storename": "제주점",
+            "Matnr": "R003",
+            "Matname": "말차가루",
+            "Poqty": 6,
+            "Unit": "kg",
+            "Status": "발주완료"
+        }
+    ],
+    "SalesSummarySet": [
+        {
+            "Storeid": "S001",
+            "Storename": "성수점",
+            "Salesamt": 3150600,
+            "Salesqty": 590
+        },
+        {
+            "Storeid": "S002",
+            "Storename": "강남점",
+            "Salesamt": 3115400,
+            "Salesqty": 600
+        },
+        {
+            "Storeid": "S003",
+            "Storename": "수원점",
+            "Salesamt": 2932600,
+            "Salesqty": 610
+        },
+        {
+            "Storeid": "S004",
+            "Storename": "성남점",
+            "Salesamt": 2805700,
+            "Salesqty": 595
+        },
+        {
+            "Storeid": "S005",
+            "Storename": "춘천점",
+            "Salesamt": 2927800,
+            "Salesqty": 605
+        },
+        {
+            "Storeid": "S006",
+            "Storename": "대전점",
+            "Salesamt": 3078700,
+            "Salesqty": 590
+        },
+        {
+            "Storeid": "S007",
+            "Storename": "전주점",
+            "Salesamt": 3134900,
+            "Salesqty": 600
+        },
+        {
+            "Storeid": "S008",
+            "Storename": "대구점",
+            "Salesamt": 3080100,
+            "Salesqty": 610
+        },
+        {
+            "Storeid": "S009",
+            "Storename": "부산점",
+            "Salesamt": 2733400,
+            "Salesqty": 595
+        },
+        {
+            "Storeid": "S010",
+            "Storename": "제주점",
+            "Salesamt": 2753900,
+            "Salesqty": 605
+        }
+    ],
+    "Dashboard": {
+        "TotalSales": 29713100,
+        "StoreCount": 12,
+        "ShortageCount": 36
+    }
+}

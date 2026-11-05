@@ -1,0 +1,17 @@
+<mvc:View controllerName="code2.fiori.pou.pou1project.controller.Main"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m">
+    <Page id="page" title="{i18n>title}">
+        <Text text="Hello World!" />
+            <VBox >
+                <Button text="Dashboard" press="go_Dashboard" />
+                <Button text="Menu" press="go_Menu" />
+                <Button text="Purchase" press="go_Purchase" />
+                <Button text="Sales" press="go_Sales" />
+                <Button text="SalesAnalytics" press="go_SalesAnalytics" />
+                <Button text="Stock" press="go_Stock" />
+                <Button text="StockShortage" press="go_StockShortage" />
+                <Button text="Store" press="go_Store" />
+            </VBox>
+    </Page>
+</mvc:View>
