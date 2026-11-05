@@ -1,6 +1,83 @@
 <mvc:View controllerName="code2.fiori.pou.pou1project.controller.MainView"
     xmlns:mvc="sap.ui.core.mvc"
+    xmlns:t="sap.ui.table"
     xmlns="sap.m">
-    <Page id="page" title="{i18n>title}">
+    <Page id="pageStore" title="{i18n>title}">
+    <VBox>
+        <Title text = "지점 관리" 
+               level = "H3"/>
+        <HBox>
+            <Label text = "지점명"
+                   width = "10rem"/>
+            <Label text = "지역"
+                   width = "10rem"/>
+        </HBox>
+        <HBox>
+        <Input id = "iStorename"
+               width = "10rem"
+               placeholder = "지점명 입력"/>
+        <Button text = "조회"
+                icon = "sap-icon://search"
+                press = "onStoreSearch"/>
+        </HBox>
+
+        <t:Table
+            rows="{Store>/StoreSet}"
+            selectionMode="MultiToggle"
+            paste="onPaste"
+            ariaLabelledBy="title">
+            <t:extension>
+                <OverflowToolbar style="Clear">
+                    <Title id="title" text="지점 목록"/>
+                </OverflowToolbar>
+            </t:extension>
+            <t:columns>
+
+                <t:Column width="11rem">
+                    <Label text="지점 코드" />
+                    <t:template>
+                        <Text text="{Store>Storeid}" wrapping="false" />              
+                    </t:template>
+                </t:Column>
+
+                <t:Column width="11rem">
+                    <Label text="지점명" />
+                    <t:template>
+                        <Text text="{Store>Storename}" wrapping="false" />
+                    </t:template>
+                </t:Column>
+
+                <t:Column width="11rem">
+                    <Label text="지역" />
+                    <t:template>
+                        <Text text="{Store>Region}" wrapping="false" />
+                    </t:template>
+                </t:Column>
+
+                <t:Column width="15rem">
+                    <Label text="주소" />
+                    <t:template>
+                        <Text text="{Store>Address}" wrapping="false" />
+                    </t:template>
+                </t:Column>
+
+                <t:Column width="11rem">
+                    <Label text="담당자" />
+                    <t:template>
+                        <Text text="{Store>Manager}" wrapping="false" />
+                    </t:template>
+                </t:Column>
+
+                <t:Column width="11rem">
+                    <Label text="운영상태" />
+                    <t:template>
+                        <Text text="{Store>Status}" wrapping="false" />
+                    </t:template>
+                </t:Column>
+                
+            </t:columns>
+        </t:Table>
+
+    </VBox>
     </Page>
 </mvc:View>
