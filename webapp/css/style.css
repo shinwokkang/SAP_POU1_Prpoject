@@ -1,1 +1,14 @@
 /* Enter your custom styles here */
+     
+      .cafeDashboard .chartRow {
+    background: #f3f4f6;
+    padding: 16px;
+    gap: 20px;
+    box-sizing: border-box;
+}
+
+.cafeDashboard .chartCard {
+    background: #fff;
+    border-radius: 14px;
+    overflow: hidden;
+}

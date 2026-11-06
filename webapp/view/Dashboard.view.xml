@@ -4,8 +4,9 @@
     xmlns:viz="sap.viz.ui5.controls"
     xmlns:viz.data="sap.viz.ui5.data"
     xmlns:viz.feeds="sap.viz.ui5.controls.common.feeds"
+    xmlns:core="sap.ui.core"
     xmlns="sap.m">
-    <Page id="Dashboard_page" title="{i18n>title}">
+    <Page id="Dashboard_page" title="{i18n>title}" class="cafeDashboard">
        <OverflowToolbar width="100%" design="Transparent" >
     <Label text="대시보드" level="H4" design="Bold" />
     <ToolbarSpacer  />
@@ -19,15 +20,35 @@
     </HBox>
     <!-- 달력 끝 -->
     <!-- 막대 차트 -->
+
     </OverflowToolbar>
-    <Panel headerText="지점별 매출" width="auto" class="chartCard sapUiSmallMargin">
+    <ToolbarSpacer  />
     <HBox>
+     <VBox>
+            
+    </VBox>
+             <core:Icon src="sap-icon://favorite" /> 
+             <Text text="전체 매출" TextAlign="Center"/>
+             <Title text="₩ 29,713,100" />
+     <HBox>
+             <core:Icon src="sap-icon://favorite" /> 
+             <Text text="운영지점 수 " TextAlign="Center"/>
+             <VBox>
+             <Title text="12지점 " />
+             </VBox>
+    </HBox>
+     <!-- 막대 차트 -->
+   <HBox width="100%" alignItems="Stretch">
+
+    <VBox width="50%" class="chartColumn">
+        <Panel headerText="지점별 매출" width="88%" class="chartCard">
+    <HBox width="100%" justifyContent="SpaceBetween" class="sapUiSmallMarginTopBottom">
     <VBox >
         <Text text="전체 매출" />
         <Title text="₩ 29,713,100" />
     </VBox>
     </HBox>
-       <viz:VizFrame id="idVizFrame" height="320px" width="100%" vizType="column"
+       <viz:VizFrame id="idVizFrame" height="380px" width="100%" vizType="stacked_column"
                      vizProperties="{title: {visible: true, text: '지점별 총 매출'}}">
        <viz:dataset>
               <viz.data:FlattenedDataset data="{/SalesSummarySet}">
@@ -46,14 +67,19 @@
            <viz:feeds>
                <viz.feeds:FeedItem uid="valueAxis" type="Measure" values="매출금액" />
                <viz.feeds:FeedItem uid="categoryAxis" type="Dimension" values="지점" />
+               <viz.feeds:FeedItem uid="color" type="Dimension" values="지점" />
+               
     </viz:feeds>
     </viz:VizFrame>
     </Panel>
+    </VBox>
     <!-- 막대차트 끝 -->
 
     <!-- 새로운 도넛 차트  -->
-    <Panel headerText="메뉴별 매출" width="auto" class="chartCard sapUiSmallMargin">
-    <viz:VizFrame id="menuDonut" width="100%" height="360px" vizType="donut"
+    <VBox width="50%" class="chartColumn" height="60px">
+        <Panel
+            headerText="메뉴별 매출 비중" width="95%" class="chartCard">
+    <viz:VizFrame id="menuDonut" width="100%" height="380px" vizType="donut"
         vizProperties="{
             title: {
                 visible: true,
@@ -91,7 +117,9 @@
             <viz.feeds:FeedItem uid="color" type="Dimension" values="메뉴" />
         </viz:feeds>
     </viz:VizFrame>
-</Panel>
+    </Panel>
+    </VBox>
+    </HBox>
 <!-- 도넛차트 끝 -->
 
 
