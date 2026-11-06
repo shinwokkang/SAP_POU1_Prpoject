@@ -1,7 +1,58 @@
 <mvc:View controllerName="code2.fiori.pou.pou1project.controller.Dashboard"
     xmlns:mvc="sap.ui.core.mvc"
+    xmlns:tnt="sap.tnt"
+    xmlns:m="sap.m"
+    xmlns:mc="sap.suite.ui.microchart"
     xmlns="sap.m">
-    <Page id="Dashboard_page" title="{i18n>title}">
-        <Text text="Dashboard!" />
+    <m:Page id="Dashboard_page" title="{i18n>title}">
+       <OverflowToolbar width="100%" design="Transparent" >
+    <Label text="대시보드" level="H4" design="Bold" />
+    <ToolbarSpacer  />
+    <HBox>
+    <Label text="조회기간"  labelFor="calender2" width="5em" design="Bold"/>
+    <DatePicker id="calender2" width="10rem" placeholder="2026-11-05" displayFormat="yyyy.MM.dd"
+        valueFormat="yyyy-MM-dd" press="onClcick"/>
+    <DatePicker id="calender1" width="10rem" placeholder="2026-11-15" displayFormat="yyyy.MM.dd"
+        valueFormat="yyyy-MM-dd" press="onClcick2"/>
+    </HBox>
+    </OverflowToolbar>
+    <HBox>
+    <VBox >
+        <Text text="전체 매출" />
+        <Title text="₩ 29,713,100" />
+    </VBox>
+    </HBox>
+    <m:VBox>
+    <m:GenericTile header="Revenue Dynamics"
+		frameType="OneByOne" press="press">
+		<m:tileContent>
+			<m:TileContent footer="Column chart">
+				<m:content>
+					<mc:ColumnMicroChart size="Responsive">
+						<mc:columns>
+							<mc:ColumnMicroChartData value="65" color="Error" />
+							<mc:ColumnMicroChartData value="90" color="Error" />
+							<mc:ColumnMicroChartData value="75" color="Error" />
+							<mc:ColumnMicroChartData value="95" color="Error" />
+							<mc:ColumnMicroChartData value="100" color="Error" />
+							<mc:ColumnMicroChartData value="90" color="Error" />
+							<mc:ColumnMicroChartData value="80" color="Error" />
+							<mc:ColumnMicroChartData value="35" color="Neutral" />
+							<mc:ColumnMicroChartData value="65" color="Neutral" />
+							<mc:ColumnMicroChartData value="55" color="Neutral" />
+							<mc:ColumnMicroChartData value="60" color="Neutral" />
+							<mc:ColumnMicroChartData value="5" color="Neutral" />
+							<mc:ColumnMicroChartData value="15" color="Neutral" />
+							<mc:olumnMicroChartData value="15" color="Neutral" />
+						</mc:columns>
+					</mc:ColumnMicroChart>
+				</m:content>
+			</m:TileContent>
+		</m:tileContent>
+	</m:GenericTile>
+    </m:VBox>
+
+
+
     </Page>
 </mvc:View>
