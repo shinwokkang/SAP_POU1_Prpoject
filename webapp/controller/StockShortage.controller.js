@@ -23,7 +23,8 @@ sap.ui.define([
         // ③ StockSet에서 부족 재고만 골라 새 배열을 만든다
         makeShortageList : function ()
         {
-            let lt_stock    = this.getView().getModel("CSET").getProperty("/StockSet"), // [ {}, {}, ... ] 60건
+            // let lt_stock    = this.getView().getModel("CSET").getProperty("/StockSet"), // [ {}, {}, ... ] 60건
+            let lt_stock    = this.getView().getModel("CEST").oData.StockSet;
                 lt_shortage = [];                                                       // 부족 품목을 담을 빈 배열
 
             for (const ls_stock of lt_stock) {
