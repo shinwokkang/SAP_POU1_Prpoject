@@ -5,6 +5,10 @@
     xmlns:t="sap.ui.table"
     xmlns="sap.m">
     <Page id="Menu_page" title="{i18n>title}">
+        <VBox>
+                <Title text="메뉴 관리" titleStyle="H3"/>
+                <Text text="메뉴 정보, 가격 및 카테고리 조회"/>
+        </VBox>
         <t:Table
             id="IMenu"
             rows="{CSET>/MenuSet}"
