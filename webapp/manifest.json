@@ -51,6 +51,10 @@
         "settings": {
           "bundleName": "code2.fiori.pou.pou1project.i18n.i18n"
         }
+      },
+      "": {
+        "type": "sap.ui.model.json.JSONModel",
+        "uri": "model/Data.json"
       }
     },
     "resources": {
@@ -64,11 +68,9 @@
       "config": {
         "routerClass": "sap.m.routing.Router",
         "controlAggregation": "pages",
-        "controlId": "app",
-        "transition": "fade",
-        "type": "View",
+        "controlId": "navContainer",
+        "transition": "slide",
         "viewType": "XML",
-        "path": "code2.fiori.pou.pou1project.view",
         "async": true,
         "viewPath": "code2.fiori.pou.pou1project.view"
       },
@@ -139,40 +141,49 @@
       ],
       "targets": {
         "TargetMain": {
-          "id": "Main",
-          "name": "Main"
+          "viewType": "XML",
+          "viewName": "Main",
+          "viewId": "Main"
         },
         "TargetDashboard": {
-          "id": "Dashboard",
-          "name": "Dashboard"
+          "viewType": "XML",
+          "viewName": "Dashboard",
+          "viewId": "Dashboard"
         },
         "TargetStore": {
-          "id": "Store",
-          "name": "Store"
+          "viewType": "XML",
+          "viewName": "Store",
+          "viewId": "Store"
         },
         "TargetMenu": {
-          "id": "Menu",
-          "name": "Menu"
+          "viewType": "XML",
+          "viewName": "Menu",
+          "viewId": "Menu"
         },
         "TargetSales": {
-          "id": "Sales",
-          "name": "Sales"
+          "viewType": "XML",
+          "viewName": "Sales",
+          "viewId": "Sales"
         },
         "TargetStock": {
-          "id": "Stock",
-          "name": "Stock"
+          "viewType": "XML",
+          "viewName": "Stock",
+          "viewId": "Stock"
         },
         "TargetStockShortage": {
-          "id": "StockShortage",
-          "name": "StockShortage"
+          "viewType": "XML",
+          "viewName": "StockShortage",
+          "viewId": "StockShortage"
         },
         "TargetPurchase": {
-          "id": "Purchase",
-          "name": "Purchase"
+          "viewType": "XML",
+          "viewName": "Purchase",
+          "viewId": "Purchase"
         },
         "TargetSalesAnalytics": {
-          "id": "SalesAnalytics",
-          "name": "SalesAnalytics"
+          "viewType": "XML",
+          "viewName": "SalesAnalytics",
+          "viewId": "SalesAnalytics"
         }
       }
     },
