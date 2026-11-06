@@ -8,9 +8,10 @@ sap.ui.define([
 ], (Controller,JSONModel, Filter, FilterOperator) => {
     "use strict";
 
-    return Controller.extend("code2.fiori.pou.pou1project.controller.Purchase", {
+    return Controller.extend("code2.fiori.pou.pou1project.controller.Purchase", 
+    {
         onInit() {
-            this.getRouter().getRoute("Purchase");
+            this.getRouter().getRoute("Purchase").attachPatternMatched(this.onUpdateAlert, this);
 
             let oData = {
                             StoreNameSet :
@@ -104,6 +105,50 @@ sap.ui.define([
             };
 
             oBinding.filter(aFilter);
+        },
+
+        onAlertColor: function(vStatus)
+        {
+            if(vStatus == "발송 완료")
+            {
+                return "Success";
+            }
+            else
+            {
+                return "None";
+            }
+        },
+
+        onUpdateAlert: function()
+        {
+            let oModel = this.getOwnerComponent().getModel(),
+                oData = oModel.getData(),
+
+                lt_stock   = oData.StockSet,
+                lt_purchase= oData.PurchaseSet;
+
+            // 발주 데이터를 하나씩 확인
+            for(let i in lt_purchase)
+            {
+                let ls_purchase = lt_purchase[i],
+                    vStatus = "미발송";
+
+                for(let ls_stock of lt_stock)
+                {
+                    if(ls_purchase.Storeid == ls_stock.Storeid &&
+                       ls_purchase.Matnr == ls_stock.Matnr &&
+                       ls_stock.AlertStatus == "발송 완료")
+                    {
+                        vStatus = "발송 완료";
+                    }
+                }
+
+                oModel.setProperty
+                (
+                    "/PurchaseSet/" + i + "/AlertStatus",
+                    vStatus
+                );
+            }
         }
 
         
