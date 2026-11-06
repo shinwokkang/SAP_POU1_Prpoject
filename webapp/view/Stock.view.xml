@@ -10,8 +10,9 @@
             rows="{/StockSet}"
             selectionMode="Single"
             selectionBehavior="RowOnly">
-
+            
             <t:extension>
+                <HBox >
                 <OverflowToolbar  style="Clear">
                 <Label text="지점" design="Bold"/>
                 <ComboBox 
@@ -37,11 +38,21 @@
                 </ComboBox>
 
                 <ToolbarSpacer width="3rem"/>
-                
+               
                 <Button
                         text="조회"
-                        press="onSearch"/>
+                        type="Emphasized"
+                        icon="sap-icon://search"
+                        press="onSearch"
+                        width="80px"/>
                 </OverflowToolbar>
+
+                <Button 
+                        text="초기화"
+                        press="onReset"
+                        icon="sap-icon://undo"
+                        width="80px"/>
+                </HBox>
 
             </t:extension>
 
@@ -91,7 +102,11 @@
                 <t:Column width="8rem">
                     <Label text="재고상태"/>
                     <t:template>
-                        <Text text="{Status}" wrapping="false"/>
+                        <ObjectStatus 
+                              text="{Status}" 
+                              state="{path: 'Status',  formatter: '.onStatusColor'}"
+                              inverted="true"
+                              icon="sap-icon://status-critical"/>
                     </t:template>
                 </t:Column>
 
