@@ -10,7 +10,19 @@ sap.ui.define([
     return Controller.extend("code2.fiori.pou.pou1project.controller.Menu", {
         onInit() {
             this.getRouter().getRoute("Menu");
-            this.getView().setModel(new JSONModel("/data/CafeSet.json"), "CSET");
+            
+            let oModel = this.getOwnerComponent().getModel();
+            this.getView().setModel(oModel, "CSET");
+
+            let CategorySet = [
+                                {Category : "Coffee"},
+                                {Category : "NonCoffee"},
+                                {Category : "Ade"},
+                                {Category : "Bakery"},
+                                {Category : "Desert"}
+                              ],
+                oCategoryModel = new JSONModel(CategorySet);
+            this.getView().setModel(oCategoryModel, "Category");
         },
 
         getRouter:function(){
@@ -42,7 +54,7 @@ sap.ui.define([
                 {   
                     oFilter = new Filter({
                         path    : "Category",
-                        operator: FilterOperator.Contains,
+                        operator: FilterOperator.EQ,
                         value1  : vCategory
                     });
 
