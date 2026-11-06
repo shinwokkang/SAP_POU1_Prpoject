@@ -1,7 +1,80 @@
 <mvc:View controllerName="code2.fiori.pou.pou1project.controller.Sales"
     xmlns:mvc="sap.ui.core.mvc"
+	xmlns:u="sap.ui.unified"
+    xmlns:t="sap.ui.table"
     xmlns="sap.m">
     <Page id="Sales_page" title="{i18n>title}">
-        <Text text="Sales!" />
+            <t:Table
+            id="Sales"
+            rows="{CSET>/SalesSet}" 
+            selectionMode="None" 
+            selectionBehavior="Row" 
+            paste="onPaste"
+            ariaLabelledBy="title">
+            <t:extension>
+                <OverflowToolbar style="Clear">
+                    <Label text="날짜" design="Bold"/>
+                    <Input id="IDate" width="8em" placeholder="날짜"/> 
+                    <ToolbarSpacer width = "3rem" />                   
+                    <Label text="지점" design="Bold"/>
+                    <Input id="IStorename" width="8em" placeholder="지점"/>
+                    <ToolbarSpacer width = "3rem" />
+                    <Label text="메뉴" design="Bold"/>
+                    <Input id="IMenuname" width="8em" placeholder="메뉴"/>
+
+                    <Button text="Search" icon="sap-icon://search" press="onSearch"/>
+
+                </OverflowToolbar>
+            </t:extension>
+            <t:columns>
+                <t:Column width="20%">
+                    <Label text="날짜" />
+                    <t:template>
+                        <Text text="{CSET>Salesdate}" wrapping="false" />
+                    </t:template>
+                </t:Column>
+                <t:Column width="20%">
+                    <Label text="지점" />
+                    <t:template>
+                        <Text text="{CSET>Storename}" wrapping="false" /> 
+                    </t:template>
+                </t:Column>
+                <t:Column width="20%">
+                    <Label text="메뉴" />
+                    <t:template>
+                        <Text text="{CSET>Menuname}" wrapping="false" />
+                    </t:template>
+                </t:Column>
+                <t:Column width="20%">
+                    <Label text="판매량" />
+                    <t:template>
+                        <Text text="{CSET>Quantity}" wrapping="false" />
+                    </t:template>
+                </t:Column>
+                <t:Column width="20%">
+                    <Label text="금액" />
+                    <t:template>
+		                    <u:Currency value="{CSET>Amount}" currency="{Currency}"/> 
+                    </t:template>
+                </t:Column>
+            </t:columns>					
+        </t:Table>
+
+    <HBox
+        justifyContent="End"
+        alignItems="Center"
+        class="sapUiSmallMarginTop sapUiSmallMarginEnd">
+
+        <Label
+            text="총 판매량 : "
+            design="Bold"/>
+
+        <Label
+            text="총 금액 : "
+            design="Bold"/>
+            
+
+    </HBox>
+
     </Page>
 </mvc:View>
