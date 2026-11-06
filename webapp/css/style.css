@@ -1,1 +1,64 @@
 /* Enter your custom styles here */
+     
+      .cafeDashboard .chartRow {
+    background: #f3f4f6;
+    padding: 16px;
+    gap: 20px;
+    box-sizing: border-box;
+}
+
+.cafeDashboard .chartCard {
+    background: #fff;
+    border-radius: 14px;
+    overflow: hidden;
+}
+.cafeDashboard .dashboardKpi {
+    padding: 20px;
+    border-radius: 12px;
+    box-sizing: border-box;
+    gap: 10px;
+}
+
+.cafeDashboard .dashboardKpi .sapMObjectNumberText {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.cafeDashboard .kpiBlue {
+    background: #e0f2fe;
+}
+
+.cafeDashboard .kpiPurple {
+    background: #ede9fe;
+}
+
+.cafeDashboard .kpiOrange {
+    background: #ffedd5;
+}
+.cafeDashboard .chartCard .sapMPanelHdr {
+    font-weight: 700;
+}
+.cafeDashboard .kpiGreen {
+    background: #dcfce7;
+}
+.cafeDashboard .operatingLabel {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #14532d;
+}
+
+.cafeDashboard .operatingNumber .sapMObjectNumberText {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #14532d;
+}
+.cafeDashboard .operatingCount .sapMObjectNumberText {
+    font-size: 1.8rem !important;
+    font-weight: 700 !important;
+    line-height: 1.5;
+}
+
+.cafeDashboard .operatingCount .sapMObjectNumberUnit {
+    font-size: 1rem !important;
+    font-weight: 400 !important;
+}
