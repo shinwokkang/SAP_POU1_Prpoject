@@ -8,9 +8,49 @@ sap.ui.define([
 
     return Controller.extend("code2.fiori.pou.pou1project.controller.Sales", {
         onInit() {
-            this.getRouter().getRoute("Sales");
 
-            this.getView().setModel(new JSONModel("/data/CafeSet.json"),"CSET");
+            //지점콤보박스
+            let aStoreList = [
+
+                                {Store: "성수점"},
+                                {Store: "강남점"},
+                                {Store: "수원점"},
+                                {Store: "성남점"},
+                                {Store: "춘천점"},
+                                {Store: "대전점"},
+                                {Store: "전주점"},
+                                {Store: "대구점"},
+                                {Store: "부산점"},
+                                {Store: "제주점"}
+                            
+                             ],
+                oStoreModel = new JSONModel(aStoreList);
+            this.getView().setModel(oStoreModel, "StoreList");
+
+            //메뉴콤보박스
+            let aMenuList = [
+
+                                {Menu: "아메리카노"},
+                                {Menu: "카페라떼"},
+                                {Menu: "말차라떼"},
+                                {Menu: "초코라떼"},
+                                {Menu: "바닐라라떼"},
+                                {Menu: "카푸치노"},
+                                {Menu: "레몬에이드"},
+                                {Menu: "자몽에이드"},
+                                {Menu: "소금빵"},
+                                {Menu: "휘낭시에"},
+                                {Menu: "크루아상"},
+                                {Menu: "치즈케이크"}
+
+                                
+                            
+                             ],
+                oMenuModel = new JSONModel(aMenuList);
+            this.getView().setModel(oMenuModel, "MenuList");
+
+
+
         },
 
         getRouter:function(){
@@ -23,27 +63,47 @@ sap.ui.define([
                 oFilter  = null,
                 aFilter = [], 
                 vDate = this.getView().byId("IDate").getValue(), 
+                vStartDate = "",
+                vEndDate = "",
                 vStorename = this.getView().byId("IStorename").getValue(),
                 vMenuname = this.getView().byId("IMenuname").getValue();
 
-                if(vDate !="")
-                {   
-                    oFilter = new Filter({
-                        path    : "Salesdate", 
-                        operator: FilterOperator.Contains,
-                        value1  : vDate 
-                    });
+                if(vDate != "")
+                {
+                    if(vDate.length > 10 )
+                    {
+                        vStartDate = vDate.slice(0,10);
+                        vEndDate   = vDate.slice(13,23);
 
-                    aFilter.push(oFilter); 
-                };
+                        oFilter = new Filter({
+                        path    : "Salesdate", 
+                        operator: FilterOperator.BT,
+                        value1: vStartDate,
+                        value2: vEndDate
+                        });
+
+                        aFilter.push(oFilter); 
+                    }
+                    else
+                    {
+                        vStartDate = vDate.slice(0,10);
+
+                        oFilter = new Filter({
+                        path    : "Salesdate", 
+                        operator: FilterOperator.EQ,
+                        value1: vStartDate,
+                        });
+
+                        aFilter.push(oFilter); 
+                    }
+                }
 
                 
-
-                if(vStorename !="")
+                if(vStorename !="") //지점검색
                 {   
                     oFilter = new Filter({
                         path    : "Storename", 
-                        operator: FilterOperator.Contains,
+                        operator: FilterOperator.EQ,
                         value1  : vStorename 
                     });
 
@@ -51,11 +111,11 @@ sap.ui.define([
                 };
 
 
-                if(vMenuname!="")
+                if(vMenuname!="") //메뉴검색
                 {   
                     oFilter = new Filter({
                         path    : "Menuname", 
-                        operator: FilterOperator.Contains,
+                        operator: FilterOperator.EQ,
                         value1  : vMenuname 
                     });
 
@@ -63,7 +123,7 @@ sap.ui.define([
                 };
 
                 oBinding.filter(aFilter); 
-                //주석
+                
 
         }
     });

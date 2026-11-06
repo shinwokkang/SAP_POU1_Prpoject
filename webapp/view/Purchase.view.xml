@@ -1,7 +1,78 @@
 <mvc:View controllerName="code2.fiori.pou.pou1project.controller.Purchase"
     xmlns:mvc="sap.ui.core.mvc"
+    xmlns:t="sap.ui.table"
+    xmlns:u="sap.ui.unified"
     xmlns="sap.m">
     <Page id="Purchase_page" title="{i18n>title}">
-        <Text text="Purchase!" />
+        <Title text = "발주 관리" titleStyle = "H3"/>
+        <Text text="   "    />
+        <t:Table
+            rows="{/ProductCollection}"
+            selectionMode="Single"
+            paste="onPaste"
+            ariaLabelledBy="title">
+            <t:extension>
+                <OverflowToolbar style="Clear">
+                    <VBox>
+                        
+                        <HBox>
+                            <Label text = "지점명"
+                                width = "10rem"     />
+                            <ToolbarSpacer width="2rem"/>
+                            <Label text = "원재료명"
+                                width = "10rem"     />
+                            <ToolbarSpacer width="2rem"/>
+                            <Label text = "발주상태"
+                                width = "10rem"     />
+                                
+                        </HBox>
+                        <HBox>
+                            <Input id = "iStoreName"
+                                width = "10rem"
+                                showClearIcon = "true" />
+                            <ToolbarSpacer width="2rem"/>
+
+                            <Input id = "iMaterialName"
+                                width = "10rem"
+                                showClearIcon = "true" />
+                            <ToolbarSpacer width="2rem"/>
+
+                            <Input id = "iStatus"
+                                width = "10rem"
+                                showClearIcon = "true" />
+                            <ToolbarSpacer width="4rem"/>
+
+                            <Button text="Search" icon= "sap-icon://search" press="searchPurchase"/>
+                        </HBox>
+                    </VBox>
+                </OverflowToolbar>
+            </t:extension>
+            <t:columns>
+                <t:Column width="11rem">
+                    <Label text="Product Name" />
+                    <t:template>
+                        <Text text="{Name}" wrapping="false" />
+                    </t:template>
+                </t:Column>
+                
+                <t:Column width="9rem">
+                    <Label text="Price" />
+                    <t:template>
+                        <u:Currency value="{Price}" currency="{CurrencyCode}"/>
+                    </t:template>
+                </t:Column>
+               
+                <t:Column width="11rem" hAlign="Center">
+                    <Label text="Delivery Date" />
+                    <t:template>
+                        <DatePicker value="{
+                            path: 'DeliveryDate',
+                            type: 'sap.ui.model.type.Date',
+                            formatOptions: {source: {pattern: 'timestamp'}}
+                        }"/>
+                    </t:template>
+                </t:Column>
+            </t:columns>
+        </t:Table>
     </Page>
 </mvc:View>
