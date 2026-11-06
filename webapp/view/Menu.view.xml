@@ -1,6 +1,7 @@
 <mvc:View controllerName="code2.fiori.pou.pou1project.controller.Menu"
     xmlns:mvc="sap.ui.core.mvc"
 	xmlns:u="sap.ui.unified"
+    xmlns:core="sap.ui.core"
     xmlns:t="sap.ui.table"
     xmlns="sap.m">
     <Page id="Menu_page" title="{i18n>title}">
@@ -17,7 +18,10 @@
                     <Input id="IMenuname" width="8em" placeholder="메뉴명 입력"/> 
                     <ToolbarSpacer width = "3rem" />                   
                     <Label text="카테고리" design="Bold"/>
-                    <Input id="ICategory" width="8em" placeholder="지점"/>
+                    <ComboBox id="ICategory" width="14rem" placeholder="카테고리"
+                              items="{path : 'Category>/'}">
+                    <core:Item key="{Category>Category}" text="{Category>Category}"/>
+                    </ComboBox>
                     <ToolbarSpacer width = "3rem" />
 
                     <Button text="조회" icon="sap-icon://search" press="onSearch"/>
