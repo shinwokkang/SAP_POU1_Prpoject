@@ -8,8 +8,8 @@
         <Title text = "발주 관리" titleStyle = "H3"/>
         <Text text="   "    />
         <t:Table
-            id="purchasePage"
-            rows="{Cafe>/PurchaseSet}"
+            id="purchaseTable"
+            rows="{/PurchaseSet}"
             selectionMode="Single"
             selectionBehavior="RowOnly"
             paste="onPaste"
@@ -75,21 +75,21 @@
                 <t:Column width="10rem"  >
                     <Label text="발주번호"/>
                     <t:template>
-                        <Text text="{Cafe>Pono}" wrapping="false" />
+                        <Text text="{Pono}" wrapping="false" />
                     </t:template>
                 </t:Column>
                 
                 <t:Column width="10rem">
                     <Label text="지점" />
                     <t:template>
-                        <Text text="{Cafe>Storename}" wrapping="false"/>
+                        <Text text="{Storename}" wrapping="false"/>
                     </t:template>
                 </t:Column>
 
                 <t:Column width="10rem"  >
                     <Label text="원재료" />
                     <t:template>
-                        <Text text="{Cafe>Matname}" wrapping="false"/>
+                        <Text text="{Matname}" wrapping="false"/>
                     </t:template>
                 </t:Column>
                
@@ -97,7 +97,7 @@
                     <Label text="발주날짜"              />
                     <t:template>
                         <DatePicker value="{
-                            path: 'Cafe>Podate',
+                            path: 'Podate',
                             type: 'sap.ui.model.type.Date',
                             formatOptions: {source: {pattern: 'yyyy-MM-dd'}}
                         }"/>
@@ -107,21 +107,21 @@
                 <t:Column width="10rem"           >
                     <Label text="발주수량" />
                     <t:template>
-                        <Text text="{Cafe>Poqty}" wrapping="false"/>
+                        <Text text="{Poqty}" wrapping="false"/>
                     </t:template>
                 </t:Column>
 
                 <t:Column width="10rem"           >
                     <Label text="단위" />
                     <t:template>
-                        <Text text="{Cafe>Unit}" wrapping="false"/>
+                        <Text text="{Unit}" wrapping="false"/>
                     </t:template>
                 </t:Column>
 
                 <t:Column width="10rem"    >
                     <Label text="발주상태" />
                     <t:template>
-                        <Text text="{Cafe>Status}" wrapping="false"/>
+                        <Text text="{Status}" wrapping="false"/>
                     </t:template>
                 </t:Column>
                 

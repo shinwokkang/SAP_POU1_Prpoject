@@ -52,12 +52,35 @@ sap.ui.define([
                         continue;
                 }
 
-                //  지점별 매출, 메뉴별 판매량 누적 (처음 나온 이름이면 0부터)
-                if (oStore[oSale.Storename] == undefined) oStore[oSale.Storename] = 0;
-                if (oMenu[oSale.Menuname]   == undefined) oMenu[oSale.Menuname]   = 0;
+                // 1-3. 지점별 매출: 이미 있는 지점이면 더하고, 처음 나온 지점이면 새로 추가
+                let vFindStore = false;                                  // 이 지점을 배열에서 찾았는지
 
-                oStore[oSale.Storename] += oSale.Amount;
-                oMenu[oSale.Menuname]   += oSale.Quantity;
+                for (let oRow of aStore)                                 // 지금까지 모은 지점들을 하나씩 확인
+                {
+                    if (oRow.Storename == oSale.Storename)               // 같은 지점이 이미 있으면
+                    {
+                        oRow.Salesamt = oRow.Salesamt + oSale.Amount;    // 그 지점에 매출 더하기
+                        vFindStore = true;
+                    }
+                }
+
+                if (vFindStore == false)                                 // 처음 나온 지점이면 새로 추가
+                    aStore.push({ Storename : oSale.Storename, Salesamt : oSale.Amount });
+
+                // 1-4. 메뉴별 판매량: 이미 있는 메뉴면 더하고, 처음 나온 메뉴면 새로 추가
+                let vFindMenu = false;                                   // 이 메뉴를 배열에서 찾았는지
+
+                for (let oRow of aMenu)
+                {
+                    if (oRow.Menuname == oSale.Menuname)
+                    {
+                        oRow.Soldqty = oRow.Soldqty + oSale.Quantity;    // 그 메뉴에 수량 더하기
+                        vFindMenu = true;
+                    }
+                }
+
+                if (vFindMenu == false)                                  // 처음 나온 메뉴면 새로 추가
+                    aMenu.push({ Menuname : oSale.Menuname, Soldqty : oSale.Quantity });
             }
 
             //  { 이름 : 합계 } 객체 → 차트용 배열

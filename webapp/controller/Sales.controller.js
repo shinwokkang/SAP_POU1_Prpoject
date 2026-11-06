@@ -57,7 +57,8 @@ sap.ui.define([
             return sap.ui.core.UIComponent.getRouterFor(this);
         },
         onSearch: function ()
-        {
+        {   
+            //조건검색필터
             let oBinding = this.getView().byId("Sales").getBinding("rows"),
             
                 oFilter  = null,
@@ -68,6 +69,7 @@ sap.ui.define([
                 vStorename = this.getView().byId("IStorename").getValue(),
                 vMenuname = this.getView().byId("IMenuname").getValue();
 
+                //날짜 검색
                 if(vDate != "")
                 {
                     if(vDate.length > 10 )
@@ -123,8 +125,49 @@ sap.ui.define([
                 };
 
                 oBinding.filter(aFilter); 
-                
 
+                // 날짜, 지점, 메뉴 별 총 판매량, 총 매출금액
+
+                let oTotalModel = this.getView().getModel();
+                let aData = oTotalModel.oData.SalesSet;
+                let iTotalQuantity = 0,
+                    iTotalAmount = 0;
+
+                for(let vRow of aData)
+                {
+                    if (vStorename != "") 
+                    {
+                        if (vRow.Storename != vStorename)
+                            continue;
+                    }
+
+                    if (vMenuname != "")
+                    {
+                        if (vRow.Menuname != vMenuname)
+                            continue;
+                    }
+
+                    if (vDate != "")
+                    {
+                        if (vDate.length > 10)
+                        {
+                            if ( vRow.Salesdate <= vStartDate || vRow.Salesdate >= vEndDate)
+                                continue;
+                        }
+                        else
+                        {
+                            if (vRow.Salesdate != vStartDate)
+                                continue;
+                        }
+                    }
+
+                    iTotalQuantity += parseInt(vRow.Quantity);
+                    iTotalAmount += parseInt(vRow.Amount);
+                }    
+
+            this.getView().byId("TotalQuantity").setText(iTotalQuantity);
+            this.getView().byId("TotalAmount").setValue(iTotalAmount);
+                
         }
     });
 });
