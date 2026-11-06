@@ -51,7 +51,8 @@ sap.ui.define([
             this.getView().setModel(new JSONModel(oData2),"MSET");
             this.getView().setModel(new JSONModel(StatusSet),"StaSet");
 
-            this.getView().setModel(new JSONModel("/model/Data.json"),"Cafe");
+            
+
         },
 
         getRouter:function(){
@@ -61,17 +62,17 @@ sap.ui.define([
         searchPurchase: function()
         {
             
-            let oBinding     = this.getView().byId("purchasePage").getBinding("rows"),
+            let oBinding     = this.getView().byId("purchaseTable").getBinding("rows"),
                 oFilter      = null,
                 aFilter      = [],
-                vStorename   = this.getView().byId("IstoreName").getValue(),
-                vMaterialName= this.getView().byId("ImaterialName").getValue(),
-                vStatus      = this.getView().byId("Istatus").getValue();
+                vStorename   = this.getView().byId("IstoreName").getSelectedKey(),
+                vMaterialName= this.getView().byId("ImaterialName").getSelectedKey(),
+                vStatus      = this.getView().byId("Istatus").getSelectedKey();
                 
             if (vStorename != "") 
             {
                 oFilter = new Filter({                                                
-                    path     : "Storename",
+                    path     : "Storeid",
                     operator : FilterOperator.Contains,                             
                     value1   : vStorename                                          
                 });
@@ -82,7 +83,7 @@ sap.ui.define([
             if(vMaterialName != "")
             {
                 oFilter = new Filter({                                              
-                    path     : "Matname",
+                    path     : "Matnr",
                     operator : FilterOperator.Contains,                              
                     value1   : vMaterialName                                                
                 });
