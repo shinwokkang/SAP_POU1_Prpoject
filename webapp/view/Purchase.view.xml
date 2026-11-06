@@ -21,12 +21,10 @@
                         <Label text = "지점명" 
                                width = "10rem" 
                                design="Bold"       />
-                        <ToolbarSpacer width="4.7rem"/>
 
                         <Label text = "원재료명"
                                width = "10rem" 
                                design="Bold"       />
-                        <ToolbarSpacer width="4.7rem"/>
 
                         <Label text = "발주상태" 
                                width = "10rem" 
@@ -35,35 +33,37 @@
                     </HBox>
                     <HBox>
                         <ComboBox
-                            id="cbStoreName"
-                            items="{
-					        path: 'Cafe>/PurchaseSet',
-					        sorter: { path: 'Store' }
-                            }">
-                            <c:Item key="{Cafe>Storename}"
-                                       text="{Cafe>Storename}"/>
+                            id="IstoreName"
+                            items="{StoSet>/StoreNameSet}"
+                            width="8rem"
+                            placeholder="전체">
+
+                            <c:Item key="{StoSet>Strcd}"
+                                    text="{StoSet>Store}"/>
                         </ComboBox>
                         <ToolbarSpacer width="2rem"  />
 
                         <ComboBox
-                            id="cbMaterialName"
-                            items="{
-					        path: 'Cafe>/PurchaseSet',
-					        sorter: { path: 'Cafe>Matname' }
-                            }">
-                            <c:Item key="{Cafe>Matname}"
-                                       text="{Cafe>Matname}"/>
+                            id="ImaterialName"
+                            items="{MSET>/MaterialSet}"
+                            width="8rem"
+                            placeholder="전체">
+
+                            <c:Item 
+                                key="{MSET>Matnr}" 
+                                text="{MSET>Matname}"/>
                         </ComboBox>
                         <ToolbarSpacer width="2rem"  />
 
                         <ComboBox
-                            id="cbStatus"
-                            items="{
-					        path: 'Cafe>/PurchaseSet',
-					        sorter: { path: 'Cafe>Status' }
-                            }">
-                            <c:Item key="{Cafe>Status}"
-                                       text="{Cafe>Status}"/>
+                            id="Istatus"
+                            items="{path : 'StaSet>/'}"
+                            width="8rem"
+                            placeholder="전체">
+
+                            <c:Item 
+                                key="{StaSet>Status}" 
+                                text="{StaSet>Status}"/>
                         </ComboBox>
                         <ToolbarSpacer width="4rem"  />
 
