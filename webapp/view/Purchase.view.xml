@@ -2,6 +2,7 @@
     xmlns:mvc="sap.ui.core.mvc"
     xmlns:t="sap.ui.table"
     xmlns:u="sap.ui.unified"
+    xmlns:c="sap.ui.core"
     xmlns="sap.m">
     <Page id="Purchase_page" title="{i18n>title}">
         <Title text = "발주 관리" titleStyle = "H3"/>
@@ -17,39 +18,62 @@
                 <VBox>
                     
                     <HBox>
-                        <Label text = "지점명"
-                            width = "10rem"        />
-                        <ToolbarSpacer width="2rem"/>
+                        <Label text = "지점명" 
+                               width = "10rem" 
+                               design="Bold"       />
+                        <ToolbarSpacer width="4.7rem"/>
+
                         <Label text = "원재료명"
-                            width = "10rem"        />
-                        <ToolbarSpacer width="2rem"/>
-                        <Label text = "발주상태"
-                            width = "10rem"        />
+                               width = "10rem" 
+                               design="Bold"       />
+                        <ToolbarSpacer width="4.7rem"/>
+
+                        <Label text = "발주상태" 
+                               width = "10rem" 
+                               design="Bold"       />
                             
                     </HBox>
                     <HBox>
-                        <Input id = "iStoreName"
-                            width = "10rem"
-                            showClearIcon = "true" />
-                        <ToolbarSpacer width="2rem"/>
+                        <ComboBox
+                            id="cbStoreName"
+                            items="{
+					        path: 'Cafe>/PurchaseSet',
+					        sorter: { path: 'Store' }
+                            }">
+                            <c:Item key="{Cafe>Storename}"
+                                       text="{Cafe>Storename}"/>
+                        </ComboBox>
+                        <ToolbarSpacer width="2rem"  />
 
-                        <Input id = "iMaterialName"
-                            width = "10rem"
-                            showClearIcon = "true" />
-                        <ToolbarSpacer width="2rem"/>
+                        <ComboBox
+                            id="cbMaterialName"
+                            items="{
+					        path: 'Cafe>/PurchaseSet',
+					        sorter: { path: 'Cafe>Matname' }
+                            }">
+                            <c:Item key="{Cafe>Matname}"
+                                       text="{Cafe>Matname}"/>
+                        </ComboBox>
+                        <ToolbarSpacer width="2rem"  />
 
-                        <Input id = "iStatus"
-                            width = "10rem"
-                            showClearIcon = "true" />
-                        <ToolbarSpacer width="4rem"/>
+                        <ComboBox
+                            id="cbStatus"
+                            items="{
+					        path: 'Cafe>/PurchaseSet',
+					        sorter: { path: 'Cafe>Status' }
+                            }">
+                            <c:Item key="{Cafe>Status}"
+                                       text="{Cafe>Status}"/>
+                        </ComboBox>
+                        <ToolbarSpacer width="4rem"  />
 
-                        <Button text="Search" icon= "sap-icon://search" press="searchPurchase"/>
+                        <Button text="조회" icon= "sap-icon://search" press="searchPurchase"/>
                     </HBox>
                 </VBox>
             </t:extension>
             <t:columns>
-                <t:Column width="10rem">
-                    <Label text="발주번호" />
+                <t:Column width="10rem"  >
+                    <Label text="발주번호"/>
                     <t:template>
                         <Text text="{Cafe>Pono}" wrapping="false" />
                     </t:template>
@@ -62,7 +86,7 @@
                     </t:template>
                 </t:Column>
 
-                <t:Column width="10rem">
+                <t:Column width="10rem"  >
                     <Label text="원재료" />
                     <t:template>
                         <Text text="{Cafe>Matname}" wrapping="false"/>
@@ -70,27 +94,31 @@
                 </t:Column>
                
                 <t:Column width="10rem" hAlign="Center">
-                    <Label text="발주날짜" />
+                    <Label text="발주날짜"              />
                     <t:template>
                         <DatePicker value="{
                             path: 'Cafe>Podate',
                             type: 'sap.ui.model.type.Date',
-                            formatOptions: {source: {pattern: 'timestamp'}}
+                            formatOptions: {source: {pattern: 'yyyy-MM-dd'}}
                         }"/>
                     </t:template>
                 </t:Column>
                 
-                <t:Column width="10rem">
+                <t:Column width="10rem"           >
                     <Label text="발주수량 및 단위" />
                     <t:template>
-                        <Text text="{Cafe>Poqty}" wrapping="false" />
+                        <Text text="{
+                              parts: [{path: 'Cafe>Poqty'}, {path: 'Cafe>Unit'}],
+                              type: 'sap.ui.model.type.Unit',
+                              formatOptions: {showMeasure: true}
+                            }" wrapping="false" />
                     </t:template>
                 </t:Column>
 
-                <t:Column width="10rem">
+                <t:Column width="10rem"    >
                     <Label text="발주상태" />
                     <t:template>
-                        <Text text="{Cafe>Status}" wrapping="false" />
+                        <Text text="{Cafe>Status}" wrapping="false"/>
                     </t:template>
                 </t:Column>
                 

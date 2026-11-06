@@ -12,6 +12,21 @@ sap.ui.define([
         onInit() {
             this.getRouter().getRoute("Purchase");
 
+            let StoreNameSet = [
+                                {Store : "강남점"},
+                                {Store : "대구전"},
+                                {Store : "대전점"},
+                                {Store : "부산점"},
+                                {Store : "성남점"},
+                                {Store : "성수점"},
+                                {Store : "수원점"},
+                                {Store : "전주점"},
+                                {Store : "제주점"},
+                                {Store : "춘천점"}
+                               ],
+                oStoreModel = new JSONModel(StoreNameSet);
+            this.getView().setModel(oStoreModel, "Store");
+
             this.getView().setModel(new JSONModel("/model/Data.json"),"Cafe");
         },
 
@@ -21,7 +36,49 @@ sap.ui.define([
 
         searchPurchase: function()
         {
+            
+            let oBinding     = this.getView().byId("purchasePage").getBinding("rows"),
+                oFilter      = null,
+                aFilter      = [],
+                vStorename   = this.getView().byId("cbStoreName").getValue(),
+                vMaterialName= this.getView().byId("cbMaterialName").getValue(),
+                vStatus      = this.getView().byId("cbStatus").getValue();
+                
+            if (vStorename != "") 
+            {
+                oFilter = new Filter({                                                
+                    path     : "Storename",
+                    operator : FilterOperator.Contains,                             
+                    value1   : vStorename                                          
+                });
 
+                aFilter.push(oFilter);
+            };
+
+            if(vMaterialName != "")
+            {
+                oFilter = new Filter({                                              
+                    path     : "Matname",
+                    operator : FilterOperator.Contains,                              
+                    value1   : vMaterialName                                                
+                });
+
+                aFilter.push(oFilter);
+
+            };
+
+            if(vStatus != "")
+            {
+                oFilter = new Filter({                                              
+                    path     : "Status",
+                    operator : FilterOperator.Contains,                              
+                    value1   : vStatus                                                
+                });
+
+                aFilter.push(oFilter);
+            };
+
+            oBinding.filter(aFilter);
         }
 
         
