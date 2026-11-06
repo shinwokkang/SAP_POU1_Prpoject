@@ -3,7 +3,7 @@
     xmlns:core="sap.ui.core"
     xmlns:t="sap.ui.table"
     xmlns="sap.m">
-    <Page id="Store_page" title="{i18n>title}">
+    
     <VBox>
         <HBox alignItems = "Center" 
               class="sapUiSmallMargin">
@@ -97,5 +97,5 @@
 
     </VBox>
 
-    </Page>
+    
 </mvc:View>
