@@ -1,6 +1,7 @@
 <mvc:View controllerName="code2.fiori.pou.pou1project.controller.Stock"
     xmlns:t="sap.ui.table"
     xmlns:u="sap.ui.unified"
+    xmlns:core="sap.ui.core"
     xmlns:mvc="sap.ui.core.mvc"
     xmlns="sap.m">
     <Page id="Stock_page" title="{i18n>title}">
@@ -13,12 +14,33 @@
             <t:extension>
                 <OverflowToolbar  style="Clear">
                 <Label text="지점" design="Bold"/>
-                <ComboBox id="IStore" width="8rem" placeholder="전체"/>
-                <ToolbarSpacer width="3rem"/>
+                <ComboBox 
+                        id="IStore" 
+                        items="{CAFE>/StoreSet}"
+                        width="8rem"
+                        placeholder="전체">
+                    <core:Item 
+                         key="{CAFE>Storeid}" 
+                         text="{CAFE>Storename}"/>
+                </ComboBox>
+
                 <Label text="원재료명" design="Bold"/>
-                <ComboBox id="IMatnr" width="8rem" placeholder="전체"/>
+
+                <ComboBox id="IMatnr" 
+                          items="{CAFE>/StockSet}"
+                          width="8rem"
+                          placeholder="전체">
+
+                    <core:Item 
+                        key="{CAFE>Matnr}" 
+                        text="{CAFE>Matname}"/>
+                </ComboBox>
+
                 <ToolbarSpacer width="3rem"/>
                 
+                <Button
+                        text="조회"
+                        press="onSearch"/>
                 </OverflowToolbar>
 
             </t:extension>

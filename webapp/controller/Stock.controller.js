@@ -22,11 +22,37 @@ sap.ui.define([
 
         onSearch:function()
         {
-            let oBinding = this.getView().byId("CafeSet").getBinding("rows"),
+            let oBinding = this.getView().byId("StockSet").getBinding("rows"),
                 oFilter = null,
                 aFilter = [],
-                vStore = this.getView().byId("IStore").getSelectedKey();
+                vStore = this.getView().byId("IStore").getSelectedKey(),
                 vMatnr = this.getView().byId("IMatnr").getSelectedKey();
+
+            if(vStore != "")
+            {
+                 oFilter = new Filter({
+                     path : "Storeid",
+                     operator: FilterOperator.EQ,
+                     value1: vStore
+                 });
+
+                 aFilter.push(oFilter);
+
+            };
+
+            if(vMatnr != "")
+            {
+                 oFilter = new Filter({
+                     path : "Matnr",
+                     operator: FilterOperator.EQ,
+                     value1: vMatnr
+                 });
+
+                 aFilter.push(oFilter);
+
+            };
+            
+            oBinding.filter(aFilter);
         }
     });
 });
