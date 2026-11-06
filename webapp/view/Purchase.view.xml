@@ -105,13 +105,16 @@
                 </t:Column>
                 
                 <t:Column width="10rem"           >
-                    <Label text="발주수량 및 단위" />
+                    <Label text="발주수량" />
                     <t:template>
-                        <Text text="{
-                              parts: [{path: 'Cafe>Poqty'}, {path: 'Cafe>Unit'}],
-                              type: 'sap.ui.model.type.Unit',
-                              formatOptions: {showMeasure: true}
-                            }" wrapping="false" />
+                        <Text text="{Cafe>Poqty}" wrapping="false"/>
+                    </t:template>
+                </t:Column>
+
+                <t:Column width="10rem"           >
+                    <Label text="단위" />
+                    <t:template>
+                        <Text text="{Cafe>Unit}" wrapping="false"/>
                     </t:template>
                 </t:Column>
 
