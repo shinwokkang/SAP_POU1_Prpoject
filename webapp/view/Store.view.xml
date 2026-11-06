@@ -2,6 +2,19 @@
     xmlns:mvc="sap.ui.core.mvc"
     xmlns="sap.m">
     <Page id="Store_page" title="{i18n>title}">
-        <Text text="Store!" />
+        <Text text="발주 관리"                 />
+        <HBox>
+            <VBox >
+                <Label text="지점"/>
+                <Input id="store"/>
+            </VBox>
+
+            <VBox >
+                <Label text="처리상태"  />
+                <Input id="storeState" />
+            </VBox>
+
+            <Button text="조회" icon="sap-icon://search" press="storeSearch"/>
+        </HBox>
     </Page>
 </mvc:View>
