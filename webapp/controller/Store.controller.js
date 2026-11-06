@@ -73,23 +73,38 @@ sap.ui.define([
 
             if (vState === "운영중")
                 {
-                    MessageBox.confirm("휴점 상태로 변경됩니다.",{
+                    MessageBox.confirm("휴점 상태로 변경하시겠습니까? ",{
                             title : "운영 상태 변경",
                             actions : ["예", "아니오"],
-                            emphasizedAction : "예"
+                            emphasizedAction : "예",
+
+                            onClose : function(Aclose)
+                            {
+                                if(Aclose === "예")
+                                {
+                                    vButton.setType("Reject") 
+                                    vButton.setText("휴점중")
+                                }
+                            }
                         })
-                    vButton.setType("Reject") 
-                    vButton.setText("휴점중")
                 }
             else
                 {
-                    MessageBox.confirm("운영 상태로 변경됩니다.",{
+                    MessageBox.confirm("운영 상태로 변경하시겠습니까? ",{
                             title : "운영 상태 변경",
                             actions : ["예", "아니오"],
-                            emphasizedAction : "예"
+                            emphasizedAction : "예",
+
+                            onClose : function(Aclose)
+                            {
+                                if(Aclose === "예")
+                                {
+                                    vButton.setType("Accept") 
+                                    vButton.setText("운영중")
+                                }
+                            }
+                        
                         })
-                    vButton.setType("Accept")
-                    vButton.setText("운영중")
                 };
         }
     });
