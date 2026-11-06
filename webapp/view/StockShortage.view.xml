@@ -1,7 +1,58 @@
 <mvc:View controllerName="code2.fiori.pou.pou1project.controller.StockShortage"
+    xmlns:t="sap.ui.table"
     xmlns:mvc="sap.ui.core.mvc"
     xmlns="sap.m">
-    <Page id="StockShortage_page" title="{i18n>title}">
-        <Text text="StockShortage!" />
-    </Page>
+
+       <!-- 건수는 컨트롤러 onRowsUpdated에서 setText로 채운다 -->
+        <MessageStrip id="shortageStrip"
+                      text="최소 재고 기준 이하인 품목입니다."
+                      type="Information"
+                      showIcon="true"
+                      customIcon="sap-icon://alert"
+                      class="sapUiResponsiveMargin"/>
+
+        <t:Table id="shortageTable"
+                 rows="{CSET>/StockSet}"
+                 rowsUpdated=".onRowsUpdated"
+                 selectionMode="None"
+                 class="sapUiResponsiveMargin">
+            <t:columns>
+                <t:Column>
+                    <Label text="지점명"/>
+                    <t:template>
+                        <Text text="{CSET>Storename}" wrapping="false"/>
+                    </t:template>
+                </t:Column>
+
+                <t:Column>
+                    <Label text="원재료명"/>
+                    <t:template>
+                        <Text text="{CSET>Matname}" wrapping="false"/>
+                    </t:template>
+                </t:Column>
+
+                <t:Column width="7rem" hAlign="End">
+                    <Label text="현재 재고"/>
+                    <t:template>
+                        <Text text="{CSET>Quantity}"/>
+                    </t:template>
+                </t:Column>
+
+                <t:Column width="7rem" hAlign="End">
+                    <Label text="최소 재고"/>
+                    <t:template>
+                        <Text text="{CSET>Minqty}"/>
+                    </t:template>
+                </t:Column>
+
+                <t:Column width="8rem" hAlign="Center">
+                    <Label text="부족 수량"/>
+                    <t:template>
+                        <ObjectStatus text="{ parts : ['CSET>Quantity', 'CSET>Minqty'], formatter : '.formatShortText' }"
+                                      state="{ parts : ['CSET>Quantity', 'CSET>Minqty'], formatter : '.formatShortState' }"
+                                      inverted="true"/>
+                    </t:template>
+                </t:Column>
+            </t:columns>
+        </t:Table>
 </mvc:View>

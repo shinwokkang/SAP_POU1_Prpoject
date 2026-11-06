@@ -7,71 +7,93 @@
         <Title text = "발주 관리" titleStyle = "H3"/>
         <Text text="   "    />
         <t:Table
-            rows="{/ProductCollection}"
+            id="purchasePage"
+            rows="{Cafe>/PurchaseSet}"
             selectionMode="Single"
+            selectionBehavior="RowOnly"
             paste="onPaste"
             ariaLabelledBy="title">
             <t:extension>
-                <OverflowToolbar style="Clear">
-                    <VBox>
-                        
-                        <HBox>
-                            <Label text = "지점명"
-                                width = "10rem"     />
-                            <ToolbarSpacer width="2rem"/>
-                            <Label text = "원재료명"
-                                width = "10rem"     />
-                            <ToolbarSpacer width="2rem"/>
-                            <Label text = "발주상태"
-                                width = "10rem"     />
-                                
-                        </HBox>
-                        <HBox>
-                            <Input id = "iStoreName"
-                                width = "10rem"
-                                showClearIcon = "true" />
-                            <ToolbarSpacer width="2rem"/>
+                <VBox>
+                    
+                    <HBox>
+                        <Label text = "지점명"
+                            width = "10rem"        />
+                        <ToolbarSpacer width="2rem"/>
+                        <Label text = "원재료명"
+                            width = "10rem"        />
+                        <ToolbarSpacer width="2rem"/>
+                        <Label text = "발주상태"
+                            width = "10rem"        />
+                            
+                    </HBox>
+                    <HBox>
+                        <Input id = "iStoreName"
+                            width = "10rem"
+                            showClearIcon = "true" />
+                        <ToolbarSpacer width="2rem"/>
 
-                            <Input id = "iMaterialName"
-                                width = "10rem"
-                                showClearIcon = "true" />
-                            <ToolbarSpacer width="2rem"/>
+                        <Input id = "iMaterialName"
+                            width = "10rem"
+                            showClearIcon = "true" />
+                        <ToolbarSpacer width="2rem"/>
 
-                            <Input id = "iStatus"
-                                width = "10rem"
-                                showClearIcon = "true" />
-                            <ToolbarSpacer width="4rem"/>
+                        <Input id = "iStatus"
+                            width = "10rem"
+                            showClearIcon = "true" />
+                        <ToolbarSpacer width="4rem"/>
 
-                            <Button text="Search" icon= "sap-icon://search" press="searchPurchase"/>
-                        </HBox>
-                    </VBox>
-                </OverflowToolbar>
+                        <Button text="Search" icon= "sap-icon://search" press="searchPurchase"/>
+                    </HBox>
+                </VBox>
             </t:extension>
             <t:columns>
-                <t:Column width="11rem">
-                    <Label text="Product Name" />
+                <t:Column width="10rem">
+                    <Label text="발주번호" />
                     <t:template>
-                        <Text text="{Name}" wrapping="false" />
+                        <Text text="{Cafe>Pono}" wrapping="false" />
                     </t:template>
                 </t:Column>
                 
-                <t:Column width="9rem">
-                    <Label text="Price" />
+                <t:Column width="10rem">
+                    <Label text="지점" />
                     <t:template>
-                        <u:Currency value="{Price}" currency="{CurrencyCode}"/>
+                        <Text text="{Cafe>Storename}" wrapping="false"/>
+                    </t:template>
+                </t:Column>
+
+                <t:Column width="10rem">
+                    <Label text="원재료" />
+                    <t:template>
+                        <Text text="{Cafe>Matname}" wrapping="false"/>
                     </t:template>
                 </t:Column>
                
-                <t:Column width="11rem" hAlign="Center">
-                    <Label text="Delivery Date" />
+                <t:Column width="10rem" hAlign="Center">
+                    <Label text="발주날짜" />
                     <t:template>
                         <DatePicker value="{
-                            path: 'DeliveryDate',
+                            path: 'Cafe>Podate',
                             type: 'sap.ui.model.type.Date',
                             formatOptions: {source: {pattern: 'timestamp'}}
                         }"/>
                     </t:template>
                 </t:Column>
+                
+                <t:Column width="10rem">
+                    <Label text="발주수량 및 단위" />
+                    <t:template>
+                        <Text text="{Cafe>Poqty}" wrapping="false" />
+                    </t:template>
+                </t:Column>
+
+                <t:Column width="10rem">
+                    <Label text="발주상태" />
+                    <t:template>
+                        <Text text="{Cafe>Status}" wrapping="false" />
+                    </t:template>
+                </t:Column>
+                
             </t:columns>
         </t:Table>
     </Page>
