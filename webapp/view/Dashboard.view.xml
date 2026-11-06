@@ -9,36 +9,37 @@
        <OverflowToolbar width="100%" design="Transparent" >
     <Label text="대시보드" level="H4" design="Bold" />
     <ToolbarSpacer  />
-    <HBox>
+    <!-- 달력 -->
+    <HBox> 
     <Label text="조회기간"  labelFor="calender2" width="5em" design="Bold"/>
     <DatePicker id="calender2" width="10rem" placeholder="2026-11-05" displayFormat="yyyy.MM.dd"
         valueFormat="yyyy-MM-dd" press="onClcick"/>
     <DatePicker id="calender1" width="10rem" placeholder="2026-11-15" displayFormat="yyyy.MM.dd"
         valueFormat="yyyy-MM-dd" press="onClcick2"/>
     </HBox>
+    <!-- 달력 끝 -->
+    <!-- 막대 차트 -->
     </OverflowToolbar>
+    <Panel headerText="지점별 매출" width="auto" class="chartCard sapUiSmallMargin">
     <HBox>
     <VBox >
         <Text text="전체 매출" />
         <Title text="₩ 29,713,100" />
     </VBox>
     </HBox>
-       <viz:VizFrame id="idVizFrame"
-    height="320px"
-    width="100%"
-    vizType="column"
-    vizProperties="{title: {visible: true, text: '총매출'}}">
+       <viz:VizFrame id="idVizFrame" height="320px" width="100%" vizType="column"
+                     vizProperties="{title: {visible: true, text: '지점별 총 매출'}}">
        <viz:dataset>
-              <viz.data:FlattenedDataset data="{CafeSet>/SalesSummarySet}">
+              <viz.data:FlattenedDataset data="{/SalesSummarySet}">
               <viz.data:dimensions>
             <viz.data:DimensionDefinition
                     name="지점"
-                    value="{CafeSet>Storename}" />
+                    value="{Storename}" />
             </viz.data:dimensions>
             <viz.data:measures>
                 <viz.data:MeasureDefinition
                     name="매출금액"
-                    value="{CafeSet>Salesamt}" />
+                    value="{Salesamt}" />
                 </viz.data:measures>
                 </viz.data:FlattenedDataset>
                 </viz:dataset>
@@ -46,8 +47,52 @@
                <viz.feeds:FeedItem uid="valueAxis" type="Measure" values="매출금액" />
                <viz.feeds:FeedItem uid="categoryAxis" type="Dimension" values="지점" />
     </viz:feeds>
-</viz:VizFrame>
+    </viz:VizFrame>
+    </Panel>
+    <!-- 막대차트 끝 -->
 
+    <!-- 새로운 도넛 차트  -->
+    <Panel headerText="메뉴별 매출" width="auto" class="chartCard sapUiSmallMargin">
+    <viz:VizFrame id="menuDonut" width="100%" height="360px" vizType="donut"
+        vizProperties="{
+            title: {
+                visible: true,
+                text: '메뉴별 매출 비중'
+            },
+            plotArea: {
+                dataLabel: {
+                    visible: true,
+                    type: 'percentage'
+                }
+            },
+            legend: {
+                visible: true
+            }
+        }">
+
+        <viz:dataset>
+            <viz.data:FlattenedDataset data="{/SalesSet}">
+                <viz.data:dimensions>
+                    <viz.data:DimensionDefinition
+                        name="메뉴"
+                        value="{Menuname}" />
+                </viz.data:dimensions>
+
+                <viz.data:measures>
+                    <viz.data:MeasureDefinition
+                        name="매출금액"
+                        value="{Amount}" />
+                </viz.data:measures>
+            </viz.data:FlattenedDataset>
+        </viz:dataset>
+
+        <viz:feeds>
+            <viz.feeds:FeedItem uid="size" type="Measure" values="매출금액" />
+            <viz.feeds:FeedItem uid="color" type="Dimension" values="메뉴" />
+        </viz:feeds>
+    </viz:VizFrame>
+</Panel>
+<!-- 도넛차트 끝 -->
 
 
     </Page>
