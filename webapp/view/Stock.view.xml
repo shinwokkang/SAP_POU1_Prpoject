@@ -7,7 +7,7 @@
     <Page id="Stock_page" title="{i18n>title}">
         <t:Table
             id="StockSet"
-            rows="{CAFE>/StockSet}"
+            rows="{/StockSet}"
             selectionMode="Single"
             selectionBehavior="RowOnly">
 
@@ -16,24 +16,24 @@
                 <Label text="지점" design="Bold"/>
                 <ComboBox 
                         id="IStore" 
-                        items="{CAFE>/StoreSet}"
+                        items="{/StoreSet}"
                         width="8rem"
                         placeholder="전체">
                     <core:Item 
-                         key="{CAFE>Storeid}" 
-                         text="{CAFE>Storename}"/>
+                         key="{Storeid}" 
+                         text="{Storename}"/>
                 </ComboBox>
 
                 <Label text="원재료명" design="Bold"/>
 
                 <ComboBox id="IMatnr" 
-                          items="{CAFE>/StockSet}"
+                          items="{MSET>/MaterialSet}"
                           width="8rem"
                           placeholder="전체">
 
                     <core:Item 
-                        key="{CAFE>Matnr}" 
-                        text="{CAFE>Matname}"/>
+                        key="{MSET>Matnr}" 
+                        text="{MSET>Matname}"/>
                 </ComboBox>
 
                 <ToolbarSpacer width="3rem"/>
@@ -49,49 +49,49 @@
                 <t:Column width="8rem">
                     <Label text="지점명"/>
                     <t:template>
-                        <Text text="{CAFE>Storename}" wrapping="false"/>
+                        <Text text="{Storename}" wrapping="false"/>
                     </t:template>
                 </t:Column>
 
                 <t:Column width="8rem">
                     <Label text="원재료코드"/>
                     <t:template>
-                        <Text text="{CAFE>Matnr}" wrapping="false"/>
+                        <Text text="{Matnr}" wrapping="false"/>
                     </t:template>
                 </t:Column>
 
                 <t:Column width="8rem">
                     <Label text="원재료명"/>
                     <t:template>
-                        <Text text="{CAFE>Matname}" wrapping="false"/>
+                        <Text text="{Matname}" wrapping="false"/>
                     </t:template>
                 </t:Column>
 
                 <t:Column width="8rem">
                     <Label text="현재재고"/>
                     <t:template>
-                        <Text text="{CAFE>Quantity}" wrapping="false"/>
+                        <Text text="{Quantity}" wrapping="false"/>
                     </t:template>
                 </t:Column>
 
                 <t:Column width="8rem">
                     <Label text="최소재고"/>
                     <t:template>
-                        <Text text="{CAFE>Minqty}" wrapping="false"/>
+                        <Text text="{Minqty}" wrapping="false"/>
                     </t:template>
                 </t:Column>
 
                 <t:Column width="8rem">
                     <Label text="단위"/>
                     <t:template>
-                        <Text text="{CAFE>Unit}" wrapping="false"/>
+                        <Text text="{Unit}" wrapping="false"/>
                     </t:template>
                 </t:Column>
 
                 <t:Column width="8rem">
                     <Label text="재고상태"/>
                     <t:template>
-                        <Text text="{CAFE>Status}" wrapping="false"/>
+                        <Text text="{Status}" wrapping="false"/>
                     </t:template>
                 </t:Column>
 
