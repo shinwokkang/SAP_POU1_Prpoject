@@ -1,28 +1,72 @@
 <mvc:View controllerName="code2.fiori.pou.pou1project.controller.Sales"
     xmlns:mvc="sap.ui.core.mvc"
+    xmlns:core="sap.ui.core"
 	xmlns:u="sap.ui.unified"
     xmlns:t="sap.ui.table"
     xmlns="sap.m">
     <Page id="Sales_page" title="{i18n>title}">
+         <VBox>
+                <Title text="매출 조회" titleStyle="H3"/>
+                <Text text="전국 카페 매출을 조회합니다"/>
+            </VBox>
             <t:Table
             id="Sales"
-            rows="{CSET>/SalesSet}" 
+            rows="{/SalesSet}" 
             selectionMode="None" 
             selectionBehavior="Row" 
             paste="onPaste"
             ariaLabelledBy="title">
             <t:extension>
                 <OverflowToolbar style="Clear">
-                    <Label text="날짜" design="Bold"/>
-                    <Input id="IDate" width="8em" placeholder="날짜"/> 
+                    <Label text="조회기간" design="Bold"/>
+                    <!-- <DatePicker
+					id="IDate"
+                    width="8rem"
+					placeholder="yyyy-MM-dd"
+					change="handleChange"
+                    displayFormat="yyyy-MM-dd"
+					valueFormat="yyyy-MM-dd"/> -->
+
+                    <DateRangeSelection
+                    id="IDate"
+                    width = "15rem" 
+                    value= "{
+                        'type': 'sap.ui.model.type.DateInterval',
+                        'formatOptions': {
+                            'pattern': 'yyyy-MM-dd'
+                        },
+                        'parts': [
+                            {
+                                'type': 'sap.ui.model.type.Date',
+                                'path': '/start'
+                            },
+                            {
+                                'type': 'sap.ui.model.type.Date',
+                                'path': '/end'
+                            }
+                        ]
+                    }"
+                    change="handleChange"/>
+
                     <ToolbarSpacer width = "3rem" />                   
                     <Label text="지점" design="Bold"/>
-                    <Input id="IStorename" width="8em" placeholder="지점"/>
+
+                    <ComboBox id="IStorename" width="8rem" placeholder="지점 선택" 
+                              showClearIcon = "true"
+                              items="{path  : 'StoreList>/',
+                                      sorter: {path: 'Store'}}">
+                        <core:Item key="{StoreList>Store}" text="{StoreList>Store}"/>
+                    </ComboBox>
+
                     <ToolbarSpacer width = "3rem" />
                     <Label text="메뉴" design="Bold"/>
-                    <Input id="IMenuname" width="8em" placeholder="메뉴"/>
 
-                    <Button text="Search" icon="sap-icon://search" press="onSearch"/>
+                    <ComboBox id="IMenuname" width="8rem" placeholder="메뉴 선택" showClearIcon = "true"
+                              items="{path  : 'MenuList>/'}">
+                        <core:Item key="{MenuList>Menu}" text="{MenuList>Menu}"/>
+                    </ComboBox>
+
+                    <Button text="조회" icon="sap-icon://search" press="onSearch"/>
 
                 </OverflowToolbar>
             </t:extension>
@@ -30,31 +74,31 @@
                 <t:Column width="20%">
                     <Label text="날짜" />
                     <t:template>
-                        <Text text="{CSET>Salesdate}" wrapping="false" />
+                        <Text text="{Salesdate}" wrapping="false" />
                     </t:template>
                 </t:Column>
                 <t:Column width="20%">
                     <Label text="지점" />
                     <t:template>
-                        <Text text="{CSET>Storename}" wrapping="false" /> 
+                        <Text text="{Storename}" wrapping="false" /> 
                     </t:template>
                 </t:Column>
                 <t:Column width="20%">
                     <Label text="메뉴" />
                     <t:template>
-                        <Text text="{CSET>Menuname}" wrapping="false" />
+                        <Text text="{Menuname}" wrapping="false" />
                     </t:template>
                 </t:Column>
                 <t:Column width="20%">
                     <Label text="판매량" />
                     <t:template>
-                        <Text text="{CSET>Quantity}" wrapping="false" />
+                        <Text text="{Quantity}" wrapping="false" />
                     </t:template>
                 </t:Column>
                 <t:Column width="20%">
                     <Label text="금액" />
                     <t:template>
-		                    <u:Currency value="{CSET>Amount}" currency="{Currency}"/> 
+		                    <u:Currency value="{Amount}" currency="KRW"/> 
                     </t:template>
                 </t:Column>
             </t:columns>					
