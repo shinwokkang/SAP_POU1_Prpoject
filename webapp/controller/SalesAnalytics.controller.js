@@ -1,8 +1,8 @@
 sap.ui.define([
-    "sap/ui/core/mvc/Controller",          // 컨트롤러 기본 클래스
+    "sap/ui/core/mvc/Controller",          
     "sap/ui/model/json/JSONModel",
-    "sap/ui/model/Filter",                 // 필터 객체
-    "sap/ui/model/FilterOperator"          // 필터 비교 방법 (EQ 등)
+    "sap/ui/model/Filter",                
+    "sap/ui/model/FilterOperator"          
 ], (Controller, JSONModel, Filter, FilterOperator) => {
     "use strict";
 
@@ -31,13 +31,13 @@ sap.ui.define([
                 aStore = [],                                             // 차트 1용 배열
                 aMenu  = [];                                             // 차트 2용 배열
 
-            // 1. 판매 내역을 한 줄씩 보면서 조건에 맞는 것만 합산
+            // 판매 내역을 한 줄씩 보면서 조건에 맞는 것만 합산
             for (let oSale of aSales)
             {
                 if (oSale.Salesdate < vFrom || oSale.Salesdate > vTo)
                     continue;
 
-                // 1-2. 지점을 골랐으면, 고른 지점인지 확인 (matchNum 방식)
+                // 지점을 골랐으면, 고른 지점인지 확인 (matchNum 방식)
                 if (aKeys.length > 0)
                 {
                     let vMatch = false;
@@ -52,7 +52,7 @@ sap.ui.define([
                         continue;
                 }
 
-                // 1-3. 지점별 매출, 메뉴별 판매량 누적 (처음 나온 이름이면 0부터)
+                //  지점별 매출, 메뉴별 판매량 누적 (처음 나온 이름이면 0부터)
                 if (oStore[oSale.Storename] == undefined) oStore[oSale.Storename] = 0;
                 if (oMenu[oSale.Menuname]   == undefined) oMenu[oSale.Menuname]   = 0;
 
@@ -60,14 +60,14 @@ sap.ui.define([
                 oMenu[oSale.Menuname]   += oSale.Quantity;
             }
 
-            // 2. { 이름 : 합계 } 객체 → 차트용 배열
+            //  { 이름 : 합계 } 객체 → 차트용 배열
             for (let vName in oStore)
                 aStore.push({ Storename : vName, Salesamt : oStore[vName] });
 
             for (let vName in oMenu)
                 aMenu.push({ Menuname : vName, Soldqty : oMenu[vName] });
 
-            // 3. 계산 결과를 "Chart" 이름의 모델로 View에 연결 → 차트 자동 갱신
+            // 계산 결과를 "Chart" 이름의 모델로 View에 연결 → 차트 자동 갱신
             this.getView().setModel(new JSONModel({
                 SalesSummarySet : aStore,
                 MenuSet  : aMenu
@@ -121,7 +121,7 @@ sap.ui.define([
 
         onMenuFilter : function()
         {
-            // 1. 선택한 메뉴 ID 목록 (ex: ["M001", "M007"])
+            // 선택한 메뉴 ID 목록 (ex: ["M001", "M007"])
             let aKeys    = this.byId("menuFilter").getSelectedKeys(),
 
                 oBinding = this.byId("menuQtyChart").getDataset().getBinding("data"),
