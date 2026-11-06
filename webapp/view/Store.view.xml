@@ -3,7 +3,7 @@
     xmlns:core="sap.ui.core"
     xmlns:t="sap.ui.table"
     xmlns="sap.m">
-    <Page id="Store_page" title="{i18n>title}">
+    
     <VBox>
         <HBox alignItems = "Center" 
               class="sapUiSmallMargin">
@@ -36,7 +36,7 @@
 
         <t:Table
             id = "StoreSet"
-            rows="{Store>/StoreSet}"
+            rows="{/StoreSet}"
             selectionMode="MultiToggle"
             paste="onPaste"
             ariaLabelledBy="title">
@@ -50,42 +50,45 @@
                 <t:Column width="11rem">
                     <Label text="지점 코드" />
                     <t:template>
-                        <Text text="{Store>Storeid}" wrapping="false" />              
+                        <Text text="{Storeid}" wrapping="false" />              
                     </t:template>
                 </t:Column>
 
                 <t:Column width="11rem">
                     <Label text="지점명" />
                     <t:template>
-                        <Text text="{Store>Storename}" wrapping="false" />
+                        <Text text="{Storename}" wrapping="false" />
                     </t:template>
                 </t:Column>
 
                 <t:Column width="11rem">
                     <Label text="지역" />
                     <t:template>
-                        <Text text="{Store>Region}" wrapping="false" />
+                        <Text text="{Region}" wrapping="false" />
                     </t:template>
                 </t:Column>
 
                 <t:Column width="17rem">
                     <Label text="주소" />
                     <t:template>
-                        <Text text="{Store>Address}" wrapping="false" />
+                        <Text text="{Address}" wrapping="false" />
                     </t:template>
                 </t:Column>
 
                 <t:Column width="11rem">
                     <Label text="담당자" />
                     <t:template>
-                        <Text text="{Store>Manager}" wrapping="false" />
+                        <Text text="{Manager}" wrapping="false" />
                     </t:template>
                 </t:Column>
 
                 <t:Column width="11rem">
                     <Label text="운영상태" />
                     <t:template>
-                        <Text text="{Store>Status}" wrapping="false" />
+                        <Button text = "{Status}"
+                                icon = "sap-icon://retail-store"
+                                type = "{= ${Status} === '운영중' ? 'Accept' : 'Reject' }"
+                                press = "onState" />
                     </t:template>
                 </t:Column>
                 
@@ -94,5 +97,5 @@
 
     </VBox>
 
-    </Page>
+    
 </mvc:View>
