@@ -1,74 +1,50 @@
 sap.ui.define([
     "sap/ui/core/mvc/Controller",
-    "sap/ui/model/json/JSONModel"
-], (Controller, JSONModel) => {
+    "sap/ui/model/Filter",
+    "sap/ui/model/FilterOperator"
+], (Controller, Filter, FilterOperator) => {
     "use strict";
 
     return Controller.extend("code2.fiori.pou.pou1project.controller.StockShortage", {
-        onInit()
+       onInit()
         {
-            this.getRouter().getRoute("StockShortage");
+            // Data.json(manifest 기본 모델)을 "CSET" 이름으로 화면에 연결
+            this.getView().setModel(this.getOwnerComponent().getModel(), "CSET");
 
-            // ① 공통 데이터(CafeSet.json)를 "CSET" 이름으로 화면에 연결
-            //    (1번이 Component에 CSET를 등록하면 이 두 줄은 바꾼다)
-            let oModel = new JSONModel("/data/CafeSet.json");
-            this.getView().setModel(oModel, "CSET");
+            // 표에서 Status가 "부족"인 것만 남긴다 (Menu / Store 화면과 같은 방식)
+            let oBinding = this.byId("shortageTable").getBinding("rows"),
+                oFilter  = new Filter({
+                    path     : "Status",
+                    operator : FilterOperator.EQ,
+                    value1   : "부족"
+                });
 
-            // ② 파일 읽기가 "끝난 뒤에" 부족 목록을 만든다
-            oModel.dataLoaded().then(() => {
-                this.makeShortageList();
-            });
+            oBinding.filter([oFilter]);
         },
 
-        // ③ StockSet에서 부족 재고만 골라 새 배열을 만든다
-        makeShortageList : function ()
+        // 표가 다시 그려질 때마다 "총 n건" 문구를 바꾼다 (뷰의 rowsUpdated 이벤트)
+        onRowsUpdated : function ()
         {
-            // let lt_stock    = this.getView().getModel("CSET").getProperty("/StockSet"), // [ {}, {}, ... ] 60건
-            let lt_stock    = this.getView().getModel("CEST").oData.StockSet;
-                lt_shortage = [];                                                       // 부족 품목을 담을 빈 배열
+            let lv_count = this.byId("shortageTable").getBinding("rows").getLength();
 
-            for (const ls_stock of lt_stock) {
+            this.byId("shortageStrip").setText("최소 재고 기준 이하인 품목입니다. (총 " + lv_count + "건)");
+        },
 
-                // 판단 기준 : 현재 재고 <= 최소 재고 → 부족
-                if (ls_stock.Quantity <= ls_stock.Minqty) {
-
-                    let lv_shortqty = ls_stock.Minqty - ls_stock.Quantity, // 부족 수량
-                        lv_text     = String(lv_shortqty),                 // 표에 보여줄 글자
-                        lv_state    = "Warning";                           // 기본 색 : 주황
-
-                    if (ls_stock.Quantity === 0) {          // 재고 0 → 품절
-                        lv_state = "Error";                 // 빨강
-                    } else if (lv_shortqty === 0) {         // 현재 = 최소 → 기준 도달
-                        lv_text  = "기준 도달";
-                        lv_state = "Information";           // 파랑
-                    }
-
-                    let ls_shortage = {
-                        Storeid   : ls_stock.Storeid,       // 나중에 8번 발주 화면과 연결할 때 사용
-                        Storename : ls_stock.Storename,
-                        Matnr     : ls_stock.Matnr,
-                        Matname   : ls_stock.Matname,
-                        Quantity  : ls_stock.Quantity,
-                        Minqty    : ls_stock.Minqty,
-                        Unit      : ls_stock.Unit,
-                        Shortqty  : lv_shortqty,
-                        ShortText : lv_text,
-                        State     : lv_state
-                    };
-                    lt_shortage.push(ls_shortage);          // [ {}, {}, ... ]
-                }
+        // 부족 수량 칸의 글자
+        formatShortText : function (iQuantity, iMinqty)
+        {
+            if (iQuantity === iMinqty) {
+                return "기준 도달";
             }
-
-            // ④ 결과를 "Shortage" 모델로 화면에 연결
-            let oShortageModel = new JSONModel({
-                gt_shortage : lt_shortage,
-                gv_count    : lt_shortage.length
-            });
-            this.getView().setModel(oShortageModel, "Shortage");
+            return iMinqty - iQuantity;
         },
 
-        getRouter:function(){
-            return sap.ui.core.UIComponent.getRouterFor(this);
+        // ⑤ 부족 수량 칸의 색
+        formatShortState : function (iQuantity, iMinqty)
+        {
+            if (iQuantity === 0)       { return "Error"; }         // 품절 → 빨강
+            if (iQuantity === iMinqty) { return "Information"; }   // 기준 도달 → 파랑
+            return "Warning";                                      // 부족 → 주황
         }
     });
 });
