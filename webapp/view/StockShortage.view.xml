@@ -1,5 +1,6 @@
 <mvc:View controllerName="code2.fiori.pou.pou1project.controller.StockShortage"
     xmlns:t="sap.ui.table"
+    xmlns:core="sap.ui.core"
     xmlns:mvc="sap.ui.core.mvc"
     xmlns="sap.m">
 
@@ -16,6 +17,30 @@
                  rowsUpdated=".onRowsUpdated"
                  selectionMode="None"
                  class="sapUiResponsiveMargin">
+                
+                <t:extension>
+                <OverflowToolbar style="Clear">
+                    <Label text="지점" design="Bold"/>
+
+                    <ComboBox id="IStore" width="8rem" placeholder="지점 선택" 
+                              showClearIcon = "true"
+                              items="{path  : 'StoreList>/',
+                                      sorter: {path: 'Store'}}">
+                        <core:Item key="{StoreList>Store}" text="{StoreList>Store}"/>
+                    </ComboBox>
+
+                    <Label text="원재료명" design="Bold"/>
+
+                    <ComboBox id="IMat" width="8rem" placeholder="원재료 선택" 
+                              showClearIcon = "true"
+                              items="{path  : 'MatList>/',
+                                      sorter: {path: 'Matname'}}">
+                        <core:Item key="{MatList>Matname}" text="{MatList>Matname}"/>
+                    </ComboBox>
+                     <Button text="조회" icon="sap-icon://search" press="onSearch"/>
+                </OverflowToolbar>
+            </t:extension>
+
             <t:columns>
                 <t:Column>
                     <Label text="지점명"/>
