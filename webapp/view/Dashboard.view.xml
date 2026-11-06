@@ -1,10 +1,11 @@
 <mvc:View controllerName="code2.fiori.pou.pou1project.controller.Dashboard"
     xmlns:mvc="sap.ui.core.mvc"
     xmlns:tnt="sap.tnt"
-    xmlns:m="sap.m"
-    xmlns:mc="sap.suite.ui.microchart"
+    xmlns:viz="sap.viz.ui5.controls"
+    xmlns:viz.data="sap.viz.ui5.data"
+    xmlns:viz.feeds="sap.viz.ui5.controls.common.feeds"
     xmlns="sap.m">
-    <m:Page id="Dashboard_page" title="{i18n>title}">
+    <Page id="Dashboard_page" title="{i18n>title}">
        <OverflowToolbar width="100%" design="Transparent" >
     <Label text="대시보드" level="H4" design="Bold" />
     <ToolbarSpacer  />
@@ -22,35 +23,30 @@
         <Title text="₩ 29,713,100" />
     </VBox>
     </HBox>
-    <m:VBox>
-    <m:GenericTile header="Revenue Dynamics"
-		frameType="OneByOne" press="press">
-		<m:tileContent>
-			<m:TileContent footer="Column chart">
-				<m:content>
-					<mc:ColumnMicroChart size="Responsive">
-						<mc:columns>
-							<mc:ColumnMicroChartData value="65" color="Error" />
-							<mc:ColumnMicroChartData value="90" color="Error" />
-							<mc:ColumnMicroChartData value="75" color="Error" />
-							<mc:ColumnMicroChartData value="95" color="Error" />
-							<mc:ColumnMicroChartData value="100" color="Error" />
-							<mc:ColumnMicroChartData value="90" color="Error" />
-							<mc:ColumnMicroChartData value="80" color="Error" />
-							<mc:ColumnMicroChartData value="35" color="Neutral" />
-							<mc:ColumnMicroChartData value="65" color="Neutral" />
-							<mc:ColumnMicroChartData value="55" color="Neutral" />
-							<mc:ColumnMicroChartData value="60" color="Neutral" />
-							<mc:ColumnMicroChartData value="5" color="Neutral" />
-							<mc:ColumnMicroChartData value="15" color="Neutral" />
-							<mc:olumnMicroChartData value="15" color="Neutral" />
-						</mc:columns>
-					</mc:ColumnMicroChart>
-				</m:content>
-			</m:TileContent>
-		</m:tileContent>
-	</m:GenericTile>
-    </m:VBox>
+       <viz:VizFrame id="idVizFrame"
+    height="320px"
+    width="100%"
+    vizType="column"
+    vizProperties="{title: {visible: true, text: '총매출'}}">
+       <viz:dataset>
+              <viz.data:FlattenedDataset data="{CafeSet>/SalesSummarySet}">
+              <viz.data:dimensions>
+            <viz.data:DimensionDefinition
+                    name="지점"
+                    value="{CafeSet>Storename}" />
+            </viz.data:dimensions>
+            <viz.data:measures>
+                <viz.data:MeasureDefinition
+                    name="매출금액"
+                    value="{CafeSet>Salesamt}" />
+                </viz.data:measures>
+                </viz.data:FlattenedDataset>
+                </viz:dataset>
+           <viz:feeds>
+               <viz.feeds:FeedItem uid="valueAxis" type="Measure" values="매출금액" />
+               <viz.feeds:FeedItem uid="categoryAxis" type="Dimension" values="지점" />
+    </viz:feeds>
+</viz:VizFrame>
 
 
 

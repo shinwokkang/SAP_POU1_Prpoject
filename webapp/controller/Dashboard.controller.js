@@ -8,8 +8,7 @@ sap.ui.define([
         onInit() 
         {
             this.getRouter().getRoute("Dashboard");
-            let oModel= new JSONModel("/data/CafeSet.json");
-            this.getView().setModel(oModel, "CafeSet")
+          
         },
 
         getRouter:function(){

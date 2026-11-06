@@ -1,7 +1,80 @@
 <mvc:View controllerName="code2.fiori.pou.pou1project.controller.Stock"
+    xmlns:t="sap.ui.table"
+    xmlns:u="sap.ui.unified"
     xmlns:mvc="sap.ui.core.mvc"
     xmlns="sap.m">
     <Page id="Stock_page" title="{i18n>title}">
-        <Text text="Stock!" />
+        <t:Table
+            id="StockSet"
+            rows="{CAFE>/StockSet}"
+            selectionMode="Single"
+            selectionBehavior="RowOnly">
+
+            <t:extension>
+                <OverflowToolbar  style="Clear">
+                <Label text="지점" design="Bold"/>
+                <ComboBox id="IStore" width="8rem" placeholder="전체"/>
+                <ToolbarSpacer width="3rem"/>
+                <Label text="원재료명" design="Bold"/>
+                <ComboBox id="IMatnr" width="8rem" placeholder="전체"/>
+                <ToolbarSpacer width="3rem"/>
+                
+                </OverflowToolbar>
+
+            </t:extension>
+
+            <t:columns>
+                <t:Column width="8rem">
+                    <Label text="지점명"/>
+                    <t:template>
+                        <Text text="{CAFE>Storename}" wrapping="false"/>
+                    </t:template>
+                </t:Column>
+
+                <t:Column width="8rem">
+                    <Label text="원재료코드"/>
+                    <t:template>
+                        <Text text="{CAFE>Matnr}" wrapping="false"/>
+                    </t:template>
+                </t:Column>
+
+                <t:Column width="8rem">
+                    <Label text="원재료명"/>
+                    <t:template>
+                        <Text text="{CAFE>Matname}" wrapping="false"/>
+                    </t:template>
+                </t:Column>
+
+                <t:Column width="8rem">
+                    <Label text="현재재고"/>
+                    <t:template>
+                        <Text text="{CAFE>Quantity}" wrapping="false"/>
+                    </t:template>
+                </t:Column>
+
+                <t:Column width="8rem">
+                    <Label text="최소재고"/>
+                    <t:template>
+                        <Text text="{CAFE>Minqty}" wrapping="false"/>
+                    </t:template>
+                </t:Column>
+
+                <t:Column width="8rem">
+                    <Label text="단위"/>
+                    <t:template>
+                        <Text text="{CAFE>Unit}" wrapping="false"/>
+                    </t:template>
+                </t:Column>
+
+                <t:Column width="8rem">
+                    <Label text="재고상태"/>
+                    <t:template>
+                        <Text text="{CAFE>Status}" wrapping="false"/>
+                    </t:template>
+                </t:Column>
+
+            </t:columns>
+        </t:Table>
+
     </Page>
 </mvc:View>
