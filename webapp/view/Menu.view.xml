@@ -12,46 +12,46 @@
         <t:Table
             id="IMenu"
             rows="{CSET>/MenuSet}"
-            selectionMode="MultiToggle"
+            selectionMode="None"
             selectionBehavior="Row"
             paste="onPaste"
             ariaLabelledBy="title">
             <t:extension>
                 <OverflowToolbar style="Clear">
                     <Label text="메뉴명" design="Bold"/>
-                    <Input id="IMenuname" width="8em" placeholder="메뉴명 입력"/> 
-                    <ToolbarSpacer width = "3rem" />                   
+                    <Input id="IInputMenuname" width="8em" placeholder="메뉴명 입력"/> 
+                    <ToolbarSpacer width = "5rem" />                   
                     <Label text="카테고리" design="Bold"/>
-                    <ComboBox id="ICategory" width="14rem" placeholder="카테고리"
+                    <ComboBox id="ICategory" width="8rem" placeholder="카테고리"
                               items="{path : 'Category>/'}">
                     <core:Item key="{Category>Category}" text="{Category>Category}"/>
                     </ComboBox>
-                    <ToolbarSpacer width = "3rem" />
+                    <ToolbarSpacer width = "5rem" />
 
                     <Button text="조회" icon="sap-icon://search" press="onSearch"/>
 
                 </OverflowToolbar>
             </t:extension>
             <t:columns>
-                <t:Column width="11rem">
+                <t:Column width="19rem">
                     <Label text="메뉴코드" />
                     <t:template>
                         <Text text="{CSET>Menuid}" wrapping="false" />
                     </t:template>
                 </t:Column>
-                <t:Column width="11rem">
+                <t:Column width="19rem">
                     <Label text="메뉴명" />
                     <t:template>
                         <Text text="{CSET>Menuname}" wrapping="false" /> 
                     </t:template>
                 </t:Column>
-                <t:Column width="11rem">
+                <t:Column width="19rem">
                     <Label text="카테고리" />
                     <t:template>
                         <Text text="{CSET>Category}" wrapping="false" />
                     </t:template>
                 </t:Column>
-                <t:Column width="11rem">
+                <t:Column width="19rem">
                     <Label text="가격(원)" />
                     <t:template>
                         <Text text="{CSET>Price}" wrapping="false" />

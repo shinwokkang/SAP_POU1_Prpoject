@@ -34,7 +34,7 @@ sap.ui.define([
             let oBinding = this.getView().byId("IMenu").getBinding("rows"),
                 oFilter  = null,
                 aFilter = [],
-                vMenuid = this.getView().byId("IMenuname").getValue(),
+                vMenuid = this.getView().byId("IInputMenuname").getValue(),
                 vCategory = this.getView().byId("ICategory").getValue();
 
                 if(vMenuid !="")
