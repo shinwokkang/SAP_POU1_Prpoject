@@ -16,7 +16,7 @@
                                width="20rem"
                                placeholder="전체 지점"
                                items="{/SalesSummarySet}">
-                    <core:Item key="{Storeid}" text="{Storeid} {Storename}" />
+                    <core:Item key="{Storeid}" text="{Storename}" />
                 </MultiComboBox>
                 <Label text="조회기간" design="Bold" class="sapUiMediumMarginBegin sapUiSmallMarginEnd" />
                 <DatePicker id="dateFrom" width="9rem" value="2026-10-30" valueFormat="yyyy-MM-dd" displayFormat="yyyy.MM.dd" />
