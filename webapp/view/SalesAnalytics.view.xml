@@ -1,7 +1,80 @@
 <mvc:View controllerName="code2.fiori.pou.pou1project.controller.SalesAnalytics"
     xmlns:mvc="sap.ui.core.mvc"
+    xmlns:core="sap.ui.core"
+    xmlns:l="sap.ui.layout"
+    xmlns:viz="sap.viz.ui5.controls"
+    xmlns:viz.data="sap.viz.ui5.data"
+    xmlns:viz.feeds="sap.viz.ui5.controls.common.feeds"
     xmlns="sap.m">
     <Page id="SalesAnalytics_page" title="{i18n>title}">
-        <Text text="SalesAnalytics!" />
+        <VBox class="sapUiSmallMargin">
+
+            <!-- 지점 ID 선택 + 검색 버튼 -->
+            <HBox alignItems="Center">
+                <Label text="지점 ID" design="Bold" class="sapUiSmallMarginEnd" />
+                <MultiComboBox id="storeFilter"
+                               width="20rem"
+                               placeholder="전체 지점"
+                               items="{/SalesSummarySet}">
+                    <core:Item key="{Storeid}" text="{Storename}" />
+                </MultiComboBox>
+                <Label text="조회기간" design="Bold" class="sapUiMediumMarginBegin sapUiSmallMarginEnd" />
+                <DatePicker id="dateFrom" width="9rem" value="2026-10-30" valueFormat="yyyy-MM-dd" displayFormat="yyyy.MM.dd" />
+                <Text text="~" class="sapUiTinyMarginBeginEnd" />
+                <DatePicker id="dateTo"   width="9rem" value="2026-11-03" valueFormat="yyyy-MM-dd" displayFormat="yyyy.MM.dd" />
+                
+                <Button icon="sap-icon://search"
+                        text="Search"
+                        press="onSearch"
+                        class="sapUiSmallMarginBegin" />
+            </HBox>
+
+            <!-- 차트 1. 지점별 총매출 (Column) -->
+            <HBox renderType="Bare" width="100%">
+            <viz:VizFrame id="storeSalesChart"
+                          vizType="column"
+                          width="50%" height="380px"
+                          uiConfig="{applicationSet:'fiori'}">
+                <viz:dataset>
+                    <viz.data:FlattenedDataset data="{Chart>/SalesSummarySet}">
+                        <viz.data:dimensions>
+                            <viz.data:DimensionDefinition name="지점" value="{Chart>Storename}" />
+                        </viz.data:dimensions>
+                        <viz.data:measures>
+                            <viz.data:MeasureDefinition name="총매출" value="{Chart>Salesamt}" />
+                        </viz.data:measures>
+                    </viz.data:FlattenedDataset>
+                </viz:dataset>
+                <viz:feeds>
+                    <viz.feeds:FeedItem uid="valueAxis"    type="Measure"   values="총매출" />
+                    <viz.feeds:FeedItem uid="categoryAxis" type="Dimension" values="지점" />
+                </viz:feeds>
+            </viz:VizFrame>
+
+
+            <!-- 차트 2. 메뉴별 판매량 (Bar) -->
+            <viz:VizFrame id="menuQtyChart"
+                          vizType="donut"
+                          width="50%" height="380px"
+                          uiConfig="{applicationSet:'fiori'}">
+                <viz:dataset>
+                    <viz.data:FlattenedDataset data="{Chart>/MenuSet}">
+                        <viz.data:dimensions>
+                            <viz.data:DimensionDefinition name="메뉴" value="{Chart>Menuname}" />
+                        </viz.data:dimensions>
+                        <viz.data:measures>
+                            <viz.data:MeasureDefinition name="판매량" value="{Chart>Soldqty}" />
+                        </viz.data:measures>
+                    </viz.data:FlattenedDataset>
+                </viz:dataset>
+                <viz:feeds>
+                    <!-- bar: Measure → valueAxis (막대 길이) / Dimension → categoryAxis (메뉴명) -->
+                    <viz.feeds:FeedItem uid="size"    type="Measure"   values="판매량" />
+                    <viz.feeds:FeedItem uid="color" type="Dimension" values="메뉴" />
+                </viz:feeds>
+            </viz:VizFrame>
+        </HBox>
+
+        </VBox>
     </Page>
 </mvc:View>

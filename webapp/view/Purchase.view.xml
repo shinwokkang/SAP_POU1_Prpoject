@@ -2,13 +2,14 @@
     xmlns:mvc="sap.ui.core.mvc"
     xmlns:t="sap.ui.table"
     xmlns:u="sap.ui.unified"
+    xmlns:c="sap.ui.core"
     xmlns="sap.m">
     <Page id="Purchase_page" title="{i18n>title}">
         <Title text = "발주 관리" titleStyle = "H3"/>
         <Text text="   "    />
         <t:Table
-            id="purchasePage"
-            rows="{Cafe>/PurchaseSet}"
+            id="purchaseTable"
+            rows="{/PurchaseSet}"
             selectionMode="Single"
             selectionBehavior="RowOnly"
             paste="onPaste"
@@ -17,80 +18,110 @@
                 <VBox>
                     
                     <HBox>
-                        <Label text = "지점명"
-                            width = "10rem"        />
-                        <ToolbarSpacer width="2rem"/>
+                        <Label text = "지점명" 
+                               width = "10rem" 
+                               design="Bold"       />
+
                         <Label text = "원재료명"
-                            width = "10rem"        />
-                        <ToolbarSpacer width="2rem"/>
-                        <Label text = "발주상태"
-                            width = "10rem"        />
+                               width = "10rem" 
+                               design="Bold"       />
+
+                        <Label text = "발주상태" 
+                               width = "10rem" 
+                               design="Bold"       />
                             
                     </HBox>
                     <HBox>
-                        <Input id = "iStoreName"
-                            width = "10rem"
-                            showClearIcon = "true" />
-                        <ToolbarSpacer width="2rem"/>
+                        <ComboBox
+                            id="IstoreName"
+                            items="{StoSet>/StoreNameSet}"
+                            width="8rem"
+                            placeholder="전체">
 
-                        <Input id = "iMaterialName"
-                            width = "10rem"
-                            showClearIcon = "true" />
-                        <ToolbarSpacer width="2rem"/>
+                            <c:Item key="{StoSet>Strcd}"
+                                    text="{StoSet>Store}"/>
+                        </ComboBox>
+                        <ToolbarSpacer width="2rem"  />
 
-                        <Input id = "iStatus"
-                            width = "10rem"
-                            showClearIcon = "true" />
-                        <ToolbarSpacer width="4rem"/>
+                        <ComboBox
+                            id="ImaterialName"
+                            items="{MSET>/MaterialSet}"
+                            width="8rem"
+                            placeholder="전체">
 
-                        <Button text="Search" icon= "sap-icon://search" press="searchPurchase"/>
+                            <c:Item 
+                                key="{MSET>Matnr}" 
+                                text="{MSET>Matname}"/>
+                        </ComboBox>
+                        <ToolbarSpacer width="2rem"  />
+
+                        <ComboBox
+                            id="Istatus"
+                            items="{path : 'StaSet>/'}"
+                            width="8rem"
+                            placeholder="전체">
+
+                            <c:Item 
+                                key="{StaSet>Status}" 
+                                text="{StaSet>Status}"/>
+                        </ComboBox>
+                        <ToolbarSpacer width="4rem"  />
+
+                        <Button text="조회" icon= "sap-icon://search" press="searchPurchase"/>
                     </HBox>
                 </VBox>
             </t:extension>
             <t:columns>
-                <t:Column width="10rem">
-                    <Label text="발주번호" />
+                <t:Column width="10rem"  >
+                    <Label text="발주번호"/>
                     <t:template>
-                        <Text text="{Cafe>Pono}" wrapping="false" />
+                        <Text text="{Pono}" wrapping="false" />
                     </t:template>
                 </t:Column>
                 
                 <t:Column width="10rem">
                     <Label text="지점" />
                     <t:template>
-                        <Text text="{Cafe>Storename}" wrapping="false"/>
+                        <Text text="{Storename}" wrapping="false"/>
                     </t:template>
                 </t:Column>
 
-                <t:Column width="10rem">
+                <t:Column width="10rem"  >
                     <Label text="원재료" />
                     <t:template>
-                        <Text text="{Cafe>Matname}" wrapping="false"/>
+                        <Text text="{Matname}" wrapping="false"/>
                     </t:template>
                 </t:Column>
                
                 <t:Column width="10rem" hAlign="Center">
-                    <Label text="발주날짜" />
+                    <Label text="발주날짜"              />
                     <t:template>
                         <DatePicker value="{
-                            path: 'Cafe>Podate',
+                            path: 'Podate',
                             type: 'sap.ui.model.type.Date',
-                            formatOptions: {source: {pattern: 'timestamp'}}
+                            formatOptions: {source: {pattern: 'yyyy-MM-dd'}}
                         }"/>
                     </t:template>
                 </t:Column>
                 
-                <t:Column width="10rem">
-                    <Label text="발주수량 및 단위" />
+                <t:Column width="10rem"           >
+                    <Label text="발주수량" />
                     <t:template>
-                        <Text text="{Cafe>Poqty}" wrapping="false" />
+                        <Text text="{Poqty}" wrapping="false"/>
                     </t:template>
                 </t:Column>
 
-                <t:Column width="10rem">
+                <t:Column width="10rem"           >
+                    <Label text="단위" />
+                    <t:template>
+                        <Text text="{Unit}" wrapping="false"/>
+                    </t:template>
+                </t:Column>
+
+                <t:Column width="10rem"    >
                     <Label text="발주상태" />
                     <t:template>
-                        <Text text="{Cafe>Status}" wrapping="false" />
+                        <Text text="{Status}" wrapping="false"/>
                     </t:template>
                 </t:Column>
                 
