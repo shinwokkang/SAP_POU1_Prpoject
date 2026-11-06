@@ -2,7 +2,7 @@ sap.ui.define([
     "sap/ui/core/mvc/Controller",
     "sap/ui/model/json/JSONModel",
     "sap/ui/model/Filter",
-    "sap/ui/model/FilterOperator"
+    "sap/ui/model/FilterOperator",
 ], (Controller, JSONModel, Filter, FilterOperator) => {
     "use strict";
 
@@ -10,8 +10,8 @@ sap.ui.define([
         onInit() {
             this.getRouter().getRoute("Store");
 
-            let oStoreModel = new JSONModel("/data/Cafeset.json");
-            this.getView().setModel(oStoreModel, "Store")
+            // let oStoreModel = new JSONModel("/data/Cafeset.json");
+            // this.getView().setModel(oStoreModel, "Store")
 
             let RegionSet = [
                             {Region : "서울"},
@@ -63,6 +63,25 @@ sap.ui.define([
             };
 
             oBinding.filter(aFilter);
+        },
+        onState : function(StateEvent)
+        {
+            let vButton = StateEvent.getSource(),
+                vState  = vButton.getText();
+
+
+            if (vState === "운영중")
+                {
+                    alert("휴점 상태로 변경됩니다.")
+                    vButton.setType("Reject") 
+                    vButton.setText("휴점중")
+                }
+            else
+                {
+                    alert("운영 상태로 변경됩니다.")
+                    vButton.setType("Accept")
+                    vButton.setText("운영중")
+                };
         }
     });
 });
