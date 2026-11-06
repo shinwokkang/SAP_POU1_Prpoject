@@ -19,24 +19,54 @@
         valueFormat="yyyy-MM-dd" press="onClcick2"/>
     </HBox>
     <!-- 달력 끝 -->
-    <!-- 막대 차트 -->
+  
 
     </OverflowToolbar>
-    <ToolbarSpacer  />
-    <HBox>
-     <VBox>
-            
+    <HBox width="100%"
+      justifyContent="SpaceBetween"
+      class="sapUiSmallMarginBottom">
+
+    <VBox width="23%" class="dashboardKpi kpiBlue">
+    <HBox alignItems="Center">
+    <core:Icon src="sap-icon://paid-leave" size="1.2rem" class="sapUiTinyMarginEnd" />
+    <Text text="총 매출" />
+</HBox>
+        <ObjectNumber
+             number="{path: '/Dashboard/TotalSales',type: 'sap.ui.model.type.Integer',
+             formatOptions: {groupingEnabled: true,groupingSeparator: ','} }" unit="₩"/> 
     </VBox>
-             <core:Icon src="sap-icon://favorite" /> 
-             <Text text="전체 매출" TextAlign="Center"/>
-             <Title text="₩ 29,713,100" />
-     <HBox>
-             <core:Icon src="sap-icon://favorite" /> 
-             <Text text="운영지점 수 " TextAlign="Center"/>
-             <VBox>
-             <Title text="12지점 " />
-             </VBox>
-    </HBox>
+     <VBox width="23%" class="dashboardKpi kpiGreen">
+     <HBox alignItems="Center">
+    <core:Icon src="sap-icon://home" size="1.2rem" class="sapUiTinyMarginEnd" />
+    <Text text="운영 지점 수" />
+   </HBox>
+    <ObjectNumber number="{
+                                 path: '/StoreSet',
+                            formatter: '.formatOperatingCount'
+                           }" unit="개" class="operatingCount"/>
+                           
+   </VBox>
+
+    <VBox width="23%" class="dashboardKpi kpiPurple">
+         <HBox alignItems="Center">
+         <core:Icon src="sap-icon://home" size="1.2rem" class="sapUiTinyMarginEnd" />
+        <Text text="전체 지점 수" />
+   </HBox>
+        <ObjectNumber
+            number="{
+                       path: '/StoreSet',
+                      formatter: '.formatOperatingCount'
+                     }" unit="개" class="operatingCount" />
+    </VBox>
+
+    <VBox width="23%" class="dashboardKpi kpiOrange">
+        <Text text="재고 부족" wrapping="true"/>
+        <ObjectNumber
+            number="{/Dashboard/ShortageCount}"
+            unit="건" />
+    </VBox>
+
+</HBox>
      <!-- 막대 차트 -->
    <HBox width="100%" alignItems="Stretch">
 
@@ -48,7 +78,7 @@
         <Title text="₩ 29,713,100" />
     </VBox>
     </HBox>
-       <viz:VizFrame id="idVizFrame" height="380px" width="100%" vizType="stacked_column"
+       <viz:VizFrame id="idVizFrame" height="280px" width="100%" vizType="stacked_column"
                      vizProperties="{title: {visible: true, text: '지점별 총 매출'}}">
        <viz:dataset>
               <viz.data:FlattenedDataset data="{/SalesSummarySet}">
@@ -79,7 +109,7 @@
     <VBox width="50%" class="chartColumn" height="60px">
         <Panel
             headerText="메뉴별 매출 비중" width="95%" class="chartCard">
-    <viz:VizFrame id="menuDonut" width="100%" height="380px" vizType="donut"
+    <viz:VizFrame id="menuDonut" width="100%" height="260px" vizType="donut"
         vizProperties="{
             title: {
                 visible: true,
@@ -121,7 +151,6 @@
     </VBox>
     </HBox>
 <!-- 도넛차트 끝 -->
-
 
     </Page>
 </mvc:View>
