@@ -55,6 +55,9 @@
                     <Label text="금액" />
                     <t:template>
 		                    <u:Currency value="{CSET>Amount}" currency="{Currency}"/> 
+                            <!--
+                            asoifnaoidnfoasinfdoasnfoisanfoi
+                            asfinsaodifnsoainfs-->
                     </t:template>
                 </t:Column>
             </t:columns>					
