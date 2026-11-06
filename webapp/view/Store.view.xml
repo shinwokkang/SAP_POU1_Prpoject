@@ -1,7 +1,98 @@
 <mvc:View controllerName="code2.fiori.pou.pou1project.controller.Store"
     xmlns:mvc="sap.ui.core.mvc"
+    xmlns:core="sap.ui.core"
+    xmlns:t="sap.ui.table"
     xmlns="sap.m">
     <Page id="Store_page" title="{i18n>title}">
-        <Text text="Store!" />
+    <VBox>
+        <HBox alignItems = "Center" 
+              class="sapUiSmallMargin">
+            <core:Icon src="sap-icon://map-fill"
+               size="2rem"
+               color="#0a6ed1"
+               class="sapUiResponsiveMargin"/>
+            <VBox>
+                <Title text="지점 관리" titleStyle="H3"/>
+                <Text text="전국 카페 지점 현황을 조회하고 관리합니다"/>
+            </VBox>
+        </HBox>
+
+        <Panel headerText="검색" class="sapUiResponsiveMargin" width="auto">
+            <HBox alignItems="End">
+            <VBox class="sapUiSmallMarginEnd">
+                <Label text="지점명" labelFor="iStorename"/>
+                <Input id="iStorename" width="14rem" placeholder="지점명 입력" showClearIcon="true"/>
+            </VBox>
+            <VBox class="sapUiSmallMarginEnd">
+                <Label text="지역" labelFor="iRegion"/>
+                <ComboBox id="iRegion" width="14rem" placeholder="지역 선택"
+                        items="{path : 'Region>/'}">
+                    <core:Item key="{Region>Region}" text="{Region>Region}"/>
+                </ComboBox>
+            </VBox>
+            <Button text="조회" icon="sap-icon://search" type="Emphasized" press="onStoreSearch"/>
+            </HBox>
+        </Panel>
+
+        <t:Table
+            id = "StoreSet"
+            rows="{Store>/StoreSet}"
+            selectionMode="MultiToggle"
+            paste="onPaste"
+            ariaLabelledBy="title">
+            <t:extension>
+                <OverflowToolbar style="Clear">
+                    <Title id="title" text="지점 목록"/>
+                </OverflowToolbar>
+            </t:extension>
+            <t:columns>
+
+                <t:Column width="11rem">
+                    <Label text="지점 코드" />
+                    <t:template>
+                        <Text text="{Store>Storeid}" wrapping="false" />              
+                    </t:template>
+                </t:Column>
+
+                <t:Column width="11rem">
+                    <Label text="지점명" />
+                    <t:template>
+                        <Text text="{Store>Storename}" wrapping="false" />
+                    </t:template>
+                </t:Column>
+
+                <t:Column width="11rem">
+                    <Label text="지역" />
+                    <t:template>
+                        <Text text="{Store>Region}" wrapping="false" />
+                    </t:template>
+                </t:Column>
+
+                <t:Column width="17rem">
+                    <Label text="주소" />
+                    <t:template>
+                        <Text text="{Store>Address}" wrapping="false" />
+                    </t:template>
+                </t:Column>
+
+                <t:Column width="11rem">
+                    <Label text="담당자" />
+                    <t:template>
+                        <Text text="{Store>Manager}" wrapping="false" />
+                    </t:template>
+                </t:Column>
+
+                <t:Column width="11rem">
+                    <Label text="운영상태" />
+                    <t:template>
+                        <Text text="{Store>Status}" wrapping="false" />
+                    </t:template>
+                </t:Column>
+                
+            </t:columns>
+        </t:Table>
+
+    </VBox>
+
     </Page>
 </mvc:View>
