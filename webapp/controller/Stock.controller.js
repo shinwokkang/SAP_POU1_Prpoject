@@ -34,6 +34,19 @@ sap.ui.define([
             return sap.ui.core.UIComponent.getRouterFor(this);
         },
 
+        onStatusColor: function(vStatus)
+        {
+            if(vStatus == "부족")
+             {
+                return "Warning";
+             }
+             else
+              {
+                return "Success";
+              }
+        },
+
+
         onSearch:function()
         {
             let oBinding = this.getView().byId("StockSet").getBinding("rows"),
@@ -67,6 +80,18 @@ sap.ui.define([
             };
             
             oBinding.filter(aFilter);
+        },
+
+        onReset: function()
+        {
+            this.getView().byId("IStore").setSelectedKey("");
+
+            this.getView().byId("IMatnr").setSelectedKey("");
+
+            var oBinding = this.getView().byId("StockSet").getBinding("rows");
+
+            oBinding.filter([]);
         }
+
     });
 });
