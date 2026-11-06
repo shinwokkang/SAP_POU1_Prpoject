@@ -6,8 +6,8 @@
     <Page id="Sales_page" title="{i18n>title}">
             <t:Table
             id="Sales"
-            rows="{Sales>/SalesSet}" 
-            selectionMode="MultiToggle" 
+            rows="{CSET>/SalesSet}" 
+            selectionMode="None" 
             selectionBehavior="Row" 
             paste="onPaste"
             ariaLabelledBy="title">
@@ -27,38 +27,54 @@
                 </OverflowToolbar>
             </t:extension>
             <t:columns>
-                <t:Column width="11rem">
+                <t:Column width="20%">
                     <Label text="날짜" />
                     <t:template>
-                        <Text text="{Sales>Salesdate}" wrapping="false" />
+                        <Text text="{CSET>Salesdate}" wrapping="false" />
                     </t:template>
                 </t:Column>
-                <t:Column width="11rem">
+                <t:Column width="20%">
                     <Label text="지점" />
                     <t:template>
-                        <Text text="{Sales>Storename}" wrapping="false" /> 
+                        <Text text="{CSET>Storename}" wrapping="false" /> 
                     </t:template>
                 </t:Column>
-                <t:Column width="11rem">
+                <t:Column width="20%">
                     <Label text="메뉴" />
                     <t:template>
-                        <Text text="{Sales>Menuname}" wrapping="false" />
+                        <Text text="{CSET>Menuname}" wrapping="false" />
                     </t:template>
                 </t:Column>
-                <t:Column width="11rem">
+                <t:Column width="20%">
                     <Label text="판매량" />
                     <t:template>
-                        <Text text="{Sales>Quantity}" wrapping="false" />
+                        <Text text="{CSET>Quantity}" wrapping="false" />
                     </t:template>
                 </t:Column>
-                <t:Column width="11rem">
+                <t:Column width="20%">
                     <Label text="금액" />
                     <t:template>
-		                    <u:Currency value="{Sales>Amount}" currency="{Currency}"/> 
+		                    <u:Currency value="{CSET>Amount}" currency="{Currency}"/> 
                     </t:template>
                 </t:Column>
             </t:columns>					
         </t:Table>
+
+    <HBox
+        justifyContent="End"
+        alignItems="Center"
+        class="sapUiSmallMarginTop sapUiSmallMarginEnd">
+
+        <Label
+            text="총 판매량 : "
+            design="Bold"/>
+
+        <Label
+            text="총 금액 : "
+            design="Bold"/>
+            
+
+    </HBox>
 
     </Page>
 </mvc:View>
