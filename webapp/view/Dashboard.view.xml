@@ -29,7 +29,7 @@
     <VBox width="23%" class="dashboardKpi kpiBlue">
     <HBox alignItems="Center">
     <core:Icon src="sap-icon://paid-leave" size="1.2rem" class="sapUiTinyMarginEnd" />
-    <Text text="총 매출" />
+    <Text text="총" />
 </HBox>
         <ObjectNumber
              number="{path: '/Dashboard/TotalSales',type: 'sap.ui.model.type.Integer',
@@ -48,19 +48,21 @@
    </VBox>
 
     <VBox width="23%" class="dashboardKpi kpiPurple">
-         <HBox alignItems="Center">
-         <core:Icon src="sap-icon://home" size="1.2rem" class="sapUiTinyMarginEnd" />
-        <Text text="전체 지점 수" />
-   </HBox>
-        <ObjectNumber
-            number="{
-                       path: '/StoreSet',
-                      formatter: '.formatOperatingCount'
-                     }" unit="개" class="operatingCount" />
+        <HBox alignItems="Center">
+    <core:Icon src="sap-icon://favorite" size="1.2rem" class="sapUiTinyMarginEnd" />
+    <Text text="최고 인기 메뉴" />
+     </HBox>
+       <Title text="{
+                        path: '/MenuSet',
+                        formatter: '.formatPopularMenu'
+                     }" />
     </VBox>
 
     <VBox width="23%" class="dashboardKpi kpiOrange">
-        <Text text="재고 부족" wrapping="true"/>
+        <HBox alignItems="Center">
+        <core:Icon src="sap-icon://cart-3" size="1.2rem" class="sapUiTinyMarginEnd" />
+        <Text text="재고 부족" />
+   </HBox>
         <ObjectNumber
             number="{/Dashboard/ShortageCount}"
             unit="건" />

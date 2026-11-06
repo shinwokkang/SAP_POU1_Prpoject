@@ -29,6 +29,22 @@ sap.ui.define([
         getRouter:function(){
             return sap.ui.core.UIComponent.getRouterFor(this);
         },
+        //    인기메뉴 함수
+            formatPopularMenu: function (aMenus) 
+            {
+          if (!Array.isArray(aMenus) || aMenus.length === 0) {
+             return "—";
+           }
+
+               const oTopMenu = aMenus.reduce(function (oTop, oMenu) 
+               {
+               return Number(oMenu.Soldqty) > Number(oTop.Soldqty)
+                  ? oMenu
+                  : oTop;
+               });
+
+                return oTopMenu.Menuname;
+            },
 
 
 
