@@ -20,7 +20,7 @@
                 <OverflowToolbar style="Clear">
                     <Label text="메뉴명" design="Bold"/>
                     <Input id="IInputMenuname" width="8em" placeholder="메뉴명 입력"/> 
-                    <ToolbarSpacer width = "5rem" />                   
+                    <ToolbarSpacer width = "5rem" />   
                     <Label text="카테고리" design="Bold"/>
                     <ComboBox id="ICategory" width="8rem" placeholder="카테고리"
                               items="{path : 'Category>/'}">

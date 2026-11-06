@@ -75,7 +75,9 @@
                     <t:template>
                         <ObjectStatus text="{ parts : ['CSET>Quantity', 'CSET>Minqty'], formatter : '.formatShortText' }"
                                       state="{ parts : ['CSET>Quantity', 'CSET>Minqty'], formatter : '.formatShortState' }"
-                                      inverted="true"/>
+                                      inverted="true"
+                                      active="true"
+                                      press="onSendAlert"/>
                     </t:template>
                 </t:Column>
             </t:columns>

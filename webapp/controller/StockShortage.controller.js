@@ -2,8 +2,9 @@ sap.ui.define([
     "sap/ui/core/mvc/Controller",
     "sap/ui/model/Filter",
     "sap/ui/model/FilterOperator",
-    "sap/ui/model/json/JSONModel"
-], (Controller, Filter, FilterOperator, JSONModel) => {
+    "sap/ui/model/json/JSONModel",
+    "sap/m/MessageBox"
+], (Controller, Filter, FilterOperator,MessageBox, JSONModel) => {
     "use strict";
 
     return Controller.extend("code2.fiori.pou.pou1project.controller.StockShortage", {
@@ -114,6 +115,37 @@ sap.ui.define([
             };
             
             oBinding.filter(aFilter);
+        },
+         
+        // 알람 추가
+        onSendAlert: function(oEvent)
+        {
+            let oContext = oEvent.getSource().getBindingContext("CSET"),
+                ls_stock = oContext.getObject(),
+                  oModel = this.getView().getModel("CSET"),
+                   vPath = oContext.getPath();
+                   
+            MessageBox.confirm(
+                ls_stock.Storename + "의 " + ls_stock.Matname +
+                " 발주 요청 알림을 보내시겠습니까?",
+                {
+                    title: "발주 요청 안내",
+                    AuthenticatorAttestationResponse: ["예","아니요"],
+                    emphasizedAction: "예",
+
+                    onClose: function(vAction)
+                    {
+                        if(vAction =="예")
+                        {
+                            oModel.setProperty(
+                                vPath + "/AlertStatus",
+                                "발송 완료"
+                            );
+                            MessageBox.information("발주 요청 알림이 등록되었습니다.");
+                        }
+                    }
+                }
+            )
         }
     });
 });
