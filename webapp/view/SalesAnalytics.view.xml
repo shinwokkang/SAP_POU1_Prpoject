@@ -1,7 +1,43 @@
 <mvc:View controllerName="code2.fiori.pou.pou1project.controller.SalesAnalytics"
     xmlns:mvc="sap.ui.core.mvc"
+    xmlns:core="sap.ui.core"
+    xmlns:viz="sap.viz.ui5.controls"
+    xmlns:viz.data="sap.viz.ui5.data"
+    xmlns:viz.feeds="sap.viz.ui5.controls.common.feeds"
     xmlns="sap.m">
     <Page id="SalesAnalytics_page" title="{i18n>title}">
-        <Text text="SalesAnalytics!" />
+        <VBox class="sapUiSmallMargin">
+ 
+            <HBox alignItems="Center">
+                <Label text="지점 ID" design="Bold" class="sapUiSmallMarginEnd" />
+                <MultiComboBox id="storeFilter"
+                               width="20rem"
+                               placeholder="전체 지점"
+                               items="{CSET>/SalesSummarySet}"
+                               selectionFinish="onStoreFilter">
+                    <core:Item key="{CSET>Storeid}" text="{CSET>Storeid} {CSET>Storename}" />
+                </MultiComboBox>
+            </HBox>
+            <viz:VizFrame id="storeSalesChart"
+                          vizType="column"
+                          width="100%" height="400px"
+                          uiConfig="{applicationSet:'fiori'}">
+                <viz:dataset>
+                    <viz.data:FlattenedDataset data="{CSET>/SalesSummarySet}">
+                        <viz.data:dimensions>
+                            <viz.data:DimensionDefinition name="지점" value="{CSET>Storename}" />
+                        </viz.data:dimensions>
+                        <viz.data:measures>
+                            <viz.data:MeasureDefinition name="총매출" value="{CSET>Salesamt}" />
+                        </viz.data:measures>
+                    </viz.data:FlattenedDataset>
+                </viz:dataset>
+                <viz:feeds>
+                    <viz.feeds:FeedItem uid="valueAxis"    type="Measure"   values="총매출" />
+                    <viz.feeds:FeedItem uid="categoryAxis" type="Dimension" values="지점" />
+                </viz:feeds>
+            </viz:VizFrame>
+        </VBox>
+
     </Page>
 </mvc:View>
