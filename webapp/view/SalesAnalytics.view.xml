@@ -6,9 +6,15 @@
     xmlns:viz.data="sap.viz.ui5.data"
     xmlns:viz.feeds="sap.viz.ui5.controls.common.feeds"
     xmlns="sap.m">
-    <Page id="SalesAnalytics_page" title="{i18n>title}">
         <VBox class="sapUiSmallMargin">
-
+            <HBox alignItems = "Center" 
+              class="sapUiSmallMargin">
+            <core:Icon src="sap-icon://business-objects-experience"
+               size="2rem"
+               color="#e6bee5"
+               class="sapUiResponsiveMargin"/>
+               <Title text = "매출 분석" titleStyle="H2"/>
+            </HBox>
             <!-- 지점 ID 선택 + 검색 버튼 -->
             <HBox alignItems="Center">
                 <Label text="지점 ID" design="Bold" class="sapUiSmallMarginEnd" />
@@ -76,5 +82,4 @@
         </HBox>
 
         </VBox>
-    </Page>
 </mvc:View>
