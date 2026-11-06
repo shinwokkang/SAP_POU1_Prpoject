@@ -63,6 +63,7 @@ sap.ui.define([
                 };
 
                 oBinding.filter(aFilter); 
+                //주석
 
         }
     });
