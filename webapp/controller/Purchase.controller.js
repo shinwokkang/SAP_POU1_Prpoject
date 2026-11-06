@@ -12,7 +12,7 @@ sap.ui.define([
         onInit() {
             this.getRouter().getRoute("Purchase");
 
-            this.getView().setModel(new JSONModel("/data/CafeSet.json"),"Cafe");
+            this.getView().setModel(new JSONModel("/model/Data.json"),"Cafe");
         },
 
         getRouter:function(){
@@ -21,7 +21,7 @@ sap.ui.define([
 
         searchPurchase: function()
         {
-            
+
         }
 
         
