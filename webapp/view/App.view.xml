@@ -1,58 +1,7 @@
-<mvc:View
-    controllerName="code2.fiori.pou.pou1project.controller.App"
+<mvc:View controllerName="code2.fiori.pou.pou1project.controller.App"
+    displayBlock="true"
     xmlns:mvc="sap.ui.core.mvc"
-    xmlns="sap.m"
-    xmlns:tnt="sap.tnt">
-
-    <tnt:ToolPage id="toolPage">
-        <!-- 1. 상단 고정 헤더 -->
-        <tnt:header>
-            <tnt:ToolHeader>
-                <!-- 사이드바 열림/닫힘 토글 버튼 -->
-                <Button
-                    id="sideNavigationToggleButton"
-                    icon="sap-icon://menu2"
-                    type="Transparent"
-                    press=".onSideNavButtonPress">
-                    <layoutData>
-                        <OverflowToolbarLayoutData priority="NeverOverflow" />
-                    </layoutData>
-                </Button>
-                <!-- 로고/프로젝트명 -->
-                <Title text="CafeFlow" level="H2" class="sapUiTinyMarginBegin" />
-                <Text text="카페 프랜차이즈 통합 운영 관리 시스템" class="sapUiSmallMarginBegin" />
-                <ToolbarSpacer />
-                <!-- 우측 사용자 정보 -->
-                <Button
-                    icon="sap-icon://customer"
-                    text="본사관리자"
-                    type="Transparent" />
-            </tnt:ToolHeader>
-        </tnt:header>
-
-        <!-- 2. 좌측 고정 사이드바 -->
-        <tnt:sideContent>
-            <tnt:SideNavigation
-                id="sideNavigation"
-                selectedKey="Main"
-                itemSelect=".onItemSelect">
-                <tnt:NavigationList>
-                    <tnt:NavigationListItem text="홈" icon="sap-icon://home" key="Main" />
-                    <tnt:NavigationListItem text="대시보드" icon="sap-icon://bbyd-dashboard" key="Dashboard" />
-                    <tnt:NavigationListItem text="지점 관리" icon="sap-icon://home" key="Store" />
-                    <tnt:NavigationListItem text="메뉴 관리" icon="sap-icon://menu" key="Menu" />
-                    <tnt:NavigationListItem text="매출 조회" icon="sap-icon://sales-order" key="Sales" />
-                    <tnt:NavigationListItem text="매출 분석" icon="sap-icon://line-charts" key="SalesAnalytics" />
-                    <tnt:NavigationListItem text="재고 관리" icon="sap-icon://inventory" key="Stock" />
-                    <tnt:NavigationListItem text="재고 부족 관리" icon="sap-icon://alert" key="StockShortage" />
-                    <tnt:NavigationListItem text="발주 관리" icon="sap-icon://cart" key="Purchase" />
-                </tnt:NavigationList>
-            </tnt:SideNavigation>
-        </tnt:sideContent>
-
-        <!-- 3. 내부 본문 영역 (라우터가 화면을 갈아끼우는 컨테이너) -->
-        <tnt:mainContents>
-            <App id="navContainer" />
-        </tnt:mainContents>
-    </tnt:ToolPage>
+    xmlns="sap.m">
+    <App id="app">
+    </App>
 </mvc:View>

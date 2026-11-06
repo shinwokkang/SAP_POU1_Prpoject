@@ -1,25 +1,17 @@
-<mvc:View 
-    controllerName="code2.fiori.pou.pou1project.controller.Main"
+<mvc:View controllerName="code2.fiori.pou.pou1project.controller.Main"
     xmlns:mvc="sap.ui.core.mvc"
     xmlns="sap.m">
-    <Page id="page" showHeader="false" enableScrolling="false">
-        <content>
-            <!-- 화면 중앙 정렬 및 여백 제어 -->
-            <FlexBox 
-                alignItems="Center" 
-                justifyContent="Center" 
-                fitContainer="true" 
-                height="100%"
-                class="sapUiSmallMargin">
-                <items>
-                    <!-- 화면 높이(vh) 기준으로 반응형 크기 조절 -->
-                    <Image 
-                        src="/img/MainView_img.png" 
-                        height="65vh"
-                        decorative="true"
-                        densityAware="false" />
-                </items>
-            </FlexBox>
-        </content>
+    <Page id="page" title="{i18n>title}">
+        <Text text="Hello World!" />
+            <VBox >
+                <Button text="Dashboard" press="go_Dashboard" />
+                <Button text="Menu" press="go_Menu" />
+                <Button text="Purchase" press="go_Purchase" />
+                <Button text="Sales" press="go_Sales" />
+                <Button text="SalesAnalytics" press="go_SalesAnalytics" />
+                <Button text="Stock" press="go_Stock" />
+                <Button text="StockShortage" press="go_StockShortage" />
+                <Button text="Store" press="go_Store" />
+            </VBox>
     </Page>
 </mvc:View>
