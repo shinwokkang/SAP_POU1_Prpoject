@@ -7,4 +7,5 @@ mta_archives
 mta-*
 resources
 archive.zip
-.*_mta_build_tmp.DS_Store
+.*_mta_build_tmp
+.DS_Store
