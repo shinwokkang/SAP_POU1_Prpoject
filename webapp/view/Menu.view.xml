@@ -5,6 +5,95 @@
     xmlns:t="sap.ui.table"
     xmlns="sap.m">
     <Page id="Menu_page" title="{i18n>title}">
+
+ <!-- < 지점 조회용 테이블 /> -->
+        <t:Table
+            id="fpurchaseTable"
+            rows="{/PurchaseSet}"
+            selectionMode="Single"
+            selectionBehavior="RowOnly"
+            paste="onPaste"
+            ariaLabelledBy="title">
+            <t:extension>
+                <VBox>
+                    
+                    <HBox>
+                        <ComboBox
+                            id="IfstoreName"
+                            items="{StoSet>/StoreNameSet}"
+                            width="8rem"
+                            placeholder="전체">
+
+                            <core:Item key="{StoSet>Strcd}"
+                                    text="{StoSet>Store}"/>
+                        </ComboBox>
+                        <ToolbarSpacer width="2rem"  />
+
+
+                        <Button text="조회" icon= "sap-icon://search" press="searchPurchase"/>
+                    </HBox>
+                </VBox>
+            </t:extension>
+            <t:columns>
+                <t:Column width="10rem"  >
+                    <Label text="발주번호"/>
+                    <t:template>
+                        <Text text="{Pono}" wrapping="false" />
+                    </t:template>
+                </t:Column>
+                
+                <t:Column width="10rem">
+                    <Label text="지점" />
+                    <t:template>
+                        <Text text="{Storename}" wrapping="false"/>
+                    </t:template>
+                </t:Column>
+
+                <t:Column width="10rem"  >
+                    <Label text="원재료" />
+                    <t:template>
+                        <Text text="{Matname}" wrapping="false"/>
+                    </t:template>
+                </t:Column>
+               
+                <t:Column width="10rem" hAlign="Center">
+                    <Label text="발주날짜"              />
+                    <t:template>
+                        <DatePicker value="{
+                            path: 'Podate',
+                            type: 'sap.ui.model.type.Date',
+                            formatOptions: {source: {pattern: 'yyyy-MM-dd'}}
+                        }"/>
+                    </t:template>
+                </t:Column>
+                
+                <t:Column width="10rem"           >
+                    <Label text="발주수량" />
+                    <t:template>
+                        <Text text="{Poqty}" wrapping="false"/>
+                    </t:template>
+                </t:Column>
+
+                <t:Column width="10rem"           >
+                    <Label text="단위" />
+                    <t:template>
+                        <Text text="{Unit}" wrapping="false"/>
+                    </t:template>
+                </t:Column>
+
+                <t:Column width="10rem"    >
+                    <Label text="발주상태" />
+                    <t:template>
+                        <Text text="{Status}" wrapping="false"/>
+                    </t:template>
+                </t:Column>
+                
+            </t:columns>
+        </t:Table>
+
+
+
+<!-- < 메뉴 관리 테이블 /> -->
         <VBox>
                 <Title text="메뉴 관리" titleStyle="H3"/>
                 <Text text="메뉴 정보, 가격 및 카테고리 조회"/>

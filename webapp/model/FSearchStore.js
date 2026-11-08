@@ -1,0 +1,52 @@
+sap.ui.define([
+    "sap/ui/model/json/JSONModel",
+    "sap/ui/model/Filter",
+    "sap/ui/model/FilterOperator"
+], (JSONModel, Filter, FilterOperator) => {
+    "use strict";
+
+    return {
+        executePurchaseLogic: 
+        function (oView, aFilter) {
+            let oData = {
+                            StoreNameSet :
+                            [
+                                {Strcd: "S001", Store : "성수점"},
+                                {Strcd: "S002", Store : "강남점"},
+                                {Strcd: "S003", Store : "수원점"},
+                                {Strcd: "S004", Store : "성남점"},
+                                {Strcd: "S005", Store : "춘천점"},
+                                {Strcd: "S006", Store : "대전점"},
+                                {Strcd: "S007", Store : "전주점"},
+                                {Strcd: "S008", Store : "대구점"},
+                                {Strcd: "S009", Store : "부산점"},
+                                {Strcd: "S010", Store : "제주점"}
+                            ]
+                        };
+                        
+
+            oView.setModel(new JSONModel(oData), "StoSet");
+
+            if (!aFilter) 
+            {
+                aFilter = [];
+            }
+
+            let oFilter      = null,
+                vStorename   = oView.byId("IfstoreName").getSelectedKey();
+                
+            if (vStorename != "") 
+            {
+                oFilter = new Filter({                                                
+                    path     : "Storeid",
+                    operator : FilterOperator.Contains,                             
+                    value1   : vStorename                                          
+                });
+
+                aFilter.push(oFilter);
+            };
+
+            return aFilter;
+        }
+    };
+});
