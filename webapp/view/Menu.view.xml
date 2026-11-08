@@ -8,7 +8,7 @@
 
  <!-- < 지점 조회용 테이블 /> -->
         <t:Table
-            id="fpurchaseTable"
+            id="IFSearchStoreTable"
             rows="{/PurchaseSet}"
             selectionMode="Single"
             selectionBehavior="RowOnly"
@@ -30,7 +30,7 @@
                         <ToolbarSpacer width="2rem"  />
 
 
-                        <Button text="조회" icon= "sap-icon://search" press="searchPurchase"/>
+                        <Button text="조회" icon= "sap-icon://search" press="searchStore"/>
                     </HBox>
                 </VBox>
             </t:extension>

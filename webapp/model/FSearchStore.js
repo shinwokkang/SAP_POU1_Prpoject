@@ -1,51 +1,42 @@
 sap.ui.define([
-    "sap/ui/model/json/JSONModel",
     "sap/ui/model/Filter",
     "sap/ui/model/FilterOperator"
-], (JSONModel, Filter, FilterOperator) => {
+], (Filter, FilterOperator) => {
     "use strict";
 
     return {
-        executePurchaseLogic: 
+
+        /**
+         * 지점 검색 필터를 생성하고 모델을 설정하는 유틸리티 함수 (검색 필터 로직을 따로 분리해서 재사용하기 위해 만든 것)
+         * @param {sap.ui.core.mvc.View} oView - 현재 뷰 인스턴스
+         * @param {Array} aFilter - 기존 필터 배열
+         * @returns {Array} 생성된 필터가 추가된 배열 반환
+         */
+
+        FSearchStore: 
         function (oView, aFilter) {
-            let oData = {
-                            StoreNameSet :
-                            [
-                                {Strcd: "S001", Store : "성수점"},
-                                {Strcd: "S002", Store : "강남점"},
-                                {Strcd: "S003", Store : "수원점"},
-                                {Strcd: "S004", Store : "성남점"},
-                                {Strcd: "S005", Store : "춘천점"},
-                                {Strcd: "S006", Store : "대전점"},
-                                {Strcd: "S007", Store : "전주점"},
-                                {Strcd: "S008", Store : "대구점"},
-                                {Strcd: "S009", Store : "부산점"},
-                                {Strcd: "S010", Store : "제주점"}
-                            ]
-                        };
-                        
-
-            oView.setModel(new JSONModel(oData), "StoSet");
-
+            // 1. 전달받은 필터 배열이 없을 경우 새로 초기화
             if (!aFilter) 
             {
                 aFilter = [];
             }
 
             let oFilter      = null,
-                vStorename   = oView.byId("IfstoreName").getSelectedKey();
-                
+                vStorename   = oView.byId("IfstoreName").getSelectedKey(); // 전달받은 oView를 이용해 화면에 있는 지점 선택 컴포넌트를 찾아서 선택된 키 값 가져오기
+            
+            // 2. 지점이 선택된 경우(값이 비어있지 않다면) 필터 객체 생성 후 추가
             if (vStorename != "") 
             {
                 oFilter = new Filter({                                                
-                    path     : "Storeid",
-                    operator : FilterOperator.Contains,                             
+                    path     : "Storeid",                // 필터링할 바인딩 데이터의 속성명
+                    operator : FilterOperator.Contains,  // 포함 조건                           
                     value1   : vStorename                                          
                 });
 
                 aFilter.push(oFilter);
             };
 
+            // 3. 완성된 필터 배열을 호출한 곳으로 반환
             return aFilter;
         }
     };
