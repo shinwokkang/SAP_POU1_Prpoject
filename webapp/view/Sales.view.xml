@@ -9,11 +9,26 @@
             <HBox alignItems = "Center"
                   class="sapUiSmallMargin">
                 <core:Icon src="sap-icon://sales-order"
-               size="2rem"
-               color="#0a6ed1"
-               class="sapUiResponsiveMargin"/>
+                           size="2rem"
+                           color="#0a6ed1"
+                           class="sapUiResponsiveMargin"/>
                 <Title text="매출 조회" titleStyle="H2"/>
-            </HBox>        
+
+                <ToolbarSpacer width="30rem"/>
+                <Title text="총 판매량 : " width="7rem" />
+
+                <Label
+                id="TotalQuantity" design="Bold" width="7rem"
+                text="0"/> 
+
+                <Title text="총 매출금액 : "  width="8rem" />
+
+                <u:Currency
+                id="TotalAmount"
+                value="0"
+                currency="KRW"/>
+            </HBox>
+
         </VBox>
             <t:Table
             id="Sales"
@@ -54,9 +69,10 @@
                     </ComboBox>
                 <!-- 버튼 -->
                     <Button text="조회" icon="sap-icon://search" 
-                            type="Emphasized" press="onSearch" width = "6rem"/>
+                            type="Emphasized" press="onSearch"/>
+                    <Button text="초기화" type="Ghost" press="onTotal"/>  
+                                
                     <ToolbarSpacer/>
-
                     <Button text="전체매출조회" icon="sap-icon://lead" 
                             type="Ghost" press="onTotal"/>
 
@@ -96,8 +112,7 @@
             </t:columns>					
         </t:Table>
 
-    <HBox>
-    
+    <!-- <HBox>
         <ToolbarSpacer width="40rem"/>
         <Title text="총 판매량 : " width="8rem" />
 
@@ -111,9 +126,7 @@
         id="TotalAmount"
         value="0"
         currency="KRW"/>
-            
-
-    </HBox>
+    </HBox> -->
 
     </Page>
 </mvc:View>
