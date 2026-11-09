@@ -73,7 +73,7 @@ sap.ui.define([
                         {
                             // 알림 상태 저장
                             oModel.setProperty( vPath + "/AlertStatus","발송 완료" );
-                            
+
                              // 발송 상태를 기록한 뒤 화면을 이동할지 확인
                             MessageBox.confirm
                             (

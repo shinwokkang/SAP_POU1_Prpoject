@@ -89,8 +89,7 @@ sap.ui.define([
                 oFilter  = null,
                 aFilter = [],
                 vMenuid = this.getView().byId("IInputMenuname").getValue(), // 화면의 메뉴명 입력값 가져오기
-                vCategory = this.getView().byId("ICategory").getValue(), // 화면의 카테고리 선택값 가져오기
-                iMenuCount = oBinding.getLength();
+                vCategory = this.getView().byId("ICategory").getValue(); // 화면의 카테고리 선택값 가져오기
 
             // 메뉴명이 입력된 경우: 부분 일치(Contains) 조건 필터 생성 후 배열에 추가
             if(vMenuid !="")
@@ -121,6 +120,7 @@ sap.ui.define([
             oBinding.filter(aFilter);
 
             // 총 메뉴 수 표시
+            let iMenuCount = oBinding.getLength();
             this.getView().byId("TotalMenuQuantity").setText(iMenuCount);
             
         },
@@ -134,6 +134,9 @@ sap.ui.define([
             var oBinding = this.getView().byId("IMenu").getBinding("rows");
 
             oBinding.filter([]);
+
+            let iMenuCount = oBinding.getLength();
+            this.getView().byId("TotalMenuQuantity").setText(iMenuCount);
         },
 
         onStatusColor: function(vStatus)
