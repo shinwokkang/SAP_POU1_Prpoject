@@ -22,11 +22,30 @@
                 <Title text="CafeFlow" level="H2" class="sapUiTinyMarginBegin" />
                 <Text text="카페 프랜차이즈 통합 운영 관리 시스템" class="sapUiSmallMarginBegin" />
                 <ToolbarSpacer />
+ 
+ 
                 <!-- 우측 사용자 정보 -->
                 <Button
-                    icon="sap-icon://customer"
-                    text="본사관리자"
-                    type="Transparent" />
+                    icon="sap-icon://activity-2"
+                    text="요약"
+                    type="Transparent"
+                    press=".onUserPress" />
+
+
+
+                <MenuButton icon="sap-icon://customer" text="본사관리자" type="Transparent">
+                    <menu>
+                        <Menu itemSelected=".onUserMenuSelect">
+                            <MenuItem text="재고 부족 ({/Dashboard/ShortageCount}건)" icon="sap-icon://alert" key="StockShortage"/>
+                            <MenuItem text="발주 관리" icon="sap-icon://cart" key="Purchase"/>
+                            <MenuItem text="지점 관리" icon="sap-icon://home" key="Store"/>
+                            <MenuItem text="로그아웃"  icon="sap-icon://log"  key="Main"/>
+                        </Menu>
+                    </menu>
+                </MenuButton>
+
+
+
             </tnt:ToolHeader>
         </tnt:header>
 
