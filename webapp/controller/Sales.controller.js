@@ -33,6 +33,19 @@ sap.ui.define([
                 oMenuModel = new JSONModel(aMenuList);
             this.getView().setModel(oMenuModel, "MenuList");
 
+            this.getRouter().getRoute("SalesParam").attachPatternMatched(this.onShowParam, this);
+            
+            // 초기화면 
+            this.getView().attachModelContextChange(function () {
+
+                let oModel = this.getView().getModel();
+
+                if (oModel && oModel.oData.SalesSet) {
+                    this.onTotal();
+                }
+
+            }.bind(this));
+
         },
 
         getRouter:function(){

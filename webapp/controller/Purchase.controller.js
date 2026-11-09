@@ -128,6 +128,18 @@ sap.ui.define([
             oBinding.filter(aFilter);
         },
 
+        // 초기화 버튼을 누르면 테이블이 초기 상태로 돌아오게 한다.
+        onReset: function()
+        {
+            this.getView().byId("IstoreName").setSelectedKey("");
+            this.getView().byId("ImaterialName").setSelectedKey("");
+            this.getView().byId("Istatus").setSelectedKey("");
+
+            let oBinding = this.getView().byId("purchaseTable").getBinding("rows");
+
+            oBinding.filter([]);
+        },
+
         onShowPurchase: function()
         {
             // 알림상태 최신화
