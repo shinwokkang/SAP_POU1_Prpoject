@@ -8,13 +8,13 @@
     xmlns="sap.m">
     <Page id="Dashboard_page" title="{i18n>title}" class="cafeDashboard">
        <OverflowToolbar width="100%" design="Transparent" >
-    <Label text="대시보드" level="H4" design="Bold" />
+    <Label text="대시보드" textStyle="H2" design="Bold" />
     <ToolbarSpacer  />
     <!-- 달력 -->
     <HBox> 
     <Label text="조회기간"  labelFor="calender2" width="5em" design="Bold"/>
     <DatePicker id="calender2" width="10rem" placeholder="2026-11-05" displayFormat="yyyy.MM.dd"
-        valueFormat="yyyy-MM-dd" press="onClcick"/>
+        valueFormat="yyyy-MM-dd" />
     <DatePicker id="calender1" width="10rem" placeholder="2026-11-15" displayFormat="yyyy.MM.dd"
         valueFormat="yyyy-MM-dd" press="onClcick2"/>
     </HBox>
@@ -22,137 +22,234 @@
   
 
     </OverflowToolbar>
-    <HBox width="100%"
-      justifyContent="SpaceBetween"
-      class="sapUiSmallMarginBottom">
+<HBox width="100%" justifyContent="SpaceAround">
 
-    <VBox width="23%" class="dashboardKpi kpiBlue">
-    <HBox alignItems="Center">
-    <core:Icon src="sap-icon://paid-leave" size="1.2rem" class="sapUiTinyMarginEnd" />
-    <Text text="총" />
+    <Panel headerText="전체 지점 총 매출"
+           width="350px" height="160px">
+        <content>
+            <VBox justifyContent="SpaceBetween">
+
+                <VBox>
+                    <Title text="총 매출" level="H2" wrapping="true"/>
+                    <Label text="₩ 29,713,100" design="Bold"/>
+                </VBox>
+            </VBox>
+        </content>
+    </Panel>
+
+    <Panel headerText="운영지점 수 "
+          width="350px"  height="160px">
+        <content>
+        <VBox justifyContent="SpaceBetween">
+        <VBox>
+           <Title text=" 운영지점 점포" />
+           <Text text="10개점" />
+        </VBox>
+            </VBox>
+        </content>
+    </Panel>
+        <Panel headerText="메뉴별 매출 비중" width="350px"  height="160px">
+        <content>
+            <VBox justifyContent="SpaceBetween">
+     <VBox>
+         <Title text="최고 매출메뉴" />
+         <Text text="자몽에이드" />
+    </VBox>
+            </VBox>
+        </content>
+    </Panel>
+
+         <Panel headerText="매출 분석" width="350px"  height="160px">
+    <content>
+            <VBox justifyContent="SpaceBetween">
+
+     <VBox>
+          <Title text="발주 관리" />
+          <Text text="지점별 재고를 관리하세요" />
+    </VBox>
+            </VBox>
+        </content>
+    </Panel>
+
 </HBox>
-        <ObjectNumber
-             number="{path: '/Dashboard/TotalSales',type: 'sap.ui.model.type.Integer',
-             formatOptions: {groupingEnabled: true,groupingSeparator: ','} }" unit="₩"/> 
-    </VBox>
-     <VBox width="23%" class="dashboardKpi kpiGreen">
-     <HBox alignItems="Center">
-    <core:Icon src="sap-icon://home" size="1.2rem" class="sapUiTinyMarginEnd" />
-    <Text text="운영 지점 수" />
-   </HBox>
-    <ObjectNumber number="{
-                                 path: '/StoreSet',
-                            formatter: '.formatOperatingCount'
-                           }" unit="개" class="operatingCount"/>
-                           
-   </VBox>
-
-    <VBox width="23%" class="dashboardKpi kpiPurple">
-        <HBox alignItems="Center">
-    <core:Icon src="sap-icon://favorite" size="1.2rem" class="sapUiTinyMarginEnd" />
-    <Text text="최고 인기 메뉴" />
-     </HBox>
-       <Title text="{
-                        path: '/MenuSet',
-                        formatter: '.formatPopularMenu'
-                     }" />
-    </VBox>
-
-    <VBox width="23%" class="dashboardKpi kpiOrange">
-        <HBox alignItems="Center">
-        <core:Icon src="sap-icon://cart-3" size="1.2rem" class="sapUiTinyMarginEnd" />
-        <Text text="재고 부족" />
-   </HBox>
-        <ObjectNumber
-            number="{/Dashboard/ShortageCount}"
-            unit="건" />
-    </VBox>
-
-</HBox>
+<VBox height="30px"/>
      <!-- 막대 차트 -->
-   <HBox width="100%" alignItems="Stretch">
+<!-- 그래프 위쪽 공백 -->
+<VBox height="30px"/>
 
-    <VBox width="50%" class="chartColumn">
-        <Panel headerText="지점별 매출" width="88%" class="chartCard">
-    <HBox width="100%" justifyContent="SpaceBetween" class="sapUiSmallMarginTopBottom">
-    <VBox >
-        <Text text="전체 매출" />
-        <Title text="₩ 29,713,100" />
-    </VBox>
-    </HBox>
-       <viz:VizFrame id="idVizFrame" height="280px" width="100%" vizType="stacked_column"
-                     vizProperties="{title: {visible: true, text: '지점별 총 매출'}}">
+<!-- 그래프 전체 -->
+   <HBox width="100%" justifyContent="SpaceBetween" alignItems="Start">
+    <!-- 왼쪽 막대그래프 -->
+    <VBox width="49%">
+    <Panel headerText="지점별 매출" width="100%" height="430px">
+    <content>
+    <VBox width="100%">
+       <Text text="전체 매출"/>
+       <Title text="₩ 29,713,100" level="H3"/>
+      <viz:VizFrame id="barChart" width="100%" height="320px" vizType="column"
+    vizProperties='{
+        "title": {
+            "visible": true,
+            "text": "총매출"
+        },
+        "plotArea": {
+        "dataLabel": {
+            "visible": true,
+            "formatString": "0.0,,"
+        }
+    }
+    }'>
        <viz:dataset>
-              <viz.data:FlattenedDataset data="{/SalesSummarySet}">
-              <viz.data:dimensions>
-            <viz.data:DimensionDefinition
-                    name="지점"
-                    value="{Storename}" />
-            </viz.data:dimensions>
-            <viz.data:measures>
-                <viz.data:MeasureDefinition
-                    name="매출금액"
-                    value="{Salesamt}" />
-                </viz.data:measures>
-                </viz.data:FlattenedDataset>
-                </viz:dataset>
-           <viz:feeds>
-               <viz.feeds:FeedItem uid="valueAxis" type="Measure" values="매출금액" />
-               <viz.feeds:FeedItem uid="categoryAxis" type="Dimension" values="지점" />
-               <viz.feeds:FeedItem uid="color" type="Dimension" values="지점" />
-               
-    </viz:feeds>
-    </viz:VizFrame>
-    </Panel>
-    </VBox>
-    <!-- 막대차트 끝 -->
+     <viz.data:FlattenedDataset data="{/SalesSummarySet}">
+    <viz.data:dimensions>
+    <viz.data:DimensionDefinition name="Store Name" value="{Storename}"/>
+     </viz.data:dimensions>
 
-    <!-- 새로운 도넛 차트  -->
-    <VBox width="50%" class="chartColumn" height="60px">
-        <Panel
-            headerText="메뉴별 매출 비중" width="95%" class="chartCard">
-    <viz:VizFrame id="menuDonut" width="100%" height="260px" vizType="donut"
-        vizProperties="{
-            title: {
-                visible: true,
-                text: '메뉴별 매출 비중'
-            },
-            plotArea: {
-                dataLabel: {
-                    visible: true,
-                    type: 'percentage'
-                }
-            },
-            legend: {
-                visible: true
+     <viz.data:measures>
+            <viz.data:MeasureDefinition name="총 매출" value="{Salesamt}"/>
+    </viz.data:measures>
+
+    </viz.data:FlattenedDataset>
+    </viz:dataset>
+    <viz:feeds>
+       <viz.feeds:FeedItem uid="valueAxis" type="Measure" values="총 매출"/>
+       <viz.feeds:FeedItem uid="categoryAxis" type="Dimension"  values="Store Name"/>
+       </viz:feeds>
+      </viz:VizFrame>
+      </VBox>
+       </content>
+    </Panel>
+        </VBox>
+
+   
+    <!-- 오른쪽 메뉴별 판매량 도넛차트 -->
+    <VBox width="49%">
+    <Panel headerText="메뉴별 판매량" width="100%" height="430px">
+    <content>
+        <viz:VizFrame id="donutChart" width="100%" height="365px" vizType="donut"
+    vizProperties='{
+        "title": {
+            "visible": true,
+            "text": "메뉴별 판매량"
+        },
+        "plotArea": {
+            "dataLabel": {
+                "visible": true,
+                "type": "percentage"
             }
-        }">
+        }
+    }'>
+          <viz:dataset>
+         <viz.data:FlattenedDataset data="{/MenuSet}">
+        <viz.data:dimensions>
+         <viz.data:DimensionDefinition name="Menu Name" value="{Menuname}"/>
+            </viz.data:dimensions>
+           <viz.data:measures>
+            <viz.data:MeasureDefinition name="Quantity" value="{Soldqty}"/>
+                        </viz.data:measures>
+             </viz.data:FlattenedDataset>
+                </viz:dataset>
+                
+      <viz:feeds>
+             <viz.feeds:FeedItem uid="size" type="Measure" values="Quantity"/>
+             <viz.feeds:FeedItem uid="color" type="Dimension" values="Menu Name"/>
+      </viz:feeds>
+      </viz:VizFrame>
+     </content>
+     </Panel>
 
-        <viz:dataset>
-            <viz.data:FlattenedDataset data="{/SalesSet}">
-                <viz.data:dimensions>
-                    <viz.data:DimensionDefinition
-                        name="메뉴"
-                        value="{Menuname}" />
-                </viz.data:dimensions>
+</VBox>
 
-                <viz.data:measures>
-                    <viz.data:MeasureDefinition
-                        name="매출금액"
-                        value="{Amount}" />
-                </viz.data:measures>
-            </viz.data:FlattenedDataset>
-        </viz:dataset>
-
-        <viz:feeds>
-            <viz.feeds:FeedItem uid="size" type="Measure" values="매출금액" />
-            <viz.feeds:FeedItem uid="color" type="Dimension" values="메뉴" />
-        </viz:feeds>
-    </viz:VizFrame>
-    </Panel>
-    </VBox>
-    </HBox>
+</HBox>
 <!-- 도넛차트 끝 -->
+    <VBox height="45px"/>
+    <!-- 큰 흰색 박스 -->
+    <Panel width="100%" backgroundDesign="Solid">
+    <content>
+    <VBox width="100%">
+
+                <!-- 상단 제목 -->
+    <HBox width="100%" justifyContent="SpaceBetween" alignItems="Center">
+         
+         <Text text="매일 오전 9시 업데이트"/>
+     </HBox>
+     <VBox height="20px"/>
+            <!-- 첫 번째 줄 -->
+     <HBox width="100%" justifyContent="SpaceBetween" alignItems="Center">
+
+    <VBox width="350px">
+    <VBox >
+        <Text text="영업시간 운영률 "/>
+        <Title text="91%" level="H3"/>
+    </VBox>
+    </VBox>
+     <Toolbar height="90px">
+    <ToolbarSeparator/>
+    </Toolbar>
+     <VBox width="350px">
+        <Text text="운영지점 수"/>
+        <Title text="10개 지점" level="H3"/>
+    </VBox>
+    <Toolbar height="90px">
+        <ToolbarSeparator/>
+    </Toolbar>
+    <VBox width="350px">
+        <Text text="재고관리"/>
+        <Title text="성수점 원두 부족" level="H3"/>
+   </VBox>
+   </HBox>
+   <VBox height="15px"/>
+   <VBox height="10px"/>
+
+                <!-- 두 번째 줄 -->
+    <VBox height="15px"/>
+    <HBox width="100%" justifyContent="SpaceBetween">
+    <Panel width="350px" height="110px">
+     <content>
+    <VBox>
+        <Text text="최근 발주"/>
+        <Title text="11월 5일 춘천점" level="H2"/>
+        </VBox>
+        </content>
+        </Panel>
+
+        <Panel width="350px" height="110px">
+        <content>
+        <VBox>
+            <Text text="인기메뉴"/>
+            <Title text="자몽에이드" level="H2"/>
+        </VBox>
+        </content>
+        </Panel>
+             <Panel width="350px" height="110px">
+       <content>
+       <VBox>
+            <Text text="최근 별점 "/>
+           <Title text="4.9⭐" level="H2"/>
+     </VBox>
+    </content>
+            </Panel>
+     </HBox>
+     <VBox height="20px"/>
+             <!-- 아래 안내 박스 -->
+    <Panel width="100%"  backgroundDesign="Translucent">
+    <content>
+     <HBox justifyContent="Center">
+   
+     </HBox>
+     </content>
+
+     </Panel>
+      </VBox>
+    </content>
+
+    </Panel>
+
+    <!-- 큰 박스와 버튼 사이 공백 -->
+    <VBox height="15px"/>
+
+   
+
 
     </Page>
-</mvc:View>
+    </mvc:View>
