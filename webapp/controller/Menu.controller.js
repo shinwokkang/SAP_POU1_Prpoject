@@ -29,23 +29,9 @@ sap.ui.define([
             this.getView().setModel(oCategoryModel, "Category");
 
             // 지점 목록 데이터 정의 (성수점, 강남점 등)
-            let oData = {
-                            StoreNameSet :
-                            [
-                                {Strcd: "S001", Store : "성수점"},
-                                {Strcd: "S002", Store : "강남점"},
-                                {Strcd: "S003", Store : "수원점"},
-                                {Strcd: "S004", Store : "성남점"},
-                                {Strcd: "S005", Store : "춘천점"},
-                                {Strcd: "S006", Store : "대전점"},
-                                {Strcd: "S007", Store : "전주점"},
-                                {Strcd: "S008", Store : "대구점"},
-                                {Strcd: "S009", Store : "부산점"},
-                                {Strcd: "S010", Store : "제주점"}
-                            ]
-                        },
+            
             // 원자재 목록 데이터 정의 (원두, 우유 등)
-                oData2= {
+            let oData2= {
                             MaterialSet: 
                             [
                                 {Matnr: "R001", Matname: "원두"},
@@ -64,9 +50,10 @@ sap.ui.define([
                            ]
                         
             // 각각의 데이터를 JSON 모델로 생성하여 뷰에 바인딩 (StoSet, MSET, StaSet)
-            this.getView().setModel(new JSONModel(oData), "StoSet");
+            //this.getView().setModel(new JSONModel(oData), "StoSet");
             this.getView().setModel(new JSONModel(oData2),"MSET");
             this.getView().setModel(new JSONModel(StatusSet),"StaSet");
+            this.getView().setModel(new JSONModel("/model/Store.json"),"StoreNameSet");
         },
 
         // function 01. 지점 조회용 함수 (외부 유틸리티 모듈 FSearchStore 활용)

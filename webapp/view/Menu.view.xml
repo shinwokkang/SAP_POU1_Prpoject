@@ -20,12 +20,12 @@
                     <HBox>
                         <ComboBox
                             id="IcomboStore"
-                            items="{StoSet>/StoreNameSet}"
+                            items="{StoreNameSet>/StoreNameSet}"
                             width="8rem"
                             placeholder="전체">
 
-                            <core:Item key="{StoSet>Strcd}"
-                                    text="{StoSet>Store}"/>
+                            <core:Item key="{StoreNameSet>Strcd}"
+                                    text="{StoreNameSet>Store}"/>
                         </ComboBox>
                         <ToolbarSpacer width="2rem"  />
 
