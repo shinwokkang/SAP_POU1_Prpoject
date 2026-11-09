@@ -10,8 +10,14 @@ sap.ui.define([
 
     return Controller.extend("code2.fiori.pou.pou1project.controller.Purchase", {
         onInit() {
+                    
+            // 일반 메뉴에서 8번으로 들어올 때
             this.getRouter().getRoute("Purchase").attachPatternMatched(
-            this.onUpdateAlert, this);
+                this.onShowPurchase, this);
+
+            // 7번에서 지점, 원재료를 전달받을 때
+            this.getRouter().getRoute("PurchaseParam").attachPatternMatched(
+                this.onShowParam, this);
 
             let oData = {
                             StoreNameSet :
@@ -151,7 +157,62 @@ sap.ui.define([
             };
 
             oBinding.filter(aFilter);
-        }
+        },
+
+        onShowPurchase: function()
+            {
+                // 알림상태 최신화
+                this.onUpdateAlert();
+
+                // 일반 메뉴 진입 시 조회 조건 초기화
+                this.getView().byId("IstoreName").setSelectedKey("");
+                this.getView().byId("ImaterialName").setSelectedKey("");
+                this.getView().byId("Istatus").setSelectedKey("");
+
+                var oBinding = this.getView().byId("purchaseTable").getBinding("rows");
+
+                oBinding.filter([]);
+            },
+
+            onShowParam: function(oEvent)
+            {
+                // URL 매개변수 받기
+                let vStore = oEvent.getParameters().arguments.Storeid,
+                    vMatnr = oEvent.getParameters().arguments.Matnr;
+
+                // ComboBox에 전달받은 값 선택
+                this.getView().byId("IstoreName").setSelectedKey(vStore);
+                this.getView().byId("ImaterialName").setSelectedKey(vMatnr);
+                this.getView().byId("Istatus").setSelectedKey("");
+
+                // 기존 알림 상태 최신화
+                this.onUpdateAlert();
+
+                // 전달받은 지점과 원재료로 자동 조회
+                let oBinding = this.getView().byId("purchaseTable").getBinding("rows"),
+                    aFilter = [],
+                    oFilter = null;
+
+                oFilter = new Filter({
+                    path: "Storeid",
+                    operator: FilterOperator.EQ,
+                    value1: vStore
+                });
+
+                aFilter.push(oFilter);
+
+                oFilter = new Filter({
+                    path: "Matnr",
+                    operator: FilterOperator.EQ,
+                    value1: vMatnr
+                });
+
+                aFilter.push(oFilter);
+
+                oBinding.filter(aFilter);
+            },
+
+
 
         
     });

@@ -49,16 +49,15 @@ sap.ui.define([
         },
         // 알람 추가
                 
+            
         onSendAlert: function(oEvent)
         {
-            console.log("1. 부족 수량 클릭");
-
+            // 클릭한 재고 정보 가져오기
             let oContext = oEvent.getSource().getBindingContext("CSET"),
                 ls_stock = oContext.getObject(),
                 oModel = this.getView().getModel("CSET"),
-                vPath = oContext.getPath();
-
-            console.log("2. 선택한 재고:", ls_stock.Storeid, ls_stock.Matnr);
+                vPath = oContext.getPath(),
+                oRouter = this.getOwnerComponent().getRouter();
 
             MessageBox.confirm(
                 ls_stock.Storename + "의 " + ls_stock.Matname +
@@ -70,21 +69,25 @@ sap.ui.define([
 
                     onClose: function(vAction)
                     {
-
                         if(vAction == "예")
                         {
+                            // 알림 상태 저장
                             oModel.setProperty(
                                 vPath + "/AlertStatus",
                                 "발송 완료"
                             );
 
-
-                            MessageBox.information("발주 요청 알림이 등록되었습니다.");
+                            // 지점과 원재료를 전달하면서 8번으로 이동
+                            oRouter.navTo("PurchaseParam", {
+                                Storeid: ls_stock.Storeid,
+                                Matnr: ls_stock.Matnr
+                            });
                         }
                     }
                 }
             );
-        }
+        } 
+        
 
     });
 });
