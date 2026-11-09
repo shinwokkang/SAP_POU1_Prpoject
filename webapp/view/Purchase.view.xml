@@ -5,8 +5,26 @@
     xmlns:c="sap.ui.core"
     xmlns="sap.m">
     <Page id="Purchase_page" title="{i18n>title}">
-        <Title text = "발주 관리" titleStyle = "H2"/>
-        <Text text="   "    />
+
+    <VBox class="sapUiSmallMargin">
+        <HBox
+            alignItems="Center"
+            class="sapUiSmallMargin">
+
+            <c:Icon
+                src="sap-icon://cart"
+                size="2rem"
+                color="#2681cb"
+                class="sapUiResponsiveMargin"/>
+
+            <Title
+                text="발주 관리"
+                titleStyle="H2"/>
+
+        </HBox>
+    </VBox>
+
+
         <t:Table
             id="purchaseTable"
             rows="{/PurchaseSet}"
@@ -125,6 +143,7 @@
                     </t:template>
                 </t:Column>
 
+
                 <t:Column width="10rem">
                     <Label text="알림상태"/>
                     <t:template>
@@ -134,7 +153,6 @@
                             inverted="true"/>
                     </t:template>
                 </t:Column>
-                
             </t:columns>
         </t:Table>
     </Page>

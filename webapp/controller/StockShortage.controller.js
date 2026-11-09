@@ -48,34 +48,64 @@ sap.ui.define([
             return "Warning";                                      // 부족 → 주황
         },
         // 알람 추가
+                
+            
         onSendAlert: function(oEvent)
         {
+            // 클릭한 재고 정보 가져오기
             let oContext = oEvent.getSource().getBindingContext("CSET"),
                 ls_stock = oContext.getObject(),
-                  oModel = this.getView().getModel("CSET"),
-                   vPath = oContext.getPath();
-                   
+                oModel = this.getView().getModel("CSET"),
+                vPath = oContext.getPath(),
+                oRouter = this.getOwnerComponent().getRouter();
+
             MessageBox.confirm(
                 ls_stock.Storename + "의 " + ls_stock.Matname +
                 " 발주 요청 알림을 보내시겠습니까?",
                 {
                     title: "발주 요청 안내",
-                    AuthenticatorAttestationResponse: ["예","아니요"],
+                    actions: ["예", "아니요"],
                     emphasizedAction: "예",
 
                     onClose: function(vAction)
                     {
-                        if(vAction =="예")
+                        if(vAction == "예")
                         {
-                            oModel.setProperty(
-                                vPath + "/AlertStatus",
-                                "발송 완료"
+                            // 알림 상태 저장
+                            oModel.setProperty( vPath + "/AlertStatus","발송 완료" );
+                            
+                             // 발송 상태를 기록한 뒤 화면을 이동할지 확인
+                            MessageBox.confirm
+                            (
+                                "발주 요청 알림을 보냈습니다.\n발주 관리 페이지로 이동하시겠습니까?",
+                                {
+                                    title: "발주 관리 이동",
+                                    actions: ["예", "아니요"],
+                                    emphasizedAction: "예",
+
+                                    onClose: function(vMoveAction)
+                                    {
+                                        // 두 번째 창에서 예를 눌렀을 때만 이동
+                                        if(vMoveAction == "예")
+                                        {
+                                            oRouter.navTo
+                                            ("PurchaseParam", 
+                                                {
+                                                Storeid: ls_stock.Storeid,
+                                                Matnr: ls_stock.Matnr
+                                                }
+                                            );
+                                        }
+                                    }
+                                }
                             );
-                            MessageBox.information("발주 요청 알림이 등록되었습니다.");
+                            
                         }
                     }
                 }
-            )
-        }
+            );
+        } 
+        
+
     });
 });
