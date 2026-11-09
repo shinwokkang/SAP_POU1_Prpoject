@@ -29,20 +29,20 @@
     </HBox>
     <ToolbarSpacer  />
     <!-- 달력 -->
-    <HBox> 
+    <HBox alignItems="Center">
     <Label text="조회기간"  labelFor="calender2" width="5em" design="Bold"/>
-    <DatePicker id="calender2" width="10rem" placeholder="2026-11-05" value="2026-11-05" displayFormat="yyyy.MM.dd"
-        valueFormat="yyyy-MM-dd" />
-        <Text text="~"/>
-    <DatePicker id="calender1" width="10rem" placeholder="2026-11-15" value="2026-11-15" displayFormat="yyyy.MM.dd"
-        valueFormat="yyyy-MM-dd"/>
+    <DatePicker id="calender2" value="2026-10-30" width="10rem" displayFormat="yyyy.MM.dd" valueFormat="yyyy-MM-dd"/>
+
+<DatePicker id="calender1" value="2026-11-03" width="10rem" displayFormat="yyyy.MM.dd" valueFormat="yyyy-MM-dd"/>
         <Button text="조회" press="Button" icon="sap-icon://search" type="Emphasized" />
     </HBox>
     <!-- 달력 끝 -->
   
 
     </OverflowToolbar>
-   <HBox width="100%" justifyContent="SpaceBetween">
+   <VBox height="40px"/>
+
+<HBox width="100%" justifyContent="SpaceBetween">
 
     <VBox width="24%" class="sapUiSmallMarginEnd">
        <Panel headerText="총 매출 "
@@ -51,7 +51,7 @@
         <VBox justifyContent="SpaceBetween">
         <VBox>
            <Title text=" 총 매출"/>
-            <Text id="totalSales" press="onSales"/>
+            <Text id="totalSales"/>
         </VBox>
             </VBox>
         </content>
@@ -79,7 +79,7 @@
         <VBox justifyContent="SpaceBetween">
         <VBox>
            <Title text=" 인기메뉴"/>
-           <Text id="SaleSet" press="SaleSet"/>
+           <Text id="SaleSet"/>
         </VBox>
             </VBox>
         </content>
@@ -92,7 +92,7 @@
         <VBox justifyContent="SpaceBetween">
         <VBox>
            <Title text=" 발주 관리"/>
-           <Text id="orderCount" press="onOrder"/>
+           <Text id="orderCount"/>
         </VBox>
             </VBox>
         </content>
@@ -102,10 +102,10 @@
     
 
 </HBox>
-<VBox height="30px"/>
+<VBox height="10px"/>
      <!-- 막대 차트 -->
 <!-- 그래프 위쪽 공백 -->
-<VBox height="30px"/>
+
 
 <!-- 그래프 전체 -->
    <HBox width="100%" justifyContent="SpaceBetween" alignItems="Start">
@@ -130,17 +130,19 @@
     }
     }'>
        <viz:dataset>
-   <viz.data:FlattenedDataset data="{/SalesSummarySet}">
-    <viz.data:dimensions>
-    <viz.data:DimensionDefinition name="Store Name" value="{Storename}"/>
-     </viz.data:dimensions>
-
-     <viz.data:measures>
-            <viz.data:MeasureDefinition name="총 매출" value="{Salesamt}"/>
-    </viz.data:measures>
-
+    <viz.data:FlattenedDataset data="{/FilteredSalesSet}">
+        <viz.data:dimensions>
+            <viz.data:DimensionDefinition
+                name="Store Name"
+                value="{Storename}"/>
+        </viz.data:dimensions>
+        <viz.data:measures>
+            <viz.data:MeasureDefinition
+                name="총 매출"
+                value="{Salesamt}"/>
+        </viz.data:measures>
     </viz.data:FlattenedDataset>
-    </viz:dataset>
+</viz:dataset>
     <viz:feeds>
        <viz.feeds:FeedItem uid="valueAxis" type="Measure" values="총 매출"/>
        <viz.feeds:FeedItem uid="categoryAxis" type="Dimension"  values="Store Name"/>
@@ -169,16 +171,20 @@
             }
         }
     }'>
-          <viz:dataset>
-         <viz.data:FlattenedDataset data="{/MenuSet}">
+         <viz:dataset>
+    <viz.data:FlattenedDataset data="{/FilteredMenuSet}">
         <viz.data:dimensions>
-         <viz.data:DimensionDefinition name="Menu Name" value="{Menuname}"/>
-            </viz.data:dimensions>
-           <viz.data:measures>
-            <viz.data:MeasureDefinition name="Quantity" value="{Soldqty}"/>
-                        </viz.data:measures>
-             </viz.data:FlattenedDataset>
-                </viz:dataset>
+            <viz.data:DimensionDefinition
+                name="Menu Name"
+                value="{Menuname}"/>
+        </viz.data:dimensions>
+        <viz.data:measures>
+            <viz.data:MeasureDefinition
+                name="Quantity"
+                value="{Soldqty}"/>
+        </viz.data:measures>
+    </viz.data:FlattenedDataset>
+</viz:dataset>
                 
       <viz:feeds>
              <viz.feeds:FeedItem uid="size" type="Measure" values="Quantity"/>
@@ -192,91 +198,6 @@
 
 </HBox>
 <!-- 도넛차트 끝 -->
-    <VBox height="45px"/>
-    <!-- 큰 흰색 박스 -->
-    <Panel width="100%" backgroundDesign="Solid">
-    <content>
-    <VBox width="100%">
-
-                <!-- 상단 제목 -->
-    <HBox width="100%" justifyContent="SpaceBetween" alignItems="Center">
-         
-         <Text text="매일 오전 9시 업데이트"/>
-     </HBox>
-     <VBox height="20px"/>
-            <!-- 첫 번째 줄 -->
-     <HBox width="100%" justifyContent="SpaceBetween" alignItems="Center">
-
-    <VBox width="350px">
-    <VBox >
-        <Text text="영업시간 운영률 "/>
-        <Title text="91%" level="H3"/>
-    </VBox>
-    </VBox>
-     <Toolbar height="90px">
-    <ToolbarSeparator/>
-    </Toolbar>
-     <VBox width="350px">
-        <Text text="운영지점 수"/>
-        <Title text="10개 지점" level="H3"/>
-    </VBox>
-    <Toolbar height="90px">
-        <ToolbarSeparator/>
-    </Toolbar>
-    <VBox width="350px">
-        <Text text="재고관리"/>
-        <Title text="성수점 원두 부족" level="H3"/>
-   </VBox>
-   </HBox>
-   <VBox height="15px"/>
-   <VBox height="10px"/>
-
-                <!-- 두 번째 줄 -->
-    <VBox height="15px"/>
-    <HBox width="100%" justifyContent="SpaceBetween">
-    <Panel width="350px" height="110px">
-     <content>
-    <VBox>
-        <Text text="최근 발주"/>
-        <Title text="11월 5일 춘천점" level="H2"/>
-        </VBox>
-        </content>
-        </Panel>
-
-        <Panel width="350px" height="110px">
-        <content>
-        <VBox>
-            <Text text="인기메뉴"/>
-            <Title text="자몽에이드" level="H2"/>
-        </VBox>
-        </content>
-        </Panel>
-             <Panel width="350px" height="110px">
-       <content>
-       <VBox>
-            <Text text="최근 별점 "/>
-           <Title text="4.9" level="H2"/>
-     </VBox>
-    </content>
-            </Panel>
-     </HBox>
-     <VBox height="20px"/>
-             <!-- 아래 안내 박스 -->
-    <Panel width="100%"  backgroundDesign="Translucent">
-    <content>
-     <HBox justifyContent="Center">
-   
-     </HBox>
-     </content>
-
-     </Panel>
-      </VBox>
-    </content>
-
-    </Panel>
-
-    <!-- 큰 박스와 버튼 사이 공백 -->
-    <VBox height="15px"/>
 
    
 

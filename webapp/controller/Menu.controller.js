@@ -34,50 +34,10 @@ sap.ui.define([
 
             this.getView().setModel(new JSONModel(CategorySet), "Category");
             this.getView().setModel(new JSONModel(MenuStatusSet),"MenuStaSet");
-
-            // 원자재 목록 데이터 정의 (원두, 우유 등)
-            let oData2= {
-                            MaterialSet: 
-                            [
-                                {Matnr: "R001", Matname: "원두"},
-                                {Matnr: "R002", Matname: "우유"},
-                                {Matnr: "R003", Matname: "말차가루"},
-                                {Matnr: "R004", Matname: "초코파우더"},
-                                {Matnr: "R005", Matname: "밀가루"},
-                                {Matnr: "R006", Matname: "버터"}
-                            ]
-                        };
-            // 상태 목록 데이터 정의 (발주완료, 발주요청, 입고완료)
-            let StatusSet= [
-                            {Status: "발주완료"},
-                            {Status: "발주요청"},
-                            {Status: "입고완료"}
-                           ]
-                        
-            // 각각의 데이터를 JSON 모델로 생성하여 뷰에 바인딩 (MSET, StaSet)
-            this.getView().setModel(new JSONModel(oData2),"MSET");
-            this.getView().setModel(new JSONModel(StatusSet),"StaSet");
             this.getView().setModel(new JSONModel("/model/Store.json"),"StoreNameSet");
  
         },
 
-        // function 01. 지점 조회용 함수 (외부 유틸리티 모듈 FSearchStore 활용)
-        searchFilter: function()
-        {
-            // 지점 테이블("IFSearchStoreTable")의 바인딩(행 데이터)과 필터 배열 초기화
-            let oBinding = this.getView().byId("IFSearchStoreTable").getBinding("rows"),
-                aFilter = [];
-
-            // 외부 모듈(FSearchStore)의 함수를 호출하여 필터 조건들을 aFilter에 추가
-            // this.getView() : 현재 화면(View)의 정보. 화면에 있는 입력창 컴포넌트들을 찾아내기 위함
-            // aFilter : 현재 만들어져 있는 필터들의 목록(배열).
-            aFilter = getStoreFilter.addStoreFilter(this.getView(), aFilter);
-
-            // 완성된 필터를 테이블 바인딩에 적용하여 화면 갱신
-            oBinding.filter(aFilter);
-        },
-
-        // function 02. 라우터 객체를 쉽게 가져오기 위한 공통 헬퍼 함수
         getRouter:function(){
             return sap.ui.core.UIComponent.getRouterFor(this);
         },

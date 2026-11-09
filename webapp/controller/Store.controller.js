@@ -13,8 +13,6 @@ sap.ui.define([
             oRoute.getRoute("Store").attachPatternMatched(this.onRouteMatch, this);
             oRoute.getRoute("StoreFilter").attachPatternMatched(this.onRouteMatch, this);
 
-            // let oStoreModel = new JSONModel("/data/Cafeset.json");
-            // this.getView().setModel(oStoreModel, "Store")
 
             let RegionSet = [
                                 {Region : "서울"},
@@ -43,17 +41,17 @@ sap.ui.define([
         onRouteMatch : function(oRoute)
         {
             let vRoute = oRoute.getParameter("name"),
-                oCombodata = this.getView().byId("iStatus")
+                oStatusCombo = this.getView().byId("iStatus")
             
             if (vRoute === "StoreFilter")
             {
-                oCombodata.setSelectedKey("운영중");
+                oStatusCombo.setSelectedKey("운영중");
             }
             else
             {
                 this.getView().byId("iStorename").setValue("");
                 this.getView().byId("iRegion").setSelectedKey("");
-                oCombodata.setSelectedKey("");
+                oStatusCombo.setSelectedKey("");
             }
             
             this.onStoreSearch();
@@ -113,38 +111,47 @@ sap.ui.define([
             if (vStatus === "운영중")
                 {
                     MessageBox.confirm("휴점 상태로 변경하시겠습니까? ",{
-                            title : "운영 상태 변경",
-                            actions : ["예", "아니오"],
-                            emphasizedAction : "예",
+                        title : "운영 상태 변경",
+                        actions : ["예", "아니오"],
+                        emphasizedAction : "예",
 
-                            onClose : function(Aclose)
+                        onClose : function(Aclose)
+                        {
+                            if(Aclose === "예")
                             {
-                                if(Aclose === "예")
-                                {
-                                    vButton.setType("Reject") 
-                                    vButton.setText("휴점중")
-                                }
+                                vButton.setType("Reject") 
+                                vButton.setText("휴점중")
                             }
-                        })
+                        }
+                    })
                 }
             else
                 {
                     MessageBox.confirm("운영 상태로 변경하시겠습니까? ",{
-                            title : "운영 상태 변경",
-                            actions : ["예", "아니오"],
-                            emphasizedAction : "예",
+                        title : "운영 상태 변경",
+                        actions : ["예", "아니오"],
+                        emphasizedAction : "예",
 
-                            onClose : function(Aclose)
+                        onClose : function(Aclose)
+                        {
+                            if(Aclose === "예")
                             {
-                                if(Aclose === "예")
-                                {
-                                    vButton.setType("Accept") 
-                                    vButton.setText("운영중")
-                                }
+                                vButton.setType("Accept") 
+                                vButton.setText("운영중")
                             }
-                        
-                        })
-                };
+                        }
+                    
+                    })
+                }
+        },
+        onReset : function()
+        {
+            this.getView().byId("iStorename").setValue("");
+            this.getView().byId("iRegion").setSelectedKey("");
+            this.getView().byId("iStatus").setSelectedKey("");
+
+            let oBinding = this.getView().byId("StoreSet").getBinding("rows");
+            oBinding.filter([]);
         }
     });
 });
