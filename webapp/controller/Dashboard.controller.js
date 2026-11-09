@@ -11,13 +11,11 @@ sap.ui.define([
             this.onSales();
             this.SaleSet();
             this.OrderSet();
-            this.onStore();
+            
 
         },
 
-        onStore() {
-            this.getOwnerComponent().getRouter().navTo("StoreFilter");
-        },
+       
         onSales: function () {
             let oModel = this.getOwnerComponent().getModel();
             let aSales = oModel.getProperty("/SalesSummarySet");
@@ -68,8 +66,12 @@ sap.ui.define([
 
             oSideNav.setSelectedKey("Store")
 
+            this.getOwnerComponent().getRouter().navTo("StoreFilter");
 
+        },
 
+        onStoreCount : function()
+        {
             let oModel = this.getOwnerComponent().getModel();
             let Store = oModel.getProperty("/StoreSet");
             let count = 0;
@@ -82,27 +84,11 @@ sap.ui.define([
             }
 
             this.byId("storeCount").setText(count + "개점");
-        },
-        Button: function () {
+        }
+       
 
-            let start = this.byId("calendar2").getValue();
-            let end = this.byId("calendar1").getValue();
 
-            let oModel = this.getOwnerComponent().getModel();
-            let aSales = oModel.getProperty("/SalesHistorySet") || [];
-            let aResult = [];
 
-            for (let i = 0; i < aSales.length; i++) {
-
-                if (aSales[i].Date >= start && aSales[i].Date <= end) {
-                    aResult.push(aSales[i]);
-                }
-
-            }
-
-            oModel.setProperty("/FilteredSalesSet", aResult);
-
-        },
 
 
 
