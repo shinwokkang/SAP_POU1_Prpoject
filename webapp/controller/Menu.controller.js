@@ -49,8 +49,7 @@ sap.ui.define([
                             {Status: "입고완료"}
                            ]
                         
-            // 각각의 데이터를 JSON 모델로 생성하여 뷰에 바인딩 (StoSet, MSET, StaSet)
-            //this.getView().setModel(new JSONModel(oData), "StoSet");
+            // 각각의 데이터를 JSON 모델로 생성하여 뷰에 바인딩 (MSET, StaSet)
             this.getView().setModel(new JSONModel(oData2),"MSET");
             this.getView().setModel(new JSONModel(StatusSet),"StaSet");
             this.getView().setModel(new JSONModel("/model/Store.json"),"StoreNameSet");
