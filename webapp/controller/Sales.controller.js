@@ -33,6 +33,8 @@ sap.ui.define([
                 oMenuModel = new JSONModel(aMenuList);
             this.getView().setModel(oMenuModel, "MenuList");
 
+            this.getRouter().getRoute("SalesParam").attachPatternMatched(this.onShowParam, this);
+
         },
 
         getRouter:function(){

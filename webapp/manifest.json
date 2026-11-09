@@ -158,6 +158,13 @@
           "target": [
             "TargetSalesAnalytics"
           ]
+        },
+        {
+          "name": "SalesParam",
+          "pattern": "Sales/{Storeid}/{From}/{To}",
+          "target": [
+            "TargetSales"
+          ]
         }
       ],
       "targets": {
