@@ -18,10 +18,10 @@ sap.ui.define([
                             {Status: "발주요청"},
                             {Status: "입고완료"}
                            ]
-                           
-            this.getView().setModel(new JSONModel("/model/Store.json"), "StoSet");
+
+            this.getView().setModel(new JSONModel("/model/Store.json"), "StoSet");      // 매점id와 매점명을 "StoSet" 공간에 저장
             this.getView().setModel(new JSONModel("/model/Material.json"),"MSET");
-            this.getView().setModel(new JSONModel(StatusSet),"StaSet");                 // 발주상태 테이블을 "StaSet"이라는 공간에 JSON으로 저장 
+            this.getView().setModel(new JSONModel(StatusSet),"StaSet");                 // 발주상태 테이블을 "StaSet" 공간에 저장
         },
 
         getRouter:function(){
