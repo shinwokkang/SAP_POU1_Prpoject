@@ -61,23 +61,20 @@ sap.ui.define([
                 let ls_purchase = lt_purchase[i],
                     vStatus = "";
 
-                // 재고 데이터와 비교
+                // 재고 데이터와 발주 데이터를 비교
                 for(let ls_stock of lt_stock)
                 {
                     if(ls_purchase.Storeid == ls_stock.Storeid &&
                        ls_purchase.Matnr == ls_stock.Matnr &&
-                       ls_stock.AlertStatus == "발송 완료")
+                       ls_stock.AlertStatus == "발송 완료")            // 재고 데이터와 발주 데이터의 store id가 같고, 원자재명이 같으면 실행 
                     {
-                        vStatus = "발송 완료";
+                        vStatus = "발송 완료";                         // vStatus에 "발송 완료"로 저장.
 
                     }
                 }
 
-                // 발주 데이터에 알림 상태 반영
-                oModel.setProperty(
-                    "/PurchaseSet/" + i + "/AlertStatus",
-                    vStatus
-                );
+                // 발주 데이터에 알림 상태 저장
+                oModel.setProperty("/PurchaseSet/" + i + "/AlertStatus", vStatus);          // vStatus에 "발송 완료"로 되어 있으면 그것으로 저장된다.
             }
         },
 
