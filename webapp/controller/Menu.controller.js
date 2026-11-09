@@ -18,20 +18,20 @@ sap.ui.define([
             this.getView().setModel(oModel, "CSET");
             
             // 카테고리 목록 데이터를 담고 있는 로컬 JSON 모델 생성 및 설정
-            let CategorySet = [
-                                {Category : "Coffee"},
-                                {Category : "NonCoffee"},
-                                {Category : "Ade"},
-                                {Category : "Bakery"},
-                                {Category : "Dessert"}
-                              ],
+            let CategorySet   = [
+                                  {Category : "Coffee"},
+                                  {Category : "NonCoffee"},
+                                  {Category : "Ade"},
+                                  {Category : "Bakery"},
+                                  {Category : "Dessert"}
+                                ],
 
-              MenuStatusSet = [
-                                 {Status: "판매대기"},
-                                 {Status: "판매중"},
-                                 {Status: "판매종료"}
-                              ];
-            
+                MenuStatusSet = [
+                                  {Status: "판매대기"},
+                                  {Status: "판매중"},
+                                  {Status: "판매종료"}
+                                ];
+
             this.getView().setModel(new JSONModel(CategorySet), "Category");
             this.getView().setModel(new JSONModel(MenuStatusSet),"MenuStaSet");
 
@@ -86,6 +86,7 @@ sap.ui.define([
         onSearch: function ()
         {
             let oBinding = this.getView().byId("IMenu").getBinding("rows"), // 메뉴 테이블 바인딩 정보 가져오기
+                vMenuCount = this.getView().getModel("oMenuCount"),
                 oFilter  = null,
                 aFilter = [],
                 vMenuid = this.getView().byId("IInputMenuname").getValue(), // 화면의 메뉴명 입력값 가져오기
@@ -118,7 +119,7 @@ sap.ui.define([
 
             // 생성된 필터들을 메뉴 테이블 바인딩에 일괄 적용
             oBinding.filter(aFilter);
-
+            vMenuCount = aFilter.length;
         },
 
         onReset: function()

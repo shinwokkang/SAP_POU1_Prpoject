@@ -201,7 +201,7 @@
 
         <Label
         id="TotalQuantity1" design="Bold" width="8rem"
-        text="12 건"/> 
+        text="12"/> 
 
         </HBox>
     </Page>
