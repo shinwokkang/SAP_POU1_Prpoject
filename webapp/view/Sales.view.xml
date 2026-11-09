@@ -19,13 +19,13 @@
 
                 <Label
                 id="TotalQuantity" design="Bold" width="7rem"
-                text="6000"/> 
+                text="0"/> 
 
                 <Title text="총 매출금액 : "  width="8rem" />
 
                 <u:Currency
                 id="TotalAmount"
-                value="29713100"
+                value="0"
                 currency="KRW"/>
             </HBox>
 
@@ -111,22 +111,5 @@
                 </t:Column>
             </t:columns>					
         </t:Table>
-
-    <!-- <HBox>
-        <ToolbarSpacer width="40rem"/>
-        <Title text="총 판매량 : " width="8rem" />
-
-        <Label
-        id="TotalQuantity" design="Bold" width="8rem"
-        text="0"/> 
-
-        <Title text="총 매출금액 : "  width="8rem" />
-
-        <u:Currency
-        id="TotalAmount"
-        value="0"
-        currency="KRW"/>
-    </HBox> -->
-
     </Page>
 </mvc:View>
