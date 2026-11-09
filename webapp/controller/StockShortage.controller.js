@@ -77,11 +77,27 @@ sap.ui.define([
                                 "발송 완료"
                             );
 
-                            // 지점과 원재료를 전달하면서 8번으로 이동
-                            oRouter.navTo("PurchaseParam", {
-                                Storeid: ls_stock.Storeid,
-                                Matnr: ls_stock.Matnr
-                            });
+                            // 발송 상태를 기록한 뒤 화면을 이동할지 확인
+                            MessageBox.confirm(
+                                "발주 요청 알림을 보냈습니다.\n발주 관리 페이지로 이동하시겠습니까?",
+                                {
+                                    title: "발주 관리 이동",
+                                    actions: ["예", "아니요"],
+                                    emphasizedAction: "예",
+
+                                    onClose: function(vMoveAction)
+                                    {
+                                        // 두 번째 창에서 예를 눌렀을 때만 이동
+                                        if(vMoveAction == "예")
+                                        {
+                                            oRouter.navTo("PurchaseParam", {
+                                                Storeid: ls_stock.Storeid,
+                                                Matnr: ls_stock.Matnr
+                                            });
+                                        }
+                                    }
+                                }
+                            );
                         }
                     }
                 }

@@ -136,52 +136,15 @@ sap.ui.define([
                 // 알림상태 최신화
                 this.onUpdateAlert();
 
-                // 일반 메뉴 진입 시 조회 조건 초기화
-                this.getView().byId("IstoreName").setSelectedKey("");
-                this.getView().byId("ImaterialName").setSelectedKey("");
-                this.getView().byId("Istatus").setSelectedKey("");
-
                 var oBinding = this.getView().byId("purchaseTable").getBinding("rows");
 
                 oBinding.filter([]);
             },
 
-            onShowParam: function(oEvent)
+            onShowParam: function()
             {
-                // URL 매개변수 받기
-                let vStore = oEvent.getParameters().arguments.Storeid,
-                    vMatnr = oEvent.getParameters().arguments.Matnr;
-
-                // ComboBox에 전달받은 값 선택
-                this.getView().byId("IstoreName").setSelectedKey(vStore);
-                this.getView().byId("ImaterialName").setSelectedKey(vMatnr);
-                this.getView().byId("Istatus").setSelectedKey("");
-
-                // 기존 알림 상태 최신화
-                this.onUpdateAlert();
-
-                // 전달받은 지점과 원재료로 자동 조회
-                let oBinding = this.getView().byId("purchaseTable").getBinding("rows"),
-                    aFilter = [],
-                    oFilter = null;
-
-                oFilter = new Filter({
-                    path: "Storeid",
-                    operator: FilterOperator.EQ,
-                    value1: vStore
-                });
-
-                aFilter.push(oFilter);
-
-                oFilter = new Filter({
-                    path: "Matnr",
-                    operator: FilterOperator.EQ,
-                    value1: vMatnr
-                });
-
-                aFilter.push(oFilter);
-
-                oBinding.filter(aFilter);
+                // 알림 상태를 갱신하고 조회 조건을 초기화해 전체 목록을 표시
+                this.onShowPurchase();
             },
 
 

@@ -4,7 +4,6 @@
     xmlns:core="sap.ui.core"
     xmlns:mvc="sap.ui.core.mvc"
     xmlns="sap.m">
-    <Page id="Stock_page" title="{i18n>title}">
         <VBox class="sapUiSmallMargin">
         <HBox
             alignItems="Center"
@@ -131,5 +130,5 @@
             </t:columns>
         </t:Table>
 
-    </Page>
+  
 </mvc:View>

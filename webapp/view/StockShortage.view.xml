@@ -1,7 +1,25 @@
 <mvc:View controllerName="code2.fiori.pou.pou1project.controller.StockShortage"
     xmlns:t="sap.ui.table"
     xmlns:mvc="sap.ui.core.mvc"
+    xmlns:core="sap.ui.core"
     xmlns="sap.m">
+        <VBox class="sapUiSmallMargin">
+        <HBox
+            alignItems="Center"
+            class="sapUiSmallMargin">
+
+            <core:Icon
+                src= "sap-icon://alert"
+                size="2rem"
+                color="#5414dc"
+                class="sapUiResponsiveMargin"/>
+
+            <Title
+                text="재고 부족 관리"
+                titleStyle="H2"/>
+
+        </HBox>
+    </VBox>
 
        <!-- 건수는 컨트롤러 onRowsUpdated에서 setText로 채운다 -->
         <MessageStrip id="shortageStrip"
