@@ -8,7 +8,10 @@
     xmlns="sap.m">
     <Page id="Dashboard_page" title="{i18n>title}" class="cafeDashboard">
        <OverflowToolbar width="100%" design="Transparent" >
-    <Label text="대시보드" textStyle="H2" design="Bold" />
+       <HBox>
+       <core:Icon src="sap-icon://bbyd-dashboard" width="2rem"/>
+    <Label text="대시보드" design="Bold" />
+    </HBox>
     <ToolbarSpacer  />
     <!-- 달력 -->
     <HBox> 
@@ -18,7 +21,7 @@
         <Text text="~"/>
     <DatePicker id="calender1" width="10rem" placeholder="2026-11-15" value="2026-11-15" displayFormat="yyyy.MM.dd"
         valueFormat="yyyy-MM-dd"/>
-        <Button text="조회" prewss="Button" icon="sap-icon://search" type="Emphasized" />
+        <Button text="조회" press="Button" icon="sap-icon://search" type="Emphasized" />
     </HBox>
     <!-- 달력 끝 -->
   
@@ -26,49 +29,23 @@
     </OverflowToolbar>
    <HBox width="100%" justifyContent="SpaceBetween">
 
-    <VBox width="350px" class="sapUiSmallMarginEnd">
+    <VBox width="24%" class="sapUiSmallMarginEnd">
        <Panel headerText="총 매출 "
-          width="350px"  height="160px">
+          width="300px"  height="160px">
         <content>
         <VBox justifyContent="SpaceBetween">
         <VBox>
            <Title text=" 총 매출"/>
-            <Link id="totalSales" press="onSales"/>
+            <Text id="totalSales" press="onSales"/>
         </VBox>
             </VBox>
         </content>
     </Panel>
     </VBox>
-     <VBox width="350px" class="sapUiSmallMarginEnd">
-    <Panel headerText="최고 인기메뉴 "
-          width="350px"  height="160px">
-        <content>
-        <VBox justifyContent="SpaceBetween">
-        <VBox>
-           <Title text=" 인기메뉴"/>
-           <Link id="SaleSet" press="onStore"/>
-        </VBox>
-            </VBox>
-        </content>
-    </Panel>
-   </VBox>
-    <VBox width="350px" class="sapUiSmallMarginEnd">
-     <Panel headerText="발주관리 "
-          width="350px"  height="160px">
-        <content>
-        <VBox justifyContent="SpaceBetween">
-        <VBox>
-           <Title text=" 발주 관리"/>
-           <Link id="orderCount" press="onOrder"/>
-        </VBox>
-            </VBox>
-        </content>
-    </Panel>
-    </VBox>
-
-    <VBox width="330px">
+    
+    <VBox width="24%" class="sapUiSmallMarginEnd">
         <Panel headerText="운영지점 수 "
-          width="350px"  height="160px">
+          width="300px"  height="160px">
         <content>
         <VBox justifyContent="SpaceBetween">
         <VBox>
@@ -80,6 +57,34 @@
         </content>
     </Panel>
     </VBox>
+     <VBox width="24%" class="sapUiSmallMarginEnd">
+    <Panel headerText="최고 인기메뉴 "
+          width="300px"  height="160px">
+        <content>
+        <VBox justifyContent="SpaceBetween">
+        <VBox>
+           <Title text=" 인기메뉴"/>
+           <Text id="SaleSet" press="SaleSet"/>
+        </VBox>
+            </VBox>
+        </content>
+    </Panel>
+   </VBox>
+    <VBox width="24%" class="sapUiSmallMarginEnd">
+     <Panel headerText="발주관리 "
+          width="300px"  height="160px">
+        <content>
+        <VBox justifyContent="SpaceBetween">
+        <VBox>
+           <Title text=" 발주 관리"/>
+           <Text id="orderCount" press="onOrder"/>
+        </VBox>
+            </VBox>
+        </content>
+    </Panel>
+    </VBox>
+
+    
 
 </HBox>
 <VBox height="30px"/>
