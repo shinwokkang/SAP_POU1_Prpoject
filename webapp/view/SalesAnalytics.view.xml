@@ -33,6 +33,10 @@
                         text="조회"
                         press="onSearch"
                         class="sapUiSmallMarginBegin" />
+                <Button icon="sap-icon://detail-view"
+                        text="상세보기"
+                        press="onDetail"
+                        class="sapUiSmallMarginBegin" />
             </HBox>
 
             <HBox renderType="Bare" width="100%">
