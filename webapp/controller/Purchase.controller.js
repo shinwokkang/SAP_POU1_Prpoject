@@ -15,7 +15,7 @@ sap.ui.define([
             this.getRouter().getRoute("Purchase").attachPatternMatched(
                 this.onShowPurchase, this);
 
-            // 7번에서 지점, 원재료를 전달받을 때
+            // 7번에서 지점, 원재료를 전달받을 때 manifest에서
             this.getRouter().getRoute("PurchaseParam").attachPatternMatched(
                 this.onShowParam, this);
 
@@ -25,13 +25,9 @@ sap.ui.define([
                             {Status: "입고완료"}
                            ]
                         
-
             this.getView().setModel(new JSONModel("/model/store.json"), "StoSet");
             this.getView().setModel(new JSONModel("/model/Material.json"),"MSET");
             this.getView().setModel(new JSONModel(StatusSet),"StaSet");
-
-            
-
         },
 
         getRouter:function(){
@@ -132,23 +128,18 @@ sap.ui.define([
         },
 
         onShowPurchase: function()
-            {
-                // 알림상태 최신화
-                this.onUpdateAlert();
+        {
+            // 알림상태 최신화
+            this.onUpdateAlert();
+            let oBinding = this.getView().byId("purchaseTable").getBinding("rows");
 
-                var oBinding = this.getView().byId("purchaseTable").getBinding("rows");
+            oBinding.filter([]);
+        },
 
-                oBinding.filter([]);
-            },
-
-            onShowParam: function()
-            {
-                // 알림 상태를 갱신하고 조회 조건을 초기화해 전체 목록을 표시
-                this.onShowPurchase();
-            },
-
-
-
-        
+        onShowParam: function()
+        {
+            // 알림 상태를 갱신하고 조회 조건을 초기화해 전체 목록을 표시
+            this.onShowPurchase();
+        }
     });
 });

@@ -72,13 +72,11 @@ sap.ui.define([
                         if(vAction == "예")
                         {
                             // 알림 상태 저장
-                            oModel.setProperty(
-                                vPath + "/AlertStatus",
-                                "발송 완료"
-                            );
+                            oModel.setProperty( vPath + "/AlertStatus","발송 완료" );
 
-                            // 발송 상태를 기록한 뒤 화면을 이동할지 확인
-                            MessageBox.confirm(
+                             // 발송 상태를 기록한 뒤 화면을 이동할지 확인
+                            MessageBox.confirm
+                            (
                                 "발주 요청 알림을 보냈습니다.\n발주 관리 페이지로 이동하시겠습니까?",
                                 {
                                     title: "발주 관리 이동",
@@ -90,14 +88,18 @@ sap.ui.define([
                                         // 두 번째 창에서 예를 눌렀을 때만 이동
                                         if(vMoveAction == "예")
                                         {
-                                            oRouter.navTo("PurchaseParam", {
+                                            oRouter.navTo
+                                            ("PurchaseParam", 
+                                                {
                                                 Storeid: ls_stock.Storeid,
                                                 Matnr: ls_stock.Matnr
-                                            });
+                                                }
+                                            );
                                         }
                                     }
                                 }
                             );
+                            
                         }
                     }
                 }
