@@ -8,11 +8,15 @@ sap.ui.define([
         onInit() 
         {
             this.getRouter().getRoute("Dashboard");
-          
+            
         },
           getRouter: function()
         {
             return sap.ui.core.UIComponent.getRouterFor(this);
+        },
+        onStore() 
+        {
+               this.getOwnerComponent().getRouter().navTo("StoreFilter");
         }
 
 

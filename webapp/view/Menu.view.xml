@@ -111,22 +111,26 @@
             paste="onPaste"
             ariaLabelledBy="title"
             class="sapUiResponsiveMargin">
+
             <t:extension>
                 <OverflowToolbar style="Clear">
                     <Label text="메뉴명" design="Bold"/>
-                    <Input id="IInputMenuname" width="13rem" placeholder="메뉴명 입력"/> 
+                    <Input id="IInputMenuname" class="SMALL" width="13rem" placeholder="메뉴명 입력"/> 
+
                     <ToolbarSpacer width = "1rem" />   
+                    
                     <Label text="카테고리" design="Bold"/>
-                    <ComboBox id="ICategory" width="13rem" placeholder="카테고리"
+                    <ComboBox id="ICategory" class="SMALL" width="13rem" placeholder="카테고리"
                               items="{path : 'Category>/'}">
                     <core:Item key="{Category>Category}" text="{Category>Category}"/>
                     </ComboBox>
+
                     <ToolbarSpacer width = "1rem" />
 
                     <Button text="조회" icon= "sap-icon://search" press="onSearch" type="Emphasized" />
-
                 </OverflowToolbar>
             </t:extension>
+
             <t:columns>
                 <t:Column width="19rem">
                     <Label text="메뉴코드" />
@@ -134,18 +138,21 @@
                         <Text text="{CSET>Menuid}" wrapping="false" />
                     </t:template>
                 </t:Column>
+
                 <t:Column width="19rem">
                     <Label text="메뉴명" />
                     <t:template>
                         <Text text="{CSET>Menuname}" wrapping="false" /> 
                     </t:template>
                 </t:Column>
+
                 <t:Column width="19rem">
                     <Label text="카테고리" />
                     <t:template>
                         <Text text="{CSET>Category}" wrapping="false" />
                     </t:template>
                 </t:Column>
+
                 <t:Column width="19rem">
                     <Label text="가격(원)" />
                     <t:template>
@@ -154,6 +161,5 @@
                 </t:Column>
             </t:columns>					
         </t:Table>
-
     </Page>
 </mvc:View>

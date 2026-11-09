@@ -137,6 +137,20 @@
           "target": [
             "TargetSalesAnalytics"
           ]
+        },
+        {
+          "name": "PurchaseParam",
+          "pattern": "Purchase/{Storeid}/{Matnr}",
+          "target": [
+            "TargetPurchase"
+          ]
+        },
+        {
+          "name": "StoreFilter",
+          "pattern": "Store",
+          "target": [
+            "TargetStore"
+          ]
         }
       ],
       "targets": {
