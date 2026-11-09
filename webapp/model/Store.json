@@ -10,6 +10,8 @@
         {"Strcd": "S007", "Store" : "전주점"},
         {"Strcd": "S008", "Store" : "대구점"},
         {"Strcd": "S009", "Store" : "부산점"},
-        {"Strcd": "S010", "Store" : "제주점"}
+        {"Strcd": "S010", "Store" : "제주점"},
+        {"Strcd": "S011", "Store" : "인천점"},
+        {"Strcd": "S012", "Store" : "광주점"}
     ]
 }
