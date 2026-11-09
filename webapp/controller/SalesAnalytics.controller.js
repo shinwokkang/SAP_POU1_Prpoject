@@ -10,7 +10,7 @@ sap.ui.define([
     return Controller.extend("code2.fiori.pou.pou1project.controller.SalesAnalytics", {
         onInit()
         {
-            // 차트는 View에서 기본 모델의 /SalesSet에 바로 바인딩되어 있어서 따로 할 일 없음
+            this.getOwnerComponent().getRouter().getRoute("SalesAnalyticsFilter").attachPatternMatched(this.onShowParam, this);
         },
 
         onSearch : function()
@@ -77,11 +77,6 @@ sap.ui.define([
  
             if(aKeys.length == 1)
                 vStore = aKeys[0];
-            
-            // 두 차트에 같은 필터 적용
-            //   → 걸러진 판매 내역을 VizFrame이 Dimension(지점명 / 메뉴명) 기준으로 합쳐서 그려줌
-            oStoreBinding.filter(aFilter);
-            oMenuBinding.filter(aFilter);
 
             // URL 자리는 비워둘 수 없어서, 날짜가 비어 있으면 "ALL"로 보냄
             if(vFrom == "")
@@ -96,6 +91,18 @@ sap.ui.define([
                                             From    : vFrom,
                                             To      : vTo
                                         });
+        },
+
+        // 다른 화면에서 넘어왔을 때 : 전달받은 지점을 선택하고 자동 조회
+        onShowParam : function(oEvent)
+        {
+            let vStoreid = oEvent.getParameters().arguments.Storeid;   // "S001"
+
+            // MultiComboBox에 그 지점 선택 (여러 개 고르는 콤보라 배열로 넣음)
+            this.getView().byId("storeFilter").setSelectedKeys([vStoreid]);
+
+            // 기존 조회 버튼 기능 그대로 실행
+            this.onSearch();
         }
     });
 });
