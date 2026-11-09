@@ -63,7 +63,7 @@
                         <ObjectStatus text="{ parts : ['CSET>Quantity', 'CSET>Minqty'], formatter : '.formatShortText' }"
                                       state="{ parts : ['CSET>Quantity', 'CSET>Minqty'], formatter : '.formatShortState' }"
                                       inverted="true"
-                                      active="{= ${CSET>Quantity} &lt; ${CSET>Minqty} }"
+                                      active="true"
                                       press="onSendAlert"/>
                     </t:template>
                 </t:Column>
