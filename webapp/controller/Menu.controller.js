@@ -25,10 +25,15 @@ sap.ui.define([
                                 {Category : "Bakery"},
                                 {Category : "Desert"}
                               ],
-                oCategoryModel = new JSONModel(CategorySet);
-            this.getView().setModel(oCategoryModel, "Category");
 
-            // 지점 목록 데이터 정의 (성수점, 강남점 등)
+                MenuStatusSet= [
+                                    {Status: "판매대기"},
+                                    {Status: "판매중"},
+                                    {Status: "판매종료"}
+                               ];
+            
+            this.getView().setModel(new JSONModel(CategorySet), "Category");
+            this.getView().setModel(new JSONModel(MenuStatusSet),"MenuStaSet");
             
             // 원자재 목록 데이터 정의 (원두, 우유 등)
             let oData2= {
@@ -113,6 +118,18 @@ sap.ui.define([
             // 생성된 필터들을 메뉴 테이블 바인딩에 일괄 적용
             oBinding.filter(aFilter);
 
-        }
+        },
+
+        onStatusColor: function(vStatus)
+        {
+            if(vStatus == "부족")
+             {
+                return "Warning";
+             }
+             else
+              {
+                return "Success";
+              }
+        },
     });
 });

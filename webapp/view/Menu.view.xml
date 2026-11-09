@@ -154,9 +154,29 @@
                 </t:Column>
 
                 <t:Column width="19rem">
-                    <Label text="가격(원)" />
+                    <Label text="가격" />
                     <t:template>
-                        <Text text="{CSET>Price}" wrapping="false" />
+                        <Text text="{
+                            parts: [
+                                {path: 'CSET>Price'},
+                                {value: 'KRW'}
+                            ],
+                            type: 'sap.ui.model.type.Currency',
+                            formatOptions: {
+                                showMeasure: true
+                            }
+                        }" wrapping="false" />
+                    </t:template>
+                </t:Column>
+
+                <t:Column width="8rem">
+                    <Label text="판매상태"/>
+                    <t:template>
+                        <ObjectStatus 
+                              text="{CSET>Status}" 
+                              state="{path: 'CSET>Status',  formatter: '.onStatusColor'}"
+                              inverted="true"
+                              icon="sap-icon://status-critical"/>
                     </t:template>
                 </t:Column>
             </t:columns>					
