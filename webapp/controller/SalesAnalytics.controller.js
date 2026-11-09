@@ -66,8 +66,10 @@ sap.ui.define([
                 vFrom   = this.getView().byId("dateFrom").getValue(),            // 시작일 "2026-10-30"
                 vTo     = this.getView().byId("dateTo").getValue(),              // 종료일 "2026-11-03"
                 vStore  = "ALL",                                                 // 지점 안 고르면 "ALL" (전체)
-                oRouter = this.getOwnerComponent().getRouter();
- 
+                oRouter = this.getOwnerComponent().getRouter(),
+                oRootView = this.getOwnerComponent().getRootControl(),
+                oSideNav = oRootView.byId("sideNavigation");
+
             // 매출 조회 화면은 지점을 하나만 고를 수 있어서, 2개 이상이면 막음
             if(aKeys.length > 1)
             {
@@ -85,12 +87,16 @@ sap.ui.define([
             if(vTo == "")
                 vTo = "ALL";
  
+            oSideNav.setSelectedKey("Sales");
+
             // 매출 조회 화면으로 이동하면서 값 전달
             oRouter.navTo("SalesParam", {
                                             Storeid : vStore,
                                             From    : vFrom,
                                             To      : vTo
                                         });
+            
+            
         },
 
         // 다른 화면에서 넘어왔을 때 : 전달받은 지점을 선택하고 자동 조회
@@ -104,7 +110,7 @@ sap.ui.define([
             // 기존 조회 버튼 기능 그대로 실행
             this.onSearch();
         },
-        
+
         // 초기화 : 검색 조건을 처음 상태로 되돌리고 전체 데이터 보여주기
         onReset : function()
         {
