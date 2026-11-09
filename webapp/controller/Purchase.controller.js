@@ -9,7 +9,8 @@ sap.ui.define([
     "use strict";
 
     return Controller.extend("code2.fiori.pou.pou1project.controller.Purchase", {
-        onInit() {
+        onInit() 
+        {
                     
             // 일반 메뉴에서 8번으로 들어올 때
             this.getRouter().getRoute("Purchase").attachPatternMatched(
@@ -33,6 +34,7 @@ sap.ui.define([
         getRouter:function(){
             return sap.ui.core.UIComponent.getRouterFor(this);
         },
+
         onAlertColor: function(vStatus)
         {
             if(vStatus == "발송 완료")
@@ -44,6 +46,7 @@ sap.ui.define([
                 return "None";
             }
         },
+
         onUpdateAlert: function()
         {
            
@@ -51,8 +54,6 @@ sap.ui.define([
                 oData = oModel.getData(),
                 lt_stock = oData.StockSet,
                 lt_purchase = oData.PurchaseSet;
-
-
 
             // 발주 데이터를 하나씩 확인
             for(let i = 0; i < lt_purchase.length; i++)
