@@ -35,7 +35,7 @@ sap.ui.define([
                 total = total + parseInt(aSales[i].Salesamt);
             }
 
-            this.getView().byId("totalSales").setText("₩ " + total);
+            this.byId("totalSales").setText("₩ " + parseInt(total).toLocaleString());
 
         },
 
