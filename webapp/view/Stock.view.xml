@@ -13,7 +13,7 @@
             <core:Icon
                 src="sap-icon://inventory"
                 size="2rem"
-                color="#e6bee5"
+                color="#2681cb"
                 class="sapUiResponsiveMargin"/>
 
             <Title
