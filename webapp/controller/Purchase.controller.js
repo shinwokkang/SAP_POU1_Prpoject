@@ -18,7 +18,7 @@ sap.ui.define([
 
             // 7번에서 지점, 원재료를 전달받을 때 manifest에서
             this.getRouter().getRoute("PurchaseParam").attachPatternMatched(
-                this.onShowParam, this);
+                this.onShowPurchase, this);
 
             let StatusSet= [
                             {Status: "발주완료"},
@@ -135,12 +135,7 @@ sap.ui.define([
             let oBinding = this.getView().byId("purchaseTable").getBinding("rows");
 
             oBinding.filter([]);
-        },
-
-        onShowParam: function()
-        {
-            // 알림 상태를 갱신하고 조회 조건을 초기화해 전체 목록을 표시
-            this.onShowPurchase();
         }
+
     });
 });
