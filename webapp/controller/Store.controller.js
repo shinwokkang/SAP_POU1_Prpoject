@@ -145,6 +145,12 @@ sap.ui.define([
                         
                         })
                 };
+        },
+        onReset : function()
+        {
+            this.getView().byId("iStorename").setValue("");
+            this.getView().byId("iRegion").setSelectedKey("");
+            this.getView().byId("iStatus").setSelectedKey("");
         }
     });
 });
