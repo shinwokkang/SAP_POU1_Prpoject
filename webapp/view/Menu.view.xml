@@ -4,7 +4,7 @@
     xmlns:core="sap.ui.core"
     xmlns:t="sap.ui.table"
     xmlns="sap.m">
-    <Page id="Menu_page" title="{i18n>title}">
+    <Page id="Menu_page" title="{i18n>title}" showHeader= "false">
 
  <!-- < 지점 조회용 테이블 /> -->
         <t:Table
@@ -94,30 +94,36 @@
 
 
 <!-- < 메뉴 관리 테이블 /> -->
-        <VBox>
-                <Title text="메뉴 관리" titleStyle="H3"/>
-                <Text text="메뉴 정보, 가격 및 카테고리 조회"/>
-        </VBox>
+        
+        <HBox alignItems = "Center"
+              class="sapUiSmallMargin">
+            <core:Icon src="sap-icon://menu"
+               size="2rem"
+               color="#e6bee5"
+               class="sapUiResponsiveMargin"/>
+               <Title text = "메뉴 관리" titleStyle="H2"/>
+        </HBox>
         <t:Table
             id="IMenu"
             rows="{CSET>/MenuSet}"
             selectionMode="None"
             selectionBehavior="Row"
             paste="onPaste"
-            ariaLabelledBy="title">
+            ariaLabelledBy="title"
+            class="sapUiResponsiveMargin">
             <t:extension>
                 <OverflowToolbar style="Clear">
                     <Label text="메뉴명" design="Bold"/>
-                    <Input id="IInputMenuname" width="8em" placeholder="메뉴명 입력"/> 
-                    <ToolbarSpacer width = "5rem" />   
+                    <Input id="IInputMenuname" width="13rem" placeholder="메뉴명 입력"/> 
+                    <ToolbarSpacer width = "1rem" />   
                     <Label text="카테고리" design="Bold"/>
-                    <ComboBox id="ICategory" width="8rem" placeholder="카테고리"
+                    <ComboBox id="ICategory" width="13rem" placeholder="카테고리"
                               items="{path : 'Category>/'}">
                     <core:Item key="{Category>Category}" text="{Category>Category}"/>
                     </ComboBox>
-                    <ToolbarSpacer width = "5rem" />
+                    <ToolbarSpacer width = "1rem" />
 
-                    <Button text="조회" icon="sap-icon://search" press="onSearch"/>
+                    <Button text="조회" icon= "sap-icon://search" press="onSearch" type="Emphasized" />
 
                 </OverflowToolbar>
             </t:extension>
