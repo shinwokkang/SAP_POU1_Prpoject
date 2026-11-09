@@ -9,7 +9,9 @@ sap.ui.define([
 
     return Controller.extend("code2.fiori.pou.pou1project.controller.Store", {
         onInit() {
-            this.getRouter().getRoute("Store");
+            let oRoute = this.getRouter()
+            oRoute.getRoute("Store").attachPatternMatched(this.onRouteMatch, this);
+            oRoute.getRoute("StoreFilter").attachPatternMatched(this.onRouteMatch, this);
 
             // let oStoreModel = new JSONModel("/data/Cafeset.json");
             // this.getView().setModel(oStoreModel, "Store")
@@ -25,10 +27,36 @@ sap.ui.define([
                             ],
                 oRegionModel = new JSONModel(RegionSet);
             this.getView().setModel(oRegionModel, "Region");
+
+            let StatusSet = [
+                                {Status : "운영중"},
+                                {Status : "휴점중"}
+                            ],
+                oStatusModel = new JSONModel(StatusSet);
+            this.getView().setModel(oStatusModel, "Status");
         },
 
         getRouter:function(){
             return sap.ui.core.UIComponent.getRouterFor(this);
+        },
+
+        onRouteMatch : function(oRoute)
+        {
+            let vRoute = oRoute.getParameter("name"),
+                oCombodata = this.getView().byId("iStatus")
+            
+            if (vRoute === "StoreFilter")
+            {
+                oCombodata.setSelectedKey("운영중");
+            }
+            else
+            {
+                this.getView().byId("iStorename").setValue("");
+                this.getView().byId("iRegion").setSelectedKey("");
+                oCombodata.setSelectedKey("");
+            }
+            
+            this.onStoreSearch();
         },
 
         onStoreSearch : function()
@@ -37,8 +65,10 @@ sap.ui.define([
                 oFilter = null,
                 aFilter = [],
                 vStorename = this.getView().byId("iStorename").getValue(),
-                vRegion = this.getView().byId("iRegion").getValue();
-
+                vRegion = this.getView().byId("iRegion").getSelectedKey(),
+                vDStatus = this.getView().byId("iStatus").getSelectedKey();
+                
+            if (!oBinding) { return; }
             if(vStorename != "")
             {
                 oFilter = new Filter({
@@ -49,8 +79,6 @@ sap.ui.define([
 
                 aFilter.push(oFilter);
             }; 
-
-            
 
             if(vRegion != "")
             {
@@ -63,15 +91,26 @@ sap.ui.define([
                 aFilter.push(oFilter);
             };
 
+            if(vDStatus != "")
+            {
+                oFilter = new Filter({
+                    path     : "Status",
+                    operator : FilterOperator.EQ,
+                    value1 : vDStatus
+                });
+
+                aFilter.push(oFilter);
+            };
+
             oBinding.filter(aFilter);
         },
-        onState : function(StateEvent)
+        onStatus : function(StatusEvent)
         {
-            let vButton = StateEvent.getSource(),
-                vState  = vButton.getText();
+            let vButton = StatusEvent.getSource(),
+                vStatus  = vButton.getText();
 
 
-            if (vState === "운영중")
+            if (vStatus === "운영중")
                 {
                     MessageBox.confirm("휴점 상태로 변경하시겠습니까? ",{
                             title : "운영 상태 변경",
