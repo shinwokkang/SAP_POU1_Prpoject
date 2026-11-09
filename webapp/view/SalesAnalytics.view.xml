@@ -27,11 +27,7 @@
                 <Label text="조회기간" design="Bold" class="sapUiMediumMarginBegin sapUiSmallMarginEnd" />
                 <DatePicker id="dateFrom" class="SMALL" value="2026-10-30" valueFormat="yyyy-MM-dd" displayFormat="yyyy.MM.dd" />
                 <Text text="~" class="sapUiTinyMarginBeginEnd" />
-<<<<<<< HEAD
                 <DatePicker id="dateTo"   class="SMALL" value="2026-11-03" valueFormat="yyyy-MM-dd" displayFormat="yyyy.MM.dd" />
-=======
-                <DatePicker id="dateTo"   width="9rem" value="2026-11-03" valueFormat="yyyy-MM-dd" displayFormat="yyyy.MM.dd" />
->>>>>>> 558123c314a3b3705e1a5ac174bc7240d2620655
 
                 <Button icon="sap-icon://search"
                         text="조회"

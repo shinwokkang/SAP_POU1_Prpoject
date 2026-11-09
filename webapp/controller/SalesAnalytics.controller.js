@@ -22,15 +22,9 @@ sap.ui.define([
                 aFilter = [],
                 aKeys   = this.getView().byId("storeFilter").getSelectedKeys(),  // 선택한 지점 ID들 (여러 개라 배열) ex) ["S001", "S005"]
                 vFrom   = this.getView().byId("dateFrom").getValue(),            
-<<<<<<< HEAD
-                vTo     = this.getView().byId("dateTo").getValue();
-                
-                // 기간 필터
-=======
                 vTo     = this.getView().byId("dateTo").getValue();             
 
             // 기간 필터
->>>>>>> 558123c314a3b3705e1a5ac174bc7240d2620655
             if(vFrom != "" && vTo != "")
             {
                 oFilter = new Filter({
