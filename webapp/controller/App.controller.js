@@ -1,20 +1,21 @@
 sap.ui.define([
-    "sap/ui/core/mvc/Controller"
-], function (Controller) {
+    "sap/ui/core/mvc/Controller",
+    "sap/ui/model/json/JSONModel"
+], function (Controller, JSONModel) {
     "use strict";
 
     return Controller.extend("code2.fiori.pou.pou1project.controller.App", {
         onInit: function () {
             // 1. 시계 전용 JSONModel 생성 및 뷰에 등록
-            // var oClockModel = new JSONModel({
-            //     currentTime: this._getCurrentTimeString()
-            // });
-            // this.getView().setModel(oClockModel, "clock");
+            var oClockModel = new JSONModel({
+                currentTime: this._getCurrentTimeString()
+            });
+            this.getView().setModel(oClockModel, "clock");
 
-            // // 2. 1초마다 시간 갱신
-            // this._timerId = setInterval(function () {
-            //     oClockModel.setProperty("/currentTime", this._getCurrentTimeString());
-            // }.bind(this), 1000);
+            // 2. 1초마다 시간 갱신
+            this._timerId = setInterval(function () {
+                oClockModel.setProperty("/currentTime", this._getCurrentTimeString());
+            }.bind(this), 1000);
         },
 
         // 사이드바 메뉴 클릭 시 화면 라우팅
@@ -32,6 +33,7 @@ sap.ui.define([
             var bSideExpanded = oToolPage.getSideExpanded();
             oToolPage.setSideExpanded(!bSideExpanded);
         },
+        
         // 현재 시간을 'YYYY-MM-DD HH:mm:ss' 형태로 포맷팅하는 헬퍼 함수
         _getCurrentTimeString: function () {
             var now = new Date();

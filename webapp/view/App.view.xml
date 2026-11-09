@@ -21,8 +21,9 @@
                 <!-- 로고/프로젝트명 -->
                 <Title text="CafeFlow" level="H2" class="sapUiTinyMarginBegin" />
                 <Text text="카페 프랜차이즈 통합 운영 관리 시스템" class="sapUiSmallMarginBegin" />
+                
                 <ToolbarSpacer />
- 
+                <Text text="{clock>/currentTime}" class="sapUiTinyMarginBeginEnd" />
  
                 <!-- 우측 사용자 정보 -->
                 <Button
