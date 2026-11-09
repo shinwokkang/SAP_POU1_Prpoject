@@ -10,16 +10,31 @@
     <VBox class="sapUiSmallMargin">
         <HBox alignItems = "Center" 
             class="sapUiResponsiveMargin">
+
             <core:Icon src="sap-icon://cart"
-            size="2rem"
-            color="#0a6ed1"
-            class="sapUiSmallMarginEnd"/>
-            <VBox>
+                    size="2rem"
+                    color="#0a6ed1"
+                    class="sapUiSmallMarginEnd"/>
+            
+            <VBox width="30em">
                 <Title text="메뉴 관리" titleStyle="H3"/>
                 <Text text="전국 카페 지점의 현재 발주상태를 관리합니다"/>
             </VBox>
+
+
+            <HBox>
+    
+                <ToolbarSpacer width="20rem"/>
+                <Title text="총 메뉴 수 : " width="6rem" />
+
+                <Label
+                    id="TotalMenuQuantity" design="Bold" width="8rem"
+                    text="12"/> 
+
+            </HBox>
         </HBox>
     </VBox>
+
 
 
             <Panel class="sapUiResponsiveMargin" width="auto">
@@ -27,12 +42,12 @@
                 <VBox class="sapUiSmallMarginEnd">
                     <Label text="메뉴명" labelFor="iMenuName"/>
                     <Input  id="IInputMenuname" 
-                            class="SMALL" placeholder="지점명 입력" showClearIcon="true"/>
+                            class="MEDIUM" placeholder="지점명 입력" showClearIcon="true"/>
                 </VBox>
 
                 <VBox class="sapUiSmallMarginEnd">
                     <Label text="카테고리" labelFor="iCategory"/>
-                    <ComboBox id="ICategory" items="{path : 'Category>/'}" class="SMALL" 
+                    <ComboBox id="ICategory" items="{path : 'Category>/'}" class="MEDIUM" 
                                                                            placeholder="카테고리" 
                                                                            showClearIcon = "true">
                     <core:Item key="{Category>Category}" text="{Category>Category}"/>

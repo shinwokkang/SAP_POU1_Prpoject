@@ -62,6 +62,7 @@
                 <Button 
                         text="초기화"
                         press="onReset"
+                        type="Emphasized"
                         icon="sap-icon://undo"
                         width="80px"/>
             </HBox>

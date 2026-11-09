@@ -15,8 +15,8 @@
                 color="#0a6ed1"
                 class="sapUiSmallMarginEnd"/>
                 <VBox>
-                    <Title text="지점 관리" titleStyle="H3"/>
-                    <Text text="전국 카페 지점 현황을 조회하고 관리합니다"/>
+                    <Title text="대시 보드" titleStyle="H3"/>
+                    <Text text="전국 카페 지점 현황을 한 번에 조회하고 관리합니다"/>
                 </VBox>
             </HBox>
 
