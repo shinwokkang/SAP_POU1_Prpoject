@@ -5,7 +5,7 @@
     xmlns:c="sap.ui.core"
     xmlns="sap.m">
     <Page id="Purchase_page" title="{i18n>title}">
-        <Title text = "발주 관리" titleStyle = "H3"/>
+        <Title text = "발주 관리" titleStyle = "H2"/>
         <Text text="   "    />
         <t:Table
             id="purchaseTable"

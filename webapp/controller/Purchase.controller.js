@@ -11,7 +11,7 @@ sap.ui.define([
     return Controller.extend("code2.fiori.pou.pou1project.controller.Purchase", 
     {
         onInit() {
-            this.getRouter().getRoute("Purchase").attachPatternMatched(this.onUpdateAlert, this);
+            this.getRouter().getRoute("Purchase");
 
             let oData = {
                             StoreNameSet :
@@ -41,7 +41,7 @@ sap.ui.define([
                             ]
                         };
 
-            let StatusSet= [
+            let StatusSet= [                                                            // 발주상태의 중복을 제거하기 위해 간단한 Internal 테이블 생성
                             {Status: "발주완료"},
                             {Status: "발주요청"},
                             {Status: "입고완료"}
@@ -50,7 +50,7 @@ sap.ui.define([
 
             this.getView().setModel(new JSONModel(oData), "StoSet");
             this.getView().setModel(new JSONModel(oData2),"MSET");
-            this.getView().setModel(new JSONModel(StatusSet),"StaSet");
+            this.getView().setModel(new JSONModel(StatusSet),"StaSet");                 // 발주상태 테이블을 "StaSet"이라는 공간에 JSON으로 저장 
 
             
 
@@ -63,10 +63,10 @@ sap.ui.define([
         searchPurchase: function()
         {
             
-            let oBinding     = this.getView().byId("purchaseTable").getBinding("rows"),
+            let oBinding     = this.getView().byId("purchaseTable").getBinding("rows"), // 테이블의 아이디 "purchaseTable" 와 "rows"로 바인딩 할 값을 가져온다.
                 oFilter      = null,
                 aFilter      = [],
-                vStorename   = this.getView().byId("IstoreName").getSelectedKey(),
+                vStorename   = this.getView().byId("IstoreName").getSelectedKey(),      // combo box의 id를 통해 key값을 가져온다.
                 vMaterialName= this.getView().byId("ImaterialName").getSelectedKey(),
                 vStatus      = this.getView().byId("Istatus").getSelectedKey();
                 
@@ -74,7 +74,7 @@ sap.ui.define([
             {
                 oFilter = new Filter({                                                
                     path     : "Storeid",
-                    operator : FilterOperator.Contains,                             
+                    operator : FilterOperator.EQ,                             
                     value1   : vStorename                                          
                 });
 
@@ -85,7 +85,7 @@ sap.ui.define([
             {
                 oFilter = new Filter({                                              
                     path     : "Matnr",
-                    operator : FilterOperator.Contains,                              
+                    operator : FilterOperator.EQ,                              
                     value1   : vMaterialName                                                
                 });
 
@@ -97,7 +97,7 @@ sap.ui.define([
             {
                 oFilter = new Filter({                                              
                     path     : "Status",
-                    operator : FilterOperator.Contains,                              
+                    operator : FilterOperator.EQ,                              
                     value1   : vStatus                                                
                 });
 
@@ -105,52 +105,6 @@ sap.ui.define([
             };
 
             oBinding.filter(aFilter);
-        },
-
-        onAlertColor: function(vStatus)
-        {
-            if(vStatus == "발송 완료")
-            {
-                return "Success";
-            }
-            else
-            {
-                return "None";
-            }
-        },
-
-        onUpdateAlert: function()
-        {
-            let oModel = this.getOwnerComponent().getModel(),
-                oData = oModel.getData(),
-
-                lt_stock   = oData.StockSet,
-                lt_purchase= oData.PurchaseSet;
-
-            // 발주 데이터를 하나씩 확인
-            for(let i in lt_purchase)
-            {
-                let ls_purchase = lt_purchase[i],
-                    vStatus = "미발송";
-
-                for(let ls_stock of lt_stock)
-                {
-                    if(ls_purchase.Storeid == ls_stock.Storeid &&
-                       ls_purchase.Matnr == ls_stock.Matnr &&
-                       ls_stock.AlertStatus == "발송 완료")
-                    {
-                        vStatus = "발송 완료";
-                    }
-                }
-
-                oModel.setProperty
-                (
-                    "/PurchaseSet/" + i + "/AlertStatus",
-                    vStatus
-                );
-            }
         }
-
-        
     });
 });
