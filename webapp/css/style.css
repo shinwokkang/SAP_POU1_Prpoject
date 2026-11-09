@@ -62,3 +62,7 @@
     font-size: 1rem !important;
     font-weight: 400 !important;
 }
+
+.SMALL { width: 8em !important; }
+.MEDIUM { width: 14rem !important; }
+.LARGE { width: 20rem !important; }

@@ -8,44 +8,16 @@ sap.ui.define([
         onInit() 
         {
             this.getRouter().getRoute("Dashboard");
-          
+            
         },
-        formatOperatingCount: function (aStores) {
-          if (!Array.isArray(aStores)) 
-            {
-                 return 0;
-             }
-
-    return aStores.filter(function (oStore) 
-    {
-        return oStore.Status === "운영중";
-    }).length; },
-
-          getRouter: function ()
-          {
-               return sap.ui.core.UIComponent.getRouterFor(this);
-            },
-
-        getRouter:function(){
+          getRouter: function()
+        {
             return sap.ui.core.UIComponent.getRouterFor(this);
         },
-        //    인기메뉴 함수
-            formatPopularMenu: function (aMenus) 
-            {
-          if (!Array.isArray(aMenus) || aMenus.length === 0) {
-             return "—";
-           }
-
-               const oTopMenu = aMenus.reduce(function (oTop, oMenu) 
-               {
-               return Number(oMenu.Soldqty) > Number(oTop.Soldqty)
-                  ? oMenu
-                  : oTop;
-               });
-
-                return oTopMenu.Menuname;
-            },
-
+        onStore() 
+        {
+               this.getOwnerComponent().getRouter().navTo("StoreFilter");
+        }
 
 
         
