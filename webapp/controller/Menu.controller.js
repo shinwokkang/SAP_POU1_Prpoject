@@ -3,8 +3,8 @@ sap.ui.define([
     "sap/ui/model/json/JSONModel",
     "sap/ui/model/Filter",
     "sap/ui/model/FilterOperator",
-    "code2/fiori/pou/pou1project/model/FSearchStore"
-], (Controller, JSONModel, Filter, FilterOperator, FSearchStore) => {
+    "code2/fiori/pou/pou1project/model/getStoreFilter"
+], (Controller, JSONModel, Filter, FilterOperator, getStoreFilter) => {
     "use strict";
 
 
@@ -70,7 +70,7 @@ sap.ui.define([
         },
 
         // function 01. 지점 조회용 함수 (외부 유틸리티 모듈 FSearchStore 활용)
-        searchStore: function()
+        searchFilter: function()
         {
             // 지점 테이블("IFSearchStoreTable")의 바인딩(행 데이터)과 필터 배열 초기화
             let oBinding = this.getView().byId("IFSearchStoreTable").getBinding("rows"),
@@ -79,7 +79,7 @@ sap.ui.define([
             // 외부 모듈(FSearchStore)의 함수를 호출하여 필터 조건들을 aFilter에 추가
             // this.getView() : 현재 화면(View)의 정보. 화면에 있는 입력창 컴포넌트들을 찾아내기 위함
             // aFilter : 현재 만들어져 있는 필터들의 목록(배열).
-            aFilter = FSearchStore.FSearchStore(this.getView(), aFilter);
+            aFilter = getStoreFilter.addStoreFilter(this.getView(), aFilter);
 
             // 완성된 필터를 테이블 바인딩에 적용하여 화면 갱신
             oBinding.filter(aFilter);

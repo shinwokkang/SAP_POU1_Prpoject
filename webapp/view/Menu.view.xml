@@ -19,7 +19,7 @@
                     
                     <HBox>
                         <ComboBox
-                            id="IfstoreName"
+                            id="IcomboStore"
                             items="{StoSet>/StoreNameSet}"
                             width="8rem"
                             placeholder="전체">
@@ -30,7 +30,7 @@
                         <ToolbarSpacer width="2rem"  />
 
 
-                        <Button text="조회" icon= "sap-icon://search" press="searchStore"/>
+                        <Button text="조회" icon= "sap-icon://search" press="searchFilter"/>
                     </HBox>
                 </VBox>
             </t:extension>
