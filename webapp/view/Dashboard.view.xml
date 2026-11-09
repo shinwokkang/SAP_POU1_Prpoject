@@ -10,7 +10,7 @@
         <VBox class="sapUiSmallMargin">
             <HBox alignItems = "Center" 
                 class="sapUiResponsiveMargin">
-                <core:Icon src="sap-icon://map-fill"
+                <core:Icon src="sap-icon://bbyd-dashboard"
                 size="2rem"
                 color="#0a6ed1"
                 class="sapUiSmallMarginEnd"/>

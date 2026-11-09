@@ -8,7 +8,7 @@
 
         <HBox alignItems = "Center" 
             class="sapUiResponsiveMargin">
-            <core:Icon src="sap-icon://product"
+            <core:Icon src="sap-icon://inventory"
             size="2rem"
             color="#0a6ed1"
             class="sapUiSmallMarginEnd"/>
