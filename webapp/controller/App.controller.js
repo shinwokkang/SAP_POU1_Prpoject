@@ -18,7 +18,8 @@ sap.ui.define([
         },
 
         // 사이드바 접기/펼치기 토글
-        onSideNavButtonPress: function () {
+        onSideNavButtonPress: function () 
+        {
             var oToolPage = this.byId("toolPage");
             var bSideExpanded = oToolPage.getSideExpanded();
             oToolPage.setSideExpanded(!bSideExpanded);
