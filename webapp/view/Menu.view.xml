@@ -200,7 +200,7 @@
         <Title text="총 메뉴 수 : " width="8rem" />
 
         <Label
-        id="TotalQuantity1" design="Bold" width="8rem"
+        id="TotalMenuQuantity" design="Bold" width="8rem"
         text="12"/> 
 
         </HBox>
