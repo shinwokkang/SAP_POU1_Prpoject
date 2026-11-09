@@ -1,37 +1,27 @@
 <mvc:View controllerName="code2.fiori.pou.pou1project.controller.Purchase"
     xmlns:mvc="sap.ui.core.mvc"
     xmlns:t="sap.ui.table"
-    xmlns:u="sap.ui.unified"
     xmlns:c="sap.ui.core"
     xmlns="sap.m">
     <Page id="Purchase_page" title="{i18n>title}">
 
-    <VBox class="sapUiSmallMargin">
-        <HBox
-            alignItems="Center"
-            class="sapUiSmallMargin">
+   <HBox alignItems="Center" class="sapUiSmallMargin">
+        <c:Icon
+            src="sap-icon://cart"
+            size="2rem"
+            color="#2681cb"
+            class="sapUiResponsiveMargin"/>
 
-            <c:Icon
-                src="sap-icon://cart"
-                size="2rem"
-                color="#2681cb"
-                class="sapUiResponsiveMargin"/>
-
-            <Title
-                text="발주 관리"
-                titleStyle="H2"/>
-
-        </HBox>
-    </VBox>
+        <Title
+            text="발주 관리"
+            titleStyle="H2"/>
+    </HBox>
 
 
-        <t:Table
+          <t:Table
             id="purchaseTable"
             rows="{/PurchaseSet}"
-            selectionMode="Single"
-            selectionBehavior="RowOnly"
-            paste="onPaste"
-            ariaLabelledBy="title">
+            selectionMode="None">
             <t:extension>
                 <VBox>
                     
@@ -114,11 +104,7 @@
                 <t:Column width="10rem" hAlign="Center">
                     <Label text="발주날짜"              />
                     <t:template>
-                        <DatePicker value="{
-                            path: 'Podate',
-                            type: 'sap.ui.model.type.Date',
-                            formatOptions: {source: {pattern: 'yyyy-MM-dd'}}
-                        }"/>
+                       <Text text="{Podate}"/>
                     </t:template>
                 </t:Column>
                 
