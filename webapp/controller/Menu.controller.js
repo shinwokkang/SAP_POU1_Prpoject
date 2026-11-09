@@ -23,18 +23,18 @@ sap.ui.define([
                                 {Category : "NonCoffee"},
                                 {Category : "Ade"},
                                 {Category : "Bakery"},
-                                {Category : "Desert"}
+                                {Category : "Dessert"}
                               ],
 
-                MenuStatusSet= [
-                                    {Status: "판매대기"},
-                                    {Status: "판매중"},
-                                    {Status: "판매종료"}
-                               ];
+              MenuStatusSet = [
+                                 {Status: "판매대기"},
+                                 {Status: "판매중"},
+                                 {Status: "판매종료"}
+                              ];
             
             this.getView().setModel(new JSONModel(CategorySet), "Category");
             this.getView().setModel(new JSONModel(MenuStatusSet),"MenuStaSet");
-            
+
             // 원자재 목록 데이터 정의 (원두, 우유 등)
             let oData2= {
                             MaterialSet: 
@@ -58,6 +58,7 @@ sap.ui.define([
             this.getView().setModel(new JSONModel(oData2),"MSET");
             this.getView().setModel(new JSONModel(StatusSet),"StaSet");
             this.getView().setModel(new JSONModel("/model/Store.json"),"StoreNameSet");
+ 
         },
 
         // function 01. 지점 조회용 함수 (외부 유틸리티 모듈 FSearchStore 활용)
@@ -120,9 +121,20 @@ sap.ui.define([
 
         },
 
+        onReset: function()
+        {
+            this.getView().byId("IInputMenuname").setSelectedKey("");
+
+            this.getView().byId("ICategory").setSelectedKey("");
+
+            var oBinding = this.getView().byId("IMenu").getBinding("rows");
+
+            oBinding.filter([]);
+        },
+
         onStatusColor: function(vStatus)
         {
-            if(vStatus == "부족")
+            if(vStatus == "판매종료")
              {
                 return "Warning";
              }
@@ -130,6 +142,6 @@ sap.ui.define([
               {
                 return "Success";
               }
-        },
+        }
     });
 });
