@@ -6,14 +6,17 @@
     xmlns:viz.feeds="sap.viz.ui5.controls.common.feeds"
     xmlns="sap.m">
         <VBox class="sapUiSmallMargin">
-            <HBox alignItems = "Center"
-              class="sapUiSmallMargin">
-            <core:Icon src="sap-icon://business-objects-experience"
-               size="2rem"
-               color="#e6bee5"
-               class="sapUiResponsiveMargin"/>
-               <Title text = "매출 분석" titleStyle="H2"/>
-            </HBox>
+            <HBox alignItems = "Center" 
+                    class="sapUiResponsiveMargin">
+                    <core:Icon src="sap-icon://product"
+                    size="2rem"
+                    color="#0a6ed1"
+                    class="sapUiSmallMarginEnd"/>
+                    <VBox>
+                        <Title text="매출 분석" titleStyle="H3"/>
+                        <Text text="전국 카페 지점의 매출을 분석합니다."/>
+                    </VBox>
+                </HBox>
 
             <HBox alignItems="Center">
                 <Label text="지점 ID" design="Bold" class="sapUiSmallMarginEnd" />

@@ -4,23 +4,19 @@
     xmlns:core="sap.ui.core"
     xmlns:mvc="sap.ui.core.mvc"
     xmlns="sap.m">
-        <VBox class="sapUiSmallMargin">
-        <HBox
-            alignItems="Center"
-            class="sapUiSmallMargin">
+    <VBox class="sapUiSmallMargin">
 
-            <core:Icon
-                src="sap-icon://inventory"
-                size="2rem"
-                color="#2681cb"
-                class="sapUiResponsiveMargin"/>
-
-            <Title
-                text="재고 관리"
-                titleStyle="H2"/>
-
+        <HBox alignItems = "Center" 
+            class="sapUiResponsiveMargin">
+            <core:Icon src="sap-icon://product"
+            size="2rem"
+            color="#0a6ed1"
+            class="sapUiSmallMarginEnd"/>
+            <VBox>
+                <Title text="재고 관리" titleStyle="H3"/>
+                <Text text="전국 카페 지점의 재고를 조회하고 관리합니다"/>
+            </VBox>
         </HBox>
-        </VBox>
 
         <t:Table
             id="StockSet"
@@ -132,6 +128,6 @@
 
             </t:columns>
         </t:Table>
-
+    </VBox>
   
 </mvc:View>

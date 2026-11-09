@@ -5,7 +5,7 @@
     xmlns:t="sap.ui.table"
     xmlns="sap.m">
     <Page id="Sales_page" showHeader="false">
-        <VBox>
+        <!-- <VBox>
             <HBox alignItems = "Center"
                   class="sapUiSmallMargin">
                 <core:Icon src="sap-icon://sales-order"
@@ -29,7 +29,39 @@
                 currency="KRW"/>
             </HBox>
 
+        </VBox> -->
+        <VBox class="sapUiSmallMargin">
+            <HBox   alignItems = "Center" 
+                    class="sapUiResponsiveMargin">
+                
+                <core:Icon  src="sap-icon://cart"
+                            size="2rem"
+                            color="#0a6ed1"
+                            class="sapUiSmallMarginEnd"/>
+                
+                <VBox>
+                
+                    <Title text="매출 조회" titleStyle="H3"/>
+                    <Text text="전국 카페 지점의 현재 발주상태를 관리합니다"/>
+                
+                </VBox>
+                    
+                <ToolbarSpacer width="20rem"/>
+                <Title text="총 판매량 : " width="5rem" />
+
+                <Label
+                id="TotalQuantity" design="Bold" width="7rem"
+                text="6000"/> 
+
+                <Title text="총 매출금액 : "  width="6rem" />
+
+                <u:Currency
+                id="TotalAmount"
+                value="29713100"
+                currency="KRW"/>
+            </HBox>
         </VBox>
+
             <t:Table
             id="Sales"
             rows="{/SalesSet}" 

@@ -5,21 +5,6 @@
     xmlns:c="sap.ui.core"
     xmlns="sap.m">
     <VBox class="sapUiSmallMargin">
-        <!-- <HBox
-            alignItems="Center"
-            class="sapUiSmallMargin">
-
-            <c:Icon
-                src="sap-icon://cart"
-                size="2rem"
-                color="#2681cb"
-                class="sapUiResponsiveMargin"/>
-
-            <Title
-                text="발주 관리"
-                titleStyle="H2"/>
-
-        </HBox> -->
 
         <HBox alignItems = "Center" 
             class="sapUiResponsiveMargin">

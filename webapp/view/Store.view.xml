@@ -4,7 +4,7 @@
     xmlns:t="sap.ui.table"
     xmlns="sap.m">
     <Page id="Store_page" title="{i18n>title}" showHeader="false">
-        <VBox>
+        <VBox class="sapUiSmallMargin">
             <HBox alignItems = "Center" 
                 class="sapUiResponsiveMargin">
                 <core:Icon src="sap-icon://map-fill"

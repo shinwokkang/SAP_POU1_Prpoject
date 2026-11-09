@@ -6,7 +6,22 @@
     xmlns:viz.feeds="sap.viz.ui5.controls.common.feeds"
     xmlns:core="sap.ui.core"
     xmlns="sap.m">
-    <Page id="Dashboard_page" title="{i18n>title}" class="cafeDashboard">
+
+        <VBox class="sapUiSmallMargin">
+            <HBox alignItems = "Center" 
+                class="sapUiResponsiveMargin">
+                <core:Icon src="sap-icon://map-fill"
+                size="2rem"
+                color="#0a6ed1"
+                class="sapUiSmallMarginEnd"/>
+                <VBox>
+                    <Title text="지점 관리" titleStyle="H3"/>
+                    <Text text="전국 카페 지점 현황을 조회하고 관리합니다"/>
+                </VBox>
+            </HBox>
+
+
+
        <OverflowToolbar width="100%" design="Transparent" >
        <HBox>
        <core:Icon src="sap-icon://bbyd-dashboard" width="2rem"/>
@@ -265,6 +280,5 @@
 
    
 
-
-    </Page>
+</VBox>
     </mvc:View>

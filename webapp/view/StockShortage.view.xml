@@ -4,7 +4,7 @@
     xmlns:core="sap.ui.core"
     xmlns="sap.m">
 
-
+    <VBox class="sapUiSmallMargin">
         <HBox alignItems = "Center" 
             class="sapUiResponsiveMargin">
             <core:Icon src="sap-icon://product"
@@ -71,4 +71,5 @@
                 </t:Column>
             </t:columns>
         </t:Table>
+    </VBox>
 </mvc:View>

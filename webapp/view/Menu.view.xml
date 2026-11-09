@@ -7,7 +7,7 @@
     <Page id="Menu_page" title="{i18n>title}" showHeader= "false">
 
  <!-- < 지점 조회용 테이블 /> -->
-        <t:Table
+        <!-- <t:Table
             id="IFSearchStoreTable"
             rows="{/PurchaseSet}"
             selectionMode="Single"
@@ -89,19 +89,24 @@
                 </t:Column>
                 
             </t:columns>
-        </t:Table>
+        </t:Table> -->
 
 
 
 <!-- < 메뉴 관리 테이블 /> -->
-        <HBox alignItems = "Center"
-              class="sapUiSmallMargin">
-            <core:Icon src="sap-icon://menu"
-               size="2rem"
-               color="#e6bee5"
-               class="sapUiResponsiveMargin"/>
-               <Title text = "메뉴 관리" titleStyle="H2"/>
+    <VBox class="sapUiSmallMargin">
+        <HBox alignItems = "Center" 
+            class="sapUiResponsiveMargin">
+            <core:Icon src="sap-icon://cart"
+            size="2rem"
+            color="#0a6ed1"
+            class="sapUiSmallMarginEnd"/>
+            <VBox>
+                <Title text="메뉴 관리" titleStyle="H3"/>
+                <Text text="전국 카페 지점의 현재 발주상태를 관리합니다"/>
+            </VBox>
         </HBox>
+    </VBox>
         <t:Table
             id="IMenu"
             rows="{CSET>/MenuSet}"
