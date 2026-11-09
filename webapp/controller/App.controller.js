@@ -22,6 +22,20 @@ sap.ui.define([
             var oToolPage = this.byId("toolPage");
             var bSideExpanded = oToolPage.getSideExpanded();
             oToolPage.setSideExpanded(!bSideExpanded);
-        }
+        },
+        // 현재 시간을 'YYYY-MM-DD HH:mm:ss' 형태로 포맷팅하는 헬퍼 함수
+        _getCurrentTimeString: function () {
+            var now = new Date();
+            var year = now.getFullYear();
+            var month = String(now.getMonth() + 1).padStart(2, "0");
+            var date = String(now.getDate()).padStart(2, "0");
+            var hours = String(now.getHours()).padStart(2, "0");
+            var minutes = String(now.getMinutes()).padStart(2, "0");
+            var seconds = String(now.getSeconds()).padStart(2, "0");
+
+            return year + "-" + month + "-" + date + " " + hours + ":" + minutes + ":" + seconds;
+        },
+
+
     });
 });
