@@ -1,0 +1,15 @@
+{
+    "StoreNameSet" :
+    [
+        {"Strcd": "S001", "Store" : "성수점"},
+        {"Strcd": "S002", "Store" : "강남점"},
+        {"Strcd": "S003", "Store" : "수원점"},
+        {"Strcd": "S004", "Store" : "성남점"},
+        {"Strcd": "S005", "Store" : "춘천점"},
+        {"Strcd": "S006", "Store" : "대전점"},
+        {"Strcd": "S007", "Store" : "전주점"},
+        {"Strcd": "S008", "Store" : "대구점"},
+        {"Strcd": "S009", "Store" : "부산점"},
+        {"Strcd": "S010", "Store" : "제주점"}
+    ]
+}

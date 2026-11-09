@@ -1,0 +1,10 @@
+{
+    "MaterialSet": [
+        {"Matnr": "R001", "Matname": "원두"},
+        {"Matnr": "R002", "Matname": "우유"},
+        {"Matnr": "R003", "Matname": "말차가루"},
+        {"Matnr": "R004", "Matname": "초코파우더"},
+        {"Matnr": "R005", "Matname": "밀가루"},
+        {"Matnr": "R006", "Matname": "버터"}
+    ]
+}
