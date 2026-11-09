@@ -18,6 +18,10 @@
                     </VBox>
                 </HBox>
 
+
+
+            <Panel class="sapUiResponsiveMargin" width="auto">
+
             <HBox alignItems="Center">
                 <Label text="지점 ID" design="Bold" class="sapUiSmallMarginEnd" />
                 <MultiComboBox id="storeFilter"
@@ -37,6 +41,11 @@
                         press="onSearch"
                         class="sapUiSmallMarginBegin" />
             </HBox>
+
+            </Panel>
+
+
+
 
             <HBox renderType="Bare" width="100%">
 

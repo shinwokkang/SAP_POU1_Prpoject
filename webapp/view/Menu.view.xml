@@ -107,6 +107,42 @@
             </VBox>
         </HBox>
     </VBox>
+
+
+            <Panel class="sapUiResponsiveMargin" width="auto">
+                <HBox alignItems="End">
+                <VBox class="sapUiSmallMarginEnd">
+                    <Label text="메뉴명" labelFor="iMenuName"/>
+                    <Input  id="IInputMenuname" 
+                            class="SMALL" placeholder="지점명 입력" showClearIcon="true"/>
+                </VBox>
+
+                <VBox class="sapUiSmallMarginEnd">
+                    <Label text="카테고리" labelFor="iCategory"/>
+                    <ComboBox id="ICategory" items="{path : 'Category>/'}" class="SMALL" 
+                                                                           placeholder="카테고리" 
+                                                                           showClearIcon = "true">
+                    <core:Item key="{Category>Category}" text="{Category>Category}"/>
+                    </ComboBox>
+                </VBox>
+
+                <ToolbarSpacer width = "1rem" />
+
+                <Button text="조회" icon= "sap-icon://search" 
+                        type="Emphasized"
+                        press="onSearch" />
+
+                <ToolbarSpacer width = "1rem" />
+
+                <Button text="초기화" press="onReset"
+                        icon="sap-icon://undo"
+                        type="Emphasized"
+                        width="80px"/>
+                </HBox>
+            </Panel>
+
+
+
         <t:Table
             id="IMenu"
             rows="{CSET>/MenuSet}"
@@ -115,38 +151,6 @@
             paste="onPaste"
             ariaLabelledBy="title"
             class="sapUiResponsiveMargin">
-
-            <t:extension>
-                <OverflowToolbar style="Clear">
-
-                    <Label text="메뉴명" design="Bold"/>
-                    <Input id="IInputMenuname" class="SMALL" 
-                                               width="13rem" 
-                                               placeholder="메뉴명 입력" 
-                                               showClearIcon = "true"/> 
-
-                    <ToolbarSpacer width = "1rem" />   
-                    
-                    <Label text="카테고리" design="Bold"/>
-                    <ComboBox id="ICategory" items="{path : 'Category>/'}" class="SMALL" 
-                                                                           width="13rem" 
-                                                                           placeholder="카테고리" 
-                                                                           showClearIcon = "true">
-                    <core:Item key="{Category>Category}" text="{Category>Category}"/>
-                    </ComboBox>
-
-                    <ToolbarSpacer width = "1rem" />
-
-                    <Button text="조회" icon= "sap-icon://search" 
-                                        type="Emphasized"
-                                        press="onSearch" />
-
-                    <Button text="초기화" press="onReset"
-                                         icon="sap-icon://undo"
-                                         type="Emphasized"
-                                         width="80px"/>
-                </OverflowToolbar>
-            </t:extension>
 
             <t:columns>
                 <t:Column width="25%">
