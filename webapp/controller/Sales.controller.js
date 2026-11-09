@@ -39,6 +39,51 @@ sap.ui.define([
             return sap.ui.core.UIComponent.getRouterFor(this);
         },
 
+        // 매출 분석(9번)에서 넘어왔을 때 : 전달받은 조건을 넣고 자동 조회
+        onShowParam: function (oEvent)
+        {
+            // URL 매개변수 받기
+            let vStoreid   = oEvent.getParameters().arguments.Storeid,   // "S001" 또는 "ALL"
+                vFrom      = oEvent.getParameters().arguments.From,      // "2026-10-30" 또는 "ALL"
+                vTo        = oEvent.getParameters().arguments.To,        // "2026-11-03" 또는 "ALL"
+                aSummary   = this.getView().getModel().oData.SalesSummarySet,
+                vStorename = "";
+
+            // 지점 ID(S001) → 지점명(성수점) 찾기 (이 화면은 지점명으로 조회함)
+            if(vStoreid != "ALL" && aSummary != undefined)
+            {
+                for(let ls_store of aSummary)
+                {
+                    if(ls_store.Storeid == vStoreid)
+                    {
+                        vStorename = ls_store.Storename;
+                    }
+                }
+            }
+
+            // "ALL"은 조건 없음 → 빈 값으로
+            if(vFrom == "ALL")
+            {
+                vFrom = "";
+            }
+
+            if(vTo == "ALL")
+            {
+                vTo = "";
+            }
+
+            // 전달받은 값을 검색 칸에 넣기
+            this.getView().byId("IStartDate").setValue(vFrom);
+            this.getView().byId("IEndDate").setValue(vTo);
+            this.getView().byId("IStorename").setSelectedKey(vStorename);
+            this.getView().byId("IStorename").setValue(vStorename);
+            this.getView().byId("IMenuname").setSelectedKey("");
+
+            // 기존 조회 버튼 기능 그대로 실행 (테이블 필터 + 총 판매량, 총 매출금액)
+            this.onSearch();
+        },
+
+
         onSearch: function ()
         {   
 
