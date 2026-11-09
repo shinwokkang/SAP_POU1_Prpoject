@@ -14,15 +14,14 @@ sap.ui.define([
          */
 
         addStoreFilter: 
-        function (oView, aFilter) {
+        function (vStorename, aFilter) {
             // 1. 전달받은 필터 배열이 없을 경우 새로 초기화
             if (!aFilter) 
             {
                 aFilter = [];
             }
 
-            let oFilter      = null,
-                vStorename   = oView.byId("IcomboStore").getSelectedKey(); // 전달받은 oView를 이용해 화면에 있는 지점 선택 컴포넌트를 찾아서 선택된 키 값 가져오기
+            let oFilter = null;
             
             // 2. 지점이 선택된 경우(값이 비어있지 않다면) 필터 객체 생성 후 추가
             if (vStorename != "") 
