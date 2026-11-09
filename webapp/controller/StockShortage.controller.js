@@ -56,11 +56,11 @@ sap.ui.define([
             let oContext = oEvent.getSource().getBindingContext("CSET"),
                 ls_stock = oContext.getObject(),
                 oModel = this.getView().getModel("CSET"),
-                vPath = oContext.getPath(),
-                oRouter = this.getOwnerComponent().getRouter();
+                vPath = oContext.getPath(), //데이터 모델의 위치(경로) 가져오기
+                oRouter = this.getOwnerComponent().getRouter();//발주페이지 이동 라우터 객체 가져오기
 
             MessageBox.confirm(
-                ls_stock.Storename + "의 " + ls_stock.Matname +
+                ls_stock.Storename + "의 " + ls_stock.Matname + //지점 + 원재료 이름
                 " 발주 요청 알림을 보내시겠습니까?",
                 {
                     title: "발주 요청 안내",
