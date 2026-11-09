@@ -5,21 +5,21 @@
     xmlns:mvc="sap.ui.core.mvc"
     xmlns="sap.m">
         <VBox class="sapUiSmallMargin">
-        <HBox
-            alignItems="Center"
-            class="sapUiSmallMargin">
+            <HBox
+                alignItems="Center"
+                class="sapUiSmallMargin">
 
-            <core:Icon
-                src="sap-icon://inventory"
-                size="2rem"
-                color="#2681cb"
-                class="sapUiResponsiveMargin"/>
+                <core:Icon
+                    src="sap-icon://inventory"
+                    size="2rem"
+                    color="#2681cb"
+                    class="sapUiResponsiveMargin"/>
 
-            <Title
-                text="재고 관리"
-                titleStyle="H2"/>
+                <Title
+                    text="재고 관리"
+                    titleStyle="H2"/>
 
-        </HBox>
+            </HBox>
         </VBox>
 
         <t:Table
@@ -125,7 +125,7 @@
                         <ObjectStatus 
                               text="{Status}" 
                               state="{path: 'Status',  formatter: '.onStatusColor'}"
-                              inverted="true"
+                              inverted="true" 
                               icon="sap-icon://status-critical"/>
                     </t:template>
                 </t:Column>
