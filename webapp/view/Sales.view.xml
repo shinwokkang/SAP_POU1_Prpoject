@@ -4,69 +4,61 @@
 	xmlns:u="sap.ui.unified"
     xmlns:t="sap.ui.table"
     xmlns="sap.m">
-    <Page id="Sales_page" title="{i18n>title}">
-         <VBox>
-                <Title text="매출 조회" titleStyle="H3"/>
-                <Text text="전국 카페 매출을 조회합니다"/>
-            </VBox>
+    <Page id="Sales_page" showHeader="false">
+        <VBox>
+            <HBox alignItems = "Center"
+                  class="sapUiSmallMargin">
+                <core:Icon src="sap-icon://sales-order"
+               size="2rem"
+               color="#0a6ed1"
+               class="sapUiResponsiveMargin"/>
+                <Title text="매출 조회" titleStyle="H2"/>
+            </HBox>        
+        </VBox>
             <t:Table
             id="Sales"
             rows="{/SalesSet}" 
             selectionMode="None" 
-            selectionBehavior="Row" 
-            paste="onPaste"
-            ariaLabelledBy="title">
+            ariaLabelledBy="title"
+            class="sapUiResponsiveMargin">
             <t:extension>
                 <OverflowToolbar style="Clear">
+                <!-- 조회기간 -->
                     <Label text="조회기간" design="Bold"/>
-                    <!-- <DatePicker
-					id="IDate"
-                    width="8rem"
-					placeholder="yyyy-MM-dd"
-					change="handleChange"
-                    displayFormat="yyyy-MM-dd"
-					valueFormat="yyyy-MM-dd"/> -->
-
-                    <DateRangeSelection
-                    id="IDate"
-                    width = "15rem" 
-                    value= "{
-                        'type': 'sap.ui.model.type.DateInterval',
-                        'formatOptions': {
-                            'pattern': 'yyyy-MM-dd'
-                        },
-                        'parts': [
-                            {
-                                'type': 'sap.ui.model.type.Date',
-                                'path': '/start'
-                            },
-                            {
-                                'type': 'sap.ui.model.type.Date',
-                                'path': '/end'
-                            }
-                        ]
-                    }"
-                    change="handleChange"/>
-
+                    <DatePicker
+					id="IStartDate" width="9rem"
+					placeholder="2026-01-01" change="handleChange"
+                    displayFormat="yyyy-MM-dd" valueFormat="yyyy-MM-dd"/>
+                    <Text text="~"/>
+                    <DatePicker
+					id="IEndDate" width="9rem"
+					placeholder="2026-12-31" change="handleChange"
+                    displayFormat="yyyy-MM-dd" valueFormat="yyyy-MM-dd"/>
+                <!-- 지점 -->
                     <ToolbarSpacer width = "3rem" />                   
                     <Label text="지점" design="Bold"/>
 
                     <ComboBox id="IStorename" width="8rem" placeholder="지점 선택" 
-                              showClearIcon = "true"
-                              items="{path  : 'StoreList>/',
+                              showClearIcon = "true" class="SMALL"
+                              items="{path  : 'StoreNameSet>/StoreNameSet',
                                       sorter: {path: 'Store'}}">
-                        <core:Item key="{StoreList>Store}" text="{StoreList>Store}"/>
+                        <core:Item key="{StoreNameSet>Store}" text="{StoreNameSet>Store}"/>
                     </ComboBox>
-
+                <!-- 메뉴 -->
                     <ToolbarSpacer width = "3rem" />
                     <Label text="메뉴" design="Bold"/>
 
-                    <ComboBox id="IMenuname" width="8rem" placeholder="메뉴 선택" showClearIcon = "true"
-                              items="{path  : 'MenuList>/'}">
+                    <ComboBox id="IMenuname" width="8rem" placeholder="메뉴 선택" 
+                              showClearIcon = "true" items="{path  : 'MenuList>/'}" class="MEDIUM">
                         <core:Item key="{MenuList>Menu}" text="{MenuList>Menu}"/>
                     </ComboBox>
+                <!-- 버튼 -->
+                    <Button text="조회" icon="sap-icon://search" 
+                            type="Emphasized" press="onSearch" width = "6rem"/>
+                    <ToolbarSpacer/>
 
-                    <Button text="조회" icon="sap-icon://search" press="onSearch"/>
+                    <Button text="전체매출조회" icon="sap-icon://lead" 
+                            type="Ghost" press="onTotal"/>
 
                 </OverflowToolbar>
             </t:extension>
@@ -114,7 +106,6 @@
         text="0"/> 
 
         <Title text="총 매출금액 : "  width="8rem" />
-
 
         <u:Currency
         id="TotalAmount"

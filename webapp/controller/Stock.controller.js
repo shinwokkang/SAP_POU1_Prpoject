@@ -9,21 +9,11 @@ sap.ui.define([
     return Controller.extend("code2.fiori.pou.pou1project.controller.Stock", {
         onInit() 
         {
-            var oData= {
-                MaterialSet: 
-                [
-                    {Matnr: "R001", Matname: "원두"},
-                    {Matnr: "R002", Matname: "우유"},
-                    {Matnr: "R003", Matname: "말차가루"},
-                    {Matnr: "R004", Matname: "초코파우더"},
-                    {Matnr: "R005", Matname: "밀가루"},
-                    {Matnr: "R006", Matname: "버터"}
-                ]
-            };
-            
-            var oModel = new JSONModel(oData);
 
-            this.getView().setModel(oModel,"MSET");
+            
+           
+
+            this.getView().setModel(new JSONModel("/model/Material.json"),"MSET");
 
             this.getRouter().getRoute("Stock");
 

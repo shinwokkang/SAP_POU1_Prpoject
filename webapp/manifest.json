@@ -147,7 +147,7 @@
         },
         {
           "name": "StoreFilter",
-          "pattern": "Store",
+          "pattern": "StoreFilter",
           "target": [
             "TargetStore"
           ]
