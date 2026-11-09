@@ -18,23 +18,23 @@ sap.ui.define([
             this.getView().setModel(oModel, "CSET");
             
             // 카테고리 목록 데이터를 담고 있는 로컬 JSON 모델 생성 및 설정
-            let CategorySet = [
-                                {Category : "Coffee"},
-                                {Category : "NonCoffee"},
-                                {Category : "Ade"},
-                                {Category : "Bakery"},
-                                {Category : "Desert"}
-                              ],
+            let CategorySet   = [
+                                  {Category : "Coffee"},
+                                  {Category : "NonCoffee"},
+                                  {Category : "Ade"},
+                                  {Category : "Bakery"},
+                                  {Category : "Dessert"}
+                                ],
 
-                MenuStatusSet= [
-                                    {Status: "판매대기"},
-                                    {Status: "판매중"},
-                                    {Status: "판매종료"}
-                               ];
-            
+                MenuStatusSet = [
+                                  {Status: "판매대기"},
+                                  {Status: "판매중"},
+                                  {Status: "판매종료"}
+                                ];
+
             this.getView().setModel(new JSONModel(CategorySet), "Category");
             this.getView().setModel(new JSONModel(MenuStatusSet),"MenuStaSet");
-            
+
             // 원자재 목록 데이터 정의 (원두, 우유 등)
             let oData2= {
                             MaterialSet: 
@@ -58,6 +58,7 @@ sap.ui.define([
             this.getView().setModel(new JSONModel(oData2),"MSET");
             this.getView().setModel(new JSONModel(StatusSet),"StaSet");
             this.getView().setModel(new JSONModel("/model/Store.json"),"StoreNameSet");
+ 
         },
 
         // function 01. 지점 조회용 함수 (외부 유틸리티 모듈 FSearchStore 활용)
@@ -88,7 +89,8 @@ sap.ui.define([
                 oFilter  = null,
                 aFilter = [],
                 vMenuid = this.getView().byId("IInputMenuname").getValue(), // 화면의 메뉴명 입력값 가져오기
-                vCategory = this.getView().byId("ICategory").getValue(); // 화면의 카테고리 선택값 가져오기
+                vCategory = this.getView().byId("ICategory").getValue(), // 화면의 카테고리 선택값 가져오기
+                iMenuCount = oBinding.getLength();
 
             // 메뉴명이 입력된 경우: 부분 일치(Contains) 조건 필터 생성 후 배열에 추가
             if(vMenuid !="")
@@ -118,11 +120,25 @@ sap.ui.define([
             // 생성된 필터들을 메뉴 테이블 바인딩에 일괄 적용
             oBinding.filter(aFilter);
 
+            // 총 메뉴 수 표시
+            this.getView().byId("TotalMenuQuantity").setText(iMenuCount);
+            
+        },
+
+        onReset: function()
+        {
+            this.getView().byId("IInputMenuname").setSelectedKey("");
+
+            this.getView().byId("ICategory").setSelectedKey("");
+
+            var oBinding = this.getView().byId("IMenu").getBinding("rows");
+
+            oBinding.filter([]);
         },
 
         onStatusColor: function(vStatus)
         {
-            if(vStatus == "부족")
+            if(vStatus == "판매종료")
              {
                 return "Warning";
              }
@@ -130,6 +146,6 @@ sap.ui.define([
               {
                 return "Success";
               }
-        },
+        }
     });
 });
