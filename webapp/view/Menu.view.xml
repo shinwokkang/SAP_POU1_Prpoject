@@ -132,28 +132,28 @@
             </t:extension>
 
             <t:columns>
-                <t:Column width="19rem">
+                <t:Column width="12rem">
                     <Label text="메뉴코드" />
                     <t:template>
                         <Text text="{CSET>Menuid}" wrapping="false" />
                     </t:template>
                 </t:Column>
 
-                <t:Column width="19rem">
+                <t:Column width="17rem">
                     <Label text="메뉴명" />
                     <t:template>
                         <Text text="{CSET>Menuname}" wrapping="false" /> 
                     </t:template>
                 </t:Column>
 
-                <t:Column width="19rem">
+                <t:Column width="17rem">
                     <Label text="카테고리" />
                     <t:template>
                         <Text text="{CSET>Category}" wrapping="false" />
                     </t:template>
                 </t:Column>
 
-                <t:Column width="19rem">
+                <t:Column width="17rem">
                     <Label text="가격" />
                     <t:template>
                         <Text text="{
