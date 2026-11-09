@@ -28,16 +28,17 @@
                 <DatePicker id="dateFrom" class="SMALL" value="2026-10-30" valueFormat="yyyy-MM-dd" displayFormat="yyyy.MM.dd" />
                 <Text text="~" class="sapUiTinyMarginBeginEnd" />
                 <DatePicker id="dateTo"   class="SMALL" value="2026-11-03" valueFormat="yyyy-MM-dd" displayFormat="yyyy.MM.dd" />
+                <ToolbarSpacer width = "5px"/>
 
                 <Button icon="sap-icon://search"
                         text="조회"
-                        press="onSearch"
-                        class="sapUiSmallMarginBegin" />
+                        press="onSearch" />
+                <ToolbarSpacer width = "5px"/>
                 <Button text="초기화" type="Ghost" press="onReset"/>
+                <ToolbarSpacer width = "5px"/>
                 <Button icon="sap-icon://detail-view"
                         text="상세보기"
-                        press="onDetail"
-                        class="sapUiSmallMarginBegin" />
+                        press="onDetail" />
             </HBox>
 
             <HBox renderType="Bare" width="100%">
