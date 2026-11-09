@@ -103,6 +103,24 @@ sap.ui.define([
 
             // 기존 조회 버튼 기능 그대로 실행
             this.onSearch();
+        },
+        
+        // 초기화 : 검색 조건을 처음 상태로 되돌리고 전체 데이터 보여주기
+        onReset : function()
+        {
+            let oStoreBinding = this.getView().byId("storeDataset").getBinding("data"),
+                oMenuBinding  = this.getView().byId("menuDataset").getBinding("data");
+
+            // 지점 선택 전부 해제 (여러 개 고르는 콤보라 빈 배열로)
+            this.getView().byId("storeFilter").setSelectedKeys([]);
+
+            // 날짜를 처음 값으로 되돌리기
+            this.getView().byId("dateFrom").setValue("2026-10-30");
+            this.getView().byId("dateTo").setValue("2026-11-03");
+
+            // 두 차트 필터 해제 → 전체 데이터
+            oStoreBinding.filter([]);
+            oMenuBinding.filter([]);
         }
     });
 });

@@ -33,6 +33,7 @@
                         text="조회"
                         press="onSearch"
                         class="sapUiSmallMarginBegin" />
+                <Button text="초기화" type="Ghost" press="onReset"/>
                 <Button icon="sap-icon://detail-view"
                         text="상세보기"
                         press="onDetail"
