@@ -151,6 +151,13 @@
           "target": [
             "TargetStore"
           ]
+        },
+        {
+          "name": "SalesAnalyticsFilter",
+          "pattern": "SalesAnalyticsFilter/{Storeid}",
+          "target": [
+            "TargetSalesAnalytics"
+          ]
         }
       ],
       "targets": {
