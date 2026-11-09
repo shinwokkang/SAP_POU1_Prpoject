@@ -124,7 +124,15 @@
                         <Text text="{Status}" wrapping="false"/>
                     </t:template>
                 </t:Column>
-                
+                <t:Column width="10rem">
+                <Label text="알림상태"/>
+                <t:template>
+                    <ObjectStatus
+                        text="{AlertStatus}"
+                        state="{path:'AlertStatus', formatter:'.onAlertColor'}"
+                        inverted="true"/>
+                </t:template>
+            </t:Column>
             </t:columns>
         </t:Table>
     </Page>

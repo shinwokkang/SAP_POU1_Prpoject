@@ -5,6 +5,24 @@
     xmlns:mvc="sap.ui.core.mvc"
     xmlns="sap.m">
     <Page id="Stock_page" title="{i18n>title}">
+        <VBox class="sapUiSmallMargin">
+        <HBox
+            alignItems="Center"
+            class="sapUiSmallMargin">
+
+            <core:Icon
+                src="sap-icon://inventory"
+                size="2rem"
+                color="#2681cb"
+                class="sapUiResponsiveMargin"/>
+
+            <Title
+                text="재고 관리"
+                titleStyle="H2"/>
+
+        </HBox>
+    </VBox>
+
         <t:Table
             id="StockSet"
             rows="{/StockSet}"
