@@ -23,27 +23,41 @@
             <Panel class="sapUiResponsiveMargin" width="auto">
 
             <HBox alignItems="Center">
-                <Label text="지점 ID" design="Bold" class="sapUiSmallMarginEnd" />
+                <Label  text="지점 ID" 
+                        design="Bold" class="sapUiSmallMarginEnd" />
                 <MultiComboBox id="storeFilter"
-                               width="20rem"
+                               class="LARGE"
                                placeholder="전체 지점"
                                items="{/SalesSummarySet}">
                     <core:Item key="{Storeid}" text="{Storename}" />
                 </MultiComboBox>
 
-                <Label text="조회기간" design="Bold" class="sapUiMediumMarginBegin sapUiSmallMarginEnd" />
-                <DatePicker id="dateFrom" class="SMALL" value="2026-10-30" valueFormat="yyyy-MM-dd" displayFormat="yyyy.MM.dd" />
+                <Label text="조회기간" 
+                       design="Bold" 
+                       class="sapUiMediumMarginBegin sapUiSmallMarginEnd" />
+                <DatePicker id="dateFrom" 
+                            class="SMALL" 
+                            value="2026-10-30" 
+                            valueFormat="yyyy-MM-dd" 
+                            displayFormat="yyyy.MM.dd" />
                 <Text text="~" class="sapUiTinyMarginBeginEnd" />
-                <DatePicker id="dateTo"   class="SMALL" value="2026-11-03" valueFormat="yyyy-MM-dd" displayFormat="yyyy.MM.dd" />
+                <DatePicker id="dateTo"   
+                            class="SMALL" 
+                            value="2026-11-03" 
+                            valueFormat="yyyy-MM-dd" 
+                            displayFormat="yyyy.MM.dd" />
+
                 <ToolbarSpacer width = "5px"/>
 
                 <Button icon="sap-icon://search"
                         text="조회"
                         type="Emphasized"
                         press="onSearch" />
+
                 <ToolbarSpacer width = "5px"/>
                 <Button text="초기화" icon="sap-icon://undo" type="Emphasized" press="onReset"/>
                 <ToolbarSpacer width = "5px"/>
+
                 <Button icon="sap-icon://detail-view"
                         text="상세보기"
                         type="Emphasized"
@@ -61,49 +75,67 @@
             <viz:VizFrame id="storeSalesChart" uiConfig="{applicationSet:'fiori'}"
                           width="50%" height="380px" vizType="column"
                           vizProperties="{
-                                            title        : { visible : true, text : '지점별 총매출' },
-                                            legend       : { visible : true },
-                                            plotArea     : { dataLabel : { visible : true } },
-                                            valueAxis    : { title : { visible : true, text : '매출액 (원)' } },
-                                            categoryAxis : { title : { visible : true, text : '지점' } }
+                                            title        : { visible    : true,             text : '지점별 총매출' },
+                                            legend       : { visible    : true },
+                                            plotArea     : { dataLabel  : { visible : true } },
+                                            valueAxis    : { title      : { visible : true, text : '매출액 (원)' } },
+                                            categoryAxis : { title      : { visible : true, text : '지점' } }
                                          }">
                 <viz:dataset>
-                    <viz.data:FlattenedDataset id="storeDataset" data="{/SalesSet}">
+                    <viz.data:FlattenedDataset id   ="storeDataset" 
+                                               data ="{/SalesSet}">
                         <viz.data:dimensions>
-                            <viz.data:DimensionDefinition name="지점" value="{Storename}" />
+                            <viz.data:DimensionDefinition name  ="지점" 
+                                                          value ="{Storename}" />
                         </viz.data:dimensions>
+
                         <viz.data:measures>
                             <viz.data:MeasureDefinition name="총매출" value="{Amount}" />
                         </viz.data:measures>
+
                     </viz.data:FlattenedDataset>
                 </viz:dataset>
                 <viz:feeds>
-                    <viz.feeds:FeedItem uid="valueAxis"    type="Measure"   values="총매출" />
-                    <viz.feeds:FeedItem uid="categoryAxis" type="Dimension" values="지점" />
+                    <viz.feeds:FeedItem uid     ="valueAxis"    
+                                        type    ="Measure"   
+                                        values  ="총매출" />
+                    <viz.feeds:FeedItem uid     ="categoryAxis" 
+                                        type    ="Dimension" 
+                                        values  ="지점" />
                 </viz:feeds>
             </viz:VizFrame>
 
             <!-- 차트 : 메뉴별 판매량 (Donut) -> 판매 내역을 메뉴명 기준으로 합산 -->
-            <viz:VizFrame id="menuQtyChart" uiConfig="{applicationSet:'fiori'}"
-                          width="50%" height="380px" vizType="donut"
+            <viz:VizFrame id        ="menuQtyChart" 
+                          uiConfig  ="{applicationSet:'fiori'}"
+                          width     ="50%" 
+                          height    ="380px" 
+                          vizType   ="donut"
                           vizProperties="{
                                             title    : { visible : true, text : '메뉴별 판매량' },
                                             legend   : { visible : true },
                                             plotArea : { dataLabel : { visible : true } }
                                          }">
                 <viz:dataset>
-                    <viz.data:FlattenedDataset id="menuDataset" data="{/SalesSet}">
+                    <viz.data:FlattenedDataset id   ="menuDataset" 
+                                               data ="{/SalesSet}">
                         <viz.data:dimensions>
-                            <viz.data:DimensionDefinition name="메뉴" value="{Menuname}" />
+                            <viz.data:DimensionDefinition name  ="메뉴" 
+                                                          value ="{Menuname}" />
                         </viz.data:dimensions>
                         <viz.data:measures>
-                            <viz.data:MeasureDefinition name="판매량" value="{Quantity}" />
+                            <viz.data:MeasureDefinition name    ="판매량" 
+                                                        value   ="{Quantity}" />
                         </viz.data:measures>
                     </viz.data:FlattenedDataset>
                 </viz:dataset>
                 <viz:feeds>
-                    <viz.feeds:FeedItem uid="size"  type="Measure"   values="판매량" />
-                    <viz.feeds:FeedItem uid="color" type="Dimension" values="메뉴" />
+                    <viz.feeds:FeedItem uid     ="size"  
+                                        type    ="Measure"   
+                                        values  ="판매량" />
+                    <viz.feeds:FeedItem uid     ="color" 
+                                        type    ="Dimension" 
+                                        values  ="메뉴" />
                 </viz:feeds>
             </viz:VizFrame>
             </HBox>
