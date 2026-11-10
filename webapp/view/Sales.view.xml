@@ -104,14 +104,14 @@
                 <!-- 조회기간 -->
                     <Label text="조회기간" design="Bold"/>
                     <DatePicker
-					id="IStartDate" width="9rem"
-					placeholder="2026-01-01" change="handleChange"
-                    displayFormat="yyyy-MM-dd" valueFormat="yyyy-MM-dd"/>
+                            id="IStartDate" width="9rem"
+                            placeholder="2026-01-01" change="handleChange"
+                            displayFormat="yyyy-MM-dd" valueFormat="yyyy-MM-dd"/>
                     <Text text="~"/>
                     <DatePicker
-					id="IEndDate" width="9rem"
-					placeholder="2026-12-31" change="handleChange"
-                    displayFormat="yyyy-MM-dd" valueFormat="yyyy-MM-dd"/>
+                            id="IEndDate" width="9rem"
+                            placeholder="2026-12-31" change="handleChange"
+                            displayFormat="yyyy-MM-dd" valueFormat="yyyy-MM-dd"/>
                 <!-- 지점 -->
                     <ToolbarSpacer width = "3rem" />                   
                     <Label text="지점" design="Bold"/>
