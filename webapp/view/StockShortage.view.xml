@@ -23,6 +23,8 @@
                       customIcon="sap-icon://alert"
                       class="sapUiResponsiveMargin"/>
 
+        <!-- 재고 부족 목록 테이블 -->
+        <!-- CSET 모델의 StockSet 배열 바인딩 -->
         <t:Table id="shortageTable"
                  rows="{CSET>/StockSet}"
                  rowsUpdated=".onRowsUpdated"
@@ -56,7 +58,7 @@
                         <Text text="{CSET>Minqty}"/>
                     </t:template>
                 </t:Column>
-
+              <!-- 부족 수량 및 발주 요청 알림   -->
                 <t:Column width="8rem" hAlign="Center">
                     <Label text="부족 수량"/>
                     <t:template>
