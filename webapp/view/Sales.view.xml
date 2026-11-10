@@ -130,6 +130,7 @@
                               showClearIcon = "true" items="{path  : 'MenuList>/'}" class="MEDIUM">
                         <core:Item key="{MenuList>Menu}" text="{MenuList>Menu}"/>
                     </ComboBox>
+                    <ToolbarSpacer width = "1rem" />
                 <!-- 버튼 -->
                     <Button text="조회" icon="sap-icon://search" 
                             type="Emphasized" press="onSearch"/>
