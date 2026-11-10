@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 24" width="1280" height="24" role="presentation">
+<defs>
+  <linearGradient id="ln" x1="0" x2="1"><stop offset="0" stop-color="#c8834a" stop-opacity="0"/><stop offset=".3" stop-color="#c8834a"/><stop offset=".7" stop-color="#0a6ed1"/><stop offset="1" stop-color="#0a6ed1" stop-opacity="0"/></linearGradient>
+  <linearGradient id="sh" x1="0" x2="1"><stop offset="0" stop-color="#ffd7a8" stop-opacity="0"/><stop offset=".5" stop-color="#ffd7a8"/><stop offset="1" stop-color="#ffd7a8" stop-opacity="0"/></linearGradient>
+</defs>
+<style>@keyframes run{from{transform:translateX(-220px)}to{transform:translateX(1500px)}}.sh{animation:run 4.5s cubic-bezier(.5,0,.5,1) infinite}@media (prefers-reduced-motion: reduce){*{animation:none!important}}</style>
+<rect x="0" y="11" width="1280" height="2" fill="url(#ln)"/>
+<rect class="sh" x="0" y="10.5" width="200" height="3" rx="1.5" fill="url(#sh)"/>
+<g transform="translate(640 12) rotate(-25)"><ellipse rx="11" ry="7.5" fill="#6f4e37"/><path d="M-9 1.5 C-3 -3.5 3 3.5 9 -1.5" fill="none" stroke="#e0a96d" stroke-width="1.6" stroke-linecap="round"/></g>
+</svg>

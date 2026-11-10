@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 210" width="1280" height="210" role="img" aria-label="Thanks for visiting CafeFlow">
+<defs><clipPath id="c"><rect width="1280" height="210" rx="28"/></clipPath>
+<linearGradient id="g" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#1b0f0a"/><stop offset=".6" stop-color="#2e1b12"/><stop offset="1" stop-color="#0b2b4d"/></linearGradient></defs>
+<style>
+  text{font-family:'Pretendard','Noto Sans KR','Apple SD Gothic Neo','Malgun Gothic','Segoe UI',sans-serif}
+  @keyframes wv{from{transform:translateX(0)}to{transform:translateX(-640px)}}
+  .w1{animation:wv 16s linear infinite}.w2{animation:wv 11s linear infinite reverse}.w3{animation:wv 8s linear infinite}
+  @keyframes bob{0%,100%{opacity:.25}50%{opacity:1}}
+  .d{animation:bob 1.5s ease-in-out infinite}.d2{animation-delay:.25s}.d3{animation-delay:.5s}
+  @media (prefers-reduced-motion: reduce){*{animation:none!important}}
+</style>
+<g clip-path="url(#c)">
+  <path class="w1" d="M0 70 Q160 40 320 70 T640 70 T960 70 T1280 70 T1600 70 T1920 70 T2240 70 T2560 70 V210 H0Z" fill="#c8834a" fill-opacity=".25"/>
+  <path class="w2" d="M0 88 Q160 62 320 88 T640 88 T960 88 T1280 88 T1600 88 T1920 88 T2240 88 T2560 88 V210 H0Z" fill="#6f4e37" fill-opacity=".55"/>
+  <path class="w3" d="M0 108 Q160 90 320 108 T640 108 T960 108 T1280 108 T1600 108 T1920 108 T2240 108 T2560 108 V210 H0Z" fill="url(#g)"/>
+  <rect y="130" width="1280" height="80" fill="url(#g)"/>
+</g>
+<text x="640" y="164" text-anchor="middle" font-size="24" font-weight="800" fill="#f3e2cf">Thanks for visiting CafeFlow</text>
+<text x="640" y="192" text-anchor="middle" font-size="13.5" fill="#c9b29a">Team POU1  ·  SAP CODE 2기  ·  Built with SAP Fiori &amp; SAPUI5</text>
+<circle class="d" cx="628" cy="128" r="3.5" fill="#e0a96d"/><circle class="d d2" cx="640" cy="128" r="3.5" fill="#e0a96d"/><circle class="d d3" cx="652" cy="128" r="3.5" fill="#4ea3f2"/>
+</svg>

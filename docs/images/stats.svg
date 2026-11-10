@@ -1,0 +1,92 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 184" width="1280" height="184" role="img" aria-label="CafeFlow 데이터 한눈에 보기: 지점 12, 메뉴 12, 판매 기록 300, 총 매출 29.7M원, 재고 부족 36, 발주 20">
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#1b0f0a"/><stop offset=".55" stop-color="#2e1b12"/><stop offset="1" stop-color="#0b2b4d"/>
+  </linearGradient>
+  <radialGradient id="gBlue" cx="88%" cy="10%" r="60%"><stop offset="0" stop-color="#1e88e5" stop-opacity=".42"/><stop offset="1" stop-color="#1e88e5" stop-opacity="0"/></radialGradient>
+  <radialGradient id="gWarm" cx="10%" cy="95%" r="55%"><stop offset="0" stop-color="#d08a4f" stop-opacity=".34"/><stop offset="1" stop-color="#d08a4f" stop-opacity="0"/></radialGradient>
+  <pattern id="dots" width="24" height="24" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1.3" fill="#fff" fill-opacity=".06"/></pattern>
+  <clipPath id="card"><rect width="196" height="182" rx="20"/></clipPath>
+  <clipPath id="num"><rect x="0" y="66" width="196" height="62"/></clipPath>
+</defs>
+<style>
+  text{font-family:'Pretendard','Noto Sans KR','Apple SD Gothic Neo','Malgun Gothic','Segoe UI',sans-serif}
+  @keyframes fadeUp{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+  .card{animation:fadeUp .8s cubic-bezier(.2,.8,.2,1) both}
+  @keyframes roll0{from{transform:translateY(0)}to{transform:translateY(-224px)}}@keyframes roll1{from{transform:translateY(0)}to{transform:translateY(-224px)}}@keyframes roll2{from{transform:translateY(0)}to{transform:translateY(-224px)}}@keyframes roll3{from{transform:translateY(0)}to{transform:translateY(-224px)}}@keyframes roll4{from{transform:translateY(0)}to{transform:translateY(-224px)}}@keyframes roll5{from{transform:translateY(0)}to{transform:translateY(-224px)}}
+  @media (prefers-reduced-motion: reduce){*{animation:none!important}}
+  @media (prefers-reduced-motion: reduce){.r0{transform:translateY(-224px)}.r1{transform:translateY(-224px)}.r2{transform:translateY(-224px)}.r3{transform:translateY(-224px)}.r4{transform:translateY(-224px)}.r5{transform:translateY(-224px)}}
+</style>
+<g transform="translate(1 1)"><g class="card" style="animation-delay:0s"><g clip-path="url(#card)">
+  <rect width="196" height="182" fill="url(#bg)"/>
+  <rect width="196" height="182" fill="url(#dots)"/>
+  <circle cx="196" cy="0" r="80" fill="#4ea3f2" fill-opacity=".16"/>
+  <rect x="22" y="24" width="28" height="4" rx="2" fill="#4ea3f2"/>
+  <text x="22" y="54" font-size="16" font-weight="700" fill="#e9d6c1">가맹 지점</text>
+  <g clip-path="url(#num)"><g class="r0" style="animation:roll0 1.7s 0.35s cubic-bezier(.15,.9,.2,1) both">
+    <text x="22" y="116" font-size="44" font-weight="800" fill="#fff" letter-spacing="-1">0</text><text x="22" y="172" font-size="44" font-weight="800" fill="#fff" letter-spacing="-1">3</text><text x="22" y="228" font-size="44" font-weight="800" fill="#fff" letter-spacing="-1">6</text><text x="22" y="284" font-size="44" font-weight="800" fill="#fff" letter-spacing="-1">9</text><text x="22" y="340" font-size="44" font-weight="800" fill="#fff" letter-spacing="-1">12</text>
+  </g></g>
+  <text x="22" y="158" font-size="13" fill="#b99f86">운영 10 · 휴점 2</text>
+</g>
+<rect x=".5" y=".5" width="195" height="181" rx="20" fill="none" stroke="#fff" stroke-opacity=".1"/></g></g>
+<g transform="translate(217.4 1)"><g class="card" style="animation-delay:0.12s"><g clip-path="url(#card)">
+  <rect width="196" height="182" fill="url(#bg)"/>
+  <rect width="196" height="182" fill="url(#dots)"/>
+  <circle cx="196" cy="0" r="80" fill="#e0a96d" fill-opacity=".16"/>
+  <rect x="22" y="24" width="28" height="4" rx="2" fill="#e0a96d"/>
+  <text x="22" y="54" font-size="16" font-weight="700" fill="#e9d6c1">판매 메뉴</text>
+  <g clip-path="url(#num)"><g class="r1" style="animation:roll1 1.7s 0.47s cubic-bezier(.15,.9,.2,1) both">
+    <text x="22" y="116" font-size="44" font-weight="800" fill="#fff" letter-spacing="-1">0</text><text x="22" y="172" font-size="44" font-weight="800" fill="#fff" letter-spacing="-1">3</text><text x="22" y="228" font-size="44" font-weight="800" fill="#fff" letter-spacing="-1">6</text><text x="22" y="284" font-size="44" font-weight="800" fill="#fff" letter-spacing="-1">9</text><text x="22" y="340" font-size="44" font-weight="800" fill="#fff" letter-spacing="-1">12</text>
+  </g></g>
+  <text x="22" y="158" font-size="13" fill="#b99f86">5개 카테고리</text>
+</g>
+<rect x=".5" y=".5" width="195" height="181" rx="20" fill="none" stroke="#fff" stroke-opacity=".1"/></g></g>
+<g transform="translate(433.8 1)"><g class="card" style="animation-delay:0.24s"><g clip-path="url(#card)">
+  <rect width="196" height="182" fill="url(#bg)"/>
+  <rect width="196" height="182" fill="url(#dots)"/>
+  <circle cx="196" cy="0" r="80" fill="#a78bfa" fill-opacity=".16"/>
+  <rect x="22" y="24" width="28" height="4" rx="2" fill="#a78bfa"/>
+  <text x="22" y="54" font-size="16" font-weight="700" fill="#e9d6c1">판매 기록</text>
+  <g clip-path="url(#num)"><g class="r2" style="animation:roll2 1.7s 0.59s cubic-bezier(.15,.9,.2,1) both">
+    <text x="22" y="116" font-size="44" font-weight="800" fill="#fff" letter-spacing="-1">0</text><text x="22" y="172" font-size="44" font-weight="800" fill="#fff" letter-spacing="-1">75</text><text x="22" y="228" font-size="44" font-weight="800" fill="#fff" letter-spacing="-1">150</text><text x="22" y="284" font-size="44" font-weight="800" fill="#fff" letter-spacing="-1">225</text><text x="22" y="340" font-size="44" font-weight="800" fill="#fff" letter-spacing="-1">300</text>
+  </g></g>
+  <text x="22" y="158" font-size="13" fill="#b99f86">2026.10.30 – 11.03</text>
+</g>
+<rect x=".5" y=".5" width="195" height="181" rx="20" fill="none" stroke="#fff" stroke-opacity=".1"/></g></g>
+<g transform="translate(650.2 1)"><g class="card" style="animation-delay:0.36s"><g clip-path="url(#card)">
+  <rect width="196" height="182" fill="url(#bg)"/>
+  <rect width="196" height="182" fill="url(#dots)"/>
+  <circle cx="196" cy="0" r="80" fill="#34d399" fill-opacity=".16"/>
+  <rect x="22" y="24" width="28" height="4" rx="2" fill="#34d399"/>
+  <text x="22" y="54" font-size="16" font-weight="700" fill="#e9d6c1">총 매출</text>
+  <g clip-path="url(#num)"><g class="r3" style="animation:roll3 1.7s 0.71s cubic-bezier(.15,.9,.2,1) both">
+    <text x="22" y="116" font-size="44" font-weight="800" fill="#fff" letter-spacing="-1">₩0</text><text x="22" y="172" font-size="44" font-weight="800" fill="#fff" letter-spacing="-1">₩7.4M</text><text x="22" y="228" font-size="44" font-weight="800" fill="#fff" letter-spacing="-1">₩14.9M</text><text x="22" y="284" font-size="44" font-weight="800" fill="#fff" letter-spacing="-1">₩22.3M</text><text x="22" y="340" font-size="44" font-weight="800" fill="#fff" letter-spacing="-1">₩29.7M</text>
+  </g></g>
+  <text x="22" y="158" font-size="13" fill="#b99f86">5일 누적 매출</text>
+</g>
+<rect x=".5" y=".5" width="195" height="181" rx="20" fill="none" stroke="#fff" stroke-opacity=".1"/></g></g>
+<g transform="translate(866.6 1)"><g class="card" style="animation-delay:0.48s"><g clip-path="url(#card)">
+  <rect width="196" height="182" fill="url(#bg)"/>
+  <rect width="196" height="182" fill="url(#dots)"/>
+  <circle cx="196" cy="0" r="80" fill="#f87171" fill-opacity=".16"/>
+  <rect x="22" y="24" width="28" height="4" rx="2" fill="#f87171"/>
+  <text x="22" y="54" font-size="16" font-weight="700" fill="#e9d6c1">재고 부족</text>
+  <g clip-path="url(#num)"><g class="r4" style="animation:roll4 1.7s 0.83s cubic-bezier(.15,.9,.2,1) both">
+    <text x="22" y="116" font-size="44" font-weight="800" fill="#fff" letter-spacing="-1">0</text><text x="22" y="172" font-size="44" font-weight="800" fill="#fff" letter-spacing="-1">9</text><text x="22" y="228" font-size="44" font-weight="800" fill="#fff" letter-spacing="-1">18</text><text x="22" y="284" font-size="44" font-weight="800" fill="#fff" letter-spacing="-1">27</text><text x="22" y="340" font-size="44" font-weight="800" fill="#fff" letter-spacing="-1">36</text>
+  </g></g>
+  <text x="22" y="158" font-size="13" fill="#b99f86">전체 60개 재고 품목 중</text>
+</g>
+<rect x=".5" y=".5" width="195" height="181" rx="20" fill="none" stroke="#fff" stroke-opacity=".1"/></g></g>
+<g transform="translate(1083 1)"><g class="card" style="animation-delay:0.6s"><g clip-path="url(#card)">
+  <rect width="196" height="182" fill="url(#bg)"/>
+  <rect width="196" height="182" fill="url(#dots)"/>
+  <circle cx="196" cy="0" r="80" fill="#fbbf24" fill-opacity=".16"/>
+  <rect x="22" y="24" width="28" height="4" rx="2" fill="#fbbf24"/>
+  <text x="22" y="54" font-size="16" font-weight="700" fill="#e9d6c1">발주 건수</text>
+  <g clip-path="url(#num)"><g class="r5" style="animation:roll5 1.7s 0.95s cubic-bezier(.15,.9,.2,1) both">
+    <text x="22" y="116" font-size="44" font-weight="800" fill="#fff" letter-spacing="-1">0</text><text x="22" y="172" font-size="44" font-weight="800" fill="#fff" letter-spacing="-1">5</text><text x="22" y="228" font-size="44" font-weight="800" fill="#fff" letter-spacing="-1">10</text><text x="22" y="284" font-size="44" font-weight="800" fill="#fff" letter-spacing="-1">15</text><text x="22" y="340" font-size="44" font-weight="800" fill="#fff" letter-spacing="-1">20</text>
+  </g></g>
+  <text x="22" y="158" font-size="13" fill="#b99f86">요청 7 · 완료 7 · 입고 6</text>
+</g>
+<rect x=".5" y=".5" width="195" height="181" rx="20" fill="none" stroke="#fff" stroke-opacity=".1"/></g></g>
+</svg>
