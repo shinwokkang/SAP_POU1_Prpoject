@@ -102,7 +102,7 @@ sap.ui.define([
             this.getView().byId("storeFilter").setSelectedKeys([vStoreid]);
 
             // 기존 조회 버튼 기능 그대로 실행
-            this.onSearch();
+            this.onSearch();    
         },
         
         // 초기화 : 검색 조건을 처음 상태로 되돌리고 전체 데이터 보여주기
