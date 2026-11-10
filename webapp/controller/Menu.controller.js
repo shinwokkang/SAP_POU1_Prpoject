@@ -2,9 +2,8 @@ sap.ui.define([
     "sap/ui/core/mvc/Controller",
     "sap/ui/model/json/JSONModel",
     "sap/ui/model/Filter",
-    "sap/ui/model/FilterOperator",
-    "code2/fiori/pou/pou1project/model/getStoreFilter"
-], (Controller, JSONModel, Filter, FilterOperator, getStoreFilter) => {
+    "sap/ui/model/FilterOperator"
+], (Controller, JSONModel, Filter, FilterOperator) => {
     "use strict";
 
 
@@ -42,7 +41,7 @@ sap.ui.define([
             return sap.ui.core.UIComponent.getRouterFor(this);
         },
 
-        // function 03. 메뉴 검색 함수 (입력된 메뉴명과 선택된 카테고리 조건으로 메뉴 테이블 필터링)
+        // function 01. 메뉴 검색 함수 (입력된 메뉴명과 선택된 카테고리 조건으로 메뉴 테이블 필터링)
         onSearch: function ()
         {
             let oBinding = this.getView().byId("IMenu").getBinding("rows"), // 메뉴 테이블 바인딩 정보 가져오기
@@ -85,13 +84,13 @@ sap.ui.define([
             
         },
 
+        // 초기화 함수
         onReset: function()
         {
             this.getView().byId("IInputMenuname").setSelectedKey("");
-
             this.getView().byId("ICategory").setSelectedKey("");
 
-            var oBinding = this.getView().byId("IMenu").getBinding("rows");
+            let oBinding = this.getView().byId("IMenu").getBinding("rows");
 
             oBinding.filter([]);
 
@@ -99,16 +98,13 @@ sap.ui.define([
             this.getView().byId("TotalMenuQuantity").setText(iMenuCount);
         },
 
+        //판매상태 관련 함수
         onStatusColor: function(vStatus)
         {
             if(vStatus == "판매종료")
-             {
                 return "Warning";
-             }
              else
-              {
                 return "Success";
-              }
         }
     });
 });
