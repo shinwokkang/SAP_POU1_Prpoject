@@ -55,9 +55,6 @@
                         type="Emphasized"
                         icon="sap-icon://search"
                         press="onSearch"/>
-                
-                        press="onSearch"
-                        width="80px"/>
 
                 <ToolbarSpacer width="1rem"/>
 
