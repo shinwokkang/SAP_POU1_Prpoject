@@ -156,7 +156,7 @@
         <t:columns>
             <t:Column width="10rem"  >
                 <Label text="발주번호"/>
-                <t:template>
+                     <t:template>
                     <Text text="{Pono}" wrapping="false" />
                 </t:template>
             </t:Column>

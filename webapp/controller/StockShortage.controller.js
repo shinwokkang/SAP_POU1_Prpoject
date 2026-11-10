@@ -19,19 +19,20 @@ sap.ui.define([
                     operator : FilterOperator.EQ,
                     value1   : "부족"
                 });
-
+            // 부족 상태인 품목만 테이블에 표시
             oBinding.filter([oFilter]);
         },
 
         // 표가 다시 그려질 때마다 "총 n건" 문구를 바꾼다 (뷰의 rowsUpdated 이벤트)
         onRowsUpdated : function ()
         {
+            // 필터가 적용된 row 바인딩의 데이터 건수 가져오기
             let lv_count = this.byId("shortageTable").getBinding("rows").getLength();
 
             this.byId("shortageStrip").setText("최소 재고 기준 이하인 품목입니다. (총 " + lv_count + "건)");
         },
 
-        // 부족 수량 칸의 글자
+        // 현재 재고와 최소 재고 비교해 부족 수량 계산
         formatShortText : function (iQuantity, iMinqty)
         {
             if (iQuantity === iMinqty) {
@@ -56,11 +57,12 @@ sap.ui.define([
             let oContext = oEvent.getSource().getBindingContext("CSET"),
                 ls_stock = oContext.getObject(),
                 oModel = this.getView().getModel("CSET"),
-                vPath = oContext.getPath(),
-                oRouter = this.getOwnerComponent().getRouter();
+                vPath = oContext.getPath(), //데이터 모델의 위치(경로) 가져오기
+                oRouter = this.getOwnerComponent().getRouter(), //발주페이지 이동 라우터 객체 가져오기
+                oAppView = this.getOwnerComponent().getRootControl();
 
             MessageBox.confirm(
-                ls_stock.Storename + "의 " + ls_stock.Matname +
+                ls_stock.Storename + "의 " + ls_stock.Matname + //지점 + 원재료 이름
                 " 발주 요청 알림을 보내시겠습니까?",
                 {
                     title: "발주 요청 안내",
@@ -83,18 +85,21 @@ sap.ui.define([
                                     actions: ["예", "아니요"],
                                     emphasizedAction: "예",
 
-                                    onClose: function(vMoveAction)
+                                    onClose: function(vMoveAction) //창 닫히면 발생하는 이벤트
                                     {
                                         // 두 번째 창에서 예를 눌렀을 때만 이동
                                         if(vMoveAction == "예")
                                         {
-                                            oRouter.navTo
+                                            oRouter.navTo //지정된 라우트로 이동하는 메서드
                                             ("PurchaseParam", 
                                                 {
-                                                Storeid: ls_stock.Storeid,
-                                                Matnr: ls_stock.Matnr
+                                                    Storeid: ls_stock.Storeid,
+                                                    Matnr: ls_stock.Matnr
                                                 }
                                             );
+
+                                             // 왼쪽 메뉴에서 발주 관리 선택
+                                             oAppView.byId("sideNavigation").setSelectedKey("Purchase");
                                         }
                                     }
                                 }

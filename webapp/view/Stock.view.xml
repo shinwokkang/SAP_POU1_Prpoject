@@ -26,7 +26,7 @@
                 <ComboBox 
                         id="IStore" 
                         items="{/StoreSet}"
-                        width="8rem"
+                        class="SMALL"
                         placeholder="전체">
                     <core:Item 
                          key="{Storeid}" 
@@ -39,7 +39,7 @@
                 
                 <ComboBox id="IMatnr" 
                           items="{MSET>/MaterialSet}"
-                          width="8rem"
+                          class="SMALL"
                           placeholder="전체">
 
                     <core:Item 
@@ -54,8 +54,7 @@
                         text="조회"
                         type="Emphasized"
                         icon="sap-icon://search"
-                        press="onSearch"
-                        width="80px"/>
+                        press="onSearch"/>
 
                 <ToolbarSpacer width="1rem"/>
 
@@ -127,7 +126,7 @@
                         <ObjectStatus 
                               text="{Status}" 
                               state="{path: 'Status',  formatter: '.onStatusColor'}"
-                              inverted="true"
+                              inverted="true" 
                               icon="sap-icon://status-critical"/>
                     </t:template>
                 </t:Column>

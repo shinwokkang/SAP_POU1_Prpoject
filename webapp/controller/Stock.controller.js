@@ -9,14 +9,9 @@ sap.ui.define([
     return Controller.extend("code2.fiori.pou.pou1project.controller.Stock", {
         onInit() 
         {
-
-            
-           
-
             this.getView().setModel(new JSONModel("/model/Material.json"),"MSET");
 
             this.getRouter().getRoute("Stock");
-
         },
 
 
@@ -78,7 +73,7 @@ sap.ui.define([
 
             this.getView().byId("IMatnr").setSelectedKey("");
 
-            var oBinding = this.getView().byId("StockSet").getBinding("rows");
+            let oBinding = this.getView().byId("StockSet").getBinding("rows");
 
             oBinding.filter([]);
         }
