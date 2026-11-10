@@ -42,7 +42,7 @@
                 <VBox class="sapUiSmallMarginEnd">
                     <Label text="메뉴명" labelFor="iMenuName"/>
                     <Input  id="IInputMenuname" 
-                            class="MEDIUM" placeholder="지점명 입력" showClearIcon="true"/>
+                            class="MEDIUM" placeholder="메뉴명 입력" showClearIcon="true"/>
                 </VBox>
 
                 <VBox class="sapUiSmallMarginEnd">
@@ -105,7 +105,7 @@
                 <t:Column width="25%">
                     <Label text="가격" />
                     <t:template>
-                        <!-- <Text text="{
+                        <Text text="{
                             parts: [
                                 {path: 'Price'},
                                 {value: 'KRW'}
@@ -114,8 +114,7 @@
                             formatOptions: {
                                 showMeasure: true
                             }
-                        }" wrapping="false" /> -->
-                        <u:Currency value="{Price}" currency="KRW"/>
+                        }" wrapping="false" />
                     </t:template>
                 </t:Column>
 
