@@ -16,10 +16,10 @@ sap.ui.define([
             this.getRouter().getRoute("Purchase").attachPatternMatched(
                 this.onShowPurchase, this);
 
-            // 7번에서 지점, 원재료를 전달받을 때 manifest에서
+            // 7번에서 지점, 원재료를 전달받을 때
             this.getRouter().getRoute("PurchaseParam").attachPatternMatched(
                 this.onShowPurchase, this);
-
+            
             let StatusSet= [
                             {Status: "발주완료"},
                             {Status: "발주요청"},
@@ -31,10 +31,12 @@ sap.ui.define([
             this.getView().setModel(new JSONModel(StatusSet),"StaSet");
         },
 
-        getRouter:function(){
+        getRouter:function()
+        {
             return sap.ui.core.UIComponent.getRouterFor(this);
         },
-
+        
+        // 색을 표시해주는 함수
         onAlertColor: function(vStatus)
         {
             if(vStatus == "발송 완료")
@@ -56,28 +58,24 @@ sap.ui.define([
                 lt_purchase = oData.PurchaseSet;
 
             // 발주 데이터를 하나씩 확인
-            for(let i = 0; i < lt_purchase.length; i++)
+            for(let i in lt_purchase)
             {
                 let ls_purchase = lt_purchase[i],
                     vStatus = "";
 
-                // 재고 데이터와 비교
+                // 재고 데이터와 발주 데이터를 비교
                 for(let ls_stock of lt_stock)
                 {
                     if(ls_purchase.Storeid == ls_stock.Storeid &&
                        ls_purchase.Matnr == ls_stock.Matnr &&
-                       ls_stock.AlertStatus == "발송 완료")
+                       ls_stock.AlertStatus == "발송 완료")            // 재고 데이터와 발주 데이터의 store id가 같고, 원자재명이 같으면 실행 
                     {
-                        vStatus = "발송 완료";
-
+                        vStatus = "발송 완료";                         // vStatus에 "발송 완료"로 저장
                     }
                 }
 
-                // 발주 데이터에 알림 상태 반영
-                oModel.setProperty(
-                    "/PurchaseSet/" + i + "/AlertStatus",
-                    vStatus
-                );
+                // 발주 데이터에 알림 상태 저장
+                oModel.setProperty("/PurchaseSet/" + i + "/AlertStatus", vStatus);          // vStatus에 "발송 완료"로 되어 있으면 그것으로 저장된다.
             }
         },
 
@@ -87,7 +85,7 @@ sap.ui.define([
             let oBinding     = this.getView().byId("purchaseTable").getBinding("rows"),
                 oFilter      = null,
                 aFilter      = [],
-                vStorename   = this.getView().byId("IstoreName").getSelectedKey(),
+                vStorename   = this.getView().byId("IstoreName").getSelectedKey(),                 // getSelectedKey() : key로 저장
                 vMaterialName= this.getView().byId("ImaterialName").getSelectedKey(),
                 vStatus      = this.getView().byId("Istatus").getSelectedKey();
                 
