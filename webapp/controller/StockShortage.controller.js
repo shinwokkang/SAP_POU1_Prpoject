@@ -58,7 +58,8 @@ sap.ui.define([
                 ls_stock = oContext.getObject(),
                 oModel = this.getView().getModel("CSET"),
                 vPath = oContext.getPath(), //데이터 모델의 위치(경로) 가져오기
-                oRouter = this.getOwnerComponent().getRouter();//발주페이지 이동 라우터 객체 가져오기
+                oRouter = this.getOwnerComponent().getRouter(), //발주페이지 이동 라우터 객체 가져오기
+                oAppView = this.getOwnerComponent().getRootControl();
 
             MessageBox.confirm(
                 ls_stock.Storename + "의 " + ls_stock.Matname + //지점 + 원재료 이름
@@ -92,10 +93,13 @@ sap.ui.define([
                                             oRouter.navTo //지정된 라우트로 이동하는 메서드
                                             ("PurchaseParam", 
                                                 {
-                                                Storeid: ls_stock.Storeid,
-                                                Matnr: ls_stock.Matnr
+                                                    Storeid: ls_stock.Storeid,
+                                                    Matnr: ls_stock.Matnr
                                                 }
                                             );
+
+                                             // 왼쪽 메뉴에서 발주 관리 선택
+                                             oAppView.byId("sideNavigation").setSelectedKey("Purchase");
                                         }
                                     }
                                 }
