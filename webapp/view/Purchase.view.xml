@@ -30,7 +30,7 @@
                 <ComboBox
                     id="IstoreName"
                     items="{StoSet>/StoreNameSet}"
-                    width="8rem" class="SMALL"
+                    class="SMALL"
                     placeholder="전체">
 
                     <c:Item key="{StoSet>Strcd}"
@@ -44,7 +44,7 @@
                 <ComboBox
                     id="ImaterialName"
                     items="{MSET>/MaterialSet}"
-                    width="8rem" class="SMALL"
+                    class="SMALL"
                     placeholder="전체">
 
                     <c:Item 
@@ -61,7 +61,7 @@
                 <ComboBox
                         id="Istatus"
                         items="{path : 'StaSet>/'}"
-                        width="8rem" class="SMALL"
+                        class="SMALL"
                         placeholder="전체">
 
                     <c:Item 
