@@ -137,7 +137,7 @@
     <viz.data:FlattenedDataset data="{/FilteredSalesSet}">
         <viz.data:dimensions>
             <viz.data:DimensionDefinition
-                name="Store Name"
+                name="지점"
                 value="{Storename}"/>
         </viz.data:dimensions>
         <viz.data:measures>
@@ -149,7 +149,7 @@
 </viz:dataset>
     <viz:feeds>
        <viz.feeds:FeedItem uid="valueAxis" type="Measure" values="총 매출"/>
-       <viz.feeds:FeedItem uid="categoryAxis" type="Dimension"  values="Store Name"/>
+       <viz.feeds:FeedItem uid="categoryAxis" type="Dimension"  values="지점"/>
        </viz:feeds>
       </viz:VizFrame>
       </VBox>
