@@ -85,7 +85,7 @@ sap.ui.define([
             let oBinding     = this.getView().byId("purchaseTable").getBinding("rows"),
                 oFilter      = null,
                 aFilter      = [],
-                vStorename   = this.getView().byId("IstoreName").getSelectedKey(),                 // getSelectedKey() : key로 저장
+                vStorename   = this.getView().byId("IstoreName").getSelectedKey(),                 // getSelectedKey() : key값으로 저장
                 vMaterialName= this.getView().byId("ImaterialName").getSelectedKey(),
                 vStatus      = this.getView().byId("Istatus").getSelectedKey();
                 

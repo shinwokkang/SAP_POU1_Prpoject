@@ -59,20 +59,22 @@ sap.ui.define([
                 vPath = oContext.getPath(),
                 oRouter = this.getOwnerComponent().getRouter();
 
+
+            // MessageBox로 메시지 형태 나타내기
             MessageBox.confirm(
                 ls_stock.Storename + "의 " + ls_stock.Matname +
                 " 발주 요청 알림을 보내시겠습니까?",
                 {
                     title: "발주 요청 안내",
                     actions: ["예", "아니요"],
-                    emphasizedAction: "예",
+                    emphasizedAction: "예",        // "예" 색깔 강조
 
                     onClose: function(vAction)
                     {
                         if(vAction == "예")
                         {
-                            // 알림 상태 저장
-                            oModel.setProperty( vPath + "/AlertStatus","발송 완료" );
+                            // 알림 상태를 저장한다.
+                            oModel.setProperty( vPath + "/AlertStatus","발송 완료" );                // oModel.setProperty("경로", "변경할 값");
 
                              // 발송 상태를 기록한 뒤 화면을 이동할지 확인
                             MessageBox.confirm
