@@ -6,7 +6,7 @@
     xmlns:viz.feeds="sap.viz.ui5.controls.common.feeds"
     xmlns:core="sap.ui.core"
     xmlns="sap.m">
-
+    <Page showHeader="false" >
         <VBox class="sapUiSmallMargin">
             <HBox alignItems = "Center" 
                 class="sapUiResponsiveMargin">
@@ -32,8 +32,12 @@
     <HBox alignItems="Center">
     <Label text="조회기간"  labelFor="calender2" width="5em" design="Bold" />
     <DatePicker id="calender2" value="2026-10-30" displayFormat="yyyy.MM.dd" valueFormat="yyyy-MM-dd" class="SMALL"/>
+       <ToolbarSpacer width="5px"/>
+    <Text text=" ~ "/>
+       <ToolbarSpacer width="5px"/>
 
 <DatePicker id="calender1" value="2026-11-03" class="SMALL" displayFormat="yyyy.MM.dd" valueFormat="yyyy-MM-dd"/>
+   <ToolbarSpacer width="1rem"/>
         <Button text="조회" press="Button" icon="sap-icon://search" type="Emphasized" />
     </HBox>
     <!-- 달력 끝 -->
@@ -202,4 +206,5 @@
    
 
 </VBox>
+</Page>
     </mvc:View>
