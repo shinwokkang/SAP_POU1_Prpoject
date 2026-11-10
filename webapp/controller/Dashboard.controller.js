@@ -1,7 +1,6 @@
 sap.ui.define([
     "sap/ui/core/mvc/Controller",
-    "sap/ui/model/json/JSONModel"
-], (Controller, JSONModel) => {
+], (Controller,) => {
     "use strict";
 
     return Controller.extend("code2.fiori.pou.pou1project.controller.Dashboard", {
@@ -27,24 +26,24 @@ sap.ui.define([
         //  대시보드 상단 글자 함수
 
         onSales: function () {
-            let oModel = this.getOwnerComponent().getModel();
-            let aSales = oModel.getProperty("/SalesSummarySet");
-            let total = 0;
+            let oModel = this.getOwnerComponent().getModel(),
+                aSales = oModel.getProperty("/SalesSummarySet"),
+                total = 0;
 
             for (let i = 0; i < aSales.length; i++) {
                 total = total + parseInt(aSales[i].Salesamt);
             }
 
-            this.byId("totalSales").setText("₩ " + parseInt(total).toLocaleString());
+            this.byId("totalSales").setText("₩ " + total.toLocaleString());
 
         },
 
 
         SaleSet: function () {
 
-            let oModel = this.getOwnerComponent().getModel();
-            let aMenu = oModel.getProperty("/MenuSet");
-            let topMenu = aMenu[0];
+            let oModel = this.getOwnerComponent().getModel(),
+                aMenu = oModel.getProperty("/MenuSet"),
+                topMenu = aMenu[0];
 
             for (let i = 1; i < aMenu.length; i++) {
                 if (aMenu[i].Soldqty > topMenu.Soldqty) { topMenu = aMenu[i]; }
@@ -54,8 +53,8 @@ sap.ui.define([
         },
 
         OrderSet: function () {
-            let oModel = this.getOwnerComponent().getModel();
-            let aOrder = oModel.getProperty("/StockSet");
+            let oModel = this.getOwnerComponent().getModel(),
+                aOrder = oModel.getProperty("/StockSet");
             if (aOrder) {
                 let count = 0;
 
@@ -81,9 +80,9 @@ sap.ui.define([
         },
 
         onStoreCount: function () {
-            let oModel = this.getOwnerComponent().getModel();
-            let Store = oModel.getProperty("/StoreSet");
-            let count = 0;
+            let oModel = this.getOwnerComponent().getModel(),
+                Store = oModel.getProperty("/StoreSet"),
+                count = 0;
 
             for (let i = 0; i < Store.length; i++) {
                 if (Store[i].Status === "운영중") {
@@ -97,14 +96,14 @@ sap.ui.define([
         // 달력 날짜 함수
         Button: function () {
 
-            let start = this.byId("calender2").getValue();
-            let end = this.byId("calender1").getValue();
+            let start = this.byId("calender2").getValue(),
+                end = this.byId("calender1").getValue(),
 
-            let oModel = this.getOwnerComponent().getModel();
-            let sales = oModel.getProperty("/SalesSet") || [];
+                oModel = this.getOwnerComponent().getModel(),
+                sales = oModel.getProperty("/SalesSet") || [],
 
-            let bar = [];
-            let donut = [];
+                bar = [],
+                donut = [];
 
             for (let s of sales) {
 
@@ -112,24 +111,24 @@ sap.ui.define([
                     continue;
                 }
 
-                let b = bar.find(x => x.Storename === s.Storename);
-                let d = donut.find(x => x.Menuname === s.Menuname);
+                let b = bar.find(x => x.Storename === s.Storename),
+                    d = donut.find(x => x.Menuname === s.Menuname);
 
                 if (b) {
-                    b.Salesamt += Number(s.Amount);
+                    b.Salesamt += parseInt(s.Amount);
                 } else {
                     bar.push({
                         Storename: s.Storename,
-                        Salesamt: Number(s.Amount)
+                        Salesamt: parseInt(s.Amount)
                     });
                 }
 
                 if (d) {
-                    d.Soldqty += Number(s.Quantity);
+                    d.Soldqty += parseInt(s.Quantity);
                 } else {
                     donut.push({
                         Menuname: s.Menuname,
-                        Soldqty: Number(s.Quantity)
+                        Soldqty: parseInt(s.Quantity)
                     });
                 }
             }

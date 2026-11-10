@@ -23,10 +23,10 @@
 <ToolbarSpacer/>
     <!-- 달력 -->
     <HBox alignItems="Center">
-    <Label text="조회기간"  labelFor="calender2" width="5em" design="Bold"/>
-    <DatePicker id="calender2" value="2026-10-30" width="10rem" displayFormat="yyyy.MM.dd" valueFormat="yyyy-MM-dd"/>
+    <Label text="조회기간"  labelFor="calender2" width="5em" design="Bold" />
+    <DatePicker id="calender2" value="2026-10-30" displayFormat="yyyy.MM.dd" valueFormat="yyyy-MM-dd" class="SMALL"/>
 
-<DatePicker id="calender1" value="2026-11-03" width="10rem" displayFormat="yyyy.MM.dd" valueFormat="yyyy-MM-dd"/>
+<DatePicker id="calender1" value="2026-11-03" class="SMALL" displayFormat="yyyy.MM.dd" valueFormat="yyyy-MM-dd"/>
         <Button text="조회" press="Button" icon="sap-icon://search" type="Emphasized" />
     </HBox>
     <!-- 달력 끝 -->
