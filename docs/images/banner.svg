@@ -1,0 +1,117 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 420" width="1280" height="420" role="img" aria-labelledby="t d">
+<title id="t">CafeFlow</title><desc id="d">카페 프랜차이즈 통합 운영 관리 시스템 — SAP Fiori · SAPUI5</desc>
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#1b0f0a"/><stop offset=".55" stop-color="#2e1b12"/><stop offset="1" stop-color="#0b2b4d"/>
+  </linearGradient>
+  <radialGradient id="gBlue" cx="88%" cy="10%" r="60%"><stop offset="0" stop-color="#1e88e5" stop-opacity=".42"/><stop offset="1" stop-color="#1e88e5" stop-opacity="0"/></radialGradient>
+  <radialGradient id="gWarm" cx="10%" cy="95%" r="55%"><stop offset="0" stop-color="#d08a4f" stop-opacity=".34"/><stop offset="1" stop-color="#d08a4f" stop-opacity="0"/></radialGradient>
+  <pattern id="dots" width="24" height="24" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1.3" fill="#fff" fill-opacity=".06"/></pattern>
+  <linearGradient id="cupG" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fffaf3"/><stop offset="1" stop-color="#e6d1ba"/></linearGradient>
+  <linearGradient id="shine" x1="0" y1="0" x2="300" y2="0" gradientUnits="userSpaceOnUse">
+    <stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset=".5" stop-color="#fff" stop-opacity=".95"/><stop offset="1" stop-color="#fff" stop-opacity="0"/>
+    <animateTransform attributeName="gradientTransform" type="translate" values="-400 0;1000 0;1000 0" keyTimes="0;.55;1" dur="5s" repeatCount="indefinite"/>
+  </linearGradient>
+  <linearGradient id="titleG" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#ffe9cf"/><stop offset=".6" stop-color="#f3cfa6"/><stop offset="1" stop-color="#9ccbff"/></linearGradient>
+  <clipPath id="cupClip"><path d="M150 196 H330 V236 C330 292 294 328 240 328 C186 328 150 292 150 236 Z"/></clipPath>
+  <clipPath id="frame"><rect width="1280" height="420" rx="28"/></clipPath>
+  <filter id="shadow" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="12" stdDeviation="14" flood-color="#000" flood-opacity=".35"/></filter>
+</defs>
+<style>
+  text{font-family:'Pretendard','Noto Sans KR','Apple SD Gothic Neo','Malgun Gothic','Segoe UI',sans-serif}
+  @keyframes steam{0%{opacity:0;transform:translateY(16px) scaleY(.85)}35%{opacity:.8}100%{opacity:0;transform:translateY(-30px) scaleY(1.05)}}
+  .steam path{transform-box:fill-box;transform-origin:50% 100%;animation:steam 3.6s ease-in-out infinite;opacity:0}
+  .steam path:nth-child(2){animation-delay:1.1s}.steam path:nth-child(3){animation-delay:2.2s}
+  @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
+  .float{animation:float 6s ease-in-out infinite}.f2{animation-delay:-2s}.f3{animation-delay:-4s}
+  @keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+  .fu{animation:fadeUp .9s cubic-bezier(.2,.8,.2,1) both}
+  @keyframes grow{from{transform:scaleY(0)}to{transform:scaleY(1)}}
+  .bar{transform-box:fill-box;transform-origin:50% 100%;animation:grow 1.1s cubic-bezier(.2,.9,.2,1) both}
+  @keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.35;transform:scale(1.9)}}
+  .pulse{transform-box:fill-box;transform-origin:center;animation:pulse 1.6s ease-in-out infinite}
+  @keyframes fill{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+  .fill{transform-box:fill-box;transform-origin:0 50%;animation:fill 1.6s .8s cubic-bezier(.2,.9,.2,1) both}
+  @keyframes wave{from{transform:translateX(0)}to{transform:translateX(-640px)}}
+  .wave{animation:wave 12s linear infinite}
+  @media (prefers-reduced-motion: reduce){*{animation:none!important}}
+</style>
+<g clip-path="url(#frame)">
+  
+  <rect width="1280" height="420" rx="28" fill="url(#bg)"/>
+  <rect width="1280" height="420" rx="28" fill="url(#gBlue)"/>
+  <rect width="1280" height="420" rx="28" fill="url(#gWarm)"/>
+  <rect width="1280" height="420" rx="28" fill="url(#dots)"/>
+  <circle cx="1180" cy="40" r="150" fill="none" stroke="#fff" stroke-opacity=".05" stroke-width="2"/>
+  <circle cx="1180" cy="40" r="210" fill="none" stroke="#fff" stroke-opacity=".035" stroke-width="2"/>
+  <path class="wave" d="M0 392 Q160 372 320 392 T640 392 T960 392 T1280 392 T1600 392 T1920 392 V420 H0Z" fill="#d9a77a" fill-opacity=".10"/>
+
+  <!-- coffee cup -->
+  <g class="float">
+    <ellipse cx="240" cy="356" rx="118" ry="12" fill="#000" fill-opacity=".35"/>
+    <ellipse cx="240" cy="336" rx="128" ry="20" fill="#e2cdb6"/>
+    <ellipse cx="240" cy="332" rx="92" ry="12" fill="#c9ad90" fill-opacity=".55"/>
+    <path d="M328 214 C386 208 388 286 326 292" fill="none" stroke="#f3e6d6" stroke-width="15" stroke-linecap="round"/>
+    <path d="M150 196 H330 V236 C330 292 294 328 240 328 C186 328 150 292 150 236 Z" fill="url(#cupG)"/>
+    <g clip-path="url(#cupClip)">
+      <rect x="140" y="250" width="200" height="30" fill="#0a6ed1"/>
+      <text x="240" y="270" text-anchor="middle" font-size="12" font-weight="800" letter-spacing="3" fill="#fff">CAFEFLOW</text>
+    </g>
+    <ellipse cx="240" cy="196" rx="90" ry="17" fill="#fffaf3"/>
+    <ellipse cx="240" cy="198" rx="78" ry="12.5" fill="#6b3f26"/>
+    <path d="M240 206 C232 200 224 197 226 192 C228 187 236 188 240 193 C244 188 252 187 254 192 C256 197 248 200 240 206Z" fill="#e6c6a3"/>
+    <g class="steam" fill="none" stroke="#f5e6d3" stroke-width="7" stroke-linecap="round">
+      <path d="M205 176 C190 154 220 140 205 116 S218 82 206 64"/>
+      <path d="M240 172 C225 148 257 134 240 108 S254 72 241 52"/>
+      <path d="M275 176 C260 154 290 140 275 116 S288 82 276 64"/>
+    </g>
+  </g>
+
+  <!-- title block -->
+  <g class="fu">
+    <text x="420" y="190" font-size="104" font-weight="800" letter-spacing="-2" fill="url(#titleG)">CafeFlow</text>
+    <text x="420" y="190" font-size="104" font-weight="800" letter-spacing="-2" fill="url(#shine)" fill-opacity=".55">CafeFlow</text>
+  </g>
+  <text class="fu" style="animation-delay:.15s" x="424" y="246" font-size="32" font-weight="700" fill="#f3e2cf">카페 프랜차이즈 통합 운영 관리 시스템</text>
+  <text class="fu" style="animation-delay:.3s" x="426" y="288" font-size="18" fill="#c9b29a" letter-spacing=".5">SAP Fiori  ·  SAPUI5 1.120  ·  SAP Horizon  ·  SAP CODE 2기 POU1</text>
+  <g class="fu" style="animation-delay:0.45s">
+    <rect x="424" y="318" width="86" height="36" rx="18" fill="#fff" fill-opacity=".08" stroke="#fff" stroke-opacity=".18"/>
+    <text x="467" y="341.5" text-anchor="middle" font-size="15" font-weight="600" fill="#f3e2cf">대시보드</text></g>
+  <g class="fu" style="animation-delay:0.54s">
+    <rect x="520" y="318" width="86" height="36" rx="18" fill="#fff" fill-opacity=".08" stroke="#fff" stroke-opacity=".18"/>
+    <text x="563" y="341.5" text-anchor="middle" font-size="15" font-weight="600" fill="#f3e2cf">지점</text></g>
+  <g class="fu" style="animation-delay:0.63s">
+    <rect x="616" y="318" width="86" height="36" rx="18" fill="#fff" fill-opacity=".08" stroke="#fff" stroke-opacity=".18"/>
+    <text x="659" y="341.5" text-anchor="middle" font-size="15" font-weight="600" fill="#f3e2cf">메뉴</text></g>
+  <g class="fu" style="animation-delay:0.72s">
+    <rect x="712" y="318" width="86" height="36" rx="18" fill="#fff" fill-opacity=".08" stroke="#fff" stroke-opacity=".18"/>
+    <text x="755" y="341.5" text-anchor="middle" font-size="15" font-weight="600" fill="#f3e2cf">매출</text></g>
+  <g class="fu" style="animation-delay:0.81s">
+    <rect x="808" y="318" width="86" height="36" rx="18" fill="#fff" fill-opacity=".08" stroke="#fff" stroke-opacity=".18"/>
+    <text x="851" y="341.5" text-anchor="middle" font-size="15" font-weight="600" fill="#f3e2cf">재고</text></g>
+  <g class="fu" style="animation-delay:0.9s">
+    <rect x="904" y="318" width="86" height="36" rx="18" fill="#fff" fill-opacity=".08" stroke="#fff" stroke-opacity=".18"/>
+    <text x="947" y="341.5" text-anchor="middle" font-size="15" font-weight="600" fill="#f3e2cf">발주</text></g>
+
+  <!-- floating KPI cards -->
+  <g class="float f2" filter="url(#shadow)">
+    <rect x="1010" y="52" width="222" height="146" rx="18" fill="#fff" fill-opacity=".08" stroke="#fff" stroke-opacity=".16"/>
+    <text x="1030" y="82" font-size="14" fill="#cbb59d">총 매출 · 5일 누적</text>
+    <text x="1030" y="112" font-size="24" font-weight="800" fill="#fff">₩29,713,100</text>
+    <rect class="bar" style="animation-delay:0.6s" x="1030" y="145" width="12" height="39" rx="3" fill="#4ea3f2"/><rect class="bar" style="animation-delay:0.67s" x="1048.6" y="147.6" width="12" height="36.4" rx="3" fill="#4ea3f2"/><rect class="bar" style="animation-delay:0.74s" x="1067.2" y="158" width="12" height="26" rx="3" fill="#4ea3f2"/><rect class="bar" style="animation-delay:0.81s" x="1085.8" y="163.2" width="12" height="20.8" rx="3" fill="#4ea3f2"/><rect class="bar" style="animation-delay:0.88s" x="1104.4" y="158" width="12" height="26" rx="3" fill="#4ea3f2"/><rect class="bar" style="animation-delay:0.95s" x="1123" y="147.6" width="12" height="36.4" rx="3" fill="#4ea3f2"/><rect class="bar" style="animation-delay:1.02s" x="1141.6" y="147.6" width="12" height="36.4" rx="3" fill="#4ea3f2"/><rect class="bar" style="animation-delay:1.09s" x="1160.2" y="147.6" width="12" height="36.4" rx="3" fill="#4ea3f2"/><rect class="bar" style="animation-delay:1.16s" x="1178.8" y="168.4" width="12" height="15.6" rx="3" fill="#4ea3f2"/><rect class="bar" style="animation-delay:1.23s" x="1197.4" y="163.2" width="12" height="20.8" rx="3" fill="#4ea3f2"/>
+  </g>
+  <g class="float f3" filter="url(#shadow)">
+    <rect x="1010" y="216" width="222" height="72" rx="18" fill="#fff" fill-opacity=".08" stroke="#fff" stroke-opacity=".16"/>
+    <circle cx="1036" cy="252" r="6" fill="#f87171" class="pulse"/><circle cx="1036" cy="252" r="6" fill="#f87171"/>
+    <text x="1054" y="247" font-size="15" font-weight="700" fill="#fff">재고 부족 알림</text>
+    <text x="1054" y="270" font-size="13" fill="#cbb59d">36개 품목 · 발주 연동</text>
+  </g>
+  <g class="float" filter="url(#shadow)">
+    <rect x="1010" y="306" width="222" height="70" rx="18" fill="#fff" fill-opacity=".08" stroke="#fff" stroke-opacity=".16"/>
+    <text x="1030" y="334" font-size="14" fill="#cbb59d">운영 지점</text>
+    <text x="1212" y="334" text-anchor="end" font-size="15" font-weight="800" fill="#fff">10 / 12</text>
+    <rect x="1030" y="350" width="182" height="8" rx="4" fill="#fff" fill-opacity=".12"/>
+    <rect class="fill" x="1030" y="350" width="151.667" height="8" rx="4" fill="#34d399"/>
+  </g>
+</g>
+</svg>
