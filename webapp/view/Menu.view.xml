@@ -105,7 +105,7 @@
                 <t:Column width="25%">
                     <Label text="가격" />
                     <t:template>
-                        <Text text="{
+                        <!-- <Text text="{
                             parts: [
                                 {path: 'Price'},
                                 {value: 'KRW'}
@@ -114,7 +114,8 @@
                             formatOptions: {
                                 showMeasure: true
                             }
-                        }" wrapping="false" />
+                        }" wrapping="false" /> -->
+                        <u:Currency value="{Price}" currency="KRW"/>
                     </t:template>
                 </t:Column>
 
